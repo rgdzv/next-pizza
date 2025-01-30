@@ -1,0 +1,11 @@
+{
+  "name": "next-pizza",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+
+  },
+  "author": "rgdzv",
+  "license": "ISC"
+}
