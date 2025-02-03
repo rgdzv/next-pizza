@@ -1,7 +1,7 @@
 {
     // eslint extension settings for project
     "eslint.options": {
-        "overrideConfigFile": "config/eslint/.eslintrc.json"
+        "overrideConfigFile": "config/eslint/eslint.config.mjs"
     },
 
     // prettier extension settings for project
