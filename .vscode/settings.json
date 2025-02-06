@@ -10,12 +10,22 @@
     "prettier.configPath": "config/prettier/prettier.config.mjs",
     "prettier.ignorePath": "config/prettier/.prettierignore",
 
+    // stylelint extension settings for project
+    "stylelint.configFile": "config/stylelint/stylelint.config.mjs",
+    "stylelint.validate": ["css", "scss"],
+    "stylelint.snippet": ["css", "scss"],
+
+    // disable VSCode validator for css and scss for stylelint usage for them
+    "css.validate": false,
+    "scss.validate": false,
+
     // fix all problems on save for prettier
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
 
-    // fix all problems on save for eslint
+    // fix all problems on save for eslint and stylelint
     "editor.codeActionsOnSave": {
+        "source.fixAll.stylelint": "explicit",
         "source.fixAll.eslint": "explicit"
     }
 }

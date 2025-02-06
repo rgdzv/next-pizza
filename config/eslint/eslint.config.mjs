@@ -14,7 +14,8 @@ export default tseslint.config(
     reactPlugin.configs.flat.recommended,
     reactPlugin.configs.flat['jsx-runtime'],
     jsxA11yPlugin.flatConfigs.recommended,
-    // reactHooksPlugin.configs.flat.recommended,           <= uncomment when flat config for reactHooksPlugin is released
+    // reactHooksPlugin.configs.flat.recommended,   <= uncomment when flat config for reactHooksPlugin is released
+    // nextPlugin.configs.flat.recommended,   <= uncomment when flat config for nextPlugin is released
     prettierConfig,
     {
         languageOptions: {
@@ -25,7 +26,8 @@ export default tseslint.config(
         },
         plugins: {
             import: importPlugin,
-            'react-hooks': reactHooksPlugin // delete when flat config for reactHooksPlugin is released
+            'react-hooks': reactHooksPlugin, // delete when flat config for reactHooksPlugin is released
+            '@next/next': nextPlugin // delete when flat config for nextPlugin is released
         },
         settings: {
             react: {
@@ -34,6 +36,8 @@ export default tseslint.config(
         },
         rules: {
             ...reactHooksPlugin.configs.recommended.rules, // delete when flat config for reactHooksPlugin is released
+            ...nextPlugin.configs.recommended.rules, // delete when flat config for nextPlugin is released
+            ...nextPlugin.configs['core-web-vitals'].rules, // delete when flat config for nextPlugin is released
             '@typescript-eslint/consistent-type-exports': 'error',
             '@typescript-eslint/consistent-type-imports': 'error',
             '@typescript-eslint/no-import-type-side-effects': 'error',
