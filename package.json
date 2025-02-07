@@ -7,8 +7,11 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
+        "eslint": "eslint --config config/eslint/eslint.config.mjs",
         "eslint:fix": "eslint --config config/eslint/eslint.config.mjs --fix",
+        "stylelint": "stylelint --config config/stylelint/stylelint.config.mjs --ignore-path config/stylelint/.stylelintignore \"**/*.scss\"",
         "stylelint:fix": "stylelint --config config/stylelint/stylelint.config.mjs --ignore-path config/stylelint/.stylelintignore --fix \"**/*.scss\"",
+        "prettier": "prettier --config config/prettier/prettier.config.mjs --ignore-path config/prettier/.prettierignore --check **/*.{ts,tsx,mjs,json}",
         "prettier:write": "prettier --config config/prettier/prettier.config.mjs --ignore-path config/prettier/.prettierignore --write **/*.{ts,tsx,mjs,json}",
         "prepare": "husky"
     },
