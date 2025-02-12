@@ -1,5 +1,5 @@
 const HomePage = () => {
-    return <h1>Hello, Next.jssssss!</h1>
+    return <p>Hello, Next.jssssssssssssssssssssss!</p>
 }
 
 export default HomePage
