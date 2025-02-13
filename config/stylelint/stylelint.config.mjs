@@ -4,7 +4,8 @@ const config = {
     plugins: ['@stylistic/stylelint-plugin'],
     extends: ['stylelint-config-standard-scss', 'stylelint-config-clean-order'],
     rules: {
-        '@stylistic/indentation': 4
+        '@stylistic/indentation': 4,
+        'selector-class-pattern': '[a-z]+(?:[A-Z][a-z]+)*'
     }
 }
 
