@@ -2,9 +2,11 @@
 :root {
     --font-family: 'Nunito';
     --font-size: 16px;
-    --font-line: 1;
+    --font-line-height: 1;
     --font-weight: 400;
-    --font: var(--font-weight) var(--font-size) / var(--font-line) var(--font-family);
+    --font: var(--font-weight) var(--font-size) / var(--font-line-height) var(--font-family);
     --background-color-primary: #FFBF9B;
     --background-color-secondary: #FFF;
+    --text-color-primary: #000;
+    --text-color-secondary: #999;
 }

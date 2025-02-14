@@ -7,7 +7,7 @@ interface RootLayoutProps {
 
 const RootLayout: FC<RootLayoutProps> = ({ children }) => {
     return (
-        <html lang="en">
+        <html lang="ru">
             <body>{children}</body>
         </html>
     )

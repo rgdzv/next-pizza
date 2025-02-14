@@ -6,3 +6,39 @@ body {
     padding: 20px;
     background-color: var(--background-color-primary);
 }
+
+.app {
+    min-height: calc(100vh - 40px);
+    border: 1px solid var(--background-color-secondary);
+    border-radius: 30px;
+    background-color: var(--background-color-secondary);
+}
+
+.not-found {
+    min-height: calc(100vh - 20px);
+}
+
+.global-error {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+    min-height: calc(100vh - 40px);
+    border: 1px solid var(--background-color-secondary);
+    border-radius: 30px;
+
+    background-color: var(--background-color-secondary);
+
+    .name {
+        font-size: 40px;
+        font-weight: 800;
+        color: var(--text-color-primary);
+    }
+
+    .msg {
+        font-size: 20px;
+        color: var(--text-color-secondary)
+    }
+}
