@@ -1,4 +1,5 @@
 'use client'
+import { Button } from 'shared/ui'
 import type { FC } from 'react'
 
 interface GlobalErrorProps {
@@ -16,7 +17,9 @@ const GlobalError: FC<GlobalErrorProps> = ({ error }) => {
                 <div className="global-error">
                     <p className="name">Что-то пошло не так!</p>
                     <p className="msg">{error.message}</p>
-                    <button onClick={handleReset}>Обновить</button>
+                    <Button className="primary" onClick={handleReset}>
+                        Обновить
+                    </Button>
                 </div>
             </body>
         </html>
