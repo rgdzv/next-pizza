@@ -41,7 +41,7 @@ export default tseslint.config(
             '@typescript-eslint/consistent-type-exports': 'error',
             '@typescript-eslint/consistent-type-imports': 'error',
             '@typescript-eslint/no-import-type-side-effects': 'error',
-            "@typescript-eslint/non-nullable-type-assertion-style": "off",
+            '@typescript-eslint/non-nullable-type-assertion-style': 'off',
             'import/order': [
                 'error',
                 {

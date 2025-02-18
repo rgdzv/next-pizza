@@ -1,0 +1,47 @@
+.empty {
+    display: flex;
+    column-gap: 65px;
+    align-items: center;
+    justify-content: center;
+
+    min-height: calc(100vh - 40px);
+    padding: 45px;
+    border: 1px solid var(--background-color-secondary);
+    border-radius: 30px;
+
+    background-color: var(--background-color-secondary);
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        row-gap: 45px;
+
+        &__header {
+            display: flex;
+            flex-direction: column;
+            row-gap: 15px;
+            
+            &__reason {
+                font-size: 40px;
+                font-weight: 800;
+                color: var(--text-color-primary);
+            }
+        
+            &__msg {
+                font-size: 20px;
+                color: var(--text-color-secondary);
+            }
+        }
+
+        &__footer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    }
+
+    &__right {
+        display: flex;
+    }
+
+}

@@ -5,7 +5,13 @@ const config = {
     extends: ['stylelint-config-standard-scss', 'stylelint-config-clean-order'],
     rules: {
         '@stylistic/indentation': 4,
-        'selector-class-pattern': '[a-z]+(?:[A-Z][a-z]+)*'
+        'selector-class-pattern': '[a-z]+(?:[A-Z][a-z]+)*',
+        'property-no-unknown': [
+            true,
+            {
+                ignoreProperties: ['composes']
+            }
+        ]
     }
 }
 

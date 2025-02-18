@@ -1,14 +1,12 @@
-import Link from 'next/link'
+import { Empty } from 'shared/ui'
 import type { FC } from 'react'
 
 const NotFound: FC = () => {
-    return (
-        <div className="not-found">
-            <h2>Не найдено</h2>
-            <p>Страница не найдена</p>
-            <Link href="/">Вернуться на главную</Link>
-        </div>
-    )
+    const name = 'Страница не найдена'
+    const message =
+        'Проверьте корректность введенного адреса или повторите попытку позже'
+
+    return <Empty name={name} message={message} />
 }
 
 export default NotFound
