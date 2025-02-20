@@ -1,6 +1,6 @@
-import Image from 'next/image'
-import { ArrowLeft } from 'shared/assets'
+import { ArrowLeft, NotFound } from 'shared/assets'
 import { Button } from '../Button/Button'
+import { CustomImage } from '../CustomImage/CustomImage'
 import styles from './Empty.module.scss'
 import type { FC } from 'react'
 
@@ -20,25 +20,14 @@ export const Empty: FC<EmptyPropsInterface> = ({ name, message }) => {
                 <div className={styles.empty__left__footer}>
                     <Button className="primary">На главную</Button>
                     <Button className="primary">Обновить</Button>
-                    <Image
-                        priority
-                        className={styles.image}
-                        src="/images/arrow-left-icon.svg"
-                        alt="Go home"
-                        width={16}
-                        height={16}
-                        objectFit="cover"
-                    />
                     <ArrowLeft />
                 </div>
             </div>
             <div className={styles.empty__right}>
-                <div
-                    style={{
-                        width: '340px',
-                        height: '340px',
-                        backgroundColor: 'grey'
-                    }}
+                <CustomImage
+                    className="not__found"
+                    src={NotFound}
+                    alt="Not found"
                 />
             </div>
         </div>
