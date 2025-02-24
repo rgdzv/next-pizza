@@ -1,18 +1,15 @@
-.button {
+.link {
     display: flex;
+    gap: 5px;
     align-items: center;
     justify-content: center;
-
-    padding: 0;
-    border: none;
 
     font-family: var(--font-family);
     font-size: var(--font-size);
     color: var(--text-color-primary);
 
-    background: none;
-
-    &:disabled {
+    &.disabled {
+        pointer-events: none;
         cursor: auto;
         user-select: none;
         opacity: 0.5;
@@ -31,12 +28,12 @@
 
     transition: all .1s linear;
 
-    &:hover:enabled {
+    &:hover {
         color: #FFF;
         background-color: #FE5F00;
     }
 
-    &:active:enabled {
+    &:active {
         box-shadow: inset 0 0 10px #0000004D;
     }
 }

@@ -7,11 +7,13 @@ type ClassNameType = 'primary'
 interface ButtonPropsInterface extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode
     className?: ClassNameType
+    disabled?: boolean
 }
 
 export const Button: FC<ButtonPropsInterface> = ({
     children,
     className,
+    disabled,
     ...otherProps
 }) => {
     const finalClassName = classNames(
@@ -20,7 +22,7 @@ export const Button: FC<ButtonPropsInterface> = ({
     )
 
     return (
-        <button className={finalClassName} {...otherProps}>
+        <button className={finalClassName} disabled={disabled} {...otherProps}>
             {children}
         </button>
     )

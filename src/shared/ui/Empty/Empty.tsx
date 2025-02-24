@@ -1,6 +1,8 @@
+'use client'
 import { ArrowLeft, NotFound } from 'shared/assets'
 import { Button } from '../Button/Button'
 import { CustomImage } from '../CustomImage/CustomImage'
+import { CustomLink } from '../CustomLink/CustomLink'
 import styles from './Empty.module.scss'
 import type { FC } from 'react'
 
@@ -10,6 +12,10 @@ interface EmptyPropsInterface {
 }
 
 export const Empty: FC<EmptyPropsInterface> = ({ name, message }) => {
+    const handleReload = () => {
+        window.location.reload()
+    }
+
     return (
         <div className={styles.empty}>
             <div className={styles.empty__left}>
@@ -18,9 +24,13 @@ export const Empty: FC<EmptyPropsInterface> = ({ name, message }) => {
                     <p className={styles.empty__left__header__msg}>{message}</p>
                 </div>
                 <div className={styles.empty__left__footer}>
-                    <Button className="primary">На главную</Button>
-                    <Button className="primary">Обновить</Button>
-                    <ArrowLeft />
+                    <CustomLink href="/" className="primary">
+                        <ArrowLeft width={24} height={24} />
+                        На главную
+                    </CustomLink>
+                    <Button className="primary" onClick={handleReload}>
+                        Обновить
+                    </Button>
                 </div>
             </div>
             <div className={styles.empty__right}>
