@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import styles from './Button.module.scss'
+import styles from './CustomButton.module.scss'
 import type { ButtonHTMLAttributes, FC, ReactNode } from 'react'
 
 type ClassNameType = 'primary'
@@ -10,7 +10,7 @@ interface ButtonPropsInterface extends ButtonHTMLAttributes<HTMLButtonElement> {
     disabled?: boolean
 }
 
-export const Button: FC<ButtonPropsInterface> = ({
+export const CustomButton: FC<ButtonPropsInterface> = ({
     children,
     className,
     disabled,

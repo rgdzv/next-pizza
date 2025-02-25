@@ -1,6 +1,6 @@
 'use client'
 import { ArrowLeft, NotFound } from 'shared/assets'
-import { Button } from '../Button/Button'
+import { CustomButton } from '../CustomButton/CustomButton'
 import { CustomImage } from '../CustomImage/CustomImage'
 import { CustomLink } from '../CustomLink/CustomLink'
 import styles from './Empty.module.scss'
@@ -25,12 +25,12 @@ export const Empty: FC<EmptyPropsInterface> = ({ name, message }) => {
                 </div>
                 <div className={styles.empty__left__footer}>
                     <CustomLink href="/" className="primary">
-                        <ArrowLeft width={24} height={24} />
+                        <ArrowLeft />
                         На главную
                     </CustomLink>
-                    <Button className="primary" onClick={handleReload}>
+                    <CustomButton className="primary" onClick={handleReload}>
                         Обновить
-                    </Button>
+                    </CustomButton>
                 </div>
             </div>
             <div className={styles.empty__right}>

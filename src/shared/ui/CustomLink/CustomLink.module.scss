@@ -28,6 +28,10 @@
 
     transition: all .1s linear;
 
+    svg {
+        fill: currentcolor;
+    }
+
     &:hover {
         color: #FFF;
         background-color: #FE5F00;
