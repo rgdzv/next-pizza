@@ -42,11 +42,6 @@
     }
 
     &__right {
-        display: flex;
+        display: block;
     }
-
-}
-
-.image {
-    fill: red;
 }

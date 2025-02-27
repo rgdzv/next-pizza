@@ -1,5 +1,5 @@
 'use client'
-import { ArrowLeft, NotFound } from 'shared/assets'
+import { ArrowLeft } from 'shared/assets'
 import { CustomButton } from '../CustomButton/CustomButton'
 import { CustomImage } from '../CustomImage/CustomImage'
 import { CustomLink } from '../CustomLink/CustomLink'
@@ -9,9 +9,18 @@ import type { FC } from 'react'
 interface EmptyPropsInterface {
     name: string
     message: string
+    imgSrc: string
+    imgClassName: string
+    imgAlt: string
 }
 
-export const Empty: FC<EmptyPropsInterface> = ({ name, message }) => {
+export const Empty: FC<EmptyPropsInterface> = ({
+    name,
+    message,
+    imgSrc,
+    imgClassName,
+    imgAlt
+}) => {
     const handleReload = () => {
         window.location.reload()
     }
@@ -35,9 +44,9 @@ export const Empty: FC<EmptyPropsInterface> = ({ name, message }) => {
             </div>
             <div className={styles.empty__right}>
                 <CustomImage
-                    className="not__found"
-                    src={NotFound}
-                    alt="Not found"
+                    className={imgClassName}
+                    src={imgSrc}
+                    alt={imgAlt}
                 />
             </div>
         </div>

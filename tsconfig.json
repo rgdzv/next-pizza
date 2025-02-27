@@ -29,7 +29,7 @@
         }
     },
     "include": [
-        "src/app/declarations/images/images.d.ts",
+        "src/app/declarations/**/*.d.ts",
         "next-env.d.ts",
         ".next/types/**/*.ts",
         "**/*.ts",

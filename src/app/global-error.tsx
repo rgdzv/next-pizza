@@ -1,5 +1,6 @@
 'use client'
-import { Button } from 'shared/ui'
+import { Empty } from 'shared/ui'
+import { NoImage } from 'shared/assets'
 import type { FC } from 'react'
 
 interface GlobalErrorProps {
@@ -7,20 +8,20 @@ interface GlobalErrorProps {
 }
 
 const GlobalError: FC<GlobalErrorProps> = ({ error }) => {
-    const handleReset = () => {
-        window.location.reload()
-    }
+    const name = 'Что-то пошло не так...'
+    const imgClassName = 'not__found'
+    const imgAlt = 'Not found'
 
     return (
         <html lang="ru">
             <body>
-                <div className="global-error">
-                    <p className="name">Что-то пошло не так!</p>
-                    <p className="msg">{error.message}</p>
-                    <Button className="primary" onClick={handleReset}>
-                        Обновить
-                    </Button>
-                </div>
+                <Empty
+                    name={name}
+                    message={error.message}
+                    imgSrc={NoImage}
+                    imgClassName={imgClassName}
+                    imgAlt={imgAlt}
+                />
             </body>
         </html>
     )
