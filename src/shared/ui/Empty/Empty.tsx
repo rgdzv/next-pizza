@@ -35,10 +35,10 @@ export const Empty: FC<EmptyPropsInterface> = ({
                 <div className={styles.empty__left__footer}>
                     <CustomLink href="/" className="primary">
                         <ArrowLeft />
-                        На главную
+                        <span>На главную</span>
                     </CustomLink>
                     <CustomButton className="primary" onClick={handleReload}>
-                        Обновить
+                        <span>Обновить</span>
                     </CustomButton>
                 </div>
             </div>
