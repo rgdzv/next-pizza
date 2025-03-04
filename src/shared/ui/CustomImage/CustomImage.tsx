@@ -18,7 +18,7 @@ export const CustomImage: FC<CustomImagePropsInterface> = ({
     className
 }) => {
     const classNameFinal = styles[className as ClassNameType]
-    const imageClassNameFinal = classNames(styles.image, {})
+    const imageClassNameFinal = classNames(styles.image)
 
     return (
         <div className={classNameFinal}>

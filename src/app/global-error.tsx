@@ -1,5 +1,5 @@
 'use client'
-import { Empty } from 'shared/ui'
+import { NoContent } from 'shared/ui'
 import { NoImage } from 'shared/assets'
 import type { FC } from 'react'
 
@@ -15,7 +15,7 @@ const GlobalError: FC<GlobalErrorProps> = ({ error }) => {
     return (
         <html lang="ru">
             <body>
-                <Empty
+                <NoContent
                     name={name}
                     message={error.message}
                     imgSrc={NoImage}

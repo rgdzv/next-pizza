@@ -1,4 +1,4 @@
-import { Empty } from 'shared/ui'
+import { NoContent } from 'shared/ui'
 import { NoImage } from 'shared/assets'
 import type { FC } from 'react'
 
@@ -10,7 +10,7 @@ const NotFound: FC = () => {
     const imgAlt = 'Not found'
 
     return (
-        <Empty
+        <NoContent
             name={name}
             message={message}
             imgSrc={NoImage}

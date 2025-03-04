@@ -3,7 +3,7 @@ import { ArrowLeft } from 'shared/assets'
 import { CustomButton } from '../CustomButton/CustomButton'
 import { CustomImage } from '../CustomImage/CustomImage'
 import { CustomLink } from '../CustomLink/CustomLink'
-import styles from './Empty.module.scss'
+import styles from './NoContent.module.scss'
 import type { FC } from 'react'
 
 interface EmptyPropsInterface {
@@ -14,7 +14,7 @@ interface EmptyPropsInterface {
     imgAlt: string
 }
 
-export const Empty: FC<EmptyPropsInterface> = ({
+export const NoContent: FC<EmptyPropsInterface> = ({
     name,
     message,
     imgSrc,
@@ -38,7 +38,7 @@ export const Empty: FC<EmptyPropsInterface> = ({
                         <span>На главную</span>
                     </CustomLink>
                     <CustomButton className="primary" onClick={handleReload}>
-                        <span>Обновить</span>
+                        Обновить
                     </CustomButton>
                 </div>
             </div>

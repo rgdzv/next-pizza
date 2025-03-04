@@ -1,7 +1,10 @@
 'use client'
-import type { FC } from 'react'
+import { useEffect, type FC } from 'react'
 
 const App: FC = () => {
+    useEffect(() => {
+        throw new Error('Error!')
+    }, [])
     return (
         <div className="app">
             <header></header>
