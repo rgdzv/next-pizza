@@ -6,7 +6,7 @@ import { CustomLink } from '../CustomLink/CustomLink'
 import styles from './NoContent.module.scss'
 import type { FC } from 'react'
 
-interface EmptyPropsInterface {
+interface NoContentPropsInterface {
     name: string
     message: string
     imgSrc: string
@@ -14,7 +14,7 @@ interface EmptyPropsInterface {
     imgAlt: string
 }
 
-export const NoContent: FC<EmptyPropsInterface> = ({
+export const NoContent: FC<NoContentPropsInterface> = ({
     name,
     message,
     imgSrc,
@@ -26,13 +26,17 @@ export const NoContent: FC<EmptyPropsInterface> = ({
     }
 
     return (
-        <div className={styles.empty}>
-            <div className={styles.empty__left}>
-                <div className={styles.empty__left__header}>
-                    <p className={styles.empty__left__header__reason}>{name}</p>
-                    <p className={styles.empty__left__header__msg}>{message}</p>
+        <div className={styles.nocontent}>
+            <div className={styles.nocontent__left}>
+                <div className={styles.nocontent__left__header}>
+                    <p className={styles.nocontent__left__header__reason}>
+                        {name}
+                    </p>
+                    <p className={styles.nocontent__left__header__msg}>
+                        {message}
+                    </p>
                 </div>
-                <div className={styles.empty__left__footer}>
+                <div className={styles.nocontent__left__footer}>
                     <CustomLink href="/" className="primary">
                         <ArrowLeft />
                         <span>На главную</span>
@@ -42,7 +46,7 @@ export const NoContent: FC<EmptyPropsInterface> = ({
                     </CustomButton>
                 </div>
             </div>
-            <div className={styles.empty__right}>
+            <div className={styles.nocontent__right}>
                 <CustomImage
                     className={imgClassName}
                     src={imgSrc}
