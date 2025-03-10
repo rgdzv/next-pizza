@@ -4,7 +4,7 @@ import type { FC } from 'react'
 
 const App: FC = () => {
     return (
-        <div className="app">
+        <div className='app'>
             <Header />
             <main></main>
             <footer></footer>

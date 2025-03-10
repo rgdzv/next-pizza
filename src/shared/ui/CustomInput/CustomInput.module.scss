@@ -1,0 +1,36 @@
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &.search__pizza {
+        input {
+            padding-left: 48px;
+        }
+    }
+
+    .input {
+        width: 100%;
+        padding: 17px 20px;
+        border: 1px solid var(--main-color);
+        border-radius: 15px;
+    
+        font:var(--font);
+        color: var(--text-color-primary);
+    
+        background-color: var(--background-color-third);
+        caret-color: var(--text-color-primary);
+    
+        &::placeholder {
+            color: var(--text-color-secondary);
+        }
+        
+        &:focus {
+            outline: none;
+        }
+    
+        &:disabled {
+            opacity: 0.5;
+        }
+    }
+}

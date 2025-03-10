@@ -1,3 +1,5 @@
 .header {
     display: grid;
+    grid-template-columns: auto 1fr min-content;
+    gap: 40px;
 }
