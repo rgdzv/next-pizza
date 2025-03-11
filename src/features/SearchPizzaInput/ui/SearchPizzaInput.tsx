@@ -11,21 +11,30 @@ export const SearchPizzaInput: FC = () => {
         setValue(e.target.value)
     }
 
-    const focusInput = () => {
+    const handleFocus = () => {
         ref.current?.focus()
     }
 
+    // const handleClean = () => {
+    //     setValue('')
+    // }
+
     const icon = (
-        <CustomButton className='search' onClick={focusInput}>
-            <SearchIcon title='Искать пиццу' />
+        <CustomButton className='search' onClick={handleFocus}>
+            <SearchIcon title='Поиск пиццы' />
         </CustomButton>
     )
+
+    // const icon2 = (
+    //     <CustomButton className='clean' onClick={handleClean}>
+    //         <CleanIcon title='Очистить' />
+    //     </CustomButton>
+    // )
 
     return (
         <CustomInput
             ref={ref}
             value={value}
-            name='Поиск'
             classNameForInputWrapper='search__pizza'
             placeholder='Поиск пиццы...'
             icon={icon}

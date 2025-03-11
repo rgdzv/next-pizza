@@ -42,13 +42,24 @@
 }
 
 .search,
-.close {
+.clean {
     svg {
-        fill: var(--text-color-secondary)
+        fill: var(--text-color-secondary);
+    }
+
+    &:active {
+        svg {
+            transform: scale(0.9);
+        }
     }
 }
 
 .search {
     position: absolute;
     left: 20px;
+}
+
+.clean {
+    position: absolute;
+    right: 20px;
 }

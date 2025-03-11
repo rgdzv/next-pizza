@@ -13,7 +13,7 @@ const GlobalError: FC<GlobalErrorProps> = ({ error }) => {
     const imgAlt = 'Not found'
 
     return (
-        <html lang="ru">
+        <html lang='ru'>
             <body>
                 <NoContent
                     name={name}

@@ -37,11 +37,11 @@ export const NoContent: FC<NoContentPropsInterface> = ({
                     </p>
                 </div>
                 <div className={styles.nocontent__left__footer}>
-                    <CustomLink href="/" className="primary">
+                    <CustomLink href='/' className='primary'>
                         <ArrowLeft />
                         <span>На главную</span>
                     </CustomLink>
-                    <CustomButton className="primary" onClick={handleReload}>
+                    <CustomButton className='primary' onClick={handleReload}>
                         Обновить
                     </CustomButton>
                 </div>
