@@ -46,15 +46,10 @@
     svg {
         fill: var(--text-color-secondary);
     }
-
-    &:active {
-        svg {
-            transform: scale(0.9);
-        }
-    }
 }
 
 .search {
+    pointer-events: none;
     position: absolute;
     left: 20px;
 }
@@ -62,4 +57,10 @@
 .clean {
     position: absolute;
     right: 20px;
+
+    &:active {
+        svg {
+            transform: scale(0.9);
+        }
+    }
 }

@@ -4,7 +4,7 @@ import styles from './CustomImage.module.scss'
 import type { StaticImageData } from 'next/image'
 import type { FC } from 'react'
 
-type ClassNameType = 'not__found' | 'logo'
+type ClassNameType = 'not__found' | 'logo' | 'mini'
 
 interface CustomImagePropsInterface {
     src: string | StaticImageData

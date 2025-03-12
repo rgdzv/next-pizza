@@ -1,5 +1,5 @@
 'use client'
-import { ArrowLeft } from 'shared/assets'
+import { ArrowLeftIcon } from 'shared/assets'
 import { CustomButton } from '../CustomButton/CustomButton'
 import { CustomImage } from '../CustomImage/CustomImage'
 import { CustomLink } from '../CustomLink/CustomLink'
@@ -38,7 +38,7 @@ export const NoContent: FC<NoContentPropsInterface> = ({
                 </div>
                 <div className={styles.nocontent__left__footer}>
                     <CustomLink href='/' className='primary'>
-                        <ArrowLeft />
+                        <ArrowLeftIcon />
                         <span>На главную</span>
                     </CustomLink>
                     <CustomButton className='primary' onClick={handleReload}>

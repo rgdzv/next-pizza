@@ -1,5 +1,5 @@
 import { CustomImage } from 'shared/ui'
-import { PizzaLogo } from 'shared/assets'
+import { PizzaLogoIcon } from 'shared/assets'
 import styles from './Logo.module.scss'
 import type { FC } from 'react'
 
@@ -11,7 +11,11 @@ interface LogoPropsInterface {
 export const Logo: FC<LogoPropsInterface> = ({ name, slogan }) => {
     return (
         <div className={styles.logo}>
-            <CustomImage src={PizzaLogo} className='logo' alt='Логотип пиццы' />
+            <CustomImage
+                src={PizzaLogoIcon}
+                className='logo'
+                alt='Логотип пиццы'
+            />
             <div className={styles.logo__block}>
                 <span className={styles.logo__block__name}>{name}</span>
                 <span className={styles.logo__block__slogan}>{slogan}</span>

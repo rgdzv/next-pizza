@@ -1,5 +1,5 @@
 import { NoContent } from 'shared/ui'
-import { NoImage } from 'shared/assets'
+import { NoImageIcon } from 'shared/assets'
 import type { FC } from 'react'
 
 const NotFound: FC = () => {
@@ -13,7 +13,7 @@ const NotFound: FC = () => {
         <NoContent
             name={name}
             message={message}
-            imgSrc={NoImage}
+            imgSrc={NoImageIcon}
             imgClassName={imgClassName}
             imgAlt={imgAlt}
         />

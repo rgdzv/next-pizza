@@ -1,8 +1,17 @@
-import ArrowLeft from './images/arrow-left-icon.svg'
-import NoImage from './images/not-found-icon.png'
-import NotAuthorized from './images/not-authorized-icon.png'
-import PizzaLogo from './images/pizza-logo-icon.png'
+import ArrowLeftIcon from './images/arrow-left-icon.svg'
+import NoImageIcon from './images/not-found-icon.png'
+import NotAuthorizedIcon from './images/not-authorized-icon.png'
+import PizzaLogoIcon from './images/pizza-logo-icon.png'
 import SearchIcon from './images/search-icon.svg'
 import CleanIcon from './images/clean-icon.svg'
+import PlugIcon from './images/mini-pizza-plug-icon.svg'
 
-export { ArrowLeft, NoImage, NotAuthorized, PizzaLogo, SearchIcon, CleanIcon }
+export {
+    ArrowLeftIcon,
+    NoImageIcon,
+    NotAuthorizedIcon,
+    PizzaLogoIcon,
+    SearchIcon,
+    CleanIcon,
+    PlugIcon
+}

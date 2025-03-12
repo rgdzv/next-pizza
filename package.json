@@ -25,6 +25,7 @@
     "author": "rgdzv",
     "license": "ISC",
     "dependencies": {
+        "@headlessui/react": "^2.2.0",
         "classnames": "^2.5.1",
         "next": "^15.1.6",
         "react": "^19.0.0",
