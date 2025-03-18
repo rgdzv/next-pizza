@@ -24,6 +24,16 @@ const pizzas: PizzaInterface[] = [
 export const SearchPizzaInput: FC = () => {
     const [inputValue, setInputValue] = useState('')
 
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setInputValue(e.target.value)
+    }
+
+    const fetchPizzaOnEnter = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter' && inputValue !== '') {
+            setInputValue('')
+        }
+    }
+
     const filteredPizzas =
         inputValue === ''
             ? pizzas
@@ -33,43 +43,20 @@ export const SearchPizzaInput: FC = () => {
                       .includes(inputValue.toLowerCase())
               })
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setInputValue(e.target.value)
-    }
-
-    // const handleSelectedPizza = () => {
-    //     setSelectedPizza(inputValue)
-    // }
-
-    const fetchPizzaOnEnter = (e: KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'Enter' && inputValue !== '') {
-            setInputValue('')
-        }
-    }
-
-    // const handleClean = () => {
-    //     setValue('')
-    // }
-
-    const icon = (
+    const iconOne = (
         <CustomButton className='search'>
             <SearchIcon title='Поиск пиццы' />
         </CustomButton>
     )
 
-    // const icon2 = (
-    //     <CustomButton className='clean' onClick={handleClean}>
-    //         <CleanIcon title='Очистить' />
-    //     </CustomButton>
-    // )
-
     return (
         <ComboBoxElement
             classNameForInputWrapper='search__pizza'
+            type='search'
             inputValue={inputValue}
             onInputChange={handleChange}
             placeholder='Поиск пиццы...'
-            icon={icon}
+            iconOne={iconOne}
             filteredPizzas={filteredPizzas}
             fetchPizzaOnEnter={fetchPizzaOnEnter}
         />

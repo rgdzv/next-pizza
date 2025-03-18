@@ -16,20 +16,22 @@ type ClassNameInputWrapperType = 'search__pizza'
 
 interface ComboBoxElementPropsInterface {
     classNameForInputWrapper?: ClassNameInputWrapperType
+    type: string
     inputValue: string
     onInputChange: (e: ChangeEvent<HTMLInputElement>) => void
     placeholder?: string
-    icon: ReactNode
+    iconOne: ReactNode
     filteredPizzas: PizzaInterface[]
     fetchPizzaOnEnter: (e: KeyboardEvent<HTMLInputElement>) => void
 }
 
 export const ComboBoxElement: FC<ComboBoxElementPropsInterface> = ({
     classNameForInputWrapper,
+    type,
     inputValue,
     onInputChange,
     placeholder,
-    icon,
+    iconOne,
     filteredPizzas,
     fetchPizzaOnEnter
 }) => {
@@ -39,12 +41,13 @@ export const ComboBoxElement: FC<ComboBoxElementPropsInterface> = ({
 
     return (
         <Combobox as='div' className={comboWrapperClassName}>
-            {icon}
+            {iconOne}
             <ComboboxInput
                 value={inputValue}
                 onChange={onInputChange}
                 placeholder={placeholder}
                 onKeyDown={fetchPizzaOnEnter}
+                type={type}
             />
             <ComboboxOptions as='ul' className={styles.comboOptions}>
                 {filteredPizzas.map((pizza) => (

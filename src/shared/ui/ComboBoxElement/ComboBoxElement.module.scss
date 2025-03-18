@@ -19,6 +19,17 @@
             color: var(--text-color-secondary);
         }
 
+        &::-webkit-search-cancel-button {
+            cursor: pointer;
+            
+            width: 16px;
+            height: 16px;
+
+            appearance: none;
+            background-image: url('../../assets/images/clean-icon.svg');
+            background-size: 16px 16px;
+        }
+
         &:focus {
             outline: none;
         }
