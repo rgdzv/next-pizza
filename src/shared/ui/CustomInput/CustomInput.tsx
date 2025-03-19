@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import styles from './CustomInput.module.scss'
 import type { FC, InputHTMLAttributes, ReactNode, RefObject } from 'react'
 
-type ClassNameInputWrapperType = 'search__pizza'
+type ClassNameInputWrapperType = 'searchPizza'
 
 interface CustomInputPropsInterface
     extends InputHTMLAttributes<HTMLInputElement> {

@@ -51,7 +51,7 @@ export const SearchPizzaInput: FC = () => {
 
     return (
         <ComboBoxElement
-            classNameForInputWrapper='search__pizza'
+            classNameForInputWrapper='searchPizza'
             type='search'
             inputValue={inputValue}
             onInputChange={handleChange}

@@ -26,19 +26,15 @@ export const NoContent: FC<NoContentPropsInterface> = ({
     }
 
     return (
-        <div className={styles.nocontent}>
-            <div className={styles.nocontent__left}>
-                <div className={styles.nocontent__left__header}>
-                    <p className={styles.nocontent__left__header__reason}>
-                        {name}
-                    </p>
-                    <p className={styles.nocontent__left__header__msg}>
-                        {message}
-                    </p>
+        <div className={styles.noContent}>
+            <div className={styles.noContentLeft}>
+                <div className={styles.noContentLeftHeader}>
+                    <p className={styles.noContentLeftHeaderReason}>{name}</p>
+                    <p className={styles.noContentLeftHeaderMsg}>{message}</p>
                 </div>
-                <div className={styles.nocontent__left__footer}>
+                <div className={styles.noContentLeftFooter}>
                     <CustomLink href='/' className='primary'>
-                        <ArrowLeftIcon />
+                        <ArrowLeftIcon title='Влево' />
                         <span>На главную</span>
                     </CustomLink>
                     <CustomButton className='primary' onClick={handleReload}>
@@ -46,7 +42,7 @@ export const NoContent: FC<NoContentPropsInterface> = ({
                     </CustomButton>
                 </div>
             </div>
-            <div className={styles.nocontent__right}>
+            <div className={styles.noContentRight}>
                 <CustomImage
                     className={imgClassName}
                     src={imgSrc}

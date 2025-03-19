@@ -1,4 +1,4 @@
-.nocontent {
+.noContent {
     display: flex;
     flex-wrap: wrap;
     gap: 65px;
@@ -12,36 +12,36 @@
 
     background-color: var(--background-color-secondary);
     
-    &__left {
+    .noContentLeft {
         display: flex;
         flex-direction: column;
         gap: 45px;
 
-        &__header {
+        .noContentLeftHeader {
             display: flex;
             flex-direction: column;
             gap: 15px;
             
-            &__reason {
+            .noContentLeftHeaderReason {
                 font-size: 40px;
                 font-weight: 800;
                 color: var(--text-color-primary);
             }
         
-            &__msg {
+            .noContentLeftHeaderMsg {
                 font-size: 20px;
                 color: var(--text-color-secondary);
             }
         }
 
-        &__footer {
+        .noContentLeftFooter {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
         }
     }
 
-    &__right {
+    .noContentRight {
         display: flex;
     }
 }

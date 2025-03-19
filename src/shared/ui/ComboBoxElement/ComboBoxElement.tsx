@@ -12,7 +12,7 @@ import styles from './ComboBoxElement.module.scss'
 import type { PizzaInterface } from 'features/SearchPizzaInput/ui/SearchPizzaInput'
 import type { ChangeEvent, FC, KeyboardEvent, ReactNode } from 'react'
 
-type ClassNameInputWrapperType = 'search__pizza'
+type ClassNameInputWrapperType = 'searchPizza'
 
 interface ComboBoxElementPropsInterface {
     classNameForInputWrapper?: ClassNameInputWrapperType
@@ -40,28 +40,30 @@ export const ComboBoxElement: FC<ComboBoxElementPropsInterface> = ({
     ])
 
     return (
-        <Combobox as='div' className={comboWrapperClassName}>
-            {iconOne}
-            <ComboboxInput
-                value={inputValue}
-                onChange={onInputChange}
-                placeholder={placeholder}
-                onKeyDown={fetchPizzaOnEnter}
-                type={type}
-            />
-            <ComboboxOptions as='ul' className={styles.comboOptions}>
-                {filteredPizzas.map((pizza) => (
-                    <ComboboxOption as='li' key={pizza.id} value={pizza}>
-                        <CustomImage
-                            src={PizzaLogoIcon}
-                            alt={pizza.name}
-                            className='mini'
-                        />
-                        <span>{pizza.name}</span>
-                        <span>155 руб.</span>
-                    </ComboboxOption>
-                ))}
-            </ComboboxOptions>
-        </Combobox>
+        <div className={styles.comboOverlay}>
+            <Combobox as='div' className={comboWrapperClassName}>
+                {iconOne}
+                <ComboboxInput
+                    value={inputValue}
+                    onChange={onInputChange}
+                    placeholder={placeholder}
+                    onKeyDown={fetchPizzaOnEnter}
+                    type={type}
+                />
+                <ComboboxOptions as='ul' className={styles.comboOptions}>
+                    {filteredPizzas.map((pizza) => (
+                        <ComboboxOption as='li' key={pizza.id} value={pizza}>
+                            <CustomImage
+                                src={PizzaLogoIcon}
+                                alt={pizza.name}
+                                className='mini'
+                            />
+                            <span>{pizza.name}</span>
+                            <span>155 руб.</span>
+                        </ComboboxOption>
+                    ))}
+                </ComboboxOptions>
+            </Combobox>
+        </div>
     )
 }

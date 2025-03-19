@@ -6,7 +6,7 @@ const NotFound: FC = () => {
     const name = 'Страница не найдена'
     const message =
         'Проверьте корректность введенного адреса или повторите попытку позже'
-    const imgClassName = 'not__found'
+    const imgClassName = 'notFound'
     const imgAlt = 'Not found'
 
     return (

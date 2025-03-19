@@ -16,9 +16,9 @@ export const Logo: FC<LogoPropsInterface> = ({ name, slogan }) => {
                 className='logo'
                 alt='Логотип пиццы'
             />
-            <div className={styles.logo__block}>
-                <span className={styles.logo__block__name}>{name}</span>
-                <span className={styles.logo__block__slogan}>{slogan}</span>
+            <div className={styles.logoBlock}>
+                <span className={styles.logoBlockName}>{name}</span>
+                <span className={styles.logoBlockSlogan}>{slogan}</span>
             </div>
         </div>
     )

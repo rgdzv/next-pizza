@@ -5,6 +5,7 @@ import PizzaLogoIcon from './images/pizza-logo-icon.png'
 import SearchIcon from './images/search-icon.svg'
 import CleanIcon from './images/clean-icon.svg'
 import PlugIcon from './images/mini-pizza-plug-icon.svg'
+import ProfileIcon from './images/profile-icon.svg'
 
 export {
     ArrowLeftIcon,
@@ -13,5 +14,6 @@ export {
     PizzaLogoIcon,
     SearchIcon,
     CleanIcon,
-    PlugIcon
+    PlugIcon,
+    ProfileIcon
 }

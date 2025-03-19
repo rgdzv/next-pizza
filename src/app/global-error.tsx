@@ -9,7 +9,7 @@ interface GlobalErrorProps {
 
 const GlobalError: FC<GlobalErrorProps> = ({ error }) => {
     const name = 'Что-то пошло не так...'
-    const imgClassName = 'not__found'
+    const imgClassName = 'notFound'
     const imgAlt = 'Not found'
 
     return (
