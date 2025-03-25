@@ -1,5 +1,5 @@
 import { CustomButton, DropDown } from 'shared/ui'
-import { ProfileIcon } from 'shared/assets'
+import { ProfileIcon, ShoppingCartIcon } from 'shared/assets'
 import type { FC } from 'react'
 
 export const LoginDropDown: FC = () => {
@@ -10,5 +10,12 @@ export const LoginDropDown: FC = () => {
         </CustomButton>
     )
 
-    return <DropDown buttonComponent={buttonComponent} />
+    return (
+        <>
+            <DropDown buttonComponent={buttonComponent} />
+            <CustomButton className='primary'>
+                <ShoppingCartIcon title='Корзина' />
+            </CustomButton>
+        </>
+    )
 }

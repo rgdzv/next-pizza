@@ -6,6 +6,7 @@ import SearchIcon from './images/search-icon.svg'
 import CleanIcon from './images/clean-icon.svg'
 import PlugIcon from './images/mini-pizza-plug-icon.svg'
 import ProfileIcon from './images/profile-icon.svg'
+import ShoppingCartIcon from './images/shopping-cart-icon.svg'
 
 export {
     ArrowLeftIcon,
@@ -15,5 +16,6 @@ export {
     SearchIcon,
     CleanIcon,
     PlugIcon,
-    ProfileIcon
+    ProfileIcon,
+    ShoppingCartIcon
 }

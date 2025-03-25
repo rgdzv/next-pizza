@@ -22,20 +22,19 @@
 .primary {
     gap: 5px;
 
-    padding: 8px 18px;
-    border: 1px solid #FE5F00;
+    padding: 14px 18px;
+    border: 1px solid var(--text-color-third);
     border-radius: 15px;
 
-    font-size: 16px;
     font-weight: 600;
-    line-height: 1.5;
-    color: #FE5F00;
+    line-height: 1;
+    color: var(--text-color-third);
 
     transition: all .1s linear;
 
     &:hover:enabled {
         color: #FFF;
-        background-color: #FE5F00;
+        background-color: var(--text-color-third);
     }
 
     &:active:enabled {
@@ -43,7 +42,7 @@
     }
 
     svg {
-        fill: #FE5F00;
+        fill: var(--text-color-third);
     }
 }
 
