@@ -3,7 +3,7 @@ import { ProfileIcon, ShoppingCartIcon } from 'shared/assets'
 import type { FC } from 'react'
 
 export const LoginDropDown: FC = () => {
-    const buttonComponent = (
+    const trigger = (
         <CustomButton className='primary'>
             <ProfileIcon title='Профиль' />
             <span>Войти</span>
@@ -12,7 +12,7 @@ export const LoginDropDown: FC = () => {
 
     return (
         <>
-            <DropDown buttonComponent={buttonComponent} />
+            <DropDown trigger={trigger} />
             <CustomButton className='primary'>
                 <ShoppingCartIcon title='Корзина' />
             </CustomButton>
