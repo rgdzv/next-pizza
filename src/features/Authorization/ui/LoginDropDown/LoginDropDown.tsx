@@ -3,16 +3,19 @@ import { ProfileIcon, ShoppingCartIcon } from 'shared/assets'
 import type { FC } from 'react'
 
 export const LoginDropDown: FC = () => {
-    const trigger = (
-        <CustomButton className='primary'>
+    const triggerContent = (
+        <>
             <ProfileIcon title='Профиль' />
             <span>Войти</span>
-        </CustomButton>
+        </>
     )
 
     return (
         <>
-            <DropDown trigger={trigger} />
+            <DropDown
+                triggerContent={triggerContent}
+                buttonClassName='primary'
+            />
             <CustomButton className='primary'>
                 <ShoppingCartIcon title='Корзина' />
             </CustomButton>

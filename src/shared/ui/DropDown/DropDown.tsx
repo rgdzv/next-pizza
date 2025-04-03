@@ -1,16 +1,22 @@
-import { Menu } from '@headlessui/react'
+import { Menu, MenuButton } from '@headlessui/react'
+import { CustomButton } from '../CustomButton/CustomButton'
 import styles from './DropDown.module.scss'
-import type { FC, ReactElement } from 'react'
+import type { FC, ReactNode } from 'react'
 
 interface DropDownPropsInterface {
-    trigger: ReactElement
+    triggerContent: ReactNode
+    buttonClassName: 'primary'
 }
 
-export const DropDown: FC<DropDownPropsInterface> = ({ trigger }) => {
+export const DropDown: FC<DropDownPropsInterface> = ({
+    triggerContent,
+    buttonClassName
+}) => {
     return (
         <Menu as='div' className={styles.dropDown}>
-            {trigger}
-            {/* <MenuButton as={trigger} /> */}
+            <MenuButton as={CustomButton} className={buttonClassName}>
+                {triggerContent}
+            </MenuButton>
         </Menu>
     )
 }
