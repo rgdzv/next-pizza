@@ -41,3 +41,16 @@
         box-shadow: inset 0 0 10px #0000004D;
     }
 }
+
+.option {
+    gap: 10px;
+    justify-content: flex-start;
+    padding: 14px 18px;
+    border-radius: inherit;
+
+
+    &[data-active] {
+        background-color: var(--background-color-primary);
+    }
+    
+}

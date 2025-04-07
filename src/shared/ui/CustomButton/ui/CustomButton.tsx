@@ -1,8 +1,7 @@
 import classNames from 'classnames'
 import styles from './CustomButton.module.scss'
+import type { ClassNameType } from '../model/types/types'
 import type { ButtonHTMLAttributes, FC, ReactNode } from 'react'
-
-type ClassNameType = 'primary' | 'search' | 'clean'
 
 interface ButtonPropsInterface extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode

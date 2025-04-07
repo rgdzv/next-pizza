@@ -1,4 +1,4 @@
-export { CustomButton } from './CustomButton/CustomButton'
+export { CustomButton } from './CustomButton/ui/CustomButton'
 export { NoContent } from './NoContent/NoContent'
 export { CustomImage } from './CustomImage/CustomImage'
 export { CustomLink } from './CustomLink/CustomLink'

@@ -3,11 +3,11 @@ import Link from 'next/link'
 import styles from './CustomLink.module.scss'
 import type { FC, ReactNode } from 'react'
 
-type ClassNameType = 'primary'
+type ClassNameType = 'primary' | 'option'
 
 interface CustomLinkPropsInterface {
     children: ReactNode
-    className: string
+    className?: string
     href: string
     disabled?: boolean
 }
