@@ -6,20 +6,23 @@ import styles from './DropDown.module.scss'
 import type { FC, ReactNode } from 'react'
 import type { ClassNameType } from '../CustomButton/model/types/types'
 
+interface DropdownOptions {
+    id: string
+    content: string
+    href: string
+    onClick?: () => void
+}
+
 interface DropDownPropsInterface {
     triggerContent: ReactNode
     buttonClassName: ClassNameType
+    options: DropdownOptions[]
 }
-
-const links = [
-    { href: '/settings', label: 'Настройки' },
-    { href: '/support', label: 'Заказы' },
-    { href: '/license', label: 'Выйти' }
-]
 
 export const DropDown: FC<DropDownPropsInterface> = ({
     triggerContent,
-    buttonClassName
+    buttonClassName,
+    options
 }) => {
     return (
         <Menu as='div' className={styles.dropDown}>
@@ -27,10 +30,14 @@ export const DropDown: FC<DropDownPropsInterface> = ({
                 {triggerContent}
             </MenuButton>
             <MenuItems className={styles.options}>
-                {links.map((link) => (
-                    <MenuItem key={link.href} as={Fragment}>
-                        <CustomLink href={link.href} className='option'>
-                            {link.label}
+                {options.map((option) => (
+                    <MenuItem key={option.id} as={Fragment}>
+                        <CustomLink
+                            href={option.href}
+                            className='option'
+                            onClick={option.onClick}
+                        >
+                            {option.content}
                         </CustomLink>
                     </MenuItem>
                 ))}
