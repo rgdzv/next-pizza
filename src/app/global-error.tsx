@@ -8,19 +8,15 @@ interface GlobalErrorProps {
 }
 
 const GlobalError: FC<GlobalErrorProps> = ({ error }) => {
-    const name = 'Что-то пошло не так...'
-    const imgClassName = 'notFound'
-    const imgAlt = 'Not found'
-
     return (
         <html lang='ru'>
             <body>
                 <NoContent
-                    name={name}
+                    name='Что-то пошло не так...'
                     message={error.message}
                     imgSrc={NoImageIcon}
-                    imgClassName={imgClassName}
-                    imgAlt={imgAlt}
+                    imgClassName='notFound'
+                    imgAlt='Not found'
                 />
             </body>
         </html>

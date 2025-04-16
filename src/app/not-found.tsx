@@ -3,19 +3,13 @@ import { NoImageIcon } from 'shared/assets'
 import type { FC } from 'react'
 
 const NotFound: FC = () => {
-    const name = 'Страница не найдена'
-    const message =
-        'Проверьте корректность введенного адреса или повторите попытку позже'
-    const imgClassName = 'notFound'
-    const imgAlt = 'Not found'
-
     return (
         <NoContent
-            name={name}
-            message={message}
+            name='Страница не найдена'
+            message='Проверьте корректность введенного адреса или повторите попытку позже'
             imgSrc={NoImageIcon}
-            imgClassName={imgClassName}
-            imgAlt={imgAlt}
+            imgClassName='notFound'
+            imgAlt='Not found'
         />
     )
 }

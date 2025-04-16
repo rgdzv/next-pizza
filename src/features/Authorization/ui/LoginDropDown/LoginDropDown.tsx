@@ -43,12 +43,7 @@ export const LoginDropDown: FC = () => {
                 buttonClassName='primary'
                 options={options}
             />
-            <CustomButton
-                className='primary'
-                onClick={() => {
-                    console.log('Click!')
-                }}
-            >
+            <CustomButton className='primary'>
                 <ShoppingCartIcon title='Корзина' />
             </CustomButton>
         </>
