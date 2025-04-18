@@ -1,6 +1,7 @@
 import { SearchPizzaInput } from 'features/SearchPizzaInput'
 import { LoginDropDown } from 'features/Authorization'
-import { PizzaLogoIcon } from 'shared/assets'
+import { PizzaLogoIcon, ShoppingCartIcon } from 'shared/assets'
+import { CustomButton } from 'shared/ui'
 import { Logo } from '../../Logo'
 import styles from './Header.module.scss'
 import type { FC } from 'react'
@@ -14,8 +15,11 @@ export const Header: FC = () => {
                 imgSrc={PizzaLogoIcon}
             />
             <SearchPizzaInput />
-            <div className={styles.headerButtons}>
+            <div className={styles.headerRight}>
                 <LoginDropDown />
+                <CustomButton className='primary'>
+                    <ShoppingCartIcon title='Корзина' />
+                </CustomButton>
             </div>
         </header>
     )

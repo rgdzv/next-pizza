@@ -1,5 +1,5 @@
-import { CustomButton, DropDown } from 'shared/ui'
-import { ProfileIcon, ShoppingCartIcon } from 'shared/assets'
+import { DropDown } from 'shared/ui'
+import { ProfileIcon } from 'shared/assets'
 import { useMemo } from 'react'
 import type { FC } from 'react'
 
@@ -7,7 +7,7 @@ export const LoginDropDown: FC = () => {
     const triggerContent = (
         <>
             <ProfileIcon title='Профиль' />
-            <span>Войти</span>
+            <span>Профиль</span>
         </>
     )
 
@@ -37,15 +37,10 @@ export const LoginDropDown: FC = () => {
     }, [])
 
     return (
-        <>
-            <DropDown
-                triggerContent={triggerContent}
-                buttonClassName='primary'
-                options={options}
-            />
-            <CustomButton className='primary'>
-                <ShoppingCartIcon title='Корзина' />
-            </CustomButton>
-        </>
+        <DropDown
+            triggerContent={triggerContent}
+            buttonClassName='primary'
+            options={options}
+        />
     )
 }
