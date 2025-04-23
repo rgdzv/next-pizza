@@ -2,6 +2,7 @@ import { SearchPizzaInput } from 'features/SearchPizzaInput'
 import { LoginDropDown } from 'features/Authorization'
 import { PizzaLogoIcon, ShoppingCartIcon } from 'shared/assets'
 import { CustomButton } from 'shared/ui'
+import { Basket } from 'widgets/Basket'
 import { Logo } from '../../Logo'
 import styles from './Header.module.scss'
 import type { FC } from 'react'
@@ -21,6 +22,7 @@ export const Header: FC = () => {
                     <ShoppingCartIcon title='Корзина' />
                 </CustomButton>
             </div>
+            <Basket />
         </header>
     )
 }
