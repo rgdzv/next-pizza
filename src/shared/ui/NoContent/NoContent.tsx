@@ -1,6 +1,6 @@
 'use client'
 import { ArrowLeftIcon } from 'shared/assets'
-import { CustomButton } from '../CustomButton/ui/CustomButton'
+import { CustomButton } from '../CustomButton/CustomButton'
 import { CustomImage } from '../CustomImage/CustomImage'
 import { CustomLink } from '../CustomLink/CustomLink'
 import styles from './NoContent.module.scss'

@@ -1,4 +1,4 @@
-import { CustomImage, CustomLink } from 'shared/ui'
+import { CustomImage, CustomButton } from 'shared/ui'
 import { ArrowLeftIcon, BasketEmptyIcon } from 'shared/assets'
 import styles from './BasketEmpty.module.scss'
 import type { FC } from 'react'
@@ -12,14 +12,14 @@ export const BasketEmpty: FC = () => {
                     className='basketEmpty'
                     alt='Корзина'
                 />
-                <span className={styles.basketName}>Корзина пустая</span>
-                <span className={styles.basketMessage}>
+                <span className={styles.basketEmptyName}>Корзина пустая</span>
+                <span className={styles.basketEmptyMessage}>
                     Добавьте хотя бы одну пиццу, чтобы совершить заказ
                 </span>
-                <CustomLink href='/' className='primary'>
+                <CustomButton className='primary'>
                     <ArrowLeftIcon title='Влево' />
                     <span>Вернуться назад</span>
-                </CustomLink>
+                </CustomButton>
             </div>
         </div>
     )

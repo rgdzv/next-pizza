@@ -1,27 +1,31 @@
 .basketEmptyBlockWrapper {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
+
     height: 100%;
+    padding: 0 35px;
     
     .basketEmptyBlock {
         display: flex;
         flex-direction: column;
-        gap: 15px;
         align-items: center;
-        justify-content: center;
     
-        .basketName {
+        .basketEmptyName {
+            margin-bottom: 15px;
             font-size: 22px;
             font-weight: 600;
             color: var(--text-color-primary);
         }
     
-        .basketMessage {
+        .basketEmptyMessage {
+            margin-bottom: 35px;
+
             font-size: 16px;
             font-weight: 400;
+            line-height: 1.2;
             color: var(--text-color-secondary);
-            
+            text-align: center;
         }
     }
 }

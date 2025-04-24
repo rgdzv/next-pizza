@@ -1,10 +1,9 @@
 import { Fragment } from 'react'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { CustomButton } from '../CustomButton/ui/CustomButton'
+import { CustomButton } from '../CustomButton/CustomButton'
 import { CustomLink } from '../CustomLink/CustomLink'
 import styles from './DropDown.module.scss'
 import type { FC, ReactNode } from 'react'
-import type { ClassNameType } from '../CustomButton/model/types/types'
 
 interface DropdownOptions {
     id: string
@@ -15,7 +14,7 @@ interface DropdownOptions {
 
 interface DropDownPropsInterface {
     triggerContent: ReactNode
-    buttonClassName: ClassNameType
+    buttonClassName: 'primary' // fix
     options: DropdownOptions[]
 }
 
