@@ -1,6 +1,6 @@
-@import 'reset';
-@import 'variables';
-@import 'fonts';
+@use 'reset';
+@use 'variables';
+@use 'fonts';
 
 body {
     padding: 20px;

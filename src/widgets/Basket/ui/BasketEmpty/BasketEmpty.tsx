@@ -3,7 +3,13 @@ import { ArrowLeftIcon, BasketEmptyIcon } from 'shared/assets'
 import styles from './BasketEmpty.module.scss'
 import type { FC } from 'react'
 
-export const BasketEmpty: FC = () => {
+interface BasketEmptyPropsInterface {
+    handleOpened: () => void
+}
+
+export const BasketEmpty: FC<BasketEmptyPropsInterface> = ({
+    handleOpened
+}) => {
     return (
         <div className={styles.basketEmptyBlockWrapper}>
             <div className={styles.basketEmptyBlock}>
@@ -16,7 +22,7 @@ export const BasketEmpty: FC = () => {
                 <span className={styles.basketEmptyMessage}>
                     Добавьте хотя бы одну пиццу, чтобы совершить заказ
                 </span>
-                <CustomButton className='primary'>
+                <CustomButton className='primary' onClick={handleOpened}>
                     <ArrowLeftIcon title='Влево' />
                     <span>Вернуться назад</span>
                 </CustomButton>

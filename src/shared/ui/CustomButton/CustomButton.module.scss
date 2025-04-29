@@ -48,11 +48,11 @@
     }
 
     &:hover:enabled {
-        color: #FFF;
+        color: var(--background-color-secondary);
         background-color: var(--text-color-third);
 
         svg {
-            fill: #FFF;
+            fill: var(--background-color-secondary);
         }
     }
 

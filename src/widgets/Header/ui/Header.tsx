@@ -3,11 +3,17 @@ import { LoginDropDown } from 'features/Authorization'
 import { PizzaLogoIcon, ShoppingCartIcon } from 'shared/assets'
 import { CustomButton } from 'shared/ui'
 import { Basket } from 'widgets/Basket'
+import { useState, type FC } from 'react'
 import { Logo } from '../../Logo'
 import styles from './Header.module.scss'
-import type { FC } from 'react'
 
 export const Header: FC = () => {
+    const [opened, setOpened] = useState(false)
+
+    const handleOpened = () => {
+        setOpened(!opened)
+    }
+
     return (
         <header className={styles.header}>
             <Logo
@@ -18,11 +24,11 @@ export const Header: FC = () => {
             <SearchPizzaInput />
             <div className={styles.headerRight}>
                 <LoginDropDown />
-                <CustomButton className='primary'>
+                <CustomButton className='primary' onClick={handleOpened}>
                     <ShoppingCartIcon title='Корзина' />
                 </CustomButton>
             </div>
-            <Basket />
+            <Basket opened={opened} handleOpened={handleOpened} />
         </header>
     )
 }
