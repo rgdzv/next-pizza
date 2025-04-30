@@ -10,8 +10,12 @@ import styles from './Header.module.scss'
 export const Header: FC = () => {
     const [opened, setOpened] = useState(false)
 
-    const handleOpened = () => {
-        setOpened(!opened)
+    const handleOpen = () => {
+        setOpened(true)
+    }
+
+    const handleClose = () => {
+        setOpened(false)
     }
 
     return (
@@ -24,11 +28,11 @@ export const Header: FC = () => {
             <SearchPizzaInput />
             <div className={styles.headerRight}>
                 <LoginDropDown />
-                <CustomButton className='primary' onClick={handleOpened}>
+                <CustomButton className='primary' onClick={handleOpen}>
                     <ShoppingCartIcon title='Корзина' />
                 </CustomButton>
             </div>
-            <Basket opened={opened} handleOpened={handleOpened} />
+            <Basket opened={opened} handleClose={handleClose} />
         </header>
     )
 }

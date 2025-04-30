@@ -5,10 +5,10 @@ import type { FC } from 'react'
 
 interface BasketPropsInterface {
     opened: boolean
-    handleOpened: () => void
+    handleClose: () => void
 }
 
-export const Basket: FC<BasketPropsInterface> = ({ opened, handleOpened }) => {
+export const Basket: FC<BasketPropsInterface> = ({ opened, handleClose }) => {
     const basketOverlayClassName = cn(styles.basketOverlay, {
         [styles.opened]: opened,
         [styles.closed]: !opened
@@ -17,7 +17,7 @@ export const Basket: FC<BasketPropsInterface> = ({ opened, handleOpened }) => {
     return (
         <div className={basketOverlayClassName}>
             <div className={styles.basketSideBar}>
-                <BasketEmpty handleOpened={handleOpened} />
+                <BasketEmpty handleClose={handleClose} />
             </div>
         </div>
     )

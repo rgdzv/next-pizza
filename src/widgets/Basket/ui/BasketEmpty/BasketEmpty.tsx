@@ -4,12 +4,10 @@ import styles from './BasketEmpty.module.scss'
 import type { FC } from 'react'
 
 interface BasketEmptyPropsInterface {
-    handleOpened: () => void
+    handleClose: () => void
 }
 
-export const BasketEmpty: FC<BasketEmptyPropsInterface> = ({
-    handleOpened
-}) => {
+export const BasketEmpty: FC<BasketEmptyPropsInterface> = ({ handleClose }) => {
     return (
         <div className={styles.basketEmptyBlockWrapper}>
             <div className={styles.basketEmptyBlock}>
@@ -22,7 +20,7 @@ export const BasketEmpty: FC<BasketEmptyPropsInterface> = ({
                 <span className={styles.basketEmptyMessage}>
                     Добавьте хотя бы одну пиццу, чтобы совершить заказ
                 </span>
-                <CustomButton className='primary' onClick={handleOpened}>
+                <CustomButton className='primary' onClick={handleClose}>
                     <ArrowLeftIcon title='Влево' />
                     <span>Вернуться назад</span>
                 </CustomButton>
