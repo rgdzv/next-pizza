@@ -1,0 +1,15 @@
+.dialog {
+    padding: 0;
+
+    &::backdrop {
+        background-color: #00000080;
+        backdrop-filter: blur(2px);
+    }
+
+    &.sidebar {
+        width: 395px;
+        height: 100vh;
+        margin-right: 0;
+        margin-left: auto;
+    }
+}

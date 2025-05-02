@@ -1,24 +1,28 @@
-import cn from 'classnames'
+import { Dialog } from 'shared/ui'
 import { BasketEmpty } from '../BasketEmpty/BasketEmpty'
-import styles from './Basket.module.scss'
-import type { FC } from 'react'
+import type { FC, MouseEvent, RefObject } from 'react'
 
 interface BasketPropsInterface {
-    opened: boolean
-    handleClose: () => void
+    dialogRef: RefObject<HTMLDialogElement | null>
+    onClickOutside: (e: MouseEvent<HTMLDialogElement>) => void
+    onClickCloseButton: () => void
+    closeModal: () => void
 }
 
-export const Basket: FC<BasketPropsInterface> = ({ opened, handleClose }) => {
-    const basketOverlayClassName = cn(styles.basketOverlay, {
-        [styles.opened]: opened,
-        [styles.closed]: !opened
-    })
-
+export const Basket: FC<BasketPropsInterface> = ({
+    dialogRef,
+    closeModal,
+    onClickOutside,
+    onClickCloseButton
+}) => {
     return (
-        <div className={basketOverlayClassName}>
-            <div className={styles.basketSideBar}>
-                <BasketEmpty handleClose={handleClose} />
-            </div>
-        </div>
+        <Dialog
+            dialogRef={dialogRef}
+            closeModal={closeModal}
+            onClickOutside={onClickOutside}
+            className='sidebar'
+        >
+            <BasketEmpty closeModal={onClickCloseButton} />
+        </Dialog>
     )
 }

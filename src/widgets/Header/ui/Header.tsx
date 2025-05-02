@@ -3,20 +3,19 @@ import { LoginDropDown } from 'features/Authorization'
 import { PizzaLogoIcon, ShoppingCartIcon } from 'shared/assets'
 import { CustomButton } from 'shared/ui'
 import { Basket } from 'widgets/Basket'
-import { useState, type FC } from 'react'
+import { useModal } from 'shared/lib'
 import { Logo } from '../../Logo'
 import styles from './Header.module.scss'
+import type { FC } from 'react'
 
 export const Header: FC = () => {
-    const [opened, setOpened] = useState(false)
-
-    const handleOpen = () => {
-        setOpened(true)
-    }
-
-    const handleClose = () => {
-        setOpened(false)
-    }
+    const {
+        openModal,
+        closeModal,
+        dialogRef,
+        onClickOutside,
+        onClickCloseButton
+    } = useModal()
 
     return (
         <header className={styles.header}>
@@ -28,11 +27,16 @@ export const Header: FC = () => {
             <SearchPizzaInput />
             <div className={styles.headerRight}>
                 <LoginDropDown />
-                <CustomButton className='primary' onClick={handleOpen}>
+                <CustomButton className='primary' onClick={openModal}>
                     <ShoppingCartIcon title='Корзина' />
                 </CustomButton>
             </div>
-            <Basket opened={opened} handleClose={handleClose} />
+            <Basket
+                closeModal={closeModal}
+                dialogRef={dialogRef}
+                onClickOutside={onClickOutside}
+                onClickCloseButton={onClickCloseButton}
+            />
         </header>
     )
 }
