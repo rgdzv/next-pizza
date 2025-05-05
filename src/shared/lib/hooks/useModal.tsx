@@ -35,7 +35,7 @@ export const useModal = (): UseModalResult => {
     }, [])
 
     useEffect(() => {
-        if (dialogRef.current === null) return
+        if (!dialogRef.current) return
 
         if (isModalOpen) {
             dialogRef.current.showModal()
