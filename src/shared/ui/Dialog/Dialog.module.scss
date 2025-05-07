@@ -1,13 +1,8 @@
 .dialog {
     padding: 0;
 
-    &::backdrop {
-        background-color: #00000080;
-        backdrop-filter: blur(2px);
-    }
-
     &.sidebar {
-        scale: 1;
+        translate: 395px;
 
         width: 395px;
         height: 100%;
@@ -16,22 +11,19 @@
         margin-left: auto;
         border: none;
 
-        opacity: 1;
+        transition: display 250ms allow-discrete, overlay 250ms allow-discrete, translate 250ms;
 
-        transition:
-            opacity 0.4s ease-in,
-            scale 0.4s ease-in,
-            display 0.4s ease-in allow-discrete;
-
-        @starting-style {
-            scale: 1.1;
-            opacity: 0;
-                
+        &::backdrop {
+            background-color: #00000080;
+            backdrop-filter: blur(2px);
         }
 
-        &:not([open]) {
-            scale: 0.8;
-            opacity: 0;
+        &[open] {
+            translate: 0;
+
+            @starting-style {
+                translate: 395px;
+            }
         }
     }
 }
