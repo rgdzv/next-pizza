@@ -1,0 +1,54 @@
+.basketContent  {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--background-color-basket);
+
+    .basketContentHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+
+        .basketContentHeaderLeft {
+            span {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .basketContentList {
+        flex-grow: 1;
+    }
+
+
+    .basketContentFooter {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        padding: 35px;
+
+        background-color: var(--background-color-third);
+
+        .basketFooterSumInfo {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            
+            .basketContentFooterSum,
+            .basketContentFooterTax {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+    
+                span {
+                    &:last-child {
+                        font-size: 18px;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}

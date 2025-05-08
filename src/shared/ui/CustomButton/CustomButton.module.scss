@@ -29,6 +29,14 @@
     }
 }
 
+.clean {
+    svg {
+        width: 20px;
+        height: 20px;
+        fill: var(--text-color-secondary);
+    }
+}
+
 .primary {
     gap: 5px;
 

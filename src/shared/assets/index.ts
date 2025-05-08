@@ -8,6 +8,7 @@ import PlugIcon from './images/mini-pizza-plug-icon.svg'
 import ProfileIcon from './images/profile-icon.svg'
 import ShoppingCartIcon from './images/shopping-cart-icon.svg'
 import BasketEmptyIcon from './images/basket-empty-icon.png'
+import ArrowRightIcon from './images/arrow-right-icon.svg'
 
 export {
     ArrowLeftIcon,
@@ -19,5 +20,6 @@ export {
     PlugIcon,
     ProfileIcon,
     ShoppingCartIcon,
-    BasketEmptyIcon
+    BasketEmptyIcon,
+    ArrowRightIcon
 }
