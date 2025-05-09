@@ -1,6 +1,9 @@
 import { Dialog } from 'shared/ui'
 // import { BasketEmpty } from '../BasketEmpty/BasketEmpty'
+import { priceFormat } from 'shared/helpers'
+import { productTax } from 'widgets/Basket/model/helpers/productTax'
 import { BasketContent } from '../BasketContent/BasketContent'
+import { productDeclension } from '../../model/helpers/productDeclension'
 import type { FC, RefObject } from 'react'
 
 interface BasketPropsInterface {
@@ -14,6 +17,10 @@ export const Basket: FC<BasketPropsInterface> = ({
     closeModal
     // onClickCloseButton
 }) => {
+    const basketProductNumber = productDeclension(11)
+    const basketFinalSum = priceFormat(2142)
+    const basketFinalSumTax = priceFormat(productTax(2142))
+
     return (
         <Dialog
             dialogRef={dialogRef}
@@ -22,9 +29,9 @@ export const Basket: FC<BasketPropsInterface> = ({
         >
             {/* <BasketEmpty closeModal={onClickCloseButton} /> */}
             <BasketContent
-                productQuantity='3'
-                basketFinalSum='2142'
-                basketFinalSumTax='112'
+                productQuantity={basketProductNumber}
+                basketFinalSum={basketFinalSum}
+                basketFinalSumTax={basketFinalSumTax}
             />
         </Dialog>
     )

@@ -19,7 +19,7 @@ export const BasketContent: FC<BasketContentPropsInterface> = ({
             <div className={styles.basketContentHeader}>
                 <div className={styles.basketContentHeaderLeft}>
                     <span>
-                        В корзине <strong>{productQuantity} товара</strong>
+                        В корзине <strong>{productQuantity}</strong>
                     </span>
                 </div>
                 <CustomButton className='clean'>
@@ -30,11 +30,11 @@ export const BasketContent: FC<BasketContentPropsInterface> = ({
             <div className={styles.basketContentFooter}>
                 <div className={styles.basketFooterSumInfo}>
                     <div className={styles.basketContentFooterSum}>
-                        <span>Итого:</span>
+                        <span>Итого :</span>
                         <span>{basketFinalSum}</span>
                     </div>
                     <div className={styles.basketContentFooterTax}>
-                        <span>Налог 5%:</span>
+                        <span>Налог 5% :</span>
                         <span>{basketFinalSumTax}</span>
                     </div>
                 </div>
