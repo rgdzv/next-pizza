@@ -1,5 +1,6 @@
 import { ArrowRightIcon, CleanIcon } from 'shared/assets'
 import { CustomButton } from 'shared/ui'
+import { BasketPizzaCard } from 'entities/BasketPizzaCard'
 import styles from './BasketContent.module.scss'
 import type { FC } from 'react'
 
@@ -26,7 +27,11 @@ export const BasketContent: FC<BasketContentPropsInterface> = ({
                     <CleanIcon />
                 </CustomButton>
             </div>
-            <div className={styles.basketContentList}></div>
+            <div className={styles.basketContentList}>
+                <BasketPizzaCard src='' alt='' />
+                <BasketPizzaCard src='' alt='' />
+                <BasketPizzaCard src='' alt='' />
+            </div>
             <div className={styles.basketContentFooter}>
                 <div className={styles.basketFooterSumInfo}>
                     <div className={styles.basketContentFooterSum}>

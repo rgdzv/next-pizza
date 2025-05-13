@@ -1,9 +1,9 @@
 import { Dialog } from 'shared/ui'
 // import { BasketEmpty } from '../BasketEmpty/BasketEmpty'
 import { priceFormat } from 'shared/helpers'
-import { productTax } from 'widgets/Basket/model/helpers/productTax'
+import { productTax } from '../../lib/productTax'
 import { BasketContent } from '../BasketContent/BasketContent'
-import { productDeclension } from '../../model/helpers/productDeclension'
+import { productDeclension } from '../../lib/productDeclension'
 import type { FC, RefObject } from 'react'
 
 interface BasketPropsInterface {

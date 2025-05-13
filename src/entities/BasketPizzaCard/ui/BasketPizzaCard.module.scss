@@ -1,0 +1,40 @@
+.basketPizzaCard {
+    display: flex;
+    gap: 25px;
+    padding: 20px;
+    background-color: var(--background-color-secondary);
+
+    .basketPizzaCardRight {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        .basketPizzaCardRightInfo {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .basketPizzaCardRightInfoTitle {
+                font-size: 16px;
+                font-weight: 700;
+                color: var(--text-color-primary)
+            }
+
+            .basketPizzaCardRightInfoSubtitle {
+                font-size: 14px;
+                color: var(--text-color-secondary)
+            }
+        }
+
+        .basketPizzaCardRightFooter {
+            display: flex;
+            justify-content: space-between;
+
+            .basketPizzaCardRightFooterSum {
+                font-weight: 700;
+                color: var(--text-color-primary)
+            }
+        }
+    }
+    
+}
