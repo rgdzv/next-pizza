@@ -1,32 +1,35 @@
 import { CustomImage } from 'shared/ui'
 import styles from './BasketPizzaCard.module.scss'
+import type { BasketPizza } from '../model/types/basketPizza'
 import type { FC } from 'react'
 
 interface BasketPizzaCardPropsInterface {
-    src: string
-    alt: string
+    pizza: BasketPizza
 }
 
 export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
-    src,
-    alt
+    pizza
 }) => {
     return (
         <div className={styles.basketPizzaCard}>
-            <CustomImage src={src} alt={alt} className='basketPizzaCard' />
+            <CustomImage
+                src={pizza.imgSrc}
+                alt={pizza.title}
+                className='basketPizzaCard'
+            />
             <div className={styles.basketPizzaCardRight}>
-                <div className={styles.basketPizzaCardRightInfo}>
-                    <span className={styles.basketPizzaCardRightInfoTitle}>
-                        Чизбургер-пицца
+                <div className={styles.basketPizzaCardInfo}>
+                    <span className={styles.basketPizzaCardInfoTitle}>
+                        {pizza.title}
                     </span>
-                    <span className={styles.basketPizzaCardRightInfoSubtitle}>
-                        Средняя 30 см, традиционное тесто
+                    <span className={styles.basketPizzaCardInfoSubtitle}>
+                        {pizza.description}
                     </span>
                 </div>
-                <div className={styles.basketPizzaCardRightFooter}>
+                <div className={styles.basketPizzaCardFooter}>
                     <div>empty</div>
-                    <span className={styles.basketPizzaCardRightFooterSum}>
-                        500 Р
+                    <span className={styles.basketPizzaCardSum}>
+                        {pizza.price} ₽
                     </span>
                 </div>
             </div>

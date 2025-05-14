@@ -2,7 +2,16 @@ import { ArrowRightIcon, CleanIcon } from 'shared/assets'
 import { CustomButton } from 'shared/ui'
 import { BasketPizzaCard } from 'entities/BasketPizzaCard'
 import styles from './BasketContent.module.scss'
+import type { BasketPizza } from 'entities/BasketPizzaCard/model/types/basketPizza'
 import type { FC } from 'react'
+
+const basketPizza: BasketPizza = {
+    id: '1',
+    title: 'Пепперони-фреш',
+    description: '30 см, традиционное тесто, 300 г',
+    imgSrc: '',
+    price: '500'
+}
 
 interface BasketContentPropsInterface {
     productQuantity: string
@@ -28,9 +37,12 @@ export const BasketContent: FC<BasketContentPropsInterface> = ({
                 </CustomButton>
             </div>
             <div className={styles.basketContentList}>
-                <BasketPizzaCard src='' alt='' />
-                <BasketPizzaCard src='' alt='' />
-                <BasketPizzaCard src='' alt='' />
+                <BasketPizzaCard pizza={basketPizza} />
+                <BasketPizzaCard pizza={basketPizza} />
+                <BasketPizzaCard pizza={basketPizza} />
+                <BasketPizzaCard pizza={basketPizza} />
+                <BasketPizzaCard pizza={basketPizza} />
+                <BasketPizzaCard pizza={basketPizza} />
             </div>
             <div className={styles.basketContentFooter}>
                 <div className={styles.basketFooterSumInfo}>
