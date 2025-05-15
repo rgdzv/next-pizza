@@ -1,28 +1,20 @@
 import { ArrowRightIcon, CleanIcon } from 'shared/assets'
 import { CustomButton } from 'shared/ui'
-import { BasketPizzaCard } from 'entities/BasketPizzaCard'
 import styles from './BasketContent.module.scss'
-import type { BasketPizza } from 'entities/BasketPizzaCard/model/types/basketPizza'
-import type { FC } from 'react'
-
-const basketPizza: BasketPizza = {
-    id: '1',
-    title: 'Пепперони-фреш',
-    description: '30 см, традиционное тесто, 300 г',
-    imgSrc: '',
-    price: '500'
-}
+import type { FC, ReactNode } from 'react'
 
 interface BasketContentPropsInterface {
     productQuantity: string
     basketFinalSum: string
     basketFinalSumTax: string
+    pizzas: ReactNode
 }
 
 export const BasketContent: FC<BasketContentPropsInterface> = ({
     productQuantity,
     basketFinalSum,
-    basketFinalSumTax
+    basketFinalSumTax,
+    pizzas
 }) => {
     return (
         <div className={styles.basketContent}>
@@ -36,14 +28,7 @@ export const BasketContent: FC<BasketContentPropsInterface> = ({
                     <CleanIcon />
                 </CustomButton>
             </div>
-            <div className={styles.basketContentList}>
-                <BasketPizzaCard pizza={basketPizza} />
-                <BasketPizzaCard pizza={basketPizza} />
-                <BasketPizzaCard pizza={basketPizza} />
-                <BasketPizzaCard pizza={basketPizza} />
-                <BasketPizzaCard pizza={basketPizza} />
-                <BasketPizzaCard pizza={basketPizza} />
-            </div>
+            <div className={styles.basketContentList}>{pizzas}</div>
             <div className={styles.basketContentFooter}>
                 <div className={styles.basketFooterSumInfo}>
                     <div className={styles.basketContentFooterSum}>

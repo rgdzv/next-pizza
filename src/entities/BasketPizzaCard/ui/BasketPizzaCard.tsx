@@ -1,6 +1,6 @@
 import { CustomImage } from 'shared/ui'
 import styles from './BasketPizzaCard.module.scss'
-import type { BasketPizza } from '../model/types/basketPizza'
+import type { BasketPizza } from '../lib/types/basketPizza'
 import type { FC } from 'react'
 
 interface BasketPizzaCardPropsInterface {

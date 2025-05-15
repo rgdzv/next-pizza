@@ -1,14 +1,13 @@
 import classNames from 'classnames'
 import styles from './Dialog.module.scss'
+import type { DialogClassNameType } from './lib/types/classNames'
 import type { FC, ReactNode, RefObject } from 'react'
-
-type ClassNameType = 'sidebar'
 
 interface DialogPropsInterface {
     children: ReactNode
     closeModal: () => void
     dialogRef: RefObject<HTMLDialogElement | null>
-    className?: ClassNameType
+    className?: DialogClassNameType
 }
 
 export const Dialog: FC<DialogPropsInterface> = ({
@@ -17,13 +16,17 @@ export const Dialog: FC<DialogPropsInterface> = ({
     closeModal,
     className
 }) => {
-    const finalClassName = classNames(
+    const dialogClassName = classNames(
         styles.dialog,
-        styles[className as ClassNameType]
+        styles[className as DialogClassNameType]
     )
 
     return (
-        <dialog ref={dialogRef} className={finalClassName} onClose={closeModal}>
+        <dialog
+            ref={dialogRef}
+            className={dialogClassName}
+            onClose={closeModal}
+        >
             {children}
         </dialog>
     )

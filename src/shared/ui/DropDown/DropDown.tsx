@@ -3,14 +3,8 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { CustomButton } from '../CustomButton/CustomButton'
 import { CustomLink } from '../CustomLink/CustomLink'
 import styles from './DropDown.module.scss'
+import type { DropdownOptions } from './lib/types/options'
 import type { FC, ReactNode } from 'react'
-
-interface DropdownOptions {
-    id: string
-    content: string
-    href: string
-    onClick?: () => void
-}
 
 interface DropDownPropsInterface {
     triggerContent: ReactNode

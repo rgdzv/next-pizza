@@ -9,13 +9,12 @@ import classNames from 'classnames'
 import { PizzaLogoIcon } from 'shared/assets'
 import { CustomImage } from '../CustomImage/CustomImage'
 import styles from './ComboBoxElement.module.scss'
+import type { InputWrapperClassNameType } from './lib/types/classNames'
 import type { PizzaInterface } from 'features/SearchPizzaInput/ui/SearchPizzaInput'
 import type { ChangeEvent, FC, KeyboardEvent, ReactNode } from 'react'
 
-type ClassNameInputWrapperType = 'searchPizza'
-
 interface ComboBoxElementPropsInterface {
-    classNameForInputWrapper?: ClassNameInputWrapperType
+    inputWrapperClassName?: InputWrapperClassNameType
     type: string
     inputValue: string
     onInputChange: (e: ChangeEvent<HTMLInputElement>) => void
@@ -26,7 +25,7 @@ interface ComboBoxElementPropsInterface {
 }
 
 export const ComboBoxElement: FC<ComboBoxElementPropsInterface> = ({
-    classNameForInputWrapper,
+    inputWrapperClassName,
     type,
     inputValue,
     onInputChange,
@@ -36,7 +35,7 @@ export const ComboBoxElement: FC<ComboBoxElementPropsInterface> = ({
     fetchPizzaOnEnter
 }) => {
     const comboWrapperClassName = classNames(styles.comboWrapper, [
-        styles[classNameForInputWrapper as ClassNameInputWrapperType]
+        styles[inputWrapperClassName as InputWrapperClassNameType]
     ])
 
     return (

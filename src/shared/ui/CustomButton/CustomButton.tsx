@@ -1,12 +1,11 @@
 import classNames from 'classnames'
 import styles from './CustomButton.module.scss'
+import type { ButtonClassNameType } from './lib/types/classNames'
 import type { ButtonHTMLAttributes, FC, ReactNode } from 'react'
-
-type ClassNameType = 'primary' | 'search' | 'clean'
 
 interface ButtonPropsInterface extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode
-    className?: ClassNameType
+    className?: ButtonClassNameType
     disabled?: boolean
 }
 
@@ -16,13 +15,13 @@ export const CustomButton: FC<ButtonPropsInterface> = ({
     disabled,
     ...otherProps
 }) => {
-    const finalClassName = classNames(
+    const buttonClassName = classNames(
         styles.button,
-        styles[className as ClassNameType]
+        styles[className as ButtonClassNameType]
     )
 
     return (
-        <button className={finalClassName} disabled={disabled} {...otherProps}>
+        <button className={buttonClassName} disabled={disabled} {...otherProps}>
             {children}
         </button>
     )

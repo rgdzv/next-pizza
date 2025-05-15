@@ -1,8 +1,7 @@
 import classNames from 'classnames'
 import styles from './CustomInput.module.scss'
+import type { InputWrapperClassNameType } from './lib/types/classNames'
 import type { FC, InputHTMLAttributes, ReactNode, RefObject } from 'react'
-
-type ClassNameInputWrapperType = 'searchPizza'
 
 interface CustomInputPropsInterface
     extends InputHTMLAttributes<HTMLInputElement> {
@@ -10,7 +9,7 @@ interface CustomInputPropsInterface
     placeholder?: string
     value: string
     disabled?: boolean
-    classNameForInputWrapper?: ClassNameInputWrapperType
+    inputWrapperClassName?: InputWrapperClassNameType
     icon?: ReactNode
 }
 
@@ -18,17 +17,17 @@ export const CustomInput: FC<CustomInputPropsInterface> = ({
     ref,
     placeholder,
     value,
-    classNameForInputWrapper,
+    inputWrapperClassName,
     disabled,
     icon,
     ...otherProps
 }) => {
-    const inputWrapperClassName = classNames(styles.inputWrapper, [
-        styles[classNameForInputWrapper as ClassNameInputWrapperType]
+    const wrapperClassName = classNames(styles.inputWrapper, [
+        styles[inputWrapperClassName as InputWrapperClassNameType]
     ])
 
     return (
-        <div className={inputWrapperClassName}>
+        <div className={wrapperClassName}>
             {icon}
             <input
                 ref={ref}

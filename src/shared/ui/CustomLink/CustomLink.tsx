@@ -1,13 +1,12 @@
 import classNames from 'classnames'
 import Link from 'next/link'
 import styles from './CustomLink.module.scss'
+import type { LinkClassNameType } from './lib/types/classNames'
 import type { FC, ReactNode } from 'react'
-
-type ClassNameType = 'primary' | 'option'
 
 interface CustomLinkPropsInterface {
     children: ReactNode
-    className?: string
+    className?: LinkClassNameType
     href: string
     disabled?: boolean
     onClick?: () => void
@@ -20,16 +19,16 @@ export const CustomLink: FC<CustomLinkPropsInterface> = ({
     disabled,
     onClick
 }) => {
-    const finalClassName = classNames(
+    const linkClassName = classNames(
         styles.link,
         {
             [styles.disabled]: disabled
         },
-        styles[className as ClassNameType]
+        styles[className as LinkClassNameType]
     )
 
     return (
-        <Link href={href} className={finalClassName} onClick={onClick}>
+        <Link href={href} className={linkClassName} onClick={onClick}>
             {children}
         </Link>
     )

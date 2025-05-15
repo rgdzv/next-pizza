@@ -1,20 +1,13 @@
 import classNames from 'classnames'
 import Image from 'next/image'
 import styles from './CustomImage.module.scss'
-import type { StaticImageData } from 'next/image'
+import type { CustomImageClassNameType } from './lib/types/classNames'
 import type { FC } from 'react'
 
-type ClassNameType =
-    | 'notFound'
-    | 'logo'
-    | 'mini'
-    | 'basketEmpty'
-    | 'basketPizzaCard'
-
 interface CustomImagePropsInterface {
-    src: string | StaticImageData
+    src: string
     alt: string
-    className: string
+    className: CustomImageClassNameType
 }
 
 export const CustomImage: FC<CustomImagePropsInterface> = ({
@@ -22,12 +15,12 @@ export const CustomImage: FC<CustomImagePropsInterface> = ({
     alt,
     className
 }) => {
-    const classNameFinal = styles[className as ClassNameType]
-    const imageClassNameFinal = classNames(styles.image)
+    const wrapperClassName = styles[className]
+    const imageClassName = classNames(styles.image)
 
     return (
-        <div className={classNameFinal}>
-            <Image className={imageClassNameFinal} src={src} alt={alt} />
+        <div className={wrapperClassName}>
+            <Image className={imageClassName} src={src} alt={alt} />
         </div>
     )
 }

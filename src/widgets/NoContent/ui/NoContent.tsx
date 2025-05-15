@@ -1,8 +1,8 @@
 'use client'
 import { ArrowLeftIcon } from 'shared/assets'
-import { CustomButton } from '../CustomButton/CustomButton'
-import { CustomImage } from '../CustomImage/CustomImage'
-import { CustomLink } from '../CustomLink/CustomLink'
+import { CustomButton } from '../../../shared/ui/CustomButton/CustomButton'
+import { CustomImage } from '../../../shared/ui/CustomImage/CustomImage'
+import { CustomLink } from '../../../shared/ui/CustomLink/CustomLink'
 import styles from './NoContent.module.scss'
 import type { FC } from 'react'
 
@@ -10,16 +10,12 @@ interface NoContentPropsInterface {
     name: string
     message: string
     imgSrc: string
-    imgClassName: string
-    imgAlt: string
 }
 
 export const NoContent: FC<NoContentPropsInterface> = ({
     name,
     message,
-    imgSrc,
-    imgClassName,
-    imgAlt
+    imgSrc
 }) => {
     const handleReload = () => {
         window.location.reload()
@@ -44,9 +40,9 @@ export const NoContent: FC<NoContentPropsInterface> = ({
             </div>
             <div className={styles.noContentRight}>
                 <CustomImage
-                    className={imgClassName}
+                    className='notFound'
                     src={imgSrc}
-                    alt={imgAlt}
+                    alt='Не найдено'
                 />
             </div>
         </div>

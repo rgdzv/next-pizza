@@ -1,6 +1,6 @@
 'use client'
-import { NoContent } from 'shared/ui'
 import { NoImageIcon } from 'shared/assets'
+import { NoContent } from 'widgets/NoContent'
 import type { FC } from 'react'
 
 interface GlobalErrorProps {
@@ -15,8 +15,6 @@ const GlobalError: FC<GlobalErrorProps> = ({ error }) => {
                     name='Что-то пошло не так...'
                     message={error.message}
                     imgSrc={NoImageIcon}
-                    imgClassName='notFound'
-                    imgAlt='Not found'
                 />
             </body>
         </html>
