@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import Image from 'next/image'
 import styles from './CustomImage.module.scss'
 import type { CustomImageClassNameType } from './lib/types/classNames'
@@ -16,11 +15,10 @@ export const CustomImage: FC<CustomImagePropsInterface> = ({
     className
 }) => {
     const wrapperClassName = styles[className]
-    const imageClassName = classNames(styles.image)
 
     return (
         <div className={wrapperClassName}>
-            <Image className={imageClassName} src={src} alt={alt} />
+            <Image className={styles.image} src={src} alt={alt} />
         </div>
     )
 }

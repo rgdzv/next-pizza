@@ -1,40 +1,23 @@
-import { Fragment } from 'react'
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import { Menu, MenuButton, MenuItems } from '@headlessui/react'
 import { CustomButton } from '../CustomButton/CustomButton'
-import { CustomLink } from '../CustomLink/CustomLink'
 import styles from './DropDown.module.scss'
-import type { DropdownOptions } from './lib/types/options'
 import type { FC, ReactNode } from 'react'
 
 interface DropDownPropsInterface {
     triggerContent: ReactNode
-    buttonClassName: 'primary' // fix
-    options: DropdownOptions[]
+    options: ReactNode
 }
 
 export const DropDown: FC<DropDownPropsInterface> = ({
     triggerContent,
-    buttonClassName,
     options
 }) => {
     return (
         <Menu as='div' className={styles.dropDown}>
-            <MenuButton as={CustomButton} className={buttonClassName}>
+            <MenuButton as={CustomButton} className='primary'>
                 {triggerContent}
             </MenuButton>
-            <MenuItems className={styles.options}>
-                {options.map((option) => (
-                    <MenuItem key={option.id} as={Fragment}>
-                        <CustomLink
-                            href={option.href}
-                            className='option'
-                            onClick={option.onClick}
-                        >
-                            {option.content}
-                        </CustomLink>
-                    </MenuItem>
-                ))}
-            </MenuItems>
+            <MenuItems className={styles.options}>{options}</MenuItems>
         </Menu>
     )
 }

@@ -1,24 +1,20 @@
-import { ComboBoxElement, CustomButton } from 'shared/ui'
+import { ComboBoxElement, CustomButton, CustomImage } from 'shared/ui'
 import { SearchIcon } from 'shared/assets'
 import { useState } from 'react'
+import { ComboboxOption } from '@headlessui/react'
 import type { ChangeEvent, FC, KeyboardEvent } from 'react'
 
-export interface PizzaInterface {
-    id: number
-    name: string
-}
-
-const pizzas: PizzaInterface[] = [
-    { id: 1, name: 'Маргарита' },
-    { id: 2, name: 'Сырная' },
-    { id: 3, name: 'С беконом' },
-    { id: 4, name: '4 сыра' },
-    { id: 5, name: 'Пепперони' },
-    { id: 6, name: 'Пепперони' },
-    { id: 7, name: 'Пепперони' },
-    { id: 8, name: 'Пепперони' },
-    { id: 9, name: 'Пепперони' },
-    { id: 10, name: 'Пепперони' }
+const PIZZAS = [
+    { id: 1, name: 'Маргарита', price: '150', img: '' },
+    { id: 2, name: 'Сырная', price: '150', img: '' },
+    { id: 3, name: 'С беконом', price: '150', img: '' },
+    { id: 4, name: '4 сыра', price: '150', img: '' },
+    { id: 5, name: 'Пепперони', price: '150', img: '' },
+    { id: 6, name: 'Пепперони', price: '150', img: '' },
+    { id: 7, name: 'Пепперони', price: '150', img: '' },
+    { id: 8, name: 'Пепперони', price: '150', img: '' },
+    { id: 9, name: 'Пепперони', price: '150', img: '' },
+    { id: 10, name: 'Пепперони', price: '150', img: '' }
 ]
 
 export const SearchPizzaInput: FC = () => {
@@ -30,18 +26,27 @@ export const SearchPizzaInput: FC = () => {
 
     const fetchPizzaOnEnter = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter' && inputValue !== '') {
+            // add store dispatch
             setInputValue('')
         }
     }
 
     const filteredPizzas =
         inputValue === ''
-            ? pizzas
-            : pizzas.filter((pizza) => {
+            ? PIZZAS
+            : PIZZAS.filter((pizza) => {
                   return pizza.name
                       .toLowerCase()
                       .includes(inputValue.toLowerCase())
               })
+
+    const pizzaOptions = filteredPizzas.map((pizza) => (
+        <ComboboxOption as='li' key={pizza.id} value={pizza}>
+            <CustomImage src={pizza.img} alt={pizza.name} className='mini' />
+            <span>{pizza.name}</span>
+            <span>от {pizza.price} ₽</span>
+        </ComboboxOption>
+    ))
 
     const iconOne = (
         <CustomButton className='search'>
@@ -57,8 +62,8 @@ export const SearchPizzaInput: FC = () => {
             onInputChange={handleChange}
             placeholder='Поиск пиццы...'
             iconOne={iconOne}
-            filteredPizzas={filteredPizzas}
             fetchPizzaOnEnter={fetchPizzaOnEnter}
+            pizzaOptions={pizzaOptions}
         />
     )
 }
