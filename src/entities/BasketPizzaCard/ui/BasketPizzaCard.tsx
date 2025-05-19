@@ -29,7 +29,7 @@ export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
                 <div className={styles.basketPizzaCardFooter}>
                     <div>empty</div>
                     <span className={styles.basketPizzaCardSum}>
-                        {pizza.price} ₽
+                        {pizza.price}
                     </span>
                 </div>
             </div>

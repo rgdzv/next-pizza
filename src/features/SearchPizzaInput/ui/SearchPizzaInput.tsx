@@ -1,7 +1,7 @@
-import { ComboBoxElement, CustomButton, CustomImage } from 'shared/ui'
-import { SearchIcon } from 'shared/assets'
 import { useState } from 'react'
 import { ComboboxOption } from '@headlessui/react'
+import { ComboBoxElement, CustomButton, CustomImage } from 'shared/ui'
+import { SearchIcon } from 'shared/assets'
 import type { ChangeEvent, FC, KeyboardEvent } from 'react'
 
 const PIZZAS = [

@@ -21,7 +21,9 @@ export const BasketContent: FC<BasketContentPropsInterface> = ({
             <div className={styles.basketContentHeader}>
                 <div className={styles.basketContentHeaderLeft}>
                     <span>
-                        В корзине <strong>{productQuantity}</strong>
+                        <strong>
+                            {productQuantity} на {basketFinalSum}
+                        </strong>
                     </span>
                 </div>
                 <CustomButton className='clean'>

@@ -1,7 +1,7 @@
-import { CustomButton, CustomLink, DropDown } from 'shared/ui'
-import { ProfileIcon } from 'shared/assets'
 import { Fragment, useState } from 'react'
 import { MenuItem } from '@headlessui/react'
+import { CustomButton, CustomLink, DropDown } from 'shared/ui'
+import { ProfileIcon } from 'shared/assets'
 import { OPTIONS } from '../../lib/const/options'
 import type { FC } from 'react'
 

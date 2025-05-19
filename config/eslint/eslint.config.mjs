@@ -54,6 +54,68 @@ export default tseslint.config(
                         'index',
                         'object',
                         'type'
+                    ],
+                    pathGroups: [
+                        {
+                            pattern: 'react',
+                            group: 'external',
+                            position: 'before'
+                        },
+                        {
+                            pattern: 'react**',
+                            group: 'external',
+                            position: 'before'
+                        },
+                        {
+                            pattern: 'app/**',
+                            group: 'internal',
+                            position: 'before'
+                        },
+                        {
+                            pattern: 'pages/**',
+                            group: 'internal',
+                            position: 'before'
+                        },
+                        {
+                            pattern: 'widgets/**',
+                            group: 'internal',
+                            position: 'before'
+                        },
+                        {
+                            pattern: 'features/**',
+                            group: 'internal',
+                            position: 'before'
+                        },
+                        {
+                            pattern: 'entities/**',
+                            group: 'internal',
+                            position: 'before'
+                        },
+                        {
+                            pattern: 'shared/**',
+                            group: 'internal',
+                            position: 'before'
+                        },
+                        {
+                            pattern: '../**',
+                            group: 'internal',
+                            position: 'before'
+                        },
+                        {
+                            pattern: '../../**',
+                            group: 'internal',
+                            position: 'before'
+                        }
+                    ],
+                    pathGroupsExcludedImportTypes: [
+                        'react',
+                        'app',
+                        'pages',
+                        'widgets',
+                        'features',
+                        'entities',
+                        'shared',
+                        'type'
                     ]
                 }
             ]

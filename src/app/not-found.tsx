@@ -1,5 +1,5 @@
-import { NoImageIcon } from 'shared/assets'
 import { NoContent } from 'widgets/NoContent'
+import { NoImageIcon } from 'shared/assets'
 import type { FC } from 'react'
 
 const NotFound: FC = () => {
