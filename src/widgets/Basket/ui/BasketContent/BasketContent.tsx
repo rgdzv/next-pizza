@@ -1,4 +1,4 @@
-import { ArrowRightIcon, CleanIcon } from 'shared/assets'
+import { ArrowRightIcon } from 'shared/assets'
 import { CustomButton } from 'shared/ui'
 import styles from './BasketContent.module.scss'
 import type { FC, ReactNode } from 'react'
@@ -19,16 +19,11 @@ export const BasketContent: FC<BasketContentPropsInterface> = ({
     return (
         <div className={styles.basketContent}>
             <div className={styles.basketContentHeader}>
-                <div className={styles.basketContentHeaderLeft}>
-                    <span>
-                        <strong>
-                            {productQuantity} на {basketFinalSum}
-                        </strong>
-                    </span>
-                </div>
-                <CustomButton className='clean'>
-                    <CleanIcon />
-                </CustomButton>
+                <span>
+                    <strong>
+                        {productQuantity} на {basketFinalSum}
+                    </strong>
+                </span>
             </div>
             <div className={styles.basketContentList}>{pizzas}</div>
             <div className={styles.basketContentFooter}>

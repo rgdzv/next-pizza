@@ -1,4 +1,5 @@
-import { CustomImage } from 'shared/ui'
+import { CustomButton, CustomImage } from 'shared/ui'
+import { CrossIcon } from 'shared/assets'
 import styles from './BasketPizzaCard.module.scss'
 import type { BasketPizza } from '../lib/types/basketPizza'
 import type { FC } from 'react'
@@ -17,7 +18,7 @@ export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
                 alt={pizza.title}
                 className='basketPizzaCard'
             />
-            <div className={styles.basketPizzaCardRight}>
+            <div className={styles.basketPizzaCardCenter}>
                 <div className={styles.basketPizzaCardInfo}>
                     <span className={styles.basketPizzaCardInfoTitle}>
                         {pizza.title}
@@ -32,6 +33,11 @@ export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
                         {pizza.price}
                     </span>
                 </div>
+            </div>
+            <div className={styles.basketPizzaCardRight}>
+                <CustomButton className='delete'>
+                    <CrossIcon title='Удалить' />
+                </CustomButton>
             </div>
         </div>
     )

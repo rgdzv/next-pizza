@@ -7,13 +7,11 @@
     .basketContentHeader {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
         padding: 20px;
 
-        .basketContentHeaderLeft {
-            span {
-                font-size: 20px;
-            }
+        span {
+            font-size: 20px;
         }
     }
 
@@ -24,7 +22,6 @@
         flex-grow: 1;
         gap: 10px;
     }
-
 
     .basketContentFooter {
         display: flex;

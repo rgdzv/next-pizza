@@ -1,10 +1,14 @@
 .basketPizzaCard {
+    position: relative;
+
     display: flex;
     gap: 25px;
+
     padding: 20px;
+
     background-color: var(--background-color-secondary);
 
-    .basketPizzaCardRight {
+    .basketPizzaCardCenter {
         display: flex;
         flex-direction: column;
         gap: 25px;
@@ -35,6 +39,12 @@
                 color: var(--text-color-primary)
             }
         }
+    }
+
+    .basketPizzaCardRight {
+        position: absolute;
+        top: 20px;
+        right: 20px;
     }
     
 }

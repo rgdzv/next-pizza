@@ -29,11 +29,31 @@
     }
 }
 
-.clean {
+.delete {
+    width: 16px;
+    height: 16px;
+
     svg {
-        width: 20px;
-        height: 20px;
         fill: var(--text-color-secondary);
+    }
+}
+
+.close {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: -40px;
+
+    transition: transform .3s linear;
+
+    svg {
+        width: 25px;
+        height: 25px;
+        fill: var(--background-color-secondary);
+    }
+
+    &:hover {
+        transform: rotate(180deg) scale(1.2);
     }
 }
 

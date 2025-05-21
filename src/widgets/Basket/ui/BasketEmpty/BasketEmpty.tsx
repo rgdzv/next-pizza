@@ -1,13 +1,9 @@
-import { CustomImage, CustomButton } from 'shared/ui'
-import { ArrowLeftIcon, BasketEmptyIcon } from 'shared/assets'
+import { CustomImage } from 'shared/ui'
+import { BasketEmptyIcon } from 'shared/assets'
 import styles from './BasketEmpty.module.scss'
 import type { FC } from 'react'
 
-interface BasketEmptyPropsInterface {
-    closeModal: () => void
-}
-
-export const BasketEmpty: FC<BasketEmptyPropsInterface> = ({ closeModal }) => {
+export const BasketEmpty: FC = () => {
     return (
         <div className={styles.basketEmptyBlockWrapper}>
             <div className={styles.basketEmptyBlock}>
@@ -20,10 +16,6 @@ export const BasketEmpty: FC<BasketEmptyPropsInterface> = ({ closeModal }) => {
                 <span className={styles.basketEmptyMessage}>
                     Добавьте хотя бы одну пиццу, чтобы совершить заказ
                 </span>
-                <CustomButton className='primary' onClick={closeModal}>
-                    <ArrowLeftIcon title='Влево' />
-                    <span>Вернуться назад</span>
-                </CustomButton>
             </div>
         </div>
     )

@@ -1,16 +1,18 @@
 import { BasketPizzaCard } from 'entities/BasketPizzaCard'
 import { priceFormat } from 'shared/lib'
-import { Dialog } from 'shared/ui'
+import { CustomButton, Dialog } from 'shared/ui'
+import { CrossIcon } from 'shared/assets'
 import { BasketEmpty } from '../BasketEmpty/BasketEmpty'
 import { BasketContent } from '../BasketContent/BasketContent'
 import { productTax } from '../../lib/helpers/productTax'
 import { productDeclension } from '../../lib/helpers/productDeclension'
-import type { FC, RefObject } from 'react'
+import type { FC, MouseEvent, RefObject } from 'react'
 
 interface BasketPropsInterface {
     dialogRef: RefObject<HTMLDialogElement | null>
     onClickCloseButton: () => void
     closeModal: () => void
+    onClickOutside: (e: MouseEvent<HTMLDialogElement>) => void
 }
 
 const BASKET_PIZZAS = [
@@ -40,7 +42,8 @@ const BASKET_PIZZAS = [
 export const Basket: FC<BasketPropsInterface> = ({
     dialogRef,
     closeModal,
-    onClickCloseButton
+    onClickCloseButton,
+    onClickOutside
 }) => {
     const basketProductNumber = productDeclension(11)
     const basketFinalSum = priceFormat(2142)
@@ -66,16 +69,23 @@ export const Basket: FC<BasketPropsInterface> = ({
             pizzas={pizzas}
         />
     ) : (
-        <BasketEmpty closeModal={onClickCloseButton} />
+        <BasketEmpty />
     )
 
     return (
         <Dialog
             dialogRef={dialogRef}
             closeModal={closeModal}
+            onClickOutside={onClickOutside}
             className='sidebar'
         >
-            {showBasketPizzasCondition}
+            <>
+                {showBasketPizzasCondition}
+                <CustomButton className='close' onClick={onClickCloseButton}>
+                    <CrossIcon title='Закрыть' />
+                </CustomButton>
+            </>
+            {/* <BasketEmpty/> */}
         </Dialog>
     )
 }
