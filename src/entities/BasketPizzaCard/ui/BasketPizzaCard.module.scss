@@ -32,7 +32,19 @@
 
         .basketPizzaCardFooter {
             display: flex;
+            align-items: center;
             justify-content: space-between;
+
+            .basketPizzaCardCountBtn {
+                display: flex;
+                gap: 15px;
+                align-items: center;
+
+                padding: 5px;
+                border-radius: 15px;
+
+                background-color: var(--background-color-basket);
+            }
 
             .basketPizzaCardSum {
                 font-weight: 700;

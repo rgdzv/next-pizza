@@ -1,1 +1,6 @@
-export type ButtonClassNameType = 'primary' | 'search' | 'delete' | 'close'
+export type ButtonClassNameType =
+    | 'primary'
+    | 'search'
+    | 'delete'
+    | 'close'
+    | 'counter'

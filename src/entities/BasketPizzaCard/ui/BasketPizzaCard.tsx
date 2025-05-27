@@ -1,5 +1,5 @@
 import { CustomButton, CustomImage } from 'shared/ui'
-import { CrossIcon } from 'shared/assets'
+import { CrossIcon, MinusIcon, PlusIcon } from 'shared/assets'
 import styles from './BasketPizzaCard.module.scss'
 import type { BasketPizza } from '../lib/types/basketPizza'
 import type { FC } from 'react'
@@ -28,7 +28,15 @@ export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
                     </span>
                 </div>
                 <div className={styles.basketPizzaCardFooter}>
-                    <div>empty</div>
+                    <div className={styles.basketPizzaCardCountBtn}>
+                        <CustomButton className='counter'>
+                            <MinusIcon title='Убавить' />
+                        </CustomButton>
+                        <span>1</span>
+                        <CustomButton className='counter'>
+                            <PlusIcon title='Прибавить' />
+                        </CustomButton>
+                    </div>
                     <span className={styles.basketPizzaCardSum}>
                         {pizza.price}
                     </span>

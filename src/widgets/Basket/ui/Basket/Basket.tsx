@@ -85,7 +85,6 @@ export const Basket: FC<BasketPropsInterface> = ({
                     <CrossIcon title='Закрыть' />
                 </CustomButton>
             </>
-            {/* <BasketEmpty/> */}
         </Dialog>
     )
 }

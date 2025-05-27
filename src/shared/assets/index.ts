@@ -9,6 +9,8 @@ import ProfileIcon from './images/profile-icon.svg'
 import ShoppingCartIcon from './images/shopping-cart-icon.svg'
 import BasketEmptyIcon from './images/basket-empty-icon.png'
 import ArrowRightIcon from './images/arrow-right-icon.svg'
+import PlusIcon from './images/plus-icon.svg'
+import MinusIcon from './images/minus-icon.svg'
 
 export {
     ArrowLeftIcon,
@@ -21,5 +23,7 @@ export {
     ProfileIcon,
     ShoppingCartIcon,
     BasketEmptyIcon,
-    ArrowRightIcon
+    ArrowRightIcon,
+    PlusIcon,
+    MinusIcon
 }

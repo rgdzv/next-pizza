@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 .button {
     display: flex;
     align-items: center;
@@ -16,44 +17,6 @@
         cursor: auto;
         user-select: none;
         opacity: 0.5;
-    }
-}
-
-.search {
-    pointer-events: none;
-    position: absolute;
-    left: 20px;
-
-    svg {
-        fill: var(--text-color-secondary);
-    }
-}
-
-.delete {
-    width: 16px;
-    height: 16px;
-
-    svg {
-        fill: var(--text-color-secondary);
-    }
-}
-
-.close {
-    position: absolute;
-    z-index: 10;
-    top: 50%;
-    left: -40px;
-
-    transition: transform .3s linear;
-
-    svg {
-        width: 25px;
-        height: 25px;
-        fill: var(--background-color-secondary);
-    }
-
-    &:hover {
-        transform: rotate(180deg) scale(1.2);
     }
 }
 
@@ -86,5 +49,66 @@
 
     &:active:enabled {
         box-shadow: inset 0 0 10px #0000004D;
+    }
+}
+
+.search {
+    pointer-events: none;
+    position: absolute;
+    left: 20px;
+
+    svg {
+        fill: var(--text-color-secondary);
+    }
+}
+
+.close {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: -40px;
+
+    transition: transform .3s linear;
+
+    svg {
+        width: 25px;
+        height: 25px;
+        fill: var(--background-color-secondary);
+    }
+
+    &:hover {
+        transform: rotate(180deg) scale(1.2);
+    }
+}
+
+.delete {
+    width: 16px;
+    height: 16px;
+
+    svg {
+        fill: var(--text-color-secondary);
+        transition: fill .1s linear;
+    }
+
+    &:hover {
+        svg {
+            fill: var(--text-color-primary)
+        }
+    }
+}
+
+.counter {
+    width: 24px;
+    height: 24px;
+
+    svg {
+        color: var(--text-color-secondary);
+        transition: color .1s linear;
+    }
+
+    &:hover {
+        svg {
+            color: var(--text-color-primary)
+        }
     }
 }
