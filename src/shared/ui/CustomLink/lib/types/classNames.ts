@@ -1,1 +1,1 @@
-export type LinkClassNameType = 'primary' | 'option'
+export type LinkClassNameType = 'primary'

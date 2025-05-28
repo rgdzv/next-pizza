@@ -35,6 +35,11 @@
             align-items: center;
             justify-content: space-between;
 
+            .basketPizzaCardSum {
+                font-weight: 700;
+                color: var(--text-color-primary)
+            }
+
             .basketPizzaCardCountBtn {
                 display: flex;
                 gap: 15px;
@@ -44,11 +49,11 @@
                 border-radius: 15px;
 
                 background-color: var(--background-color-basket);
-            }
 
-            .basketPizzaCardSum {
-                font-weight: 700;
-                color: var(--text-color-primary)
+                span {
+                    font-weight: 700;
+                    color: var(--text-color-primary)
+                }
             }
         }
     }

@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { useState } from 'react'
 import { MenuItem } from '@headlessui/react'
 import { CustomButton, CustomLink, DropDown } from 'shared/ui'
 import { ProfileIcon } from 'shared/assets'
@@ -20,10 +20,9 @@ export const LoginDropDown: FC = () => {
     )
 
     const dropdownOptions = OPTIONS.map((option) => (
-        <MenuItem key={option.id} as={Fragment}>
+        <MenuItem key={option.id} as='li'>
             <CustomLink
                 href={option.href}
-                className='option'
                 onClick={option.id === 'out' ? handleLogOut : undefined}
             >
                 {option.content}
@@ -32,7 +31,12 @@ export const LoginDropDown: FC = () => {
     ))
 
     const buttonCondition = authorized ? (
-        <DropDown triggerContent={triggerContent} options={dropdownOptions} />
+        <DropDown
+            component={CustomButton}
+            triggerContent={triggerContent}
+            options={dropdownOptions}
+            buttonClassName='primary'
+        />
     ) : (
         <CustomButton className='primary'>
             <ProfileIcon title='Профиль' />

@@ -28,18 +28,18 @@ export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
                     </span>
                 </div>
                 <div className={styles.basketPizzaCardFooter}>
+                    <span className={styles.basketPizzaCardSum}>
+                        {pizza.price}
+                    </span>
                     <div className={styles.basketPizzaCardCountBtn}>
                         <CustomButton className='counter'>
                             <MinusIcon title='Убавить' />
                         </CustomButton>
-                        <span>1</span>
+                        <span>10</span>
                         <CustomButton className='counter'>
                             <PlusIcon title='Прибавить' />
                         </CustomButton>
                     </div>
-                    <span className={styles.basketPizzaCardSum}>
-                        {pizza.price}
-                    </span>
                 </div>
             </div>
             <div className={styles.basketPizzaCardRight}>
