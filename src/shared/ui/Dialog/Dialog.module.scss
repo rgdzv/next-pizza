@@ -15,15 +15,26 @@
         transition: display 250ms allow-discrete, overlay 250ms allow-discrete, translate 250ms;
 
         &::backdrop {
+            opacity: 0;
             background-color: #00000080;
             backdrop-filter: blur(2px);
+            transition: opacity 250ms ease-out;
         }
 
         &[open] {
             translate: 0;
 
+            &::backdrop {
+                opacity: 1;
+                transition: opacity 250ms ease-out;
+            }
+
             @starting-style {
                 translate: 395px;
+
+                &::backdrop {
+                    opacity: 0;
+                }
             }
         }
     }

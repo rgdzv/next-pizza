@@ -3,6 +3,9 @@
     grid-template-columns: auto 1fr min-content;
     gap: 40px;
 
+    padding-bottom: 45px;
+    border-bottom: 0.5px solid #EDEDED;
+
     .headerRight {
         display: flex;
         gap: 15px;
