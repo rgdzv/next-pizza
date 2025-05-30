@@ -1,10 +1,10 @@
 .header {
     display: grid;
-    grid-template-columns: auto 1fr min-content;
+    grid-template-columns: auto 1fr auto;
     gap: 40px;
 
     padding-bottom: 45px;
-    border-bottom: 0.5px solid #EDEDED;
+    border-bottom: 1px solid #EDEDED;
 
     .headerRight {
         display: flex;

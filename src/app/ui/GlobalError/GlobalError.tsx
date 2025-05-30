@@ -7,7 +7,7 @@ interface GlobalErrorProps {
     error: Error & { digest?: string }
 }
 
-const GlobalError: FC<GlobalErrorProps> = ({ error }) => {
+export const GlobalError: FC<GlobalErrorProps> = ({ error }) => {
     return (
         <html lang='ru'>
             <body>
@@ -20,5 +20,3 @@ const GlobalError: FC<GlobalErrorProps> = ({ error }) => {
         </html>
     )
 }
-
-export default GlobalError

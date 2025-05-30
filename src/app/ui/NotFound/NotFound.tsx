@@ -2,7 +2,7 @@ import { NoContent } from 'widgets/NoContent'
 import { NoImageIcon } from 'shared/assets'
 import type { FC } from 'react'
 
-const NotFound: FC = () => {
+export const NotFound: FC = () => {
     return (
         <NoContent
             name='Страница не найдена'
@@ -11,5 +11,3 @@ const NotFound: FC = () => {
         />
     )
 }
-
-export default NotFound

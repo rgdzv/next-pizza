@@ -10,14 +10,14 @@ html:has(dialog[open]) {
 body {
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 45px;
     background-color: var(--background-color-primary);
 }
 
 .container {
     width: 100%;
     max-width: 1440px;
-    min-height: calc(100vh - 40px);
+    min-height: calc(100vh - 90px);
     padding: 45px;
     border: 1px solid var(--background-color-secondary);
     border-radius: 30px;

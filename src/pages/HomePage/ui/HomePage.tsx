@@ -2,7 +2,7 @@
 import { Header } from 'widgets/Header'
 import type { FC } from 'react'
 
-const App: FC = () => {
+const HomePage: FC = () => {
     return (
         <div className='container'>
             <Header />
@@ -12,4 +12,4 @@ const App: FC = () => {
     )
 }
 
-export default App
+export default HomePage
