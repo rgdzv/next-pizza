@@ -15,6 +15,14 @@ body {
 }
 
 .container {
+    display: grid;
+    grid-template: min-content auto auto auto / 1fr;
+    grid-template-areas:     
+        "header"
+        "filters"
+        "pizzas"
+        "footer";
+
     width: 100%;
     max-width: 1440px;
     min-height: calc(100vh - 90px);
