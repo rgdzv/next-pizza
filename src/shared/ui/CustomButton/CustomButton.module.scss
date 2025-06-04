@@ -112,3 +112,24 @@
         }
     }
 }
+
+.category {
+    padding: 10px 15px;
+    border-radius: 15px;
+
+    font-weight: 700;
+    line-height: 1;
+    color: var(--text-color-primary);
+
+    transition: color .1s linear;
+
+    &:hover {
+        color: var(--text-color-third);
+    }
+
+    &.active {
+        color: var(--text-color-third);
+        background-color: var(--background-color-secondary);
+        box-shadow: 0 4px 4px 0 rgb(0 0 0 / 5%);
+    }
+}

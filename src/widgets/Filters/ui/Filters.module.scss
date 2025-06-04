@@ -1,3 +1,12 @@
 .filters {
+    display: flex;
     grid-area: filters;
+    flex-direction: column;
+    gap: 20px;
+
+    .filtersTitle {
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--text-color-primary);
+    }
 }

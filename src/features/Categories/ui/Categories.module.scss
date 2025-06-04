@@ -1,0 +1,13 @@
+.categories {
+    display: inline-flex;
+
+    ul {
+        display: flex;
+        column-gap: 10px;
+
+        padding: 5px;
+        border-radius: 15px;
+
+        background-color: var(--background-color-third);
+    }
+}

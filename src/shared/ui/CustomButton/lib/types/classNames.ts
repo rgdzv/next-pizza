@@ -4,3 +4,4 @@ export type ButtonClassNameType =
     | 'delete'
     | 'close'
     | 'counter'
+    | 'category'

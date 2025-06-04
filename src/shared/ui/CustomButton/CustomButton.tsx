@@ -7,16 +7,21 @@ interface ButtonPropsInterface extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode
     className?: ButtonClassNameType
     disabled?: boolean
+    active?: boolean
 }
 
 export const CustomButton: FC<ButtonPropsInterface> = ({
     children,
     className,
     disabled,
+    active,
     ...otherProps
 }) => {
     const buttonClassName = classNames(
         styles.button,
+        {
+            [styles.active]: active
+        },
         styles[className as ButtonClassNameType]
     )
 
