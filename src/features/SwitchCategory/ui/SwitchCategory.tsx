@@ -1,23 +1,22 @@
+import { useState } from 'react'
 import { CustomButton } from 'shared/ui'
 import { categoriesNames } from '../lib/categoriesList'
 import styles from './Categories.module.scss'
 import type { FC } from 'react'
 
-interface CategoriesPropsInterface {
-    value: number
-    handleChangeCategory: (ind: number) => void
-}
+export const SwitchCategory: FC = () => {
+    const [categoryID, setCategoryID] = useState(0)
 
-export const Categories: FC<CategoriesPropsInterface> = ({
-    value,
-    handleChangeCategory
-}) => {
+    const handleChangeCategory = (ind: number) => {
+        setCategoryID(ind)
+    }
+
     const categories = categoriesNames.map((category, ind) => {
         const onClick = () => {
             handleChangeCategory(ind)
         }
 
-        const active = value === ind
+        const active = categoryID === ind
 
         return (
             <li key={category}>
