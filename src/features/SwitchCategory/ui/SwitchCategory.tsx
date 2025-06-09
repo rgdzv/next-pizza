@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { CustomButton } from 'shared/ui'
-import { categoriesNames } from '../lib/categoriesList'
-import styles from './Categories.module.scss'
+import { CATEGORIESLIST } from '../lib/const/categoriesList'
+import styles from './SwitchCategory.module.scss'
 import type { FC } from 'react'
 
 export const SwitchCategory: FC = () => {
@@ -11,18 +11,18 @@ export const SwitchCategory: FC = () => {
         setCategoryID(ind)
     }
 
-    const categories = categoriesNames.map((category, ind) => {
+    const categories = CATEGORIESLIST.map((category, ind) => {
         const onClick = () => {
             handleChangeCategory(ind)
         }
 
-        const active = categoryID === ind
+        const categoryActive = categoryID === ind
 
         return (
             <li key={category}>
                 <CustomButton
                     className='category'
-                    active={active}
+                    categoryActive={categoryActive}
                     onClick={onClick}
                 >
                     {category}

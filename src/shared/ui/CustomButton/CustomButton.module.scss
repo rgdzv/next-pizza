@@ -127,9 +127,44 @@
         color: var(--text-color-third);
     }
 
-    &.active {
+    &.categoryActive {
         color: var(--text-color-third);
         background-color: var(--background-color-secondary);
         box-shadow: 0 4px 4px 0 rgb(0 0 0 / 5%);
+    }
+}
+
+.sort {
+    gap: 5px;
+
+    padding: 10px 15px;
+    border-radius: 15px;
+
+    font-weight: 700;
+    color: var(--text-color-primary);
+
+    background-color: var(--background-color-third);
+
+    svg {
+        fill: var(--text-color-primary);
+    }
+
+    span {
+        &:last-child {
+            color: var(--text-color-third);
+        }
+    }
+}
+
+.sortArrow {
+    svg {
+        fill: var(--text-color-secondary);
+        transition: fill .1s linear;
+    }
+
+    &:hover {
+        svg {
+            fill: var(--text-color-primary);
+        }
     }
 }

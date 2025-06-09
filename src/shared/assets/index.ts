@@ -11,6 +11,9 @@ import BasketEmptyIcon from './images/basket-empty-icon.png'
 import ArrowRightIcon from './images/arrow-right-icon.svg'
 import PlusIcon from './images/plus-icon.svg'
 import MinusIcon from './images/minus-icon.svg'
+import ArrowsUpDownIcon from './images/arrows-up-down-icon.svg'
+import ArrowUpIcon from './images/arrow-up-icon.svg'
+import ArrowDownIcon from './images/arrow-down-icon.svg'
 
 export {
     ArrowLeftIcon,
@@ -25,5 +28,8 @@ export {
     BasketEmptyIcon,
     ArrowRightIcon,
     PlusIcon,
-    MinusIcon
+    MinusIcon,
+    ArrowsUpDownIcon,
+    ArrowUpIcon,
+    ArrowDownIcon
 }

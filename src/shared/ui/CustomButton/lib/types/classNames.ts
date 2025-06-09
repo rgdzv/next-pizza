@@ -5,3 +5,5 @@ export type ButtonClassNameType =
     | 'close'
     | 'counter'
     | 'category'
+    | 'sort'
+    | 'sortArrow'

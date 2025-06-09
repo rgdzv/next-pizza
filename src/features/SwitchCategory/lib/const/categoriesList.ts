@@ -1,4 +1,4 @@
-export const categoriesNames = [
+export const CATEGORIESLIST: string[] = [
     'Все',
     'Мясные',
     'Острые',

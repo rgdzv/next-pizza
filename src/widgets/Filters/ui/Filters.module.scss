@@ -9,4 +9,9 @@
         font-weight: 700;
         color: var(--text-color-primary);
     }
+
+    .filtersContent {
+        display: flex;
+        justify-content: space-between;
+    }
 }
