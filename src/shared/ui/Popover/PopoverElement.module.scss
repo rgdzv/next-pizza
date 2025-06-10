@@ -1,9 +1,11 @@
 .popover {
     position: relative;
+    border-radius: 15px;
+    background-color: var(--background-color-third);
 
     ul {
         position: absolute;
-        top: 50px;
+        top: 55px;
 
         display: flex;
         flex-direction: column;

@@ -143,8 +143,6 @@
     font-weight: 700;
     color: var(--text-color-primary);
 
-    background-color: var(--background-color-third);
-
     svg {
         fill: var(--text-color-primary);
     }
@@ -157,12 +155,19 @@
 }
 
 .sortArrow {
+    padding: 5px;
+    border: 1px solid var(--text-color-secondary);
+    border-radius: 15px;
+    transition: border-color .1s linear;
+
     svg {
         fill: var(--text-color-secondary);
         transition: fill .1s linear;
     }
 
     &:hover {
+        border-color: var(--text-color-primary);;
+
         svg {
             fill: var(--text-color-primary);
         }
