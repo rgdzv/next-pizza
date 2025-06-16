@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import styles from './Dialog.module.scss'
-import type { DialogClassNameType } from './lib/types/classNames'
+import type { DialogClassNameType } from '../lib/types/classNames'
 import type { FC, MouseEvent, ReactNode, RefObject } from 'react'
 
 interface DialogPropsInterface {

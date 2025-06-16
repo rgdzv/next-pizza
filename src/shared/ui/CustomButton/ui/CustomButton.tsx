@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import styles from './CustomButton.module.scss'
-import type { ButtonClassNameType } from './lib/types/classNames'
+import type { ButtonClassNameType } from '../lib/types/classNames'
 import type { ButtonHTMLAttributes, FC, ReactNode } from 'react'
 
 interface ButtonPropsInterface extends ButtonHTMLAttributes<HTMLButtonElement> {

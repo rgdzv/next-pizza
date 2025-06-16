@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import styles from './CustomInput.module.scss'
-import type { InputWrapperClassNameType } from './lib/types/classNames'
+import type { InputWrapperClassNameType } from '../lib/types/classNames'
 import type { FC, InputHTMLAttributes, ReactNode } from 'react'
 
 interface CustomInputPropsInterface

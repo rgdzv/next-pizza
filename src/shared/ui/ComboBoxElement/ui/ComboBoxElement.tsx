@@ -2,7 +2,7 @@
 import { Combobox, ComboboxInput, ComboboxOptions } from '@headlessui/react'
 import classNames from 'classnames'
 import styles from './ComboBoxElement.module.scss'
-import type { InputWrapperClassNameType } from './lib/types/classNames'
+import type { InputWrapperClassNameType } from '../lib/types/classNames'
 import type { ChangeEvent, FC, KeyboardEvent, ReactNode } from 'react'
 
 interface ComboBoxElementPropsInterface {

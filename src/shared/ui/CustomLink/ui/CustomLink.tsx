@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import Link from 'next/link'
 import styles from './CustomLink.module.scss'
-import type { LinkClassNameType } from './lib/types/classNames'
+import type { LinkClassNameType } from '../lib/types/classNames'
 import type { FC, ReactNode } from 'react'
 
 interface CustomLinkPropsInterface {

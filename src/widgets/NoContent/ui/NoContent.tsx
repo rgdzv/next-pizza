@@ -1,8 +1,6 @@
 'use client'
 import { ArrowLeftIcon } from 'shared/assets'
-import { CustomButton } from '../../../shared/ui/CustomButton/CustomButton'
-import { CustomImage } from '../../../shared/ui/CustomImage/CustomImage'
-import { CustomLink } from '../../../shared/ui/CustomLink/CustomLink'
+import { CustomButton, CustomImage, CustomLink } from 'shared/ui'
 import styles from './NoContent.module.scss'
 import type { FC } from 'react'
 

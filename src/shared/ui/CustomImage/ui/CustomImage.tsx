@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import styles from './CustomImage.module.scss'
-import type { CustomImageClassNameType } from './lib/types/classNames'
+import type { CustomImageClassNameType } from '../lib/types/classNames'
 import type { FC } from 'react'
 
 interface CustomImagePropsInterface {

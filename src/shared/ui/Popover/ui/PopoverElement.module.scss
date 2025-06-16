@@ -1,0 +1,30 @@
+.popover {
+    position: relative;
+
+    ul {
+        position: absolute;
+        top: 55px;
+
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    &.sort {
+        border-radius: 15px;
+        background-color: var(--background-color-third);
+
+        ul {
+            border-radius: 15px;
+            background-color: var(--background-color-third);
+
+            li {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                padding: 14px 18px;
+            }
+        }
+    }
+}
