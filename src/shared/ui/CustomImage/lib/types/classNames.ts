@@ -4,3 +4,4 @@ export type CustomImageClassNameType =
     | 'mini'
     | 'basketEmpty'
     | 'basketPizzaCard'
+    | 'pizzaCard'

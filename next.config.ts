@@ -26,6 +26,17 @@ const nextConfig: NextConfig = {
         fileLoaderRule.exclude = /\.svg$/i
 
         return config
+    },
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'media.dodostatic.net',
+                port: '',
+                pathname: '/image/**',
+                search: ''
+            }
+        ]
     }
 }
 

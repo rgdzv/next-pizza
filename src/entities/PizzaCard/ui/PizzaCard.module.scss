@@ -1,0 +1,28 @@
+.pizzaCard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .pizzaCardName {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--text-color-primary);
+    }
+
+    .pizzaCardStructure {
+        font-size: 14px;
+        line-height: 1.3;
+        color: var(--text-color-secondary);
+    }
+
+    .pizzaCardFooter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .pizzaCardFooterPrice {
+            font-weight: 700;
+            color: var(--text-color-primary);
+        }
+    }
+}
