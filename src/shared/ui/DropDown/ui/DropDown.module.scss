@@ -3,27 +3,32 @@
 
     ul {
         position: absolute;
-        top: 55px;
-
         display: flex;
         flex-direction: column;
-
         width: 100%;
     }
 
     &.login {
         ul {
+            top: 40px;
+
+            padding: 5px;
+            border: 1px solid var(--text-color-primary);
             border-radius: 15px;
+
             background-color: var(--background-color-third);
 
             li {
                 cursor: pointer;
                 gap: 10px;
-                padding: 14px 18px;
+                padding: 8px 20px;
                 border-radius: inherit;
 
                 &[data-active] {
-                    background-color: var(--background-color-primary);
+                    a {
+                        color: var(--text-color-third);
+                        transition: color .1s linear;
+                    }
                 }
             }
         }

@@ -21,10 +21,10 @@ export const CustomLink: FC<CustomLinkPropsInterface> = ({
 }) => {
     const linkClassName = classNames(
         styles.link,
+        styles[className as LinkClassNameType],
         {
             [styles.disabled]: disabled
-        },
-        styles[className as LinkClassNameType]
+        }
     )
 
     return (

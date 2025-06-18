@@ -3,27 +3,27 @@
 
     ul {
         position: absolute;
-        top: 55px;
-
         display: flex;
         flex-direction: column;
-
         width: 100%;
     }
 
     &.sort {
+        border: 1px solid var(--text-color-primary);
         border-radius: 15px;
         background-color: var(--background-color-third);
 
         ul {
-            border-radius: 15px;
+            top: 45px;
+            border: inherit;
+            border-radius: inherit;
             background-color: var(--background-color-third);
 
             li {
                 display: flex;
                 gap: 10px;
                 align-items: center;
-                padding: 14px 18px;
+                padding: 8px 20px;
             }
         }
     }

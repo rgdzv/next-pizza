@@ -23,7 +23,7 @@
 .primary {
     gap: 5px;
 
-    padding: 14px 18px;
+    padding: 8px 20px;
     border: 1px solid var(--text-color-third);
     border-radius: 15px;
 
@@ -114,7 +114,7 @@
 }
 
 .category {
-    padding: 10px 15px;
+    padding: 8px 20px;
     border-radius: 15px;
 
     font-weight: 700;
@@ -129,18 +129,17 @@
 
     &.categoryActive {
         color: var(--text-color-third);
-        background-color: var(--background-color-secondary);
-        box-shadow: 0 4px 4px 0 rgb(0 0 0 / 5%);
     }
 }
 
 .sort {
     gap: 5px;
 
-    padding: 10px 15px;
+    padding: 8px 20px;
     border-radius: 15px;
 
     font-weight: 700;
+    line-height: 1;
     color: var(--text-color-primary);
 
     svg {
@@ -161,15 +160,15 @@
     transition: border-color .1s linear;
 
     svg {
-        fill: var(--text-color-secondary);
-        transition: fill .1s linear;
+        color: var(--text-color-secondary);
+        transition: color .1s linear;
     }
 
     &:hover {
         border-color: var(--text-color-primary);;
 
         svg {
-            fill: var(--text-color-primary);
+            color: var(--text-color-primary);
         }
     }
 }
