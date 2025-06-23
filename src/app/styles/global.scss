@@ -16,7 +16,7 @@ body {
 
 .container {
     display: grid;
-    grid-template: min-content min-content auto auto / 1fr;
+    grid-template: min-content min-content min-content auto / 1fr;
     grid-template-areas:     
         "header"
         "filters"
