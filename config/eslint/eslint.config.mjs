@@ -24,8 +24,8 @@ export default tseslint.config(
         },
         plugins: {
             import: importPlugin,
-            'react-hooks': reactHooksPlugin, 
-            '@next/next': nextPlugin 
+            'react-hooks': reactHooksPlugin,
+            '@next/next': nextPlugin
         },
         settings: {
             react: {
@@ -34,8 +34,8 @@ export default tseslint.config(
         },
         rules: {
             ...reactHooksPlugin.configs.recommended.rules,
-            ...nextPlugin.configs.recommended.rules, 
-            ...nextPlugin.configs['core-web-vitals'].rules, 
+            ...nextPlugin.configs.recommended.rules,
+            ...nextPlugin.configs['core-web-vitals'].rules,
             '@typescript-eslint/consistent-type-exports': 'error',
             '@typescript-eslint/consistent-type-imports': 'error',
             '@typescript-eslint/no-import-type-side-effects': 'error',

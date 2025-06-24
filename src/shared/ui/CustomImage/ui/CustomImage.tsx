@@ -18,13 +18,7 @@ export const CustomImage: FC<CustomImagePropsInterface> = ({
 
     return (
         <div className={wrapperClassName}>
-            <Image
-                className={styles.image}
-                src={src}
-                alt={alt}
-                width={209}
-                height={209}
-            />
+            <Image src={src} alt={alt} fill={true} />
         </div>
     )
 }
