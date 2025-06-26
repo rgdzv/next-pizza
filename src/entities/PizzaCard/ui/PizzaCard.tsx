@@ -5,9 +5,13 @@ import type { FC } from 'react'
 
 interface PizzaCardPropsInterface {
     pizza: Pizza
+    pizzaCardPrice: string
 }
 
-export const PizzaCard: FC<PizzaCardPropsInterface> = ({ pizza }) => {
+export const PizzaCard: FC<PizzaCardPropsInterface> = ({
+    pizza,
+    pizzaCardPrice
+}) => {
     return (
         <div className={styles.pizzaCard}>
             <CustomImage
@@ -18,7 +22,9 @@ export const PizzaCard: FC<PizzaCardPropsInterface> = ({ pizza }) => {
             <p className={styles.pizzaCardName}>{pizza.title}</p>
             <p className={styles.pizzaCardStructure}>{pizza.description}</p>
             <div className={styles.pizzaCardFooter}>
-                <span className={styles.pizzaCardFooterPrice}>от 579 Р</span>
+                <span className={styles.pizzaCardFooterPrice}>
+                    от {pizzaCardPrice}
+                </span>
                 <CustomButton className='primary'>Выбрать</CustomButton>
             </div>
         </div>

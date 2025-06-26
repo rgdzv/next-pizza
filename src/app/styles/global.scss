@@ -3,7 +3,6 @@
 @use 'fonts';
 
 html:has(dialog[open]) {
-    // scrollbar-gutter: auto;
     overflow: hidden;
 }
 
