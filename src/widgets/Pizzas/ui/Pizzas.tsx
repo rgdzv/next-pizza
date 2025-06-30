@@ -1,11 +1,16 @@
+import { useEffect, useState } from 'react'
 import { PizzaCard } from 'entities/PizzaCard'
 import { priceFormat } from 'shared/lib'
+import { Skeleton } from 'shared/ui'
 import { PIZZAS } from '../pizzas'
 import styles from './Pizzas.module.scss'
 import type { FC } from 'react'
+import type { Pizza } from 'entities/PizzaCard/lib/types/pizza'
 
 export const Pizzas: FC = () => {
-    const pizzas = PIZZAS.map((pizza) => {
+    const [example, setExample] = useState<Pizza[] | undefined>(undefined)
+
+    const pizzas = example?.map((pizza) => {
         const pizzaCardPrice = priceFormat(Number(pizza.price[0][0]))
 
         return (
@@ -17,5 +22,17 @@ export const Pizzas: FC = () => {
         )
     })
 
-    return <main className={styles.pizzas}>{pizzas}</main>
+    const pizzasSkeletons = new Array(8)
+        .fill(0)
+        .map((_, index) => <Skeleton key={index} type='pizzaCardSkeleton' />)
+
+    const pizzasCondition = pizzas ?? pizzasSkeletons
+
+    useEffect(() => {
+        setTimeout(() => {
+            setExample(PIZZAS)
+        }, 300)
+    }, [example])
+
+    return <main className={styles.pizzas}>{pizzasCondition}</main>
 }
