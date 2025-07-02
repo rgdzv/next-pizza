@@ -7,6 +7,6 @@ export interface Pizza {
     rating: number
     imgSrc: string
     description: string
-    price: Record<string, Record<string, number>>
+    price: Record<string, number>
     weight: Record<string, Record<string, number>>
 }

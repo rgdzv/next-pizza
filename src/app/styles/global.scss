@@ -15,7 +15,7 @@ body {
 
 .container {
     display: grid;
-    grid-template: min-content min-content min-content auto / 1fr;
+    grid-template: repeat(4, min-content) / 1fr;
     grid-template-areas:     
         "header"
         "filters"
