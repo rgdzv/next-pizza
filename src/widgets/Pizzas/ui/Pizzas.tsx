@@ -9,8 +9,6 @@ import type { Pizza } from 'entities/PizzaCard/lib/types/pizza'
 
 export const Pizzas: FC = () => {
     const [example, setExample] = useState<Pizza[]>([])
-    // const [isLoading, setIsLoading] = useState(false)
-    // const [error, setIsError] = useState(null)
 
     const pizzas = example.map((pizza) => {
         const pizzaCardPrice = priceFormat(Number(pizza.price[0]))

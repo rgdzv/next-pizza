@@ -31,7 +31,7 @@ export const PIZZAS: Pizza[] = [
     },
     {
         id: '2',
-        title: 'Креветка и песто',
+        title: 'Креветки и песто',
         types: [0, 1],
         sizes: [0, 1, 2],
         category: 4,

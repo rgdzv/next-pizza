@@ -1,6 +1,6 @@
 import { Basket } from 'widgets/Basket'
-import { SearchPizzaInput } from 'features/SearchPizzaInput'
 import { LoginDropDown } from 'features/Authorization'
+import { SearchPizzas } from 'features/Pizzas/SearchPizzas'
 import { PizzaLogoIcon, ShoppingCartIcon } from 'shared/assets'
 import { CustomButton } from 'shared/ui'
 import { useModal } from 'shared/lib'
@@ -24,7 +24,7 @@ export const Header: FC = () => {
                 slogan='вкусней уже некуда'
                 imgSrc={PizzaLogoIcon}
             />
-            <SearchPizzaInput />
+            <SearchPizzas />
             <div className={styles.headerRight}>
                 <LoginDropDown />
                 <CustomButton className='primary' onClick={openModal}>

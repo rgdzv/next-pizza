@@ -17,7 +17,7 @@ const PIZZAS = [
     { id: 10, name: 'Пепперони', price: '150', img: '' }
 ]
 
-export const SearchPizzaInput: FC = () => {
+export const SearchPizzas: FC = () => {
     const [inputValue, setInputValue] = useState('')
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

@@ -4,7 +4,7 @@ import { CATEGORIESLIST } from '../lib/const/categoriesList'
 import styles from './SwitchCategory.module.scss'
 import type { FC } from 'react'
 
-export const SwitchCategory: FC = () => {
+export const SwitchCategoryPizzas: FC = () => {
     const [categoryID, setCategoryID] = useState(0)
 
     const handleChangeCategory = (ind: number) => {

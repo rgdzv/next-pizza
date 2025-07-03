@@ -1,5 +1,5 @@
-import { SwitchCategory } from 'features/SwitchCategory'
-import { SortPizzas } from 'features/SortPizzas'
+import { SwitchCategoryPizzas } from 'features/Pizzas/SwitchCategoryPizzas'
+import { SortPizzas } from 'features/Pizzas/SortPizzas'
 import styles from './Filters.module.scss'
 import type { FC } from 'react'
 
@@ -8,7 +8,7 @@ export const Filters: FC = () => {
         <div className={styles.filters}>
             <h1 className={styles.filtersTitle}>Все пиццы</h1>
             <div className={styles.filtersContent}>
-                <SwitchCategory />
+                <SwitchCategoryPizzas />
                 <SortPizzas />
             </div>
         </div>
