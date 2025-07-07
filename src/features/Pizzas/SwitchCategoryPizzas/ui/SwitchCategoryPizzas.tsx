@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { CustomButton } from 'shared/ui'
 import { CATEGORIESLIST } from '../lib/const/categoriesList'
-import styles from './SwitchCategory.module.scss'
+import styles from './SwitchCategoryPizzas.module.scss'
 import type { FC } from 'react'
 
 export const SwitchCategoryPizzas: FC = () => {

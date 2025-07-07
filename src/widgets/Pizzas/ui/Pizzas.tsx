@@ -1,16 +1,18 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { PizzaCard } from 'entities/PizzaCard'
 import { priceFormat } from 'shared/lib'
 import { Skeleton } from 'shared/ui'
-import { PIZZAS } from '../pizzas'
+import { usePizzasStore } from '../model/store/pizzas-store-provider'
 import styles from './Pizzas.module.scss'
 import type { FC } from 'react'
-import type { Pizza } from 'entities/PizzaCard/lib/types/pizza'
 
 export const Pizzas: FC = () => {
-    const [example, setExample] = useState<Pizza[]>([])
+    const data = usePizzasStore((state) => state.pizzas)
+    const isLoading = usePizzasStore((state) => state.isLoading)
+    const error = usePizzasStore((state) => state.error)
+    const fetchPizzas = usePizzasStore((state) => state.fetchPizzas)
 
-    const pizzas = example.map((pizza) => {
+    const pizzas = data?.map((pizza) => {
         const pizzaCardPrice = priceFormat(Number(pizza.price[0]))
 
         return (
@@ -28,13 +30,23 @@ export const Pizzas: FC = () => {
             <Skeleton key={index} className='pizzaCardSkeleton' />
         ))
 
-    const pizzasCondition = pizzas.length === 0 ? pizzasSkeletons : pizzas
+    // const pizzasCondition = isLoading ? pizzasSkeletons : pizzas
 
     useEffect(() => {
-        setTimeout(() => {
-            setExample(PIZZAS)
-        }, 300)
-    }, [example])
+        void fetchPizzas()
+    }, [fetchPizzas])
 
-    return <main className={styles.pizzas}>{pizzasCondition}</main>
+    if (error) {
+        return <main className={styles.error}>{error}</main>
+    }
+
+    if (isLoading) {
+        return <main className={styles.pizzas}>{pizzasSkeletons}</main>
+    }
+
+    if (pizzas) {
+        return <main className={styles.pizzas}>{pizzas}</main>
+    }
+
+    // return <main className={styles.pizzas}>{pizzasCondition}</main>
 }

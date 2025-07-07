@@ -1,3 +1,4 @@
+import { PizzasStoreProvider } from 'widgets/Pizzas/model/store/pizzas-store-provider'
 import '../styles/global.scss'
 import type { FC, ReactNode } from 'react'
 
@@ -8,7 +9,9 @@ interface RootLayoutProps {
 export const RootLayout: FC<RootLayoutProps> = ({ children }) => {
     return (
         <html lang='ru'>
-            <body>{children}</body>
+            <body>
+                <PizzasStoreProvider>{children}</PizzasStoreProvider>
+            </body>
         </html>
     )
 }
