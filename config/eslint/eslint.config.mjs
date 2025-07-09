@@ -40,6 +40,14 @@ export default tseslint.config(
             '@typescript-eslint/consistent-type-imports': 'error',
             '@typescript-eslint/no-import-type-side-effects': 'error',
             '@typescript-eslint/non-nullable-type-assertion-style': 'off',
+            '@typescript-eslint/no-misused-promises': [
+                'error',
+                {
+                    checksVoidReturn: {
+                        attributes: false
+                    }
+                }
+            ],
             'import/order': [
                 'error',
                 {

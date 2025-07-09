@@ -1,22 +1,18 @@
-import { useState } from 'react'
+import { usePizzasStore } from 'widgets/Pizzas/model/store/pizzas-store-provider'
 import { CustomButton } from 'shared/ui'
 import styles from './Footer.module.scss'
 import type { FC } from 'react'
 
 export const Footer: FC = () => {
-    const [buttonName, setButtonName] = useState('Показать больше')
+    const isLoading = usePizzasStore((state) => state.isLoading)
+    const fetchPizzas = usePizzasStore((state) => state.fetchNextPage)
 
-    const showMorePizzas = () => {
-        setButtonName('Загрузка...')
-        setTimeout(() => {
-            setButtonName('Показать больше')
-        }, 1300)
-    }
+    const buttonNameCondition = isLoading ? 'Загрузка...' : 'Показать больше'
 
     return (
         <footer className={styles.footer}>
-            <CustomButton className='primary' onClick={showMorePizzas}>
-                {buttonName}
+            <CustomButton className='primary' onClick={fetchPizzas}>
+                {buttonNameCondition}
             </CustomButton>
         </footer>
     )

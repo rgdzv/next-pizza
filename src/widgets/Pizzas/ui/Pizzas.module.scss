@@ -6,13 +6,10 @@
 }
 
 .error {
-    // display: grid;
-    // grid-area: pizzas;
-
-    // grid-template-rows: 1fr; /* Uses available space */
-    // height: 0; /* Breaks out of min-content constraint */
-    // min-height: 100%; /* Takes full available space */
-    // overflow: visible; 
+    display: grid;
+    grid-area: pizzas;
+    grid-template: 1fr / 1fr;
+    place-items: center center;
 
     font-weight: 700;
     color: var(--text-color-primary);

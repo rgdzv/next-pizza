@@ -30,8 +30,6 @@ export const Pizzas: FC = () => {
             <Skeleton key={index} className='pizzaCardSkeleton' />
         ))
 
-    // const pizzasCondition = isLoading ? pizzasSkeletons : pizzas
-
     useEffect(() => {
         void fetchPizzas()
     }, [fetchPizzas])
@@ -44,9 +42,5 @@ export const Pizzas: FC = () => {
         return <main className={styles.pizzas}>{pizzasSkeletons}</main>
     }
 
-    if (pizzas) {
-        return <main className={styles.pizzas}>{pizzas}</main>
-    }
-
-    // return <main className={styles.pizzas}>{pizzasCondition}</main>
+    return <main className={styles.pizzas}>{pizzas}</main>
 }
