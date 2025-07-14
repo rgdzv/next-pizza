@@ -5,7 +5,7 @@ import type { FC } from 'react'
 
 export const Footer: FC = () => {
     const isLoading = usePizzasStore((state) => state.isLoading)
-    const fetchPizzas = usePizzasStore((state) => state.fetchNextPage)
+    const fetchPizzas = usePizzasStore((state) => state.fetchPizzasNextPage)
 
     const buttonNameCondition = isLoading ? 'Загрузка...' : 'Показать больше'
 

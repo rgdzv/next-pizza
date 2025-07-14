@@ -10,7 +10,7 @@ export interface PizzasState {
 
 export interface PizzasActions {
     fetchPizzas: () => Promise<void>
-    fetchNextPage: () => Promise<void>
+    fetchPizzasNextPage: () => Promise<void>
 }
 
 export type PizzasStore = PizzasState & PizzasActions

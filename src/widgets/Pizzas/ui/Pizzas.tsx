@@ -42,5 +42,9 @@ export const Pizzas: FC = () => {
         return <main className={styles.pizzas}>{pizzasSkeletons}</main>
     }
 
+    if (!pizzas) {
+        return <main className={styles.pizzas}>No pizzas found!</main>
+    }
+
     return <main className={styles.pizzas}>{pizzas}</main>
 }
