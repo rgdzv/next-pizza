@@ -11,7 +11,11 @@ export const Footer: FC = () => {
 
     return (
         <footer className={styles.footer}>
-            <CustomButton className='primary' onClick={fetchPizzas}>
+            <CustomButton
+                className='primary'
+                onClick={fetchPizzas}
+                disabled={isLoading}
+            >
                 {buttonNameCondition}
             </CustomButton>
         </footer>
