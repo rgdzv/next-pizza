@@ -5,18 +5,18 @@ import type { FC, MouseEvent, ReactNode, RefObject } from 'react'
 
 interface DialogPropsInterface {
     children: ReactNode
-    closeModal: () => void
+    onClose: () => void
     dialogRef: RefObject<HTMLDialogElement | null>
     className?: DialogClassNameType
-    onClickOutside: (e: MouseEvent<HTMLDialogElement>) => void
+    onClick: (e: MouseEvent<HTMLDialogElement>) => void
 }
 
 export const Dialog: FC<DialogPropsInterface> = ({
     children,
     dialogRef,
-    closeModal,
+    onClose,
     className,
-    onClickOutside
+    onClick
 }) => {
     const dialogClassName = classNames(
         styles.dialog,
@@ -28,8 +28,8 @@ export const Dialog: FC<DialogPropsInterface> = ({
         <dialog
             ref={dialogRef}
             className={dialogClassName}
-            onClose={closeModal}
-            onClick={onClickOutside}
+            onClose={onClose}
+            onClick={onClick}
         >
             {children}
         </dialog>

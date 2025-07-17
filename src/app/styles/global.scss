@@ -15,12 +15,11 @@ body {
 
 .container {
     display: grid;
-    grid-template: min-content min-content auto min-content / 1fr;
+    grid-template: min-content min-content auto / 1fr;
     grid-template-areas:     
         "header"
         "filters"
-        "pizzas"
-        "footer";
+        "pizzas";
     row-gap: 45px;
 
     width: 100%;

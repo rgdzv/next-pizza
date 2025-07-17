@@ -1,8 +1,19 @@
 .pizzas {
     display: grid;
     grid-area: pizzas;
-    grid-template-columns: repeat(4, auto);
-    gap: 35px;
+    grid-template: repeat(2, auto) / 1fr;
+    row-gap: 45px;
+
+    .pizzasContent {
+        display: grid;
+        grid-template: 1fr / repeat(4, auto);
+        gap: 35px;
+    }
+
+    .pizzasFetchButton {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .error {

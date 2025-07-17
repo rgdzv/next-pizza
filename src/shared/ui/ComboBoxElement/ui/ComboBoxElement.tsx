@@ -12,8 +12,8 @@ interface ComboBoxElementPropsInterface {
     onInputChange: (e: ChangeEvent<HTMLInputElement>) => void
     placeholder?: string
     iconOne: ReactNode
-    fetchPizzaOnEnter: (e: KeyboardEvent<HTMLInputElement>) => void
-    pizzaOptions: ReactNode
+    onKeyDown: (e: KeyboardEvent<HTMLInputElement>) => void
+    options: ReactNode
 }
 
 export const ComboBoxElement: FC<ComboBoxElementPropsInterface> = ({
@@ -23,8 +23,8 @@ export const ComboBoxElement: FC<ComboBoxElementPropsInterface> = ({
     onInputChange,
     placeholder,
     iconOne,
-    fetchPizzaOnEnter,
-    pizzaOptions
+    onKeyDown,
+    options
 }) => {
     const comboWrapperClassName = classNames(styles.comboWrapper, [
         styles[inputWrapperClassName as InputWrapperClassNameType]
@@ -37,11 +37,11 @@ export const ComboBoxElement: FC<ComboBoxElementPropsInterface> = ({
                 value={inputValue}
                 onChange={onInputChange}
                 placeholder={placeholder}
-                onKeyDown={fetchPizzaOnEnter}
+                onKeyDown={onKeyDown}
                 type={type}
             />
             <ComboboxOptions as='ul' className={styles.comboOptions}>
-                {pizzaOptions}
+                {options}
             </ComboboxOptions>
         </Combobox>
     )

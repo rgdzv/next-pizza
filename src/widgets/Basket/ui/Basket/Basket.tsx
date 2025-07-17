@@ -75,8 +75,8 @@ export const Basket: FC<BasketPropsInterface> = ({
     return (
         <Dialog
             dialogRef={dialogRef}
-            closeModal={closeModal}
-            onClickOutside={onClickOutside}
+            onClose={closeModal}
+            onClick={onClickOutside}
             className='sidebar'
         >
             <>

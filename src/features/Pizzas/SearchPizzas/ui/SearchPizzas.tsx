@@ -62,8 +62,8 @@ export const SearchPizzas: FC = () => {
             onInputChange={handleChange}
             placeholder='Поиск пиццы...'
             iconOne={iconOne}
-            fetchPizzaOnEnter={fetchPizzaOnEnter}
-            pizzaOptions={pizzaOptions}
+            onKeyDown={fetchPizzaOnEnter}
+            options={pizzaOptions}
         />
     )
 }

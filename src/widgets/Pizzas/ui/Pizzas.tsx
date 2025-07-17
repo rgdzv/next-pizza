@@ -1,18 +1,22 @@
 import { useEffect } from 'react'
 import { PizzaCard } from 'entities/PizzaCard'
 import { priceFormat } from 'shared/lib'
-import { Skeleton } from 'shared/ui'
+import { CustomButton, Skeleton } from 'shared/ui'
 import { usePizzasStore } from '../model/store/pizzas-store-provider'
 import { getPizzas } from '../model/selectors/getPizzas/getPizzas'
 import { getError } from '../model/selectors/getError/getError'
 import { getFetchPizzas } from '../model/selectors/getFetchPizzas/getFetchPizzas'
+import { getIsLoading } from '../model/selectors/getIsLoading/getIsLoading'
+import { getFetchPizzasNextPage } from '../model/selectors/getFetchPizzasNextPage/getFetchPizzasNextPage'
 import styles from './Pizzas.module.scss'
 import type { FC } from 'react'
 
 export const Pizzas: FC = () => {
     const data = usePizzasStore(getPizzas)
+    const isLoading = usePizzasStore(getIsLoading)
     const error = usePizzasStore(getError)
     const fetchPizzas = usePizzasStore(getFetchPizzas)
+    const fetchPizzasNextPage = usePizzasStore(getFetchPizzasNextPage)
 
     const pizzas = data?.map((pizza) => {
         const pizzaCardPrice = priceFormat(Number(pizza.price[0]))
@@ -35,6 +39,8 @@ export const Pizzas: FC = () => {
     const pizzasCondition =
         pizzas && pizzas.length > 0 ? pizzas : pizzasSkeletons
 
+    const buttonNameCondition = isLoading ? 'Загрузка...' : 'Показать больше'
+
     useEffect(() => {
         void fetchPizzas()
     }, [fetchPizzas])
@@ -43,9 +49,22 @@ export const Pizzas: FC = () => {
         return <main className={styles.error}>{error}</main>
     }
 
-    if (!pizzas) {
+    if (!isLoading && !pizzas) {
         return <main className={styles.error}>Пиццы не найдены!</main>
     }
 
-    return <main className={styles.pizzas}>{pizzasCondition}</main>
+    return (
+        <main className={styles.pizzas}>
+            <div className={styles.pizzasContent}>{pizzasCondition}</div>
+            <div className={styles.pizzasFetchButton}>
+                <CustomButton
+                    className='primary'
+                    onClick={fetchPizzasNextPage}
+                    disabled={isLoading}
+                >
+                    {buttonNameCondition}
+                </CustomButton>
+            </div>
+        </main>
+    )
 }
