@@ -6,6 +6,8 @@ export interface PizzasState {
     error: string | undefined
     page: number
     limit: number
+    hasMore: boolean
+    totalCount: number
 }
 
 export interface PizzasActions {

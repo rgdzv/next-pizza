@@ -8,6 +8,7 @@ import { getError } from '../model/selectors/getError/getError'
 import { getFetchPizzas } from '../model/selectors/getFetchPizzas/getFetchPizzas'
 import { getIsLoading } from '../model/selectors/getIsLoading/getIsLoading'
 import { getFetchPizzasNextPage } from '../model/selectors/getFetchPizzasNextPage/getFetchPizzasNextPage'
+import { getHasMore } from '../model/selectors/getHasMore/getHasMore'
 import styles from './Pizzas.module.scss'
 import type { FC } from 'react'
 
@@ -15,6 +16,7 @@ export const Pizzas: FC = () => {
     const data = usePizzasStore(getPizzas)
     const isLoading = usePizzasStore(getIsLoading)
     const error = usePizzasStore(getError)
+    const hasMore = usePizzasStore(getHasMore)
     const fetchPizzas = usePizzasStore(getFetchPizzas)
     const fetchPizzasNextPage = usePizzasStore(getFetchPizzasNextPage)
 
@@ -41,6 +43,18 @@ export const Pizzas: FC = () => {
 
     const buttonNameCondition = isLoading ? 'Загрузка...' : 'Показать больше'
 
+    const pizzasFetchButtonCondition = hasMore && (
+        <div className={styles.pizzasFetchButton}>
+            <CustomButton
+                className='primary'
+                onClick={fetchPizzasNextPage}
+                disabled={isLoading}
+            >
+                {buttonNameCondition}
+            </CustomButton>
+        </div>
+    )
+
     useEffect(() => {
         void fetchPizzas()
     }, [fetchPizzas])
@@ -54,17 +68,12 @@ export const Pizzas: FC = () => {
     }
 
     return (
-        <main className={styles.pizzas}>
+        <main
+            className={styles.pizzas}
+            style={{ rowGap: hasMore ? '45px' : '0' }}
+        >
             <div className={styles.pizzasContent}>{pizzasCondition}</div>
-            <div className={styles.pizzasFetchButton}>
-                <CustomButton
-                    className='primary'
-                    onClick={fetchPizzasNextPage}
-                    disabled={isLoading}
-                >
-                    {buttonNameCondition}
-                </CustomButton>
-            </div>
+            {pizzasFetchButtonCondition}
         </main>
     )
 }

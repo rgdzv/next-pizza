@@ -9,7 +9,9 @@ export const defaultInitState: PizzasState = {
     isLoading: true,
     error: undefined,
     page: 1,
-    limit: 8
+    limit: 8,
+    hasMore: true,
+    totalCount: 16
 }
 
 export const createPizzasStore = (
@@ -33,7 +35,11 @@ export const createPizzasStore = (
                         }
                     )
 
-                    set({ pizzas: data, isLoading: false, error: undefined })
+                    set({
+                        pizzas: data,
+                        isLoading: false,
+                        error: undefined
+                    })
                 } catch (error) {
                     if (axios.isAxiosError(error)) {
                         set({
@@ -59,6 +65,8 @@ export const createPizzasStore = (
                     const page = get().page + 1
                     const limit = get().limit
                     const pizzas = get().pizzas as Pizza[]
+                    const totalCount = get().totalCount
+                    const hasMoreCondition = pizzas.length < totalCount
 
                     const { data } = await axios.get<Pizza[]>(
                         'https://686534cd5b5d8d0339803269.mockapi.io/pizzas',
@@ -73,7 +81,8 @@ export const createPizzasStore = (
                     set({
                         pizzas: [...pizzas, ...data],
                         isLoading: false,
-                        error: undefined
+                        error: undefined,
+                        hasMore: hasMoreCondition
                     })
                 } catch (error) {
                     if (axios.isAxiosError(error)) {

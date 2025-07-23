@@ -8,13 +8,6 @@ import { productTax } from '../../lib/helpers/productTax'
 import { productDeclension } from '../../lib/helpers/productDeclension'
 import type { FC, MouseEvent, RefObject } from 'react'
 
-interface BasketPropsInterface {
-    dialogRef: RefObject<HTMLDialogElement | null>
-    onClickCloseButton: () => void
-    closeModal: () => void
-    onClickOutside: (e: MouseEvent<HTMLDialogElement>) => void
-}
-
 const BASKET_PIZZAS = [
     {
         id: '1',
@@ -38,6 +31,12 @@ const BASKET_PIZZAS = [
         price: '500'
     }
 ]
+interface BasketPropsInterface {
+    dialogRef: RefObject<HTMLDialogElement | null>
+    onClickCloseButton: () => void
+    closeModal: () => void
+    onClickOutside: (e: MouseEvent<HTMLDialogElement>) => void
+}
 
 export const Basket: FC<BasketPropsInterface> = ({
     dialogRef,
