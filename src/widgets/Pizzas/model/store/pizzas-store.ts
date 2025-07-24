@@ -35,11 +35,18 @@ export const createPizzasStore = (
                         }
                     )
 
-                    set({
-                        pizzas: data,
+                    set((state) => ({
+                        pizzas: state.pizzas
+                            ? [...state.pizzas, ...data]
+                            : data,
                         isLoading: false,
                         error: undefined
-                    })
+                    }))
+                    set((state) => ({
+                        hasMore: state.pizzas
+                            ? state.pizzas.length < state.totalCount
+                            : true
+                    }))
                 } catch (error) {
                     if (axios.isAxiosError(error)) {
                         set({
@@ -57,48 +64,14 @@ export const createPizzasStore = (
                 }
             },
             fetchPizzasNextPage: async () => {
-                try {
-                    set({
-                        isLoading: true
-                    })
+                const page = get().page + 1
+                const fetchPizzas = get().fetchPizzas
 
-                    const page = get().page + 1
-                    const limit = get().limit
-                    const pizzas = get().pizzas as Pizza[]
-                    const totalCount = get().totalCount
-                    const hasMoreCondition = pizzas.length < totalCount
-
-                    const { data } = await axios.get<Pizza[]>(
-                        'https://686534cd5b5d8d0339803269.mockapi.io/pizzas',
-                        {
-                            params: {
-                                page: page,
-                                limit: limit
-                            }
-                        }
-                    )
-
-                    set({
-                        pizzas: [...pizzas, ...data],
-                        isLoading: false,
-                        error: undefined,
-                        hasMore: hasMoreCondition
-                    })
-                } catch (error) {
-                    if (axios.isAxiosError(error)) {
-                        set({
-                            pizzas: undefined,
-                            isLoading: false,
-                            error: error.message
-                        })
-                    } else {
-                        set({
-                            pizzas: undefined,
-                            isLoading: false,
-                            error: 'An unexpected error occurred!'
-                        })
-                    }
-                }
+                set({
+                    isLoading: true,
+                    page: page
+                })
+                await fetchPizzas()
             }
         }))
     )
