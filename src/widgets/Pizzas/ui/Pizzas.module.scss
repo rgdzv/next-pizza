@@ -4,6 +4,10 @@
     grid-template: repeat(2, auto) / 1fr;
     row-gap: 45px;
 
+    &.noPizzasLeft {
+        row-gap: 0;
+    }
+
     .pizzasContent {
         display: grid;
         grid-template: 1fr / repeat(4, auto);

@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import classNames from 'classnames'
 import { PizzaCard } from 'entities/PizzaCard'
 import { priceFormat } from 'shared/lib'
 import { CustomButton, Skeleton } from 'shared/ui'
@@ -55,6 +56,10 @@ export const Pizzas: FC = () => {
         </div>
     )
 
+    const pizzasClassName = classNames(styles.pizzas, {
+        [styles.noPizzasLeft]: !hasMore
+    })
+
     useEffect(() => {
         void fetchPizzas()
     }, [fetchPizzas])
@@ -68,10 +73,7 @@ export const Pizzas: FC = () => {
     }
 
     return (
-        <main
-            className={styles.pizzas}
-            style={{ rowGap: hasMore ? '45px' : '0' }}
-        >
+        <main className={pizzasClassName}>
             <div className={styles.pizzasContent}>{pizzasCondition}</div>
             {pizzasFetchButtonCondition}
         </main>
