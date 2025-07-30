@@ -1,4 +1,4 @@
-import type { PizzasStore } from '../../types/store'
+import type { PizzasStore } from '../../../types/store'
 
 export const getIsLoading = (state: PizzasStore) => {
     return state.isLoading

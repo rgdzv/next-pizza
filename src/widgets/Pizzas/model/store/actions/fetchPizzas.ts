@@ -1,17 +1,13 @@
 import axios from 'axios'
-import type { PizzasStore } from '../types/store'
+import type { PizzasActions, PizzasStore } from '../../types/store'
 import type { StateCreator } from 'zustand'
 import type { Pizza } from 'entities/PizzaCard/lib/types/pizza'
-
-interface FetchPizzasAction {
-    fetchPizzas: () => Promise<void>
-}
 
 export const createFetchPizzas: StateCreator<
     PizzasStore,
     [],
     [],
-    FetchPizzasAction
+    Pick<PizzasActions, 'fetchPizzas'>
 > = (set, get) => ({
     fetchPizzas: async () => {
         try {

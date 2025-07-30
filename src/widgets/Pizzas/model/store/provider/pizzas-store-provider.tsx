@@ -2,8 +2,8 @@
 
 import { type ReactNode, createContext, useRef, useContext } from 'react'
 import { useStore } from 'zustand'
-import { createPizzasStore } from './pizzas-store'
-import type { PizzasStore } from '../types/store'
+import { createPizzasStore } from '../pizzas-store'
+import type { PizzasStore } from '../../types/store'
 
 export type PizzasStoreApi = ReturnType<typeof createPizzasStore>
 

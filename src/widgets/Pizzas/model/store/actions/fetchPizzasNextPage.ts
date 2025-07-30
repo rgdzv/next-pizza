@@ -1,15 +1,11 @@
-import type { PizzasStore } from '../types/store'
+import type { PizzasActions, PizzasStore } from '../../types/store'
 import type { StateCreator } from 'zustand'
-
-interface FetchPizzasNextPageAction {
-    fetchPizzasNextPage: () => Promise<void>
-}
 
 export const createFetchPizzasNextPage: StateCreator<
     PizzasStore,
     [],
     [],
-    FetchPizzasNextPageAction
+    Pick<PizzasActions, 'fetchPizzasNextPage'>
 > = (set, get) => ({
     fetchPizzasNextPage: async () => {
         const page = get().page + 1
