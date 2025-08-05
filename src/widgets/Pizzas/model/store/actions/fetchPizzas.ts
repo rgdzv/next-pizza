@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { isAxiosError } from 'axios'
 import type { PizzasActions, PizzasStore } from '../../types/store'
 import type { StateCreator } from 'zustand'
 import type { Pizza } from 'entities/PizzaCard/lib/types/pizza'
@@ -11,8 +11,7 @@ export const createFetchPizzas: StateCreator<
 > = (set, get) => ({
     fetchPizzas: async () => {
         try {
-            const page = get().page
-            const limit = get().limit
+            const { page, limit, totalCount, pizzas } = get()
 
             const { data } = await axios.get<Pizza[]>(
                 'https://686534cd5b5d8d0339803269.mockapi.io/pizzas',
@@ -24,30 +23,27 @@ export const createFetchPizzas: StateCreator<
                 }
             )
 
-            set((state) => ({
-                pizzas: state.pizzas ? [...state.pizzas, ...data] : data,
-                isLoading: false,
-                error: undefined
-            }))
+            set(() => {
+                const newPizzas = pizzas ? [...pizzas, ...data] : data
 
-            set((state) => ({
-                hasMore: state.pizzas
-                    ? state.pizzas.length < state.totalCount
-                    : true
-            }))
-        } catch (error) {
-            if (axios.isAxiosError(error)) {
-                set({
-                    pizzas: undefined,
+                return {
+                    pizzas: newPizzas,
                     isLoading: false,
-                    error: error.message
-                })
+                    error: undefined,
+                    hasMore: newPizzas.length < totalCount
+                }
+            })
+        } catch (error) {
+            let errorMessage = 'An unexpected error occurred!'
+
+            if (isAxiosError(error)) {
+                errorMessage = error.message
             }
 
             set({
                 pizzas: undefined,
                 isLoading: false,
-                error: 'An unexpected error occurred!'
+                error: errorMessage
             })
         }
     }

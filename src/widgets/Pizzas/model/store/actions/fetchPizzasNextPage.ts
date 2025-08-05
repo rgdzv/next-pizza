@@ -8,12 +8,11 @@ export const createFetchPizzasNextPage: StateCreator<
     Pick<PizzasActions, 'fetchPizzasNextPage'>
 > = (set, get) => ({
     fetchPizzasNextPage: async () => {
-        const page = get().page + 1
-        const fetchPizzas = get().fetchPizzas
+        const { page, fetchPizzas } = get()
 
         set({
             isLoading: true,
-            page: page
+            page: page + 1
         })
 
         await fetchPizzas()

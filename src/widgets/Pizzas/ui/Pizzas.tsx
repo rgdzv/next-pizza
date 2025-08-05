@@ -42,8 +42,6 @@ export const Pizzas: FC = () => {
     const pizzasCondition =
         pizzas && pizzas.length > 0 ? pizzas : pizzasSkeletons
 
-    const buttonNameCondition = isLoading ? 'Загрузка...' : 'Показать больше'
-
     const pizzasFetchButtonCondition = hasMore && (
         <div className={styles.pizzasFetchButton}>
             <CustomButton
@@ -51,7 +49,7 @@ export const Pizzas: FC = () => {
                 onClick={fetchPizzasNextPage}
                 disabled={isLoading}
             >
-                {buttonNameCondition}
+                {isLoading ? 'Загрузка...' : 'Показать больше'}
             </CustomButton>
         </div>
     )
