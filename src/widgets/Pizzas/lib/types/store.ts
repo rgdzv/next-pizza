@@ -1,4 +1,4 @@
-import type { Pizza } from 'entities/PizzaCard/lib/types/pizza'
+import type { Pizza } from 'entities/PizzaCard'
 
 export interface PizzasState {
     pizzas: Pizza[] | undefined

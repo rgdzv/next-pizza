@@ -1,4 +1,4 @@
-import type { PizzasStore } from '../../../types/store'
+import type { PizzasStore } from '../../../../lib/types/store'
 
 export const getFetchPizzas = (state: PizzasStore) => {
     return state.fetchPizzas

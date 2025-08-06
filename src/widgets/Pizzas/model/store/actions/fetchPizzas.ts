@@ -1,7 +1,7 @@
 import axios, { isAxiosError } from 'axios'
-import type { PizzasActions, PizzasStore } from '../../types/store'
+import type { Pizza } from 'entities/PizzaCard'
+import type { PizzasActions, PizzasStore } from '../../../lib/types/store'
 import type { StateCreator } from 'zustand'
-import type { Pizza } from 'entities/PizzaCard/lib/types/pizza'
 
 export const createFetchPizzas: StateCreator<
     PizzasStore,

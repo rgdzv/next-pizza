@@ -1,4 +1,4 @@
-import { PizzasStoreProvider } from 'widgets/Pizzas/model/store/provider/pizzas-store-provider'
+import { PizzasStoreProvider } from 'widgets/Pizzas'
 import '../styles/global.scss'
 import type { FC, ReactNode } from 'react'
 

@@ -1,4 +1,4 @@
-import type { PizzasActions, PizzasStore } from '../../types/store'
+import type { PizzasActions, PizzasStore } from '../../../lib/types/store'
 import type { StateCreator } from 'zustand'
 
 export const createFetchPizzasNextPage: StateCreator<

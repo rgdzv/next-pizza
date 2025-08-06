@@ -2,7 +2,7 @@ import { createStore } from 'zustand/vanilla'
 import { devtools } from 'zustand/middleware'
 import { createFetchPizzas } from './actions/fetchPizzas'
 import { createFetchPizzasNextPage } from './actions/fetchPizzasNextPage'
-import type { PizzasState, PizzasStore } from '../types/store'
+import type { PizzasState, PizzasStore } from '../../lib/types/store'
 
 export const defaultInitState: PizzasState = {
     pizzas: undefined,
