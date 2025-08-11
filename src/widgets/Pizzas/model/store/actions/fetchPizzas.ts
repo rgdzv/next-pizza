@@ -1,4 +1,5 @@
-import axios, { isAxiosError } from 'axios'
+import { isAxiosError } from 'axios'
+import { axiosAPI } from 'shared/api'
 import type { Pizza } from 'entities/PizzaCard'
 import type { PizzasActions, PizzasStore } from '../../../lib/types/store'
 import type { StateCreator } from 'zustand'
@@ -13,15 +14,12 @@ export const createFetchPizzas: StateCreator<
         try {
             const { page, limit, totalCount, pizzas } = get()
 
-            const { data } = await axios.get<Pizza[]>(
-                'https://686534cd5b5d8d0339803269.mockapi.io/pizzas',
-                {
-                    params: {
-                        page: page,
-                        limit: limit
-                    }
+            const { data } = await axiosAPI.get<Pizza[]>('/pizzas', {
+                params: {
+                    page: page,
+                    limit: limit
                 }
-            )
+            })
 
             set(() => {
                 const newPizzas = pizzas ? [...pizzas, ...data] : data
