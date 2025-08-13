@@ -1,19 +1,20 @@
-import { useState } from 'react'
 import { CustomButton } from 'shared/ui'
 import { CATEGORIESLIST } from '../lib/const/categoriesList'
 import styles from './SwitchCategoryPizzas.module.scss'
 import type { FC } from 'react'
 
-export const SwitchCategoryPizzas: FC = () => {
-    const [categoryID, setCategoryID] = useState(0)
+interface SwitchCategoryPizzasPropsInterface {
+    categoryID: number
+    setCategoryID: (ind: number) => void
+}
 
-    const handleChangeCategory = (ind: number) => {
-        setCategoryID(ind)
-    }
-
+export const SwitchCategoryPizzas: FC<SwitchCategoryPizzasPropsInterface> = ({
+    categoryID,
+    setCategoryID
+}) => {
     const categories = CATEGORIESLIST.map((category, ind) => {
         const onClick = () => {
-            handleChangeCategory(ind)
+            setCategoryID(ind)
         }
 
         const categoryActive = categoryID === ind

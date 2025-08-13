@@ -1,14 +1,23 @@
 import { SwitchCategoryPizzas } from 'features/Pizzas/SwitchCategoryPizzas'
 import { SortPizzas } from 'features/Pizzas/SortPizzas'
+import { useFiltersStore } from '../model/provider/filters-store-provider'
+import { getCategoryID } from '../model/selectors/getCategoryID/getCategoryID'
+import { getSetCategoryID } from '../model/selectors/getSetCategoryID/getSetCategoryID'
 import styles from './Filters.module.scss'
 import type { FC } from 'react'
 
 export const Filters: FC = () => {
+    const categoryID = useFiltersStore(getCategoryID)
+    const setCategoryID = useFiltersStore(getSetCategoryID)
+
     return (
         <div className={styles.filters}>
             <h1 className={styles.filtersTitle}>Все пиццы</h1>
             <div className={styles.filtersContent}>
-                <SwitchCategoryPizzas />
+                <SwitchCategoryPizzas
+                    categoryID={categoryID}
+                    setCategoryID={setCategoryID}
+                />
                 <SortPizzas />
             </div>
         </div>

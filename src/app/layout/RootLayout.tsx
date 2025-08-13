@@ -1,5 +1,6 @@
 import { PizzasStoreProvider } from 'widgets/Pizzas'
 import '../styles/global.scss'
+import { FiltersStoreProvider } from 'widgets/Filters'
 import type { FC, ReactNode } from 'react'
 
 interface RootLayoutProps {
@@ -10,7 +11,9 @@ export const RootLayout: FC<RootLayoutProps> = ({ children }) => {
     return (
         <html lang='ru'>
             <body>
-                <PizzasStoreProvider>{children}</PizzasStoreProvider>
+                <FiltersStoreProvider>
+                    <PizzasStoreProvider>{children}</PizzasStoreProvider>
+                </FiltersStoreProvider>
             </body>
         </html>
     )

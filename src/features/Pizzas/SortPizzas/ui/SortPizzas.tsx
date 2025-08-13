@@ -1,3 +1,4 @@
+'use client'
 import { useState } from 'react'
 import { PopoverElement, CustomButton } from 'shared/ui'
 import { ArrowDownIcon, ArrowsUpDownIcon, ArrowUpIcon } from 'shared/assets'

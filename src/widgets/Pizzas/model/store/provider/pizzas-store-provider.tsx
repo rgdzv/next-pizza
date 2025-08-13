@@ -1,5 +1,4 @@
 'use client'
-
 import { type ReactNode, createContext, useRef, useContext } from 'react'
 import { useStore } from 'zustand'
 import { createPizzasStore } from '../pizzas-store'
@@ -23,9 +22,9 @@ export const PizzasStoreProvider = ({ children }: PizzasStoreProviderProps) => {
     }
 
     return (
-        <PizzasStoreContext.Provider value={storeRef.current}>
+        <PizzasStoreContext value={storeRef.current}>
             {children}
-        </PizzasStoreContext.Provider>
+        </PizzasStoreContext>
     )
 }
 
