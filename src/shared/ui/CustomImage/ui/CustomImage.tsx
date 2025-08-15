@@ -1,10 +1,11 @@
 import Image from 'next/image'
 import styles from './CustomImage.module.scss'
+import type { StaticImageData } from 'next/image'
 import type { CustomImageClassNameType } from '../lib/types/classNames'
 import type { FC } from 'react'
 
 interface CustomImagePropsInterface {
-    src: string
+    src: string | StaticImageData
     alt: string
     className: CustomImageClassNameType
 }

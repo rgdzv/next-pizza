@@ -1,9 +1,10 @@
 import { CustomImage } from 'shared/ui'
 import styles from './Logo.module.scss'
+import type { StaticImageData } from 'next/image'
 import type { FC } from 'react'
 
 interface LogoPropsInterface {
-    imgSrc: string
+    imgSrc: string | StaticImageData
     name: string
     slogan: string
 }
