@@ -12,6 +12,7 @@ import { getError } from '../model/store/selectors/getError/getError'
 import { getHasMore } from '../model/store/selectors/getHasMore/getHasMore'
 import { getFetchPizzas } from '../model/store/selectors/getFetchPizzas/getFetchPizzas'
 import { getFetchPizzasNextPage } from '../model/store/selectors/getFetchPizzasNextPage/getFetchPizzasNextPage'
+import { getInited } from '../model/store/selectors/getInited/getInited'
 import styles from './Pizzas.module.scss'
 import type { FC } from 'react'
 
@@ -20,6 +21,7 @@ export const Pizzas: FC = () => {
     const isLoading = usePizzasStore(getIsLoading)
     const error = usePizzasStore(getError)
     const hasMore = usePizzasStore(getHasMore)
+    const inited = usePizzasStore(getInited)
     const fetchPizzas = usePizzasStore(getFetchPizzas)
     const fetchPizzasNextPage = usePizzasStore(getFetchPizzasNextPage)
 
@@ -61,8 +63,10 @@ export const Pizzas: FC = () => {
     })
 
     useEffect(() => {
-        void fetchPizzas()
-    }, [fetchPizzas])
+        if (!inited) {
+            void fetchPizzas()
+        }
+    }, [fetchPizzas, inited])
 
     if (error) {
         return <main className={styles.error}>{error}</main>

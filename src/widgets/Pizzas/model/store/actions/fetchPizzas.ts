@@ -28,7 +28,8 @@ export const createFetchPizzas: StateCreator<
                     pizzas: newPizzas,
                     isLoading: false,
                     error: undefined,
-                    hasMore: newPizzas.length < totalCount
+                    hasMore: newPizzas.length < totalCount,
+                    inited: true
                 }
             })
         } catch (error) {

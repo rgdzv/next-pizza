@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import Link from 'next/link'
 import styles from './CustomLink.module.scss'
 import type { LinkClassNameType } from '../lib/types/classNames'
-import type { FC, ReactNode } from 'react'
+import type { FC, ReactNode, KeyboardEvent } from 'react'
 
 interface CustomLinkPropsInterface {
     children: ReactNode
@@ -10,6 +10,7 @@ interface CustomLinkPropsInterface {
     href: string
     disabled?: boolean
     onClick?: () => void
+    onKeyDown?: (e: KeyboardEvent<HTMLAnchorElement>) => void
 }
 
 export const CustomLink: FC<CustomLinkPropsInterface> = ({
@@ -17,7 +18,8 @@ export const CustomLink: FC<CustomLinkPropsInterface> = ({
     className,
     href,
     disabled,
-    onClick
+    onClick,
+    onKeyDown
 }) => {
     const linkClassName = classNames(
         styles.link,
@@ -28,7 +30,12 @@ export const CustomLink: FC<CustomLinkPropsInterface> = ({
     )
 
     return (
-        <Link href={href} className={linkClassName} onClick={onClick}>
+        <Link
+            href={href}
+            className={linkClassName}
+            onClick={onClick}
+            onKeyDown={onKeyDown}
+        >
             {children}
         </Link>
     )
