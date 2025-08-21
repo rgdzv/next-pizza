@@ -1,6 +1,6 @@
 import { PizzasStoreProvider } from 'widgets/Pizzas'
-import '../styles/global.scss'
 import { FiltersStoreProvider } from 'widgets/Filters'
+import '../styles/global.scss'
 import type { FC, ReactNode } from 'react'
 
 interface RootLayoutProps {

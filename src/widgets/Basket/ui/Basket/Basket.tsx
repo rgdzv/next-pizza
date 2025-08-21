@@ -70,6 +70,7 @@ export const Basket: FC<BasketPropsInterface> = ({
     ) : (
         <BasketEmpty />
     )
+    console.log(showBasketPizzasCondition)
 
     return (
         <Dialog
@@ -79,7 +80,7 @@ export const Basket: FC<BasketPropsInterface> = ({
             className='sidebar'
         >
             <>
-                {showBasketPizzasCondition}
+                {/* {showBasketPizzasCondition} */}
                 <CustomButton className='close' onClick={onClickCloseButton}>
                     <CrossIcon title='Закрыть' />
                 </CustomButton>

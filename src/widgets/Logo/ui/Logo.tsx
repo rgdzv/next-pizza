@@ -12,7 +12,12 @@ interface LogoPropsInterface {
 export const Logo: FC<LogoPropsInterface> = ({ imgSrc, name, slogan }) => {
     return (
         <div className={styles.logo}>
-            <CustomImage src={imgSrc} className='logo' alt='Логотип' />
+            <CustomImage
+                src={imgSrc}
+                className='logo'
+                alt='Логотип'
+                sizes='35px 35px'
+            />
             <div className={styles.logoBlock}>
                 <span className={styles.logoBlockName}>{name}</span>
                 <span className={styles.logoBlockSlogan}>{slogan}</span>

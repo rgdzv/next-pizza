@@ -1,13 +1,15 @@
 'use client'
+// import { useRouter } from 'next/navigation'
 import { ArrowLeftIcon } from 'shared/assets'
 import { CustomButton, CustomImage, CustomLink } from 'shared/ui'
 import styles from './NoContent.module.scss'
+import type { StaticImageData } from 'next/image'
 import type { FC } from 'react'
 
 interface NoContentPropsInterface {
     name: string
     message: string
-    imgSrc: string
+    imgSrc: string | StaticImageData
 }
 
 export const NoContent: FC<NoContentPropsInterface> = ({

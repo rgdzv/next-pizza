@@ -1,3 +1,4 @@
+'use client'
 import { NoContent } from 'widgets/NoContent'
 import { NoImageIcon } from 'shared/assets'
 import type { FC } from 'react'

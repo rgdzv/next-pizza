@@ -18,6 +18,7 @@ export const PizzaCard: FC<PizzaCardPropsInterface> = ({
                 src={pizza.imgSrc}
                 alt={pizza.title}
                 className='pizzaCard'
+                sizes='209px 209px'
             />
             <p className={styles.pizzaCardName}>{pizza.title}</p>
             <p className={styles.pizzaCardStructure}>{pizza.description}</p>

@@ -8,18 +8,20 @@ interface CustomImagePropsInterface {
     src: string | StaticImageData
     alt: string
     className: CustomImageClassNameType
+    sizes?: string
 }
 
 export const CustomImage: FC<CustomImagePropsInterface> = ({
     src,
     alt,
-    className
+    className,
+    sizes
 }) => {
     const wrapperClassName = styles[className]
 
     return (
         <div className={wrapperClassName}>
-            <Image src={src} alt={alt} fill={true} />
+            <Image src={src} alt={alt} fill={true} sizes={sizes} />
         </div>
     )
 }
