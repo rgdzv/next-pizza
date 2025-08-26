@@ -1,5 +1,4 @@
 'use client'
-// import { useRouter } from 'next/navigation'
 import { ArrowLeftIcon } from 'shared/assets'
 import { CustomButton, CustomImage, CustomLink } from 'shared/ui'
 import styles from './NoContent.module.scss'
@@ -43,6 +42,7 @@ export const NoContent: FC<NoContentPropsInterface> = ({
                     className='notFound'
                     src={imgSrc}
                     alt='Не найдено'
+                    sizes='340px 340px'
                 />
             </div>
         </div>

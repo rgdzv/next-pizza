@@ -1,5 +1,4 @@
 'use client'
-
 import { useEffect } from 'react'
 import classNames from 'classnames'
 import { PizzaCard } from 'entities/PizzaCard'
