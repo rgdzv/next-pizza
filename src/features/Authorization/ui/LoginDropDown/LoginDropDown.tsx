@@ -8,10 +8,6 @@ import type { FC } from 'react'
 export const LoginDropDown: FC = () => {
     const [authorized] = useState(true)
 
-    const handleLogOut = () => {
-        console.log('Вы вышли из системы!')
-    }
-
     const triggerContent = (
         <>
             <ProfileIcon title='Профиль' />
@@ -22,16 +18,26 @@ export const LoginDropDown: FC = () => {
     const dropdownOptions = OPTIONS.map((option) => {
         return (
             <MenuItem key={option.id} as='li'>
-                <CustomLink
-                    href={option.href}
-                    onClick={() => {
+                {({ close }) => {
+                    const handleLogOut = () => {
                         if (option.id === 'out') {
-                            handleLogOut()
+                            console.log('Вы вышли из системы!')
                         }
-                    }}
-                >
-                    {option.content}
-                </CustomLink>
+                        close()
+                    }
+                    const onKeyDown = () => {
+                        console.log('Вы нажали клавишу!')
+                    }
+                    return (
+                        <CustomLink
+                            href={option.href}
+                            onClick={handleLogOut}
+                            onKeyDown={onKeyDown}
+                        >
+                            {option.content}
+                        </CustomLink>
+                    )
+                }}
             </MenuItem>
         )
     })
