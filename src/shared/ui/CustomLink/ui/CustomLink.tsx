@@ -10,7 +10,6 @@ interface CustomLinkPropsInterface {
     href: string
     disabled?: boolean
     onClick?: () => void
-    onKeyDown?: () => void
 }
 
 export const CustomLink: FC<CustomLinkPropsInterface> = ({
@@ -18,8 +17,7 @@ export const CustomLink: FC<CustomLinkPropsInterface> = ({
     className,
     href,
     disabled,
-    onClick,
-    onKeyDown
+    onClick
 }) => {
     const linkClassName = classNames(
         styles.link,
@@ -30,12 +28,7 @@ export const CustomLink: FC<CustomLinkPropsInterface> = ({
     )
 
     return (
-        <Link
-            href={href}
-            className={linkClassName}
-            onClick={onClick}
-            onKeyDown={onKeyDown}
-        >
+        <Link href={href} className={linkClassName} onClick={onClick}>
             {children}
         </Link>
     )

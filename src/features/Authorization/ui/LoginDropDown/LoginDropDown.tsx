@@ -8,13 +8,6 @@ import type { FC } from 'react'
 export const LoginDropDown: FC = () => {
     const [authorized] = useState(true)
 
-    const triggerContent = (
-        <>
-            <ProfileIcon title='Профиль' />
-            <span>Профиль</span>
-        </>
-    )
-
     const dropdownOptions = OPTIONS.map((option) => {
         return (
             <MenuItem key={option.id} as='li'>
@@ -25,15 +18,9 @@ export const LoginDropDown: FC = () => {
                         }
                         close()
                     }
-                    const onKeyDown = () => {
-                        console.log('Вы нажали клавишу!')
-                    }
+
                     return (
-                        <CustomLink
-                            href={option.href}
-                            onClick={handleLogOut}
-                            onKeyDown={onKeyDown}
-                        >
+                        <CustomLink href={option.href} onClick={handleLogOut}>
                             {option.content}
                         </CustomLink>
                     )
@@ -42,11 +29,18 @@ export const LoginDropDown: FC = () => {
         )
     })
 
+    const triggerContent = (
+        <>
+            <ProfileIcon title='Профиль' />
+            <span>Профиль</span>
+        </>
+    )
+
     const buttonCondition = authorized ? (
         <DropDown
             component={CustomButton}
-            triggerContent={triggerContent}
             options={dropdownOptions}
+            triggerContent={triggerContent}
             buttonClassName='primary'
             className='login'
         />
