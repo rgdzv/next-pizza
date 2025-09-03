@@ -1,30 +1,25 @@
 import { useState } from 'react'
 import { MenuItem } from '@headlessui/react'
-import { CustomButton, CustomLink, DropDown } from 'shared/ui'
+import { useRouter } from 'next/navigation'
+import { CustomButton, DropDown } from 'shared/ui'
 import { ProfileIcon } from 'shared/assets'
 import { OPTIONS } from '../../lib/const/options'
 import type { FC } from 'react'
 
 export const LoginDropDown: FC = () => {
     const [authorized] = useState(true)
+    const router = useRouter()
 
     const dropdownOptions = OPTIONS.map((option) => {
+        const handleClick = () => {
+            if (option.id === 'out') {
+                console.log('Вы вышли из системы!')
+            }
+            router.push(option.href)
+        }
         return (
-            <MenuItem key={option.id} as='li'>
-                {({ close }) => {
-                    const handleLogOut = () => {
-                        if (option.id === 'out') {
-                            console.log('Вы вышли из системы!')
-                        }
-                        close()
-                    }
-
-                    return (
-                        <CustomLink href={option.href} onClick={handleLogOut}>
-                            {option.content}
-                        </CustomLink>
-                    )
-                }}
+            <MenuItem key={option.id} as='li' onClick={handleClick}>
+                {option.content}
             </MenuItem>
         )
     })

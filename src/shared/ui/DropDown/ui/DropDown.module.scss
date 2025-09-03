@@ -17,17 +17,13 @@
 
             li {
                 cursor: pointer;
+                padding: 8px 20px;
                 border-radius: inherit;
-
-                a {
-                    padding: 8px 20px;
-                }
+                
 
                 &[data-active] {
-                    a {
-                        color: var(--text-color-third);
-                        transition: color .1s linear;
-                    }
+                    color: var(--text-color-third);
+                    transition: color .1s linear;
                 }
             }
         }
