@@ -11,7 +11,7 @@ interface ComboBoxElementPropsInterface {
     inputValue: string
     onInputChange: (e: ChangeEvent<HTMLInputElement>) => void
     placeholder?: string
-    iconOne: ReactNode
+    iconOne?: ReactNode
     onKeyDown: (e: KeyboardEvent<HTMLInputElement>) => void
     options: ReactNode
 }

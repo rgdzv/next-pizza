@@ -60,6 +60,10 @@
     svg {
         fill: var(--text-color-secondary);
     }
+
+    &:disabled {
+        opacity: 1;
+    }
 }
 
 .close {

@@ -49,7 +49,7 @@ export const SearchPizzas: FC = () => {
     ))
 
     const iconOne = (
-        <CustomButton className='search'>
+        <CustomButton className='search' disabled>
             <SearchIcon title='Поиск пиццы' />
         </CustomButton>
     )

@@ -14,12 +14,16 @@
             border: 1px solid var(--text-color-primary);
             border-radius: 15px;
             background-color: var(--background-color-third);
+            
 
             li {
                 cursor: pointer;
+
+                width: 100%;
                 padding: 8px 20px;
                 border-radius: inherit;
-                
+
+                text-align: center;
 
                 &[data-active] {
                     color: var(--text-color-third);
