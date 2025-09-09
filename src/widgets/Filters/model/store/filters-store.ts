@@ -1,6 +1,6 @@
 import { createStore } from 'zustand'
 import { devtools } from 'zustand/middleware'
-import type { FiltersState, FiltersStore } from '../lib/types/store'
+import type { FiltersState, FiltersStore } from '../../lib/types/store'
 
 export const defaultInitState: FiltersState = {
     categoryID: 0

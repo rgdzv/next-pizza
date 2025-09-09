@@ -16,8 +16,8 @@ export const createFetchPizzas: StateCreator<
 
             const { data } = await axiosAPI.get<Pizza[]>('/pizzas', {
                 params: {
-                    page: page,
-                    limit: limit
+                    page,
+                    limit
                 }
             })
 

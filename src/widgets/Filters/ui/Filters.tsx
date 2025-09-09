@@ -1,8 +1,8 @@
 import { SwitchCategoryPizzas } from 'features/Pizzas/SwitchCategoryPizzas'
 import { SortPizzas } from 'features/Pizzas/SortPizzas'
-import { useFiltersStore } from '../model/provider/filters-store-provider'
-import { getCategoryID } from '../model/selectors/getCategoryID/getCategoryID'
-import { getSetCategoryID } from '../model/selectors/getSetCategoryID/getSetCategoryID'
+import { useFiltersStore } from '../model/store/provider/filters-store-provider'
+import { getCategoryID } from '../model/store/selectors/getCategoryID/getCategoryID'
+import { getSetCategoryID } from '../model/store/selectors/getSetCategoryID/getSetCategoryID'
 import styles from './Filters.module.scss'
 import type { FC } from 'react'
 
