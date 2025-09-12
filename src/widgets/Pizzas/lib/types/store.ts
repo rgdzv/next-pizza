@@ -12,7 +12,7 @@ export interface PizzasState {
 }
 
 export interface PizzasActions {
-    fetchPizzas: () => Promise<void>
+    fetchPizzas: (category: number) => Promise<void>
     fetchPizzasNextPage: () => Promise<void>
 }
 

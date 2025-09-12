@@ -1,6 +1,7 @@
 'use client'
 import { useEffect } from 'react'
 import classNames from 'classnames'
+import { useFiltersStore } from 'widgets/Filters/model/store/provider/filters-store-provider'
 import { PizzaCard } from 'entities/PizzaCard'
 import { priceFormat } from 'shared/lib'
 import { CustomButton, Skeleton } from 'shared/ui'
@@ -23,6 +24,8 @@ export const Pizzas: FC = () => {
     const inited = usePizzasStore(getInited)
     const fetchPizzas = usePizzasStore(getFetchPizzas)
     const fetchPizzasNextPage = usePizzasStore(getFetchPizzasNextPage)
+
+    const categoryID = useFiltersStore((state) => state.categoryID)
 
     const pizzas = data?.map((pizza) => {
         const pizzaCardPrice = priceFormat(Number(pizza.price[0]))
@@ -63,9 +66,9 @@ export const Pizzas: FC = () => {
 
     useEffect(() => {
         if (!inited) {
-            void fetchPizzas()
+            void fetchPizzas(categoryID)
         }
-    }, [fetchPizzas, inited])
+    }, [fetchPizzas, inited, categoryID])
 
     if (error) {
         return <main className={styles.error}>{error}</main>

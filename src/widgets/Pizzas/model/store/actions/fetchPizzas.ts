@@ -10,14 +10,15 @@ export const createFetchPizzas: StateCreator<
     [],
     Pick<PizzasActions, 'fetchPizzas'>
 > = (set, get) => ({
-    fetchPizzas: async () => {
+    fetchPizzas: async (categoryID: number) => {
         try {
             const { page, limit, totalCount, pizzas } = get()
 
             const { data } = await axiosAPI.get<Pizza[]>('/pizzas', {
                 params: {
                     page,
-                    limit
+                    limit,
+                    category: categoryID > 0 ? String(categoryID) : null
                 }
             })
 
