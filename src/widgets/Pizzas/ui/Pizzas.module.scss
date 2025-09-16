@@ -1,7 +1,7 @@
 .pizzas {
     display: grid;
     grid-area: pizzas;
-    grid-template: repeat(2, auto) / 1fr;
+    grid-template: auto min-content / 1fr;
     row-gap: 45px;
 
     &.noPizzasLeft {
@@ -10,7 +10,7 @@
 
     .pizzasContent {
         display: grid;
-        grid-template: 1fr / repeat(4, auto);
+        grid-template: 1fr / repeat(4, minmax(min-content,  310.75px));
         gap: 35px;
     }
 

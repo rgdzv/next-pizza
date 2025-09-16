@@ -52,7 +52,7 @@ export const Pizzas: FC = () => {
         <div className={styles.pizzasFetchButton}>
             <CustomButton
                 className='primary'
-                onClick={fetchPizzasNextPage}
+                onClick={() => fetchPizzasNextPage(categoryID)}
                 disabled={isLoading}
             >
                 {isLoading ? 'Загрузка...' : 'Показать больше'}
