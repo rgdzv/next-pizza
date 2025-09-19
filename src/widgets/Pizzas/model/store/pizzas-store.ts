@@ -1,7 +1,7 @@
 import { createStore } from 'zustand/vanilla'
 import { devtools } from 'zustand/middleware'
-import { createFetchPizzas } from './actions/fetchPizzas'
-import { createFetchPizzasNextPage } from './actions/fetchPizzasNextPage'
+import { fetchPizzas } from './actions/fetchPizzas'
+import { fetchPizzasNextPage } from './actions/fetchPizzasNextPage'
 import type { PizzasState, PizzasStore } from '../../lib/types/store'
 
 export const defaultInitState: PizzasState = {
@@ -21,8 +21,8 @@ export const createPizzasStore = (
     return createStore<PizzasStore>()(
         devtools((set, get, store) => ({
             ...initState,
-            ...createFetchPizzas(set, get, store),
-            ...createFetchPizzasNextPage(set, get, store)
+            ...fetchPizzas(set, get, store),
+            ...fetchPizzasNextPage(set, get, store)
         }))
     )
 }

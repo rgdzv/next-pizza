@@ -12,8 +12,8 @@ export interface PizzasState {
 }
 
 export interface PizzasActions {
-    fetchPizzas: (category: number) => Promise<void>
-    fetchPizzasNextPage: (category: number) => Promise<void>
+    fetchPizzas: (categoryID: number) => Promise<void>
+    fetchPizzasNextPage: (categoryID: number) => Promise<void>
 }
 
 export type PizzasStore = PizzasState & PizzasActions

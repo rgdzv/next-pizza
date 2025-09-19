@@ -65,9 +65,9 @@ export const Pizzas: FC = () => {
     })
 
     useEffect(() => {
-        if (!inited) {
-            void fetchPizzas(categoryID)
-        }
+        // if (!inited) {
+        void fetchPizzas(categoryID)
+        // }
     }, [fetchPizzas, inited, categoryID])
 
     if (error) {

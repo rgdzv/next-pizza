@@ -4,7 +4,7 @@ import type { Pizza } from 'entities/PizzaCard'
 import type { PizzasActions, PizzasStore } from '../../../lib/types/store'
 import type { StateCreator } from 'zustand'
 
-export const createFetchPizzas: StateCreator<
+export const fetchPizzas: StateCreator<
     PizzasStore,
     [],
     [],
@@ -26,7 +26,7 @@ export const createFetchPizzas: StateCreator<
                 const newPizzas = pizzas ? [...pizzas, ...data] : data
 
                 return {
-                    pizzas: newPizzas,
+                    pizzas: [...data],
                     isLoading: false,
                     error: undefined,
                     hasMore: newPizzas.length < totalCount,

@@ -1,16 +1,17 @@
 .pizzas {
     display: grid;
     grid-area: pizzas;
-    grid-template: auto min-content / 1fr;
+    grid-template: repeat(2, min-content) / 1fr;
     row-gap: 45px;
 
     &.noPizzasLeft {
+        grid-template: min-content / 1fr;
         row-gap: 0;
     }
 
     .pizzasContent {
         display: grid;
-        grid-template: 1fr / repeat(4, minmax(min-content,  310.75px));
+        grid-template: 1fr / repeat(4, 1fr);
         gap: 35px;
     }
 
