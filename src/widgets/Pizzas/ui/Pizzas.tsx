@@ -12,7 +12,6 @@ import { getError } from '../model/store/selectors/getError/getError'
 import { getHasMore } from '../model/store/selectors/getHasMore/getHasMore'
 import { getFetchPizzas } from '../model/store/selectors/getFetchPizzas/getFetchPizzas'
 import { getFetchPizzasNextPage } from '../model/store/selectors/getFetchPizzasNextPage/getFetchPizzasNextPage'
-import { getInited } from '../model/store/selectors/getInited/getInited'
 import styles from './Pizzas.module.scss'
 import type { FC } from 'react'
 
@@ -21,11 +20,10 @@ export const Pizzas: FC = () => {
     const isLoading = usePizzasStore(getIsLoading)
     const error = usePizzasStore(getError)
     const hasMore = usePizzasStore(getHasMore)
-    const inited = usePizzasStore(getInited)
     const fetchPizzas = usePizzasStore(getFetchPizzas)
     const fetchPizzasNextPage = usePizzasStore(getFetchPizzasNextPage)
 
-    const categoryID = useFiltersStore((state) => state.categoryID)
+    const categoryID = useFiltersStore((state) => state.categoryID) // <= change selector and import
 
     const pizzas = data?.map((pizza) => {
         const pizzaCardPrice = priceFormat(Number(pizza.price[0]))
@@ -48,11 +46,15 @@ export const Pizzas: FC = () => {
     const pizzasCondition =
         pizzas && pizzas.length > 0 ? pizzas : pizzasSkeletons
 
+    const handleNextPage = () => {
+        void fetchPizzasNextPage(categoryID)
+    }
+
     const pizzasFetchButtonCondition = hasMore && (
         <div className={styles.pizzasFetchButton}>
             <CustomButton
                 className='primary'
-                onClick={() => fetchPizzasNextPage(categoryID)}
+                onClick={handleNextPage}
                 disabled={isLoading}
             >
                 {isLoading ? 'Загрузка...' : 'Показать больше'}
@@ -65,10 +67,8 @@ export const Pizzas: FC = () => {
     })
 
     useEffect(() => {
-        // if (!inited) {
         void fetchPizzas(categoryID)
-        // }
-    }, [fetchPizzas, inited, categoryID])
+    }, [fetchPizzas, categoryID])
 
     if (error) {
         return <main className={styles.error}>{error}</main>

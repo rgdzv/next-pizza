@@ -9,6 +9,7 @@ export interface PizzasState {
     hasMore: boolean
     totalCount: number
     inited: boolean
+    lastCategoryID: number
 }
 
 export interface PizzasActions {
