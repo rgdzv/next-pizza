@@ -8,7 +8,6 @@ export interface PizzasState {
     limit: number
     hasMore: boolean
     totalCount: number
-    inited: boolean
     lastCategoryID: number
 }
 
