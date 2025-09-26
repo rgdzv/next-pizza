@@ -10,11 +10,14 @@ export const createFiltersStore = (
     initState: FiltersState = defaultInitState
 ) => {
     return createStore<FiltersStore>()(
-        devtools((set) => ({
-            ...initState,
-            setCategoryID: (id: number) => {
-                set(() => ({ categoryID: id }))
-            }
-        }))
+        devtools(
+            (set) => ({
+                ...initState,
+                setCategoryID: (id: number) => {
+                    set(() => ({ categoryID: id }))
+                }
+            }),
+            { name: 'Filters' }
+        )
     )
 }

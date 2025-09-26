@@ -19,10 +19,13 @@ export const createPizzasStore = (
     initState: PizzasState = defaultInitState
 ) => {
     return createStore<PizzasStore>()(
-        devtools((set, get, store) => ({
-            ...initState,
-            ...fetchPizzas(set, get, store),
-            ...fetchPizzasNextPage(set, get, store)
-        }))
+        devtools(
+            (set, get, store) => ({
+                ...initState,
+                ...fetchPizzas(set, get, store),
+                ...fetchPizzasNextPage(set, get, store)
+            }),
+            { name: 'Pizzas' }
+        )
     )
 }

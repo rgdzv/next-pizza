@@ -1,6 +1,5 @@
 import { isAxiosError } from 'axios'
-import { axiosAPI } from 'shared/api'
-import type { Pizza } from 'entities/PizzaCard'
+import { fetchPizzasAPI } from '../../../api/fetchPizzasAPI'
 import type { PizzasActions, PizzasStore } from '../../../lib/types/store'
 import type { StateCreator } from 'zustand'
 
@@ -11,26 +10,33 @@ export const fetchPizzas: StateCreator<
     Pick<PizzasActions, 'fetchPizzas'>
 > = (set, get) => ({
     fetchPizzas: async (categoryID: number) => {
-        const { page, limit, totalCount, pizzas, lastCategoryID } = get()
+        const {
+            limit,
+            totalCount,
+            pizzas,
+            lastCategoryID,
+            page: currentPage
+        } = get()
+        const isSameCategory = categoryID === lastCategoryID
+        const newPage = isSameCategory ? currentPage : 1
 
-        set({
-            page: categoryID === lastCategoryID ? page : 1
-        })
+        set(
+            {
+                page: newPage
+            },
+            false
+        )
 
         try {
-            const { data } = await axiosAPI.get<Pizza[]>('/pizzas', {
-                params: {
-                    page,
-                    limit,
-                    category: categoryID > 0 ? categoryID : null
-                }
+            const { data } = await fetchPizzasAPI({
+                page: newPage,
+                limit,
+                categoryID
             })
 
             set(() => {
                 const newPizzas =
-                    categoryID === lastCategoryID && pizzas
-                        ? [...pizzas, ...data]
-                        : data
+                    isSameCategory && pizzas ? [...pizzas, ...data] : data
 
                 return {
                     pizzas: newPizzas,
@@ -39,7 +45,7 @@ export const fetchPizzas: StateCreator<
                     hasMore: newPizzas.length < totalCount,
                     lastCategoryID: categoryID
                 }
-            })
+            }, false)
         } catch (error) {
             let errorMessage = 'An unexpected error occurred!'
 
@@ -47,11 +53,14 @@ export const fetchPizzas: StateCreator<
                 errorMessage = error.message
             }
 
-            set({
-                pizzas: undefined,
-                isLoading: false,
-                error: errorMessage
-            })
+            set(
+                {
+                    pizzas: undefined,
+                    isLoading: false,
+                    error: errorMessage
+                },
+                false
+            )
         }
     }
 })
