@@ -34,6 +34,17 @@ export const fetchPizzas: StateCreator<
                 categoryID
             })
 
+            // const total = headers['x-total-count']
+
+            // if (Number(total) !== totalCount) {
+            //     set(
+            //         {
+            //             totalCount: total
+            //         },
+            //         false
+            //     )
+            // }
+
             set(() => {
                 const newPizzas =
                     isSameCategory && pizzas ? [...pizzas, ...data] : data

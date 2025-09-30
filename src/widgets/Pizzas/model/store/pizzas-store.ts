@@ -11,7 +11,7 @@ export const defaultInitState: PizzasState = {
     page: 1,
     limit: 8,
     hasMore: true,
-    totalCount: 16,
+    totalCount: 0,
     lastCategoryID: 0
 }
 

@@ -1,4 +1,3 @@
-import { isAxiosError } from 'axios'
 import type { PizzasActions, PizzasStore } from '../../../lib/types/store'
 import type { StateCreator } from 'zustand'
 
@@ -19,23 +18,6 @@ export const fetchPizzasNextPage: StateCreator<
             false
         )
 
-        try {
-            await fetchPizzas(categoryID)
-        } catch (error) {
-            let errorMessage = 'An unexpected error occurred!'
-
-            if (isAxiosError(error)) {
-                errorMessage = error.message
-            }
-
-            set(
-                {
-                    pizzas: undefined,
-                    isLoading: false,
-                    error: errorMessage
-                },
-                false
-            )
-        }
+        await fetchPizzas(categoryID)
     }
 })
