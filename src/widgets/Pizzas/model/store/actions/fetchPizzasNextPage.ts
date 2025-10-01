@@ -12,7 +12,6 @@ export const fetchPizzasNextPage: StateCreator<
 
         set(
             {
-                isLoading: true,
                 page: page + 1
             },
             false

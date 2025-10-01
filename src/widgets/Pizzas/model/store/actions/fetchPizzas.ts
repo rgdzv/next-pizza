@@ -22,7 +22,8 @@ export const fetchPizzas: StateCreator<
 
         set(
             {
-                page: newPage
+                page: newPage,
+                isLoading: true
             },
             false
         )

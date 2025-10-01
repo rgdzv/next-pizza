@@ -43,9 +43,6 @@ export const Pizzas: FC = () => {
             <Skeleton key={index} className='pizzaCardSkeleton' />
         ))
 
-    const pizzasCondition =
-        pizzas && pizzas.length > 0 ? pizzas : pizzasSkeletons
-
     const handleNextPage = () => {
         void fetchPizzasNextPage(categoryID)
     }
@@ -70,17 +67,25 @@ export const Pizzas: FC = () => {
         void fetchPizzas(categoryID)
     }, [fetchPizzas, categoryID])
 
+    if (isLoading) {
+        return (
+            <main className={pizzasClassName}>
+                <div className={styles.pizzasContent}>{pizzasSkeletons}</div>
+            </main>
+        )
+    }
+
     if (error) {
         return <main className={styles.error}>{error}</main>
     }
 
-    if (!isLoading && !pizzas) {
+    if (!pizzas?.length) {
         return <main className={styles.error}>Пиццы не найдены!</main>
     }
 
     return (
         <main className={pizzasClassName}>
-            <div className={styles.pizzasContent}>{pizzasCondition}</div>
+            <div className={styles.pizzasContent}>{pizzas}</div>
             {pizzasFetchButtonCondition}
         </main>
     )
