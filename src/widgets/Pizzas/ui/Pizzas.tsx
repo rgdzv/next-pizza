@@ -71,6 +71,7 @@ export const Pizzas: FC = () => {
         return (
             <main className={pizzasClassName}>
                 <div className={styles.pizzasContent}>{pizzasSkeletons}</div>
+                {pizzasFetchButtonCondition}
             </main>
         )
     }

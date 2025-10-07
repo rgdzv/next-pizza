@@ -12,7 +12,7 @@ export const fetchPizzas: StateCreator<
     fetchPizzas: async (categoryID: number) => {
         const {
             limit,
-            totalCount,
+            // totalCount,
             pizzas,
             lastCategoryID,
             page: currentPage
@@ -54,7 +54,7 @@ export const fetchPizzas: StateCreator<
                     pizzas: newPizzas,
                     isLoading: false,
                     error: undefined,
-                    hasMore: newPizzas.length < totalCount,
+                    hasMore: data.length >= limit,
                     lastCategoryID: categoryID
                 }
             }, false)
