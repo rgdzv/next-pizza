@@ -11,9 +11,15 @@ export interface PizzasState {
     lastCategoryID: number
 }
 
+export interface FetchPizzasProps {
+    categoryID: number
+    sortProperty: 'rating' | 'title'
+    order: 'desc' | 'asc'
+}
+
 export interface PizzasActions {
-    fetchPizzas: (categoryID: number) => Promise<void>
-    fetchPizzasNextPage: (categoryID: number) => Promise<void>
+    fetchPizzas: (obj: FetchPizzasProps) => Promise<void>
+    fetchPizzasNextPage: (obj: FetchPizzasProps) => Promise<void>
 }
 
 export type PizzasStore = PizzasState & PizzasActions

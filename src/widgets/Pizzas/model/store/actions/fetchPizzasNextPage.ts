@@ -1,4 +1,8 @@
-import type { PizzasActions, PizzasStore } from '../../../lib/types/store'
+import type {
+    FetchPizzasProps,
+    PizzasActions,
+    PizzasStore
+} from '../../../lib/types/store'
 import type { StateCreator } from 'zustand'
 
 export const fetchPizzasNextPage: StateCreator<
@@ -7,7 +11,7 @@ export const fetchPizzasNextPage: StateCreator<
     [],
     Pick<PizzasActions, 'fetchPizzasNextPage'>
 > = (set, get) => ({
-    fetchPizzasNextPage: async (categoryID: number) => {
+    fetchPizzasNextPage: async (obj: FetchPizzasProps) => {
         const { page, fetchPizzas } = get()
 
         set(
@@ -17,6 +21,6 @@ export const fetchPizzasNextPage: StateCreator<
             false
         )
 
-        await fetchPizzas(categoryID)
+        await fetchPizzas(obj)
     }
 })

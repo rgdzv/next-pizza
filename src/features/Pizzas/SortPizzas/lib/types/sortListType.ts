@@ -1,4 +1,4 @@
 export interface SortListType {
     name: string
-    sortProperty: string
+    sortProperty: 'rating' | 'title'
 }

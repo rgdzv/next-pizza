@@ -1,9 +1,18 @@
 import { createStore } from 'zustand'
 import { devtools } from 'zustand/middleware'
-import type { FiltersState, FiltersStore } from '../../lib/types/store'
+import type {
+    FiltersState,
+    FiltersStore,
+    SortingObj
+} from '../../lib/types/store'
 
 export const defaultInitState: FiltersState = {
-    categoryID: 0
+    categoryID: 0,
+    sortingObj: {
+        name: 'алфавиту',
+        sortProperty: 'title',
+        order: 'asc'
+    }
 }
 
 export const createFiltersStore = (
@@ -15,6 +24,11 @@ export const createFiltersStore = (
                 ...initState,
                 setCategoryID: (id: number) => {
                     set(() => ({ categoryID: id }))
+                },
+                setSortingObj: (obj: SortingObj) => {
+                    set(() => ({
+                        sortingObj: obj
+                    }))
                 }
             }),
             { name: 'Filters' }

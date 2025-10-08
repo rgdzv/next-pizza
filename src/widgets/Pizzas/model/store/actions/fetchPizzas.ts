@@ -1,6 +1,10 @@
 import { isAxiosError } from 'axios'
 import { fetchPizzasAPI } from '../../../api/fetchPizzasAPI'
-import type { PizzasActions, PizzasStore } from '../../../lib/types/store'
+import type {
+    PizzasActions,
+    PizzasStore,
+    FetchPizzasProps
+} from '../../../lib/types/store'
 import type { StateCreator } from 'zustand'
 
 export const fetchPizzas: StateCreator<
@@ -9,7 +13,7 @@ export const fetchPizzas: StateCreator<
     [],
     Pick<PizzasActions, 'fetchPizzas'>
 > = (set, get) => ({
-    fetchPizzas: async (categoryID: number) => {
+    fetchPizzas: async (obj: FetchPizzasProps) => {
         const {
             limit,
             // totalCount,
@@ -17,6 +21,8 @@ export const fetchPizzas: StateCreator<
             lastCategoryID,
             page: currentPage
         } = get()
+        const { categoryID, sortProperty, order } = obj
+
         const isSameCategory = categoryID === lastCategoryID
         const newPage = isSameCategory ? currentPage : 1
 
@@ -32,7 +38,9 @@ export const fetchPizzas: StateCreator<
             const { data } = await fetchPizzasAPI({
                 page: newPage,
                 limit,
-                categoryID
+                categoryID,
+                sortBy: sortProperty,
+                order: order
             })
 
             // const total = headers['x-total-count']
@@ -54,7 +62,7 @@ export const fetchPizzas: StateCreator<
                     pizzas: newPizzas,
                     isLoading: false,
                     error: undefined,
-                    hasMore: data.length >= limit,
+                    hasMore: data.length === limit, // change
                     lastCategoryID: categoryID
                 }
             }, false)

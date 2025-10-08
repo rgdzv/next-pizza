@@ -1,32 +1,41 @@
 'use client'
-import { useState } from 'react'
 import { PopoverElement, CustomButton } from 'shared/ui'
 import { ArrowDownIcon, ArrowsUpDownIcon, ArrowUpIcon } from 'shared/assets'
 import { SORTLIST } from '../lib/const/sortList'
+import type { SortingObj } from 'widgets/Filters'
 import type { FC } from 'react'
 
-export const SortPizzas: FC = () => {
-    const [obj, setObj] = useState({ name: 'рейтингу', sortProperty: 'rating' })
+interface SortPizzasPropsInterface {
+    sortingObj: SortingObj
+    setSortingObj: (obj: SortingObj) => void
+}
 
+export const SortPizzas: FC<SortPizzasPropsInterface> = ({
+    sortingObj,
+    setSortingObj
+}) => {
     const triggerContent = (
         <>
             <ArrowsUpDownIcon title='Сортировка' />
             <span>Сортировка по:</span>
-            <span>{obj.name}</span>
+            <span>{sortingObj.name}</span>
         </>
     )
 
     const sortOptions = SORTLIST.map((item) => {
-        const handleClick = () => {
-            setObj({ ...item })
+        const handleSort = (order: 'asc' | 'desc') => () => {
+            setSortingObj({ ...item, order })
         }
 
         return (
             <li key={item.name}>
-                <CustomButton className='sortArrow' onClick={handleClick}>
+                <CustomButton className='sortArrow' onClick={handleSort('asc')}>
                     <ArrowUpIcon title='По возрастанию' />
                 </CustomButton>
-                <CustomButton className='sortArrow' onClick={handleClick}>
+                <CustomButton
+                    className='sortArrow'
+                    onClick={handleSort('desc')}
+                >
                     <ArrowDownIcon title='По убыванию' />
                 </CustomButton>
                 <span>{item.name}</span>

@@ -24,6 +24,7 @@ export const Pizzas: FC = () => {
     const fetchPizzasNextPage = usePizzasStore(getFetchPizzasNextPage)
 
     const categoryID = useFiltersStore((state) => state.categoryID) // <= change selector and import
+    const { order, sortProperty } = useFiltersStore((state) => state.sortingObj) // <= change selector and import
 
     const pizzas = data?.map((pizza) => {
         const pizzaCardPrice = priceFormat(Number(pizza.price[0]))
@@ -44,7 +45,7 @@ export const Pizzas: FC = () => {
         ))
 
     const handleNextPage = () => {
-        void fetchPizzasNextPage(categoryID)
+        void fetchPizzasNextPage({ categoryID, sortProperty, order })
     }
 
     const pizzasFetchButtonCondition = hasMore && (
@@ -64,8 +65,8 @@ export const Pizzas: FC = () => {
     })
 
     useEffect(() => {
-        void fetchPizzas(categoryID)
-    }, [fetchPizzas, categoryID])
+        void fetchPizzas({ categoryID, sortProperty, order })
+    }, [fetchPizzas, categoryID, sortProperty, order])
 
     if (isLoading) {
         return (
