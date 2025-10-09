@@ -9,6 +9,8 @@ export interface PizzasState {
     hasMore: boolean
     totalCount: number
     lastCategoryID: number
+    lastSortProperty: string
+    lastOrder: string
 }
 
 export interface FetchPizzasProps {

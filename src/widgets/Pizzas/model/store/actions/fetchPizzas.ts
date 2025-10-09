@@ -19,12 +19,18 @@ export const fetchPizzas: StateCreator<
             // totalCount,
             pizzas,
             lastCategoryID,
+            lastSortProperty,
+            lastOrder,
             page: currentPage
         } = get()
+
         const { categoryID, sortProperty, order } = obj
 
         const isSameCategory = categoryID === lastCategoryID
-        const newPage = isSameCategory ? currentPage : 1
+        const isSameSorting =
+            sortProperty === lastSortProperty && order === lastOrder
+
+        const newPage = isSameCategory && isSameSorting ? currentPage : 1
 
         set(
             {
@@ -56,14 +62,18 @@ export const fetchPizzas: StateCreator<
 
             set(() => {
                 const newPizzas =
-                    isSameCategory && pizzas ? [...pizzas, ...data] : data
+                    isSameCategory && isSameSorting && pizzas
+                        ? [...pizzas, ...data]
+                        : data
 
                 return {
                     pizzas: newPizzas,
                     isLoading: false,
                     error: undefined,
                     hasMore: data.length === limit, // change
-                    lastCategoryID: categoryID
+                    lastCategoryID: categoryID,
+                    lastSortProperty: sortProperty,
+                    lastOrder: order
                 }
             }, false)
         } catch (error) {

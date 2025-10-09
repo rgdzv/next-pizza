@@ -21,6 +21,7 @@ export const PizzaCard: FC<PizzaCardPropsInterface> = ({
                 sizes='209px 209px'
             />
             <p className={styles.pizzaCardName}>{pizza.title}</p>
+            <p className={styles.pizzaCardRating}>Рейтинг: {pizza.rating}</p>
             <p className={styles.pizzaCardStructure}>{pizza.description}</p>
             <div className={styles.pizzaCardFooter}>
                 <span className={styles.pizzaCardFooterPrice}>

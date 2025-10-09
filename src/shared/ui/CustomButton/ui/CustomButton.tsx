@@ -8,6 +8,7 @@ interface ButtonPropsInterface extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: ButtonClassNameType
     disabled?: boolean
     categoryActive?: boolean
+    sortOptionActive?: boolean
 }
 
 export const CustomButton: FC<ButtonPropsInterface> = ({
@@ -15,13 +16,15 @@ export const CustomButton: FC<ButtonPropsInterface> = ({
     className,
     disabled,
     categoryActive,
+    sortOptionActive,
     ...otherProps
 }) => {
     const buttonClassName = classNames(
         styles.button,
         styles[className as ButtonClassNameType],
         {
-            [styles.categoryActive]: categoryActive
+            [styles.categoryActive]: categoryActive,
+            [styles.sortOptionActive]: sortOptionActive
         }
     )
 

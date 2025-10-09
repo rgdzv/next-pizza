@@ -2,8 +2,8 @@
 import { PopoverElement, CustomButton } from 'shared/ui'
 import { ArrowDownIcon, ArrowsUpDownIcon, ArrowUpIcon } from 'shared/assets'
 import { SORTLIST } from '../lib/const/sortList'
-import type { SortingObj } from 'widgets/Filters'
 import type { FC } from 'react'
+import type { SortingObj } from 'widgets/Filters'
 
 interface SortPizzasPropsInterface {
     sortingObj: SortingObj
@@ -14,27 +14,31 @@ export const SortPizzas: FC<SortPizzasPropsInterface> = ({
     sortingObj,
     setSortingObj
 }) => {
-    const triggerContent = (
-        <>
-            <ArrowsUpDownIcon title='Сортировка' />
-            <span>Сортировка по:</span>
-            <span>{sortingObj.name}</span>
-        </>
-    )
-
     const sortOptions = SORTLIST.map((item) => {
-        const handleSort = (order: 'asc' | 'desc') => () => {
+        const handleSortOrder = (order: 'asc' | 'desc') => () => {
             setSortingObj({ ...item, order })
+        }
+
+        const isSortButtonActive = (order: 'asc' | 'desc') => {
+            return (
+                sortingObj.sortProperty === item.sortProperty &&
+                sortingObj.order === order
+            )
         }
 
         return (
             <li key={item.name}>
-                <CustomButton className='sortArrow' onClick={handleSort('asc')}>
+                <CustomButton
+                    className='sortArrow'
+                    onClick={handleSortOrder('asc')}
+                    sortOptionActive={isSortButtonActive('asc')}
+                >
                     <ArrowUpIcon title='По возрастанию' />
                 </CustomButton>
                 <CustomButton
                     className='sortArrow'
-                    onClick={handleSort('desc')}
+                    onClick={handleSortOrder('desc')}
+                    sortOptionActive={isSortButtonActive('desc')}
                 >
                     <ArrowDownIcon title='По убыванию' />
                 </CustomButton>
@@ -42,6 +46,14 @@ export const SortPizzas: FC<SortPizzasPropsInterface> = ({
             </li>
         )
     })
+
+    const triggerContent = (
+        <>
+            <ArrowsUpDownIcon title='Сортировка' />
+            <span>Сортировка по:</span>
+            <span>{sortingObj.name}</span>
+        </>
+    )
 
     return (
         <PopoverElement

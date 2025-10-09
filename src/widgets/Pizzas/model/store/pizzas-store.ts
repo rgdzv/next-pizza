@@ -12,7 +12,9 @@ export const defaultInitState: PizzasState = {
     limit: 8,
     hasMore: true,
     totalCount: 16,
-    lastCategoryID: 0
+    lastCategoryID: 0,
+    lastSortProperty: 'title',
+    lastOrder: 'asc'
 }
 
 export const createPizzasStore = (
