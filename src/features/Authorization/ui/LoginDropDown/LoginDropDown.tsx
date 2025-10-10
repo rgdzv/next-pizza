@@ -24,19 +24,17 @@ export const LoginDropDown: FC = () => {
         )
     })
 
-    const triggerContent = (
-        <>
+    const triggerButton = (
+        <CustomButton className='primary'>
             <ProfileIcon title='Профиль' />
             <span>Профиль</span>
-        </>
+        </CustomButton>
     )
 
     const buttonCondition = authorized ? (
         <DropDown
-            component={CustomButton}
+            triggerButton={triggerButton}
             options={dropdownOptions}
-            triggerContent={triggerContent}
-            buttonClassName='primary'
             className='login'
         />
     ) : (

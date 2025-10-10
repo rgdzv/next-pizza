@@ -1,22 +1,19 @@
+import { Fragment } from 'react'
 import { Menu, MenuButton, MenuItems } from '@headlessui/react'
 import classNames from 'classnames'
 import styles from './DropDown.module.scss'
 import type { DropDownClassNameType } from '../lib/types/classNames'
-import type { ElementType, FC, ReactNode } from 'react'
+import type { FC, ReactNode } from 'react'
 
 interface DropDownPropsInterface {
-    component: ElementType
-    triggerContent: ReactNode
+    triggerButton: ReactNode
     options: ReactNode
-    buttonClassName: string
     className?: DropDownClassNameType
 }
 
 export const DropDown: FC<DropDownPropsInterface> = ({
-    component,
-    triggerContent,
+    triggerButton,
     options,
-    buttonClassName,
     className
 }) => {
     const dropdownClassName = classNames(
@@ -26,9 +23,7 @@ export const DropDown: FC<DropDownPropsInterface> = ({
 
     return (
         <Menu as='div' className={dropdownClassName}>
-            <MenuButton as={component} className={buttonClassName}>
-                {triggerContent}
-            </MenuButton>
+            <MenuButton as={Fragment}>{triggerButton}</MenuButton>
             <MenuItems as='ul'>{options}</MenuItems>
         </Menu>
     )

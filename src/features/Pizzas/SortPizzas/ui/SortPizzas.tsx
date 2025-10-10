@@ -1,4 +1,6 @@
 'use client'
+import { Fragment } from 'react'
+import { CloseButton } from '@headlessui/react'
 import { PopoverElement, CustomButton } from 'shared/ui'
 import { ArrowDownIcon, ArrowsUpDownIcon, ArrowUpIcon } from 'shared/assets'
 import { SORTLIST } from '../lib/const/sortList'
@@ -28,40 +30,42 @@ export const SortPizzas: FC<SortPizzasPropsInterface> = ({
 
         return (
             <li key={item.name}>
-                <CustomButton
-                    className='sortArrow'
-                    onClick={handleSortOrder('asc')}
-                    sortOptionActive={isSortButtonActive('asc')}
-                >
-                    <ArrowUpIcon title='По возрастанию' />
-                </CustomButton>
-                <CustomButton
-                    className='sortArrow'
-                    onClick={handleSortOrder('desc')}
-                    sortOptionActive={isSortButtonActive('desc')}
-                >
-                    <ArrowDownIcon title='По убыванию' />
-                </CustomButton>
+                <CloseButton as={Fragment}>
+                    <CustomButton
+                        className='sortArrow'
+                        onClick={handleSortOrder('asc')}
+                        sortOptionActive={isSortButtonActive('asc')}
+                    >
+                        <ArrowUpIcon title='По возрастанию' />
+                    </CustomButton>
+                </CloseButton>
+                <CloseButton as={Fragment}>
+                    <CustomButton
+                        className='sortArrow'
+                        onClick={handleSortOrder('desc')}
+                        sortOptionActive={isSortButtonActive('desc')}
+                    >
+                        <ArrowDownIcon title='По убыванию' />
+                    </CustomButton>
+                </CloseButton>
                 <span>{item.name}</span>
             </li>
         )
     })
 
-    const triggerContent = (
-        <>
+    const triggerButton = (
+        <CustomButton className='sort'>
             <ArrowsUpDownIcon title='Сортировка' />
             <span>Сортировка по:</span>
             <span>{sortingObj.name}</span>
-        </>
+        </CustomButton>
     )
 
     return (
         <PopoverElement
-            triggerContent={triggerContent}
             options={sortOptions}
             className='sort'
-            buttonClassName='sort'
-            component={CustomButton}
+            triggerButton={triggerButton}
         />
     )
 }

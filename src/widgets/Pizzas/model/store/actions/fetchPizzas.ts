@@ -1,4 +1,5 @@
 import { isAxiosError } from 'axios'
+import { createFiltersStore } from 'widgets/Filters/model/store/filters-store'
 import { fetchPizzasAPI } from '../../../api/fetchPizzasAPI'
 import type {
     PizzasActions,
@@ -23,6 +24,9 @@ export const fetchPizzas: StateCreator<
             lastOrder,
             page: currentPage
         } = get()
+
+        const example = createFiltersStore().getState().categoryID
+        console.log(example)
 
         const { categoryID, sortProperty, order } = obj
 

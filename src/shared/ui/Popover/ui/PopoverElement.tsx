@@ -1,22 +1,19 @@
+import { Fragment } from 'react'
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
 import classNames from 'classnames'
 import styles from './PopoverElement.module.scss'
+import type { FC, ReactNode } from 'react'
 import type { PopoverClassNameType } from '../lib/types/classNames'
-import type { ElementType, FC, ReactNode } from 'react'
 
 interface PopoverElementPropsInterface {
-    component: ElementType
-    triggerContent: ReactNode
+    triggerButton: ReactNode
     options: ReactNode
-    buttonClassName: string
     className?: PopoverClassNameType
 }
 
 export const PopoverElement: FC<PopoverElementPropsInterface> = ({
-    component,
-    triggerContent,
+    triggerButton,
     options,
-    buttonClassName,
     className
 }) => {
     const popoverClassName = classNames(
@@ -26,9 +23,7 @@ export const PopoverElement: FC<PopoverElementPropsInterface> = ({
 
     return (
         <Popover as='div' className={popoverClassName}>
-            <PopoverButton as={component} className={buttonClassName}>
-                {triggerContent}
-            </PopoverButton>
+            <PopoverButton as={Fragment}>{triggerButton}</PopoverButton>
             <PopoverPanel as='ul'>{options}</PopoverPanel>
         </Popover>
     )
