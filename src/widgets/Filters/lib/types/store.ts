@@ -1,4 +1,4 @@
-export interface SortingObj {
+export interface StateSortingObj {
     name: string
     sortProperty: 'rating' | 'title'
     order: 'desc' | 'asc'
@@ -6,12 +6,12 @@ export interface SortingObj {
 
 export interface FiltersState {
     categoryID: number
-    sortingObj: SortingObj
+    sortingObj: StateSortingObj
 }
 
 export interface FiltersActions {
     setCategoryID: () => void
-    setSortingObj: (obj: SortingObj) => void
+    setSortingObj: (obj: StateSortingObj) => void
 }
 
 export type FiltersStore = FiltersState & FiltersActions

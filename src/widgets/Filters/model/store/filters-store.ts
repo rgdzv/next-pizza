@@ -3,7 +3,7 @@ import { devtools } from 'zustand/middleware'
 import type {
     FiltersState,
     FiltersStore,
-    SortingObj
+    StateSortingObj
 } from '../../lib/types/store'
 
 export const defaultInitState: FiltersState = {
@@ -25,7 +25,7 @@ export const createFiltersStore = (
                 setCategoryID: (id: number) => {
                     set(() => ({ categoryID: id }))
                 },
-                setSortingObj: (obj: SortingObj) => {
+                setSortingObj: (obj: StateSortingObj) => {
                     set(() => ({
                         sortingObj: obj
                     }))

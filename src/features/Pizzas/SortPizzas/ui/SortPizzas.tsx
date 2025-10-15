@@ -4,12 +4,12 @@ import { CloseButton } from '@headlessui/react'
 import { PopoverElement, CustomButton } from 'shared/ui'
 import { ArrowDownIcon, ArrowsUpDownIcon, ArrowUpIcon } from 'shared/assets'
 import { SORTLIST } from '../lib/const/sortList'
+import type { SortListObjProps } from '../lib/types/sortListType'
 import type { FC } from 'react'
-import type { SortingObj } from 'widgets/Filters'
 
 interface SortPizzasPropsInterface {
-    sortingObj: SortingObj
-    setSortingObj: (obj: SortingObj) => void
+    sortingObj: SortListObjProps
+    setSortingObj: (obj: SortListObjProps) => void
 }
 
 export const SortPizzas: FC<SortPizzasPropsInterface> = ({

@@ -1,5 +1,4 @@
 import { isAxiosError } from 'axios'
-import { createFiltersStore } from 'widgets/Filters/model/store/filters-store'
 import { fetchPizzasAPI } from '../../../api/fetchPizzasAPI'
 import type {
     PizzasActions,
@@ -22,19 +21,16 @@ export const fetchPizzas: StateCreator<
             lastCategoryID,
             lastSortProperty,
             lastOrder,
-            page: currentPage
+            page
         } = get()
-
-        const example = createFiltersStore().getState().categoryID
-        console.log(example)
-
         const { categoryID, sortProperty, order } = obj
 
-        const isSameCategory = categoryID === lastCategoryID
-        const isSameSorting =
-            sortProperty === lastSortProperty && order === lastOrder
+        const equalCondition =
+            categoryID === lastCategoryID &&
+            sortProperty === lastSortProperty &&
+            order === lastOrder
 
-        const newPage = isSameCategory && isSameSorting ? currentPage : 1
+        const newPage = equalCondition ? page : 1
 
         set(
             {
@@ -66,9 +62,7 @@ export const fetchPizzas: StateCreator<
 
             set(() => {
                 const newPizzas =
-                    isSameCategory && isSameSorting && pizzas
-                        ? [...pizzas, ...data]
-                        : data
+                    equalCondition && pizzas ? [...pizzas, ...data] : data
 
                 return {
                     pizzas: newPizzas,
