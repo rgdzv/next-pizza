@@ -9,9 +9,9 @@ import { usePizzasStore } from '../model/store/provider/pizzas-store-provider'
 import { getPizzas } from '../model/store/selectors/getPizzas/getPizzas'
 import { getIsLoading } from '../model/store/selectors/getIsLoading/getIsLoading'
 import { getError } from '../model/store/selectors/getError/getError'
-import { getHasMore } from '../model/store/selectors/getHasMore/getHasMore'
 import { getFetchPizzas } from '../model/store/selectors/getFetchPizzas/getFetchPizzas'
 import { getFetchPizzasNextPage } from '../model/store/selectors/getFetchPizzasNextPage/getFetchPizzasNextPage'
+import { getHasMore } from '../model/store/selectors/getHasMore/getHasMore'
 import styles from './Pizzas.module.scss'
 import type { FC } from 'react'
 
@@ -19,12 +19,15 @@ export const Pizzas: FC = () => {
     const data = usePizzasStore(getPizzas)
     const isLoading = usePizzasStore(getIsLoading)
     const error = usePizzasStore(getError)
-    const hasMore = usePizzasStore(getHasMore)
     const fetchPizzas = usePizzasStore(getFetchPizzas)
     const fetchPizzasNextPage = usePizzasStore(getFetchPizzasNextPage)
+    const hasMore = usePizzasStore(getHasMore)
 
+    const searchValue = useFiltersStore((state) => state.searchValue) // <= change selector and import
     const categoryID = useFiltersStore((state) => state.categoryID) // <= change selector and import
     const { order, sortProperty } = useFiltersStore((state) => state.sortingObj) // <= change selector and import
+    const page = useFiltersStore((state) => state.page) // <= change selector and import
+    const setPage = useFiltersStore((state) => state.setPage) // <= change selector and import
 
     const pizzas = data?.map((pizza) => {
         const pizzaCardPrice = priceFormat(Number(pizza.price[0]))
@@ -45,7 +48,15 @@ export const Pizzas: FC = () => {
         ))
 
     const handleNextPage = () => {
-        void fetchPizzasNextPage({ categoryID, sortProperty, order })
+        setPage(page + 1)
+
+        void fetchPizzasNextPage({
+            page,
+            searchValue,
+            categoryID,
+            sortProperty,
+            order
+        })
     }
 
     const pizzasFetchButtonCondition = hasMore && (
@@ -65,8 +76,8 @@ export const Pizzas: FC = () => {
     })
 
     useEffect(() => {
-        void fetchPizzas({ categoryID, sortProperty, order })
-    }, [fetchPizzas, categoryID, sortProperty, order])
+        void fetchPizzas({ page, categoryID, sortProperty, order, searchValue })
+    }, [fetchPizzas, page, categoryID, sortProperty, order, searchValue])
 
     if (isLoading) {
         return (

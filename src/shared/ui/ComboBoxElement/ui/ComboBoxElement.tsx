@@ -1,9 +1,9 @@
 'use client'
-import { Combobox, ComboboxInput, ComboboxOptions } from '@headlessui/react'
+import { Combobox, ComboboxInput } from '@headlessui/react'
 import classNames from 'classnames'
 import styles from './ComboBoxElement.module.scss'
 import type { InputWrapperClassNameType } from '../lib/types/classNames'
-import type { ChangeEvent, FC, KeyboardEvent, ReactNode } from 'react'
+import type { ChangeEvent, FC, ReactNode } from 'react'
 
 interface ComboBoxElementPropsInterface {
     inputWrapperClassName?: InputWrapperClassNameType
@@ -11,9 +11,7 @@ interface ComboBoxElementPropsInterface {
     inputValue: string
     onInputChange: (e: ChangeEvent<HTMLInputElement>) => void
     placeholder?: string
-    iconOne?: ReactNode
-    onKeyDown: (e: KeyboardEvent<HTMLInputElement>) => void
-    options: ReactNode
+    icon?: ReactNode
 }
 
 export const ComboBoxElement: FC<ComboBoxElementPropsInterface> = ({
@@ -22,9 +20,7 @@ export const ComboBoxElement: FC<ComboBoxElementPropsInterface> = ({
     inputValue,
     onInputChange,
     placeholder,
-    iconOne,
-    onKeyDown,
-    options
+    icon
 }) => {
     const comboWrapperClassName = classNames(styles.comboWrapper, [
         styles[inputWrapperClassName as InputWrapperClassNameType]
@@ -32,17 +28,13 @@ export const ComboBoxElement: FC<ComboBoxElementPropsInterface> = ({
 
     return (
         <Combobox as='div' className={comboWrapperClassName}>
-            {iconOne}
+            {icon}
             <ComboboxInput
                 value={inputValue}
                 onChange={onInputChange}
                 placeholder={placeholder}
-                onKeyDown={onKeyDown}
                 type={type}
             />
-            <ComboboxOptions as='ul' className={styles.comboOptions}>
-                {options}
-            </ComboboxOptions>
         </Combobox>
     )
 }

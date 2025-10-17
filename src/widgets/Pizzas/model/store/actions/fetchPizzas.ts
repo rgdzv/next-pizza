@@ -17,24 +17,12 @@ export const fetchPizzas: StateCreator<
         const {
             limit,
             // totalCount,
-            pizzas,
-            lastCategoryID,
-            lastSortProperty,
-            lastOrder,
-            page
+            pizzas
         } = get()
-        const { categoryID, sortProperty, order } = obj
-
-        const equalCondition =
-            categoryID === lastCategoryID &&
-            sortProperty === lastSortProperty &&
-            order === lastOrder
-
-        const newPage = equalCondition ? page : 1
+        const { page, categoryID, sortProperty, order, searchValue } = obj
 
         set(
             {
-                page: newPage,
                 isLoading: true
             },
             false
@@ -42,8 +30,9 @@ export const fetchPizzas: StateCreator<
 
         try {
             const { data } = await fetchPizzasAPI({
-                page: newPage,
+                page,
                 limit,
+                search: searchValue,
                 categoryID,
                 sortBy: sortProperty,
                 order: order
@@ -61,17 +50,13 @@ export const fetchPizzas: StateCreator<
             // }
 
             set(() => {
-                const newPizzas =
-                    equalCondition && pizzas ? [...pizzas, ...data] : data
+                const newPizzas = pizzas ? [...pizzas, ...data] : data
 
                 return {
                     pizzas: newPizzas,
                     isLoading: false,
                     error: undefined,
-                    hasMore: data.length === limit, // change
-                    lastCategoryID: categoryID,
-                    lastSortProperty: sortProperty,
-                    lastOrder: order
+                    hasMore: data.length === limit // change
                 }
             }, false)
         } catch (error) {

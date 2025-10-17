@@ -6,14 +6,17 @@ import type { FC } from 'react'
 interface SwitchCategoryPizzasPropsInterface {
     categoryID: number
     setCategoryID: (ind: number) => void
+    setPage: (page: number) => void
 }
 
 export const SwitchCategoryPizzas: FC<SwitchCategoryPizzasPropsInterface> = ({
     categoryID,
-    setCategoryID
+    setCategoryID,
+    setPage
 }) => {
     const categories = CATEGORIESLIST.map((category, ind) => {
         const onClick = () => {
+            setPage(1)
             setCategoryID(ind)
         }
 

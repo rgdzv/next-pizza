@@ -5,11 +5,15 @@ export interface StateSortingObj {
 }
 
 export interface FiltersState {
+    page: number
+    searchValue: string
     categoryID: number
     sortingObj: StateSortingObj
 }
 
 export interface FiltersActions {
+    setPage: (page: number) => void
+    setSearchValue: (value: string) => void
     setCategoryID: () => void
     setSortingObj: (obj: StateSortingObj) => void
 }

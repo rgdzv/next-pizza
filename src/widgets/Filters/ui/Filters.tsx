@@ -5,6 +5,7 @@ import { getCategoryID } from '../model/store/selectors/getCategoryID/getCategor
 import { getSetCategoryID } from '../model/store/selectors/getSetCategoryID/getSetCategoryID'
 import { getSortingObj } from '../model/store/selectors/getSortingObj/getSortingObj'
 import { getSetSortingObj } from '../model/store/selectors/getSetSortingObj/getSetSortingObj'
+import { getSetPage } from '../model/store/selectors/getSetPage/getSetPage'
 import styles from './Filters.module.scss'
 import type { FC } from 'react'
 
@@ -13,6 +14,7 @@ export const Filters: FC = () => {
     const setCategoryID = useFiltersStore(getSetCategoryID)
     const sortingObj = useFiltersStore(getSortingObj)
     const setSortingObj = useFiltersStore(getSetSortingObj)
+    const setPage = useFiltersStore(getSetPage)
 
     return (
         <div className={styles.filters}>
@@ -21,6 +23,7 @@ export const Filters: FC = () => {
                 <SwitchCategoryPizzas
                     categoryID={categoryID}
                     setCategoryID={setCategoryID}
+                    setPage={setPage}
                 />
                 <SortPizzas
                     sortingObj={sortingObj}
