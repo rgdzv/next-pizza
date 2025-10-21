@@ -8,9 +8,13 @@ export const defaultInitState: PizzasState = {
     pizzas: undefined,
     isLoading: true,
     error: undefined,
+    page: 1,
     limit: 8,
     hasMore: true,
-    totalCount: 16
+    totalCount: 16,
+    lastCategoryID: 0,
+    lastSortProperty: 'title',
+    lastOrder: 'asc'
 }
 
 export const createPizzasStore = (

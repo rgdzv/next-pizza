@@ -7,7 +7,6 @@ import type {
 } from '../../lib/types/store'
 
 export const defaultInitState: FiltersState = {
-    page: 1,
     searchValue: '',
     categoryID: 0,
     sortingObj: {
@@ -24,9 +23,6 @@ export const createFiltersStore = (
         devtools(
             (set) => ({
                 ...initState,
-                setPage: (page: number) => {
-                    set(() => ({ page }))
-                },
                 setSearchValue: (value: string) => {
                     set(() => ({ searchValue: value, categoryID: 0 }))
                 },

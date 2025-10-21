@@ -12,14 +12,14 @@ export const fetchPizzasNextPage: StateCreator<
     Pick<PizzasActions, 'fetchPizzasNextPage'>
 > = (set, get) => ({
     fetchPizzasNextPage: async (obj: FetchPizzasProps) => {
-        const { fetchPizzas } = get()
+        const { page, fetchPizzas } = get()
 
-        // set(
-        //     {
-        //         page: obj.page
-        //     },
-        //     false
-        // )
+        set(
+            {
+                page: page + 1
+            },
+            false
+        )
 
         await fetchPizzas(obj)
     }

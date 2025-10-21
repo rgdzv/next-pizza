@@ -15,14 +15,26 @@ export const fetchPizzas: StateCreator<
 > = (set, get) => ({
     fetchPizzas: async (obj: FetchPizzasProps) => {
         const {
+            page,
             limit,
             // totalCount,
-            pizzas
+            pizzas,
+            lastCategoryID,
+            lastSortProperty,
+            lastOrder
         } = get()
-        const { page, categoryID, sortProperty, order, searchValue } = obj
+        const { categoryID, sortProperty, order, searchValue } = obj
+
+        const equalCondition =
+            categoryID === lastCategoryID &&
+            sortProperty === lastSortProperty &&
+            order === lastOrder
+
+        const newPage = equalCondition ? page : 1
 
         set(
             {
+                page: newPage,
                 isLoading: true
             },
             false
@@ -30,7 +42,7 @@ export const fetchPizzas: StateCreator<
 
         try {
             const { data } = await fetchPizzasAPI({
-                page,
+                page: newPage,
                 limit,
                 search: searchValue,
                 categoryID,
@@ -50,7 +62,8 @@ export const fetchPizzas: StateCreator<
             // }
 
             set(() => {
-                const newPizzas = pizzas ? [...pizzas, ...data] : data
+                const newPizzas =
+                    equalCondition && pizzas ? [...pizzas, ...data] : data
 
                 return {
                     pizzas: newPizzas,
