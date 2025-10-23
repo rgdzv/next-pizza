@@ -62,14 +62,20 @@ export const fetchPizzas: StateCreator<
             // }
 
             set(() => {
-                const newPizzas =
-                    equalCondition && pizzas ? [...pizzas, ...data] : data
+                const newPizzas = searchValue
+                    ? data
+                    : equalCondition && pizzas
+                      ? [...pizzas, ...data]
+                      : data
 
                 return {
                     pizzas: newPizzas,
                     isLoading: false,
                     error: undefined,
-                    hasMore: data.length === limit // change
+                    hasMore: data.length === limit, // change
+                    lastCategoryID: categoryID,
+                    lastSortProperty: sortProperty,
+                    lastOrder: order
                 }
             }, false)
         } catch (error) {
