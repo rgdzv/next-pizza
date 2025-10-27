@@ -8,6 +8,7 @@ export interface PizzasState {
     limit: number
     hasMore: boolean
     totalCount: number
+    lastSearchValue: string
     lastCategoryID: number
     lastSortProperty: string
     lastOrder: string

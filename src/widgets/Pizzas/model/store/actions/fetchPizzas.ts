@@ -19,6 +19,7 @@ export const fetchPizzas: StateCreator<
             limit,
             // totalCount,
             pizzas,
+            lastSearchValue,
             lastCategoryID,
             lastSortProperty,
             lastOrder
@@ -26,6 +27,7 @@ export const fetchPizzas: StateCreator<
         const { categoryID, sortProperty, order, searchValue } = obj
 
         const equalCondition =
+            searchValue === lastSearchValue &&
             categoryID === lastCategoryID &&
             sortProperty === lastSortProperty &&
             order === lastOrder
@@ -73,6 +75,7 @@ export const fetchPizzas: StateCreator<
                     isLoading: false,
                     error: undefined,
                     hasMore: data.length === limit, // change
+                    lastSearchValue: searchValue,
                     lastCategoryID: categoryID,
                     lastSortProperty: sortProperty,
                     lastOrder: order
