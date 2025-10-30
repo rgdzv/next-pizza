@@ -1,8 +1,8 @@
 export interface fetchPizzasParams {
-    limit: number
+    perPage: number
     page: number
     search: string
     categoryID: number
-    sortBy: string
+    sort: string
     order: string
 }

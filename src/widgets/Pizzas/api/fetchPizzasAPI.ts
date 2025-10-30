@@ -2,17 +2,22 @@ import { axiosAPI } from 'shared/api'
 import type { fetchPizzasParams } from '../lib/types/api'
 import type { Pizza } from 'entities/PizzaCard'
 
-export const fetchPizzasAPI = (params: fetchPizzasParams) => {
-    const { page, limit, search, categoryID, sortBy, order } = params
+interface AxiosResponse {
+    items: number
+    data: Pizza[]
+}
 
-    const data = axiosAPI.get<Pizza[]>('/pizzas', {
+export const fetchPizzasAPI = (params: fetchPizzasParams) => {
+    const { page, perPage, search, categoryID, sort, order } = params
+
+    const data = axiosAPI.get<AxiosResponse>('/pizzas', {
         params: {
-            page,
-            limit,
-            search,
+            _page: page,
+            _per_page: perPage,
+            q: search,
             category: categoryID > 0 ? categoryID : null,
-            sortBy,
-            order
+            _sort: sort,
+            _order: order
         }
     })
 

@@ -16,8 +16,8 @@ export const fetchPizzas: StateCreator<
     fetchPizzas: async (obj: FetchPizzasProps) => {
         const {
             page,
-            limit,
-            // totalCount,
+            perPage,
+            itemsOnServerLeft,
             pizzas,
             lastSearchValue,
             lastCategoryID,
@@ -43,25 +43,25 @@ export const fetchPizzas: StateCreator<
         )
 
         try {
-            const { data } = await fetchPizzasAPI({
+            const {
+                data: { data, items }
+            } = await fetchPizzasAPI({
                 page: newPage,
-                limit,
+                perPage,
                 search: searchValue,
                 categoryID,
-                sortBy: sortProperty,
+                sort: sortProperty,
                 order: order
             })
 
-            // const total = headers['x-total-count']
-
-            // if (Number(total) !== totalCount) {
-            //     set(
-            //         {
-            //             totalCount: total
-            //         },
-            //         false
-            //     )
-            // }
+            if (items !== itemsOnServerLeft) {
+                set(
+                    {
+                        itemsOnServerLeft: items
+                    },
+                    false
+                )
+            }
 
             set(() => {
                 const newPizzas = searchValue
@@ -70,11 +70,13 @@ export const fetchPizzas: StateCreator<
                       ? [...pizzas, ...data]
                       : data
 
+                const hasMore = newPizzas.length < get().itemsOnServerLeft
+
                 return {
                     pizzas: newPizzas,
                     isLoading: false,
                     error: undefined,
-                    hasMore: data.length === limit, // change
+                    hasMore: hasMore,
                     lastSearchValue: searchValue,
                     lastCategoryID: categoryID,
                     lastSortProperty: sortProperty,

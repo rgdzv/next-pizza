@@ -5,9 +5,9 @@ export interface PizzasState {
     isLoading: boolean
     error: string | undefined
     page: number
-    limit: number
+    perPage: number
     hasMore: boolean
-    totalCount: number
+    itemsOnServerLeft: number
     lastSearchValue: string
     lastCategoryID: number
     lastSortProperty: string
