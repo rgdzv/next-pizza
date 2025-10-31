@@ -8,6 +8,7 @@
         "build": "next build",
         "start": "next start",
         "server:start": "json-server db.json --port 5000",
+        "start:final": "npm run dev && npm run server:start",
         "eslint": "eslint --config config/eslint/eslint.config.mjs",
         "eslint:fix": "eslint --config config/eslint/eslint.config.mjs --fix",
         "stylelint": "stylelint --config config/stylelint/stylelint.config.mjs --ignore-path config/stylelint/.stylelintignore \"**/*.scss\"",
