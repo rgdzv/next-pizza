@@ -1,17 +1,24 @@
 'use client'
 import { useEffect } from 'react'
 import classNames from 'classnames'
-import { useFiltersStore } from 'widgets/Filters/model/store/provider/filters-store-provider'
+import {
+    getCategory,
+    getSearchValue,
+    getSortingObj,
+    useFiltersStore
+} from 'features/Pizzas/Filters'
+import {
+    getError,
+    getFetchPizzas,
+    getFetchPizzasNextPage,
+    getHasMore,
+    getIsLoading,
+    getPizzas,
+    usePizzasStore
+} from 'features/Pizzas/Fetch'
 import { PizzaCard } from 'entities/PizzaCard'
 import { priceFormat } from 'shared/lib'
 import { CustomButton, Skeleton } from 'shared/ui'
-import { usePizzasStore } from '../model/store/provider/pizzas-store-provider'
-import { getPizzas } from '../model/store/selectors/getPizzas/getPizzas'
-import { getIsLoading } from '../model/store/selectors/getIsLoading/getIsLoading'
-import { getError } from '../model/store/selectors/getError/getError'
-import { getFetchPizzas } from '../model/store/selectors/getFetchPizzas/getFetchPizzas'
-import { getFetchPizzasNextPage } from '../model/store/selectors/getFetchPizzasNextPage/getFetchPizzasNextPage'
-import { getHasMore } from '../model/store/selectors/getHasMore/getHasMore'
 import styles from './Pizzas.module.scss'
 import type { FC } from 'react'
 
@@ -22,10 +29,9 @@ export const Pizzas: FC = () => {
     const fetchPizzas = usePizzasStore(getFetchPizzas)
     const fetchPizzasNextPage = usePizzasStore(getFetchPizzasNextPage)
     const hasMore = usePizzasStore(getHasMore)
-
-    const searchValue = useFiltersStore((state) => state.searchValue) // <= change selector and import
-    const categoryID = useFiltersStore((state) => state.categoryID) // <= change selector and import
-    const { order, sortProperty } = useFiltersStore((state) => state.sortingObj) // <= change selector and import
+    const searchValue = useFiltersStore(getSearchValue)
+    const category = useFiltersStore(getCategory)
+    const { order, sortProperty } = useFiltersStore(getSortingObj)
 
     const pizzas = data?.map((pizza) => {
         const pizzaCardPrice = priceFormat(Number(pizza.price[0]))
@@ -48,7 +54,7 @@ export const Pizzas: FC = () => {
     const handleNextPage = () => {
         void fetchPizzasNextPage({
             searchValue,
-            categoryID,
+            category,
             sortProperty,
             order
         })
@@ -71,8 +77,8 @@ export const Pizzas: FC = () => {
     })
 
     useEffect(() => {
-        void fetchPizzas({ categoryID, sortProperty, order, searchValue })
-    }, [fetchPizzas, categoryID, sortProperty, order, searchValue])
+        void fetchPizzas({ category, sortProperty, order, searchValue })
+    }, [fetchPizzas, category, sortProperty, order, searchValue])
 
     if (isLoading) {
         return (

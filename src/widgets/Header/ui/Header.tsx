@@ -1,7 +1,6 @@
 import { Basket } from 'widgets/Basket'
-import { useFiltersStore } from 'widgets/Filters/model/store/provider/filters-store-provider'
 import { LoginDropDown } from 'features/Authorization'
-import { SearchPizzas } from 'features/Pizzas/SearchPizzas'
+import { SearchPizzas } from 'features/Pizzas/Filters'
 import { PizzaLogoIcon, ShoppingCartIcon } from 'shared/assets'
 import { CustomButton } from 'shared/ui'
 import { useModal } from 'shared/lib'
@@ -18,9 +17,6 @@ export const Header: FC = () => {
         onClickOutside
     } = useModal()
 
-    const searchValue = useFiltersStore((state) => state.searchValue) // <= change
-    const setSearchValue = useFiltersStore((state) => state.setSearchValue) // <= change
-
     return (
         <header className={styles.header}>
             <Logo
@@ -28,10 +24,7 @@ export const Header: FC = () => {
                 slogan='вкусней уже некуда'
                 imgSrc={PizzaLogoIcon}
             />
-            <SearchPizzas
-                searchValue={searchValue}
-                setSearchValue={setSearchValue}
-            />
+            <SearchPizzas />
             <div className={styles.headerRight}>
                 <LoginDropDown />
                 <CustomButton className='primary' onClick={openModal}>

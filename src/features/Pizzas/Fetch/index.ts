@@ -1,0 +1,8 @@
+export { PizzasStoreProvider } from './model/store/provider/pizzas-store-provider'
+export { usePizzasStore } from './model/store/provider/pizzas-store-provider'
+export { getError } from './model/store/selectors/getError/getError'
+export { getFetchPizzas } from './model/store/selectors/getFetchPizzas/getFetchPizzas'
+export { getFetchPizzasNextPage } from './model/store/selectors/getFetchPizzasNextPage/getFetchPizzasNextPage'
+export { getHasMore } from './model/store/selectors/getHasMore/getHasMore'
+export { getIsLoading } from './model/store/selectors/getIsLoading/getIsLoading'
+export { getPizzas } from './model/store/selectors/getPizzas/getPizzas'

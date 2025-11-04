@@ -1,0 +1,8 @@
+export { FiltersStoreProvider } from './model/store/provider/filters-store-provider'
+export { SortPizzas } from './ui/SortPizzas/SortPizzas'
+export { SwitchCategoryPizzas } from './ui/SwitchCategoryPizzas/ui/SwitchCategoryPizzas'
+export { SearchPizzas } from './ui/SearchPizzas/SearchPizzas'
+export { useFiltersStore } from './model/store/provider/filters-store-provider'
+export { getSearchValue } from './model/store/selectors/getSearchValue/getSearchValue'
+export { getCategory } from './model/store/selectors/getCategory/getCategory'
+export { getSortingObj } from './model/store/selectors/getSortingObj/getSortingObj'

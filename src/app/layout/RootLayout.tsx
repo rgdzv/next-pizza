@@ -1,5 +1,5 @@
-import { PizzasStoreProvider } from 'widgets/Pizzas'
-import { FiltersStoreProvider } from 'widgets/Filters'
+import { PizzasStoreProvider } from 'features/Pizzas/Fetch'
+import { FiltersStoreProvider } from 'features/Pizzas/Filters'
 import '../styles/global.scss'
 import type { FC, ReactNode } from 'react'
 
