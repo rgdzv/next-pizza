@@ -63,6 +63,8 @@ export const fetchPizzas: StateCreator<
                 )
             }
 
+            const itemsOnServerLeftUpdated = get().itemsOnServerLeft
+
             set(() => {
                 const newPizzas = searchValue
                     ? data
@@ -70,7 +72,7 @@ export const fetchPizzas: StateCreator<
                       ? [...pizzas, ...data]
                       : data
 
-                const hasMore = newPizzas.length < get().itemsOnServerLeft
+                const hasMore = newPizzas.length < itemsOnServerLeftUpdated
 
                 return {
                     pizzas: newPizzas,

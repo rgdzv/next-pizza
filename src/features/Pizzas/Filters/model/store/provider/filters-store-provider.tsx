@@ -2,7 +2,7 @@
 import { createContext, useContext, useRef } from 'react'
 import { useStore } from 'zustand'
 import { createFiltersStore } from '../../store/filters-store'
-import type { FiltersStore } from '../../../lib/types/store'
+import type { FiltersStore } from '../../lib/types/store'
 import type { ReactNode } from 'react'
 
 export type FiltersStoreApi = ReturnType<typeof createFiltersStore>

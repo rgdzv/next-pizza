@@ -4,7 +4,7 @@ import type {
     FiltersState,
     FiltersStore,
     StateSortingObj
-} from '../../lib/types/store'
+} from '../lib/types/store'
 
 export const defaultInitState: FiltersState = {
     searchValue: '',
@@ -24,7 +24,7 @@ export const createFiltersStore = (
             (set) => ({
                 ...initState,
                 setSearchValue: (value: string) => {
-                    set(() => ({ searchValue: value, categoryID: 0 }))
+                    set(() => ({ searchValue: value, category: 0 }))
                 },
                 setCategory: (id: number) => {
                     set(() => ({ category: id, searchValue: '' }))

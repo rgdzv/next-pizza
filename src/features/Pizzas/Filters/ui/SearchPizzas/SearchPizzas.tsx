@@ -1,8 +1,8 @@
 import { ComboBoxElement, CustomButton } from 'shared/ui'
 import { SearchIcon } from 'shared/assets'
 import { useFiltersStore } from '../../model/store/provider/filters-store-provider'
-import { getSearchValue } from '../../model/store/selectors/getSearchValue/getSearchValue'
 import { setSearchValue } from '../../model/store/selectors/setSearchValue/setSearchValue'
+import { getSearchValue } from '../../model/store/selectors/getSearchValue/getSearchValue'
 import type { ChangeEvent, FC } from 'react'
 
 export const SearchPizzas: FC = () => {

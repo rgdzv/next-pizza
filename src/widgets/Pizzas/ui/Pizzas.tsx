@@ -2,20 +2,13 @@
 import { useEffect } from 'react'
 import classNames from 'classnames'
 import {
-    getCategory,
-    getSearchValue,
-    getSortingObj,
-    useFiltersStore
-} from 'features/Pizzas/Filters'
-import {
     getError,
-    getFetchPizzas,
-    getFetchPizzasNextPage,
     getHasMore,
     getIsLoading,
     getPizzas,
     usePizzasStore
 } from 'features/Pizzas/Fetch'
+import { useFilters } from 'features/Pizzas'
 import { PizzaCard } from 'entities/PizzaCard'
 import { priceFormat } from 'shared/lib'
 import { CustomButton, Skeleton } from 'shared/ui'
@@ -26,12 +19,10 @@ export const Pizzas: FC = () => {
     const data = usePizzasStore(getPizzas)
     const isLoading = usePizzasStore(getIsLoading)
     const error = usePizzasStore(getError)
-    const fetchPizzas = usePizzasStore(getFetchPizzas)
-    const fetchPizzasNextPage = usePizzasStore(getFetchPizzasNextPage)
     const hasMore = usePizzasStore(getHasMore)
-    const searchValue = useFiltersStore(getSearchValue)
-    const category = useFiltersStore(getCategory)
-    const { order, sortProperty } = useFiltersStore(getSortingObj)
+    const { fetchData, fetchDataNextPage } = useFilters()
+
+    console.log('RENDERED!')
 
     const pizzas = data?.map((pizza) => {
         const pizzaCardPrice = priceFormat(Number(pizza.price[0]))
@@ -51,13 +42,12 @@ export const Pizzas: FC = () => {
             <Skeleton key={index} className='pizzaCardSkeleton' />
         ))
 
+    // const handleNextPage = () => {
+    //     void fetchPizzasNextPage({ category, sortProperty, order, searchValue })
+    // }
+
     const handleNextPage = () => {
-        void fetchPizzasNextPage({
-            searchValue,
-            category,
-            sortProperty,
-            order
-        })
+        fetchDataNextPage()
     }
 
     const pizzasFetchButtonCondition = hasMore && (
@@ -76,9 +66,12 @@ export const Pizzas: FC = () => {
         [styles.noPizzasLeft]: !hasMore
     })
 
+    // useEffect(() => {
+    //     void fetchPizzas({ category, sortProperty, order, searchValue })
+    // }, [fetchPizzas, category, sortProperty, order, searchValue])
     useEffect(() => {
-        void fetchPizzas({ category, sortProperty, order, searchValue })
-    }, [fetchPizzas, category, sortProperty, order, searchValue])
+        fetchData()
+    }, [fetchData])
 
     if (isLoading) {
         return (
