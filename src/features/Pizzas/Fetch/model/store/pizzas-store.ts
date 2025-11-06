@@ -11,7 +11,7 @@ export const defaultInitState: PizzasState = {
     page: 1,
     perPage: 8,
     hasMore: true,
-    itemsOnServerLeft: 0,
+    pizzasLeftOnServer: 0,
     lastSearchValue: '',
     lastCategory: 0,
     lastSortProperty: 'title',

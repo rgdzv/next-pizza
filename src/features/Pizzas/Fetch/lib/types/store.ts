@@ -7,7 +7,7 @@ export interface PizzasState {
     page: number
     perPage: number
     hasMore: boolean
-    itemsOnServerLeft: number
+    pizzasLeftOnServer: number
     lastSearchValue: string
     lastCategory: number
     lastSortProperty: string

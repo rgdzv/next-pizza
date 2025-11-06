@@ -17,7 +17,7 @@ export const fetchPizzas: StateCreator<
         const {
             page,
             perPage,
-            itemsOnServerLeft,
+            pizzasLeftOnServer,
             pizzas,
             lastSearchValue,
             lastCategory,
@@ -54,16 +54,16 @@ export const fetchPizzas: StateCreator<
                 order: order
             })
 
-            if (items !== itemsOnServerLeft) {
+            if (items !== pizzasLeftOnServer) {
                 set(
                     {
-                        itemsOnServerLeft: items
+                        pizzasLeftOnServer: items
                     },
                     false
                 )
             }
 
-            const itemsOnServerLeftUpdated = get().itemsOnServerLeft
+            const pizzasLeftOnServerUpdated = get().pizzasLeftOnServer
 
             set(() => {
                 const newPizzas = searchValue
@@ -72,7 +72,7 @@ export const fetchPizzas: StateCreator<
                       ? [...pizzas, ...data]
                       : data
 
-                const hasMore = newPizzas.length < itemsOnServerLeftUpdated
+                const hasMore = newPizzas.length < pizzasLeftOnServerUpdated
 
                 return {
                     pizzas: newPizzas,

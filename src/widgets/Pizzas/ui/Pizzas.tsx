@@ -22,8 +22,6 @@ export const Pizzas: FC = () => {
     const hasMore = usePizzasStore(getHasMore)
     const { fetchData, fetchDataNextPage } = useFilters()
 
-    console.log('RENDERED!')
-
     const pizzas = data?.map((pizza) => {
         const pizzaCardPrice = priceFormat(Number(pizza.price[0]))
 
