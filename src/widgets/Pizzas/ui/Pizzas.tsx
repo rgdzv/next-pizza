@@ -6,9 +6,9 @@ import {
     getHasMore,
     getIsLoading,
     getPizzas,
+    useFilters,
     usePizzasStore
-} from 'features/Pizzas/Fetch'
-import { useFilters } from 'features/Pizzas'
+} from 'features/Pizzas'
 import { PizzaCard } from 'entities/PizzaCard'
 import { priceFormat } from 'shared/lib'
 import { CustomButton, Skeleton } from 'shared/ui'
@@ -40,10 +40,6 @@ export const Pizzas: FC = () => {
             <Skeleton key={index} className='pizzaCardSkeleton' />
         ))
 
-    // const handleNextPage = () => {
-    //     void fetchPizzasNextPage({ category, sortProperty, order, searchValue })
-    // }
-
     const handleNextPage = () => {
         fetchDataNextPage()
     }
@@ -64,9 +60,6 @@ export const Pizzas: FC = () => {
         [styles.noPizzasLeft]: !hasMore
     })
 
-    // useEffect(() => {
-    //     void fetchPizzas({ category, sortProperty, order, searchValue })
-    // }, [fetchPizzas, category, sortProperty, order, searchValue])
     useEffect(() => {
         fetchData()
     }, [fetchData])

@@ -1,56 +1,74 @@
 import { useCallback } from 'react'
-// import { useDebounce } from 'shared/lib'
-import {
-    getFetchPizzas,
-    getFetchPizzasNextPage,
-    usePizzasStore
-} from '../../Fetch'
-import {
-    useFiltersStore,
-    getSearchValue,
-    getCategory,
-    getSortingObj,
-    setSearchValue
-} from '../../Filters'
+import { useDebounce } from 'shared/lib'
+import { getFetchPizzas } from '../../model/store/selectors/getFetchPizzas/getFetchPizzas'
+import { getFetchPizzasNextPage } from '../../model/store/selectors/getFetchPizzasNextPage/getFetchPizzasNextPage'
+import { getSearchValue } from '../../model/store/selectors/getSearchValue/getSearchValue'
+import { getSetSearchValue } from '../../model/store/selectors/getSetSearchValue/getSetSearchValue'
+import { getCategory } from '../../model/store/selectors/getCategory/getCategory'
+import { getSortingObj } from '../../model/store/selectors/getSortingObj/getSortingObj'
+import { getSetSortingObj } from '../../model/store/selectors/getSetSortingObj/getSetSortingObj'
+import { getSetCategory } from '../../model/store/selectors/getSetCategory/getSetCategory'
+import { usePizzasStore } from '../../model/store/provider/pizzas-store-provider'
+import { getSetPage } from '../../model/store/selectors/getSetPage/getSetPage'
 import type { ChangeEvent } from 'react'
+import type { StateSortingObj } from '../types/store'
 
 export const useFilters = () => {
+    const searchValue = usePizzasStore(getSearchValue)
+    const category = usePizzasStore(getCategory)
+    const sortingObj = usePizzasStore(getSortingObj)
     const fetchPizzas = usePizzasStore(getFetchPizzas)
     const fetchPizzasNextPage = usePizzasStore(getFetchPizzasNextPage)
-    const searchValue = useFiltersStore(getSearchValue)
-    const category = useFiltersStore(getCategory)
-    const { order, sortProperty } = useFiltersStore(getSortingObj)
-    const handleSearchValue = useFiltersStore(setSearchValue)
-
-    // console.log(category)
+    const setPage = usePizzasStore(getSetPage)
+    const setSearchValue = usePizzasStore(getSetSearchValue)
+    const setCategory = usePizzasStore(getSetCategory)
+    const setSortingObj = usePizzasStore(getSetSortingObj)
 
     const fetchData = useCallback(() => {
-        void fetchPizzas({
-            searchValue,
-            category,
-            order,
-            sortProperty
-        })
-    }, [fetchPizzas, searchValue, category, order, sortProperty])
+        void fetchPizzas()
+    }, [fetchPizzas])
 
     const fetchDataNextPage = useCallback(() => {
-        void fetchPizzasNextPage({
-            searchValue,
-            category,
-            order,
-            sortProperty
-        })
-    }, [fetchPizzasNextPage, searchValue, category, order, sortProperty])
+        void fetchPizzasNextPage()
+    }, [fetchPizzasNextPage])
 
-    // const debouncedFetch = useDebounce(fetchData, 300)
+    const debouncedFetchData = useDebounce(fetchData, 300)
 
-    const handleInputChange = useCallback(
-        (e: ChangeEvent<HTMLInputElement>) => {
-            handleSearchValue(e.target.value)
-            // debouncedFetch()
+    const onChangeCategory = useCallback(
+        (newPage: number) => {
+            setCategory(newPage)
+            setPage(1)
+            fetchData()
         },
-        [handleSearchValue]
+        [setCategory, setPage, fetchData]
     )
 
-    return { fetchData, fetchDataNextPage, searchValue, handleInputChange }
+    const onChangeSortingObj = useCallback(
+        (obj: StateSortingObj) => {
+            setSortingObj(obj)
+            setPage(1)
+            fetchData()
+        },
+        [setSortingObj, setPage, fetchData]
+    )
+
+    const onChangeInput = useCallback(
+        (e: ChangeEvent<HTMLInputElement>) => {
+            setSearchValue(e.target.value)
+            setPage(1)
+            debouncedFetchData()
+        },
+        [debouncedFetchData, setPage, setSearchValue]
+    )
+
+    return {
+        fetchData,
+        fetchDataNextPage,
+        searchValue,
+        onChangeInput,
+        category,
+        onChangeCategory,
+        sortingObj,
+        onChangeSortingObj
+    }
 }
