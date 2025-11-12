@@ -22,11 +22,7 @@ export const defaultInitState: PizzasState = {
         name: 'алфавиту',
         sortProperty: 'title',
         order: 'asc'
-    },
-    lastSearchValue: '',
-    lastCategory: 0,
-    lastSortProperty: 'title',
-    lastOrder: 'asc'
+    }
 }
 
 export const createPizzasStore = (

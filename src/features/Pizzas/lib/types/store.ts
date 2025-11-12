@@ -17,10 +17,6 @@ export interface PizzasState {
     searchValue: string
     category: number
     sortingObj: StateSortingObj
-    lastSearchValue: string
-    lastCategory: number
-    lastSortProperty: string
-    lastOrder: string
 }
 
 export interface PizzasActions {

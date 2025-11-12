@@ -17,18 +17,8 @@ export const fetchPizzas: StateCreator<
             pizzasLeftOnServer,
             searchValue,
             category,
-            sortingObj,
-            lastSearchValue,
-            lastCategory,
-            lastSortProperty,
-            lastOrder
+            sortingObj
         } = get()
-
-        const equalCondition =
-            searchValue === lastSearchValue &&
-            category === lastCategory &&
-            sortingObj.sortProperty === lastSortProperty &&
-            sortingObj.order === lastOrder
 
         set(
             {
@@ -61,11 +51,10 @@ export const fetchPizzas: StateCreator<
             const pizzasLeftOnServerUpdated = get().pizzasLeftOnServer
 
             set(() => {
-                const newPizzas = searchValue
-                    ? data
-                    : equalCondition && pizzas
-                      ? [...pizzas, ...data]
-                      : data
+                const currentPizzas = pizzas ?? []
+
+                const newPizzas =
+                    page === 1 ? data : [...currentPizzas, ...data]
 
                 const hasMore = newPizzas.length < pizzasLeftOnServerUpdated
 
@@ -73,11 +62,7 @@ export const fetchPizzas: StateCreator<
                     pizzas: newPizzas,
                     isLoading: false,
                     error: undefined,
-                    hasMore: hasMore,
-                    lastSearchValue: searchValue,
-                    lastCategory: category,
-                    lastSortProperty: sortingObj.sortProperty,
-                    lastOrder: sortingObj.order
+                    hasMore: hasMore
                 }
             }, false)
         } catch (error) {
