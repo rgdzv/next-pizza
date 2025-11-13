@@ -10,7 +10,9 @@ export const RootLayout: FC<RootLayoutProps> = ({ children }) => {
     return (
         <html lang='ru'>
             <body>
-                <PizzasStoreProvider>{children}</PizzasStoreProvider>
+                <PizzasStoreProvider>
+                    <div className='container'>{children}</div>
+                </PizzasStoreProvider>
             </body>
         </html>
     )

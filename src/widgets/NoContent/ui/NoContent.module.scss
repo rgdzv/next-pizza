@@ -5,14 +5,7 @@
     align-items: center;
     justify-content: center;
 
-    width: 100%;
-    max-width: 1440px;
-    min-height: calc(100vh - 90px);
-    padding: 45px;
-    border: 1px solid var(--background-color-secondary);
-    border-radius: 30px;
-
-    background-color: var(--background-color-secondary);
+    height: 100%;
     
     .noContentLeft {
         display: flex;

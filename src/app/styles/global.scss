@@ -14,14 +14,6 @@ body {
 }
 
 .container {
-    display: grid;
-    grid-template: min-content min-content auto / 1fr;
-    grid-template-areas:     
-        "header"
-        "filters"
-        "pizzas";
-    row-gap: 45px;
-
     width: 100%;
     max-width: 1440px;
     min-height: calc(100vh - 90px);

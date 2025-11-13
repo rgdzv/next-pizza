@@ -11,11 +11,13 @@ export const GlobalError: FC<GlobalErrorProps> = ({ error }) => {
     return (
         <html lang='ru'>
             <body>
-                <NoContent
-                    name='Что-то пошло не так...'
-                    message={error.message}
-                    imgSrc={NoImageIcon}
-                />
+                <div className='container'>
+                    <NoContent
+                        name='Что-то пошло не так...'
+                        message={error.message}
+                        imgSrc={NoImageIcon}
+                    />
+                </div>
             </body>
         </html>
     )

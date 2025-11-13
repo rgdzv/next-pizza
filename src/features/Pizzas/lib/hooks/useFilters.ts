@@ -25,8 +25,9 @@ export const useFilters = () => {
     const setSortingObj = usePizzasStore(getSetSortingObj)
 
     const fetchData = useCallback(() => {
+        setPage(1)
         void fetchPizzas()
-    }, [fetchPizzas])
+    }, [fetchPizzas, setPage])
 
     const fetchDataNextPage = useCallback(() => {
         void fetchPizzasNextPage()
@@ -37,28 +38,25 @@ export const useFilters = () => {
     const onChangeCategory = useCallback(
         (newPage: number) => {
             setCategory(newPage)
-            setPage(1)
             fetchData()
         },
-        [setCategory, setPage, fetchData]
+        [setCategory, fetchData]
     )
 
     const onChangeSortingObj = useCallback(
         (obj: StateSortingObj) => {
             setSortingObj(obj)
-            setPage(1)
             fetchData()
         },
-        [setSortingObj, setPage, fetchData]
+        [setSortingObj, fetchData]
     )
 
     const onChangeInput = useCallback(
         (e: ChangeEvent<HTMLInputElement>) => {
             setSearchValue(e.target.value)
-            setPage(1)
             debouncedFetchData()
         },
-        [debouncedFetchData, setPage, setSearchValue]
+        [debouncedFetchData, setSearchValue]
     )
 
     return {
