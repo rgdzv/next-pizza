@@ -9,23 +9,8 @@ import styles from './Header.module.scss'
 import type { FC } from 'react'
 
 export const Header: FC = () => {
-    const {
-        isModalOpen,
-        openModal,
-        closeModal,
-        dialogRef,
-        onClickCloseButton,
-        onClickOutside
-    } = useModal()
-
-    const showBasketCondition = isModalOpen && (
-        <Basket
-            closeModal={closeModal}
-            dialogRef={dialogRef}
-            onClickCloseButton={onClickCloseButton}
-            onClickOutside={onClickOutside}
-        />
-    )
+    const { openModal, dialogRef, onClickCloseButton, onClickOutside } =
+        useModal()
 
     return (
         <header className={styles.header}>
@@ -41,7 +26,11 @@ export const Header: FC = () => {
                     <ShoppingCartIcon title='Корзина' />
                 </CustomButton>
             </div>
-            {showBasketCondition}
+            <Basket
+                dialogRef={dialogRef}
+                onClickCloseButton={onClickCloseButton}
+                onClickOutside={onClickOutside}
+            />
         </header>
     )
 }

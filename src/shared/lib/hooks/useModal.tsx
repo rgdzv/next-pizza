@@ -4,9 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import type { MouseEvent, RefObject } from 'react'
 
 interface UseModalResult {
-    isModalOpen: boolean
     openModal: () => void
-    closeModal: () => void
     dialogRef: RefObject<HTMLDialogElement | null>
     onClickOutside: (e: MouseEvent<HTMLDialogElement>) => void
     onClickCloseButton: () => void
@@ -28,6 +26,7 @@ export const useModal = (): UseModalResult => {
         (e: MouseEvent<HTMLDialogElement>): void => {
             if (e.target === dialogRef.current) {
                 dialogRef.current.close()
+                closeModal()
             }
         },
         []
@@ -35,6 +34,7 @@ export const useModal = (): UseModalResult => {
 
     const onClickCloseButton = useCallback(() => {
         dialogRef.current?.close()
+        closeModal()
     }, [])
 
     useEffect(() => {
@@ -46,9 +46,7 @@ export const useModal = (): UseModalResult => {
     }, [isModalOpen])
 
     return {
-        isModalOpen,
         openModal,
-        closeModal,
         dialogRef,
         onClickOutside,
         onClickCloseButton

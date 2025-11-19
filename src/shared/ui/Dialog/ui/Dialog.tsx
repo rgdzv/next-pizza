@@ -5,7 +5,6 @@ import type { FC, MouseEvent, ReactNode, RefObject } from 'react'
 
 interface DialogPropsInterface {
     children: ReactNode
-    onClose: () => void
     dialogRef: RefObject<HTMLDialogElement | null>
     className?: DialogClassNameType
     onClick: (e: MouseEvent<HTMLDialogElement>) => void
@@ -14,7 +13,6 @@ interface DialogPropsInterface {
 export const Dialog: FC<DialogPropsInterface> = ({
     children,
     dialogRef,
-    onClose,
     className,
     onClick
 }) => {
@@ -25,12 +23,7 @@ export const Dialog: FC<DialogPropsInterface> = ({
 
     return (
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
-        <dialog
-            ref={dialogRef}
-            className={dialogClassName}
-            onClose={onClose}
-            onClick={onClick}
-        >
+        <dialog ref={dialogRef} className={dialogClassName} onClick={onClick}>
             {children}
         </dialog>
     )

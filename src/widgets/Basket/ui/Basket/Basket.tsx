@@ -34,13 +34,11 @@ const BASKET_PIZZAS = [
 interface BasketPropsInterface {
     dialogRef: RefObject<HTMLDialogElement | null>
     onClickCloseButton: () => void
-    closeModal: () => void
     onClickOutside: (e: MouseEvent<HTMLDialogElement>) => void
 }
 
 export const Basket: FC<BasketPropsInterface> = ({
     dialogRef,
-    closeModal,
     onClickCloseButton,
     onClickOutside
 }) => {
@@ -75,7 +73,6 @@ export const Basket: FC<BasketPropsInterface> = ({
     return (
         <Dialog
             dialogRef={dialogRef}
-            onClose={closeModal}
             onClick={onClickOutside}
             className='sidebar'
         >
