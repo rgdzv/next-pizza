@@ -4,7 +4,6 @@ import { CustomButton, Dialog } from 'shared/ui'
 import { CrossIcon } from 'shared/assets'
 import { BasketEmpty } from '../BasketEmpty/BasketEmpty'
 import { BasketContent } from '../BasketContent/BasketContent'
-import { productTax } from '../../lib/helpers/productTax'
 import { productDeclension } from '../../lib/helpers/productDeclension'
 import type { FC, MouseEvent, RefObject } from 'react'
 
@@ -44,7 +43,6 @@ export const Basket: FC<BasketPropsInterface> = ({
 }) => {
     const basketProductNumber = productDeclension(11)
     const basketFinalSum = priceFormat(2142)
-    const basketFinalSumTax = priceFormat(productTax(2142))
 
     const pizzas = BASKET_PIZZAS.map((pizza) => {
         const pizzaWithFormattedPrice = {
@@ -62,7 +60,6 @@ export const Basket: FC<BasketPropsInterface> = ({
         <BasketContent
             productQuantity={basketProductNumber}
             basketFinalSum={basketFinalSum}
-            basketFinalSumTax={basketFinalSumTax}
             pizzas={pizzas}
         />
     ) : (
@@ -77,7 +74,7 @@ export const Basket: FC<BasketPropsInterface> = ({
             className='sidebar'
         >
             <>
-                {/* {showBasketPizzasCondition} */}
+                {showBasketPizzasCondition}
                 <CustomButton className='close' onClick={onClickCloseButton}>
                     <CrossIcon title='Закрыть' />
                 </CustomButton>

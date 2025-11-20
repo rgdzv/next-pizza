@@ -2,15 +2,19 @@
 @use 'variables';
 @use 'fonts';
 
-html:has(dialog[open]) {
-    overflow: hidden;
-}
-
 body {
     display: flex;
     justify-content: center;
     padding: 45px;
     background-color: var(--background-color-primary);
+}
+
+html:has(dialog[open]) {
+    body {
+        position: fixed;
+        overflow-y: scroll;
+        width: 100%;
+    }
 }
 
 .container {

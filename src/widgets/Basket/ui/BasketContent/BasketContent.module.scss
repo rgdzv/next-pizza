@@ -34,22 +34,16 @@
 
         .basketFooterSumInfo {
             display: flex;
-            flex-direction: column;
-            gap: 15px;
+            align-items: center;
+            justify-content: space-between;
             
-            .basketContentFooterSum,
-            .basketContentFooterTax {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-    
-                span {
-                    &:last-child {
-                        font-size: 18px;
-                        font-weight: 700;
-                    }
+            span {
+                &:last-child {
+                    font-size: 18px;
+                    font-weight: 700;
                 }
             }
+            
         }
     }
 }
