@@ -13,7 +13,7 @@ export const PizzaCard: FC<PizzaCardPropsInterface> = ({
     pizzaCardPrice
 }) => {
     return (
-        <div className={styles.pizzaCard}>
+        <article className={styles.pizzaCard}>
             <CustomImage
                 src={pizza.imgSrc}
                 alt={pizza.title}
@@ -29,6 +29,6 @@ export const PizzaCard: FC<PizzaCardPropsInterface> = ({
                 </span>
                 <CustomButton className='primary'>Выбрать</CustomButton>
             </div>
-        </div>
+        </article>
     )
 }
