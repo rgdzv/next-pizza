@@ -8,13 +8,15 @@ interface DialogPropsInterface {
     dialogRef: RefObject<HTMLDialogElement | null>
     className?: DialogClassNameType
     onClick: (e: MouseEvent<HTMLDialogElement>) => void
+    onClose: () => void
 }
 
 export const Dialog: FC<DialogPropsInterface> = ({
     children,
     dialogRef,
     className,
-    onClick
+    onClick,
+    onClose
 }) => {
     const dialogClassName = classNames(
         styles.dialog,
@@ -23,7 +25,12 @@ export const Dialog: FC<DialogPropsInterface> = ({
 
     return (
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
-        <dialog ref={dialogRef} className={dialogClassName} onClick={onClick}>
+        <dialog
+            ref={dialogRef}
+            className={dialogClassName}
+            onClick={onClick}
+            onClose={onClose}
+        >
             {children}
         </dialog>
     )

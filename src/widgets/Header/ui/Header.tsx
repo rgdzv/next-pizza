@@ -9,8 +9,13 @@ import styles from './Header.module.scss'
 import type { FC } from 'react'
 
 export const Header: FC = () => {
-    const { openModal, dialogRef, onClickCloseButton, onClickOutside } =
-        useModal()
+    const {
+        openModal,
+        closeModal,
+        dialogRef,
+        onClickCloseButton,
+        onClickOutside
+    } = useModal()
 
     return (
         <header className={styles.header}>
@@ -28,6 +33,7 @@ export const Header: FC = () => {
             </div>
             <Basket
                 dialogRef={dialogRef}
+                closeModal={closeModal}
                 onClickCloseButton={onClickCloseButton}
                 onClickOutside={onClickOutside}
             />
