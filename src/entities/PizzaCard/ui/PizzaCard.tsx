@@ -1,16 +1,18 @@
 import { CustomButton, CustomImage } from 'shared/ui'
 import styles from './PizzaCard.module.scss'
-import type { Pizza } from '../lib/types/pizza'
 import type { FC } from 'react'
+import type { Pizza } from '../lib/types/pizza'
 
 interface PizzaCardPropsInterface {
     pizza: Pizza
     pizzaCardPrice: string
+    handleSelectPizza: (pizza: Pizza) => void
 }
 
 export const PizzaCard: FC<PizzaCardPropsInterface> = ({
     pizza,
-    pizzaCardPrice
+    pizzaCardPrice,
+    handleSelectPizza
 }) => {
     return (
         <article className={styles.pizzaCard}>
@@ -27,7 +29,14 @@ export const PizzaCard: FC<PizzaCardPropsInterface> = ({
                 <span className={styles.pizzaCardFooterPrice}>
                     от {pizzaCardPrice}
                 </span>
-                <CustomButton className='primary'>Выбрать</CustomButton>
+                <CustomButton
+                    className='primary'
+                    onClick={() => {
+                        handleSelectPizza(pizza)
+                    }}
+                >
+                    Выбрать
+                </CustomButton>
             </div>
         </article>
     )

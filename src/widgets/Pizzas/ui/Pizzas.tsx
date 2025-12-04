@@ -1,5 +1,5 @@
 'use client'
-import { useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import classNames from 'classnames'
 import {
     getError,
@@ -10,9 +10,10 @@ import {
     usePizzasStore
 } from 'features/Pizzas'
 import { PizzaCard } from 'entities/PizzaCard'
-import { priceFormat } from 'shared/lib'
-import { CustomButton, Skeleton } from 'shared/ui'
+import { priceFormat, useModal } from 'shared/lib'
+import { CustomButton, Dialog, Skeleton } from 'shared/ui'
 import styles from './Pizzas.module.scss'
+import type { Pizza } from 'entities/PizzaCard'
 import type { FC } from 'react'
 
 export const Pizzas: FC = () => {
@@ -21,6 +22,23 @@ export const Pizzas: FC = () => {
     const error = usePizzasStore(getError)
     const hasMore = usePizzasStore(getHasMore)
     const { fetchData, fetchDataNextPage } = useFilters()
+    const {
+        isModalOpen,
+        openModal,
+        closeModal,
+        dialogRef,
+        // onClickCloseButton,
+        onClickOutside
+    } = useModal()
+    const [selectedPizza, setSelectedPizza] = useState<Pizza | null>(null)
+
+    const handleSelectPizza = useCallback(
+        (pizza: Pizza) => {
+            openModal()
+            setSelectedPizza(pizza)
+        },
+        [openModal]
+    )
 
     const pizzas = data?.map((pizza) => {
         const pizzaCardPrice = priceFormat(Number(pizza.price[0]))
@@ -30,6 +48,7 @@ export const Pizzas: FC = () => {
                 key={pizza.id}
                 pizza={pizza}
                 pizzaCardPrice={pizzaCardPrice}
+                handleSelectPizza={handleSelectPizza}
             />
         )
     })
@@ -54,6 +73,17 @@ export const Pizzas: FC = () => {
                 {isLoading ? 'Загрузка...' : 'Показать больше'}
             </CustomButton>
         </div>
+    )
+
+    const modalWithPizzaCondition = isModalOpen && (
+        <Dialog
+            dialogRef={dialogRef}
+            onClose={closeModal}
+            onClick={onClickOutside}
+            className='pizzaModal'
+        >
+            <div style={{}}>{selectedPizza?.title}</div>
+        </Dialog>
     )
 
     const pizzasClassName = classNames(styles.pizzas, {
@@ -85,6 +115,7 @@ export const Pizzas: FC = () => {
         <main className={pizzasClassName}>
             <div className={styles.pizzasContent}>{pizzas}</div>
             {pizzasFetchButtonCondition}
+            {modalWithPizzaCondition}
         </main>
     )
 }

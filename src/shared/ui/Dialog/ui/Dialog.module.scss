@@ -38,4 +38,39 @@
             }
         }
     }
+
+    &.pizzaModal {
+        transform: scale(0.96);
+
+        width: 924px; 
+        height: 610px; 
+        border: none;
+        border-radius: 20px; 
+
+        transition: display 100ms allow-discrete, overlay 100ms allow-discrete, transform 100ms;
+
+        &::backdrop {
+            opacity: 0;
+            background-color: #00000080;
+            backdrop-filter: blur(2px);
+            transition: opacity 100ms forwards;
+        }
+
+        &[open] {
+            transform: scale(1);
+
+            &::backdrop {
+                opacity: 1;
+                transition: opacity 100ms forwards;
+            }
+
+            @starting-style {
+                transform: scale(0.96);
+
+                &::backdrop {
+                    opacity: 0;
+                }
+            }
+        }
+    }
 }

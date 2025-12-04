@@ -1,1 +1,1 @@
-export type DialogClassNameType = 'sidebar'
+export type DialogClassNameType = 'sidebar' | 'pizzaModal'
