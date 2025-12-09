@@ -1,0 +1,80 @@
+.calories {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+
+    .popup {
+        position: absolute;
+        z-index: 3;
+        top: 33px;
+        right: -15px;
+
+        width: 220px;
+        padding: 14px;
+        border-radius: 12px;
+
+        color: var(--background-color-secondary);
+
+        background: #666;
+
+        animation: 0.3s 
+            ease 0s 1 normal none running fade-from-bottom;
+
+        &::before {
+            content: " ";
+
+            position: absolute;
+            top: -5px;
+            right: 15px;
+            transform: rotate(45deg);
+
+            width: 20px;
+            height: 20px;
+
+            background: #666;
+        }
+
+        .info {
+            font-size: 12px;
+            font-weight: 700;
+
+            .header {
+                margin-bottom: 12px;
+                opacity: 0.5;
+            }
+
+            .main {
+                display: flex;
+                flex-direction: column;
+                row-gap: 8px;
+                margin-bottom: 15px;
+
+                .calories, 
+                .prot, 
+                .fat, 
+                .carbo {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                }
+            }
+
+            .footer {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+@keyframes fade-from-bottom {
+    0% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

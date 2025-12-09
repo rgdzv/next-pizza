@@ -178,11 +178,48 @@
         }
     }
 
-    &.sortOptionActive {
+    &.sortArrowActive {
         border-color: var(--text-color-primary);
         
         svg {
             color: var(--text-color-primary);
+        }
+    }
+}
+
+.closeModal {
+    position: absolute;
+    right: -55px;
+
+    width: 44px;
+    height: 44px;
+    padding: 12px;
+    border-radius: 22px;
+
+    background-color: var(--background-color-secondary);
+
+    &:hover {
+        background-color: var(--background-color-third);
+    }
+}
+
+.calories {
+    svg {
+        fill-opacity: 0.4;
+        transition: all .1s linear;
+    }
+
+    &:hover {
+        svg {
+            transform: scale(1.1);
+            fill-opacity: 0.6;
+        }
+    }
+
+    &.caloriesActive {
+        svg {
+            transform: scale(1.1);
+            fill-opacity: 0.6;
         }
     }
 }

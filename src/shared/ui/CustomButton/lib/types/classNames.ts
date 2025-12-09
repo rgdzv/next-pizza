@@ -7,3 +7,5 @@ export type ButtonClassNameType =
     | 'category'
     | 'sort'
     | 'sortArrow'
+    | 'closeModal'
+    | 'calories'

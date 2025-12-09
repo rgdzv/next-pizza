@@ -12,6 +12,7 @@ import {
 import { PizzaCard } from 'entities/PizzaCard'
 import { priceFormat, useModal } from 'shared/lib'
 import { CustomButton, Dialog, Skeleton } from 'shared/ui'
+import { CrossIcon } from 'shared/assets'
 import styles from './Pizzas.module.scss'
 import type { Pizza } from 'entities/PizzaCard'
 import type { FC } from 'react'
@@ -27,7 +28,7 @@ export const Pizzas: FC = () => {
         openModal,
         closeModal,
         dialogRef,
-        // onClickCloseButton,
+        onClickCloseButton,
         onClickOutside
     } = useModal()
     const [selectedPizza, setSelectedPizza] = useState<Pizza | null>(null)
@@ -39,6 +40,7 @@ export const Pizzas: FC = () => {
         },
         [openModal]
     )
+    console.log(selectedPizza)
 
     const pizzas = data?.map((pizza) => {
         const pizzaCardPrice = priceFormat(Number(pizza.price[0]))
@@ -82,7 +84,16 @@ export const Pizzas: FC = () => {
             onClick={onClickOutside}
             className='pizzaModal'
         >
-            <div style={{}}>{selectedPizza?.title}</div>
+            <div
+                style={{ width: '100%', height: '100%', position: 'relative' }}
+            >
+                <CustomButton
+                    className='closeModal'
+                    onClick={onClickCloseButton}
+                >
+                    <CrossIcon title='Закрыть окно' />
+                </CustomButton>
+            </div>
         </Dialog>
     )
 
