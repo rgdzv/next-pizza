@@ -20,34 +20,57 @@ export const ShowCalories: FC<ShowCaloriesPropsInterface> = ({
     carbo
 }) => {
     const [opened, setIsOpened] = useState(false)
-    const [isActive, setIsActive] = useState(false)
-    const buttonRef = useRef<HTMLButtonElement>(null)
     const popupRef = useRef<HTMLDivElement>(null)
 
     const handleClick = () => {
         setIsOpened((prev) => !prev)
-        setIsActive((prev) => !prev)
     }
+
+    const caloriesPopupCondition = opened && (
+        <div className={styles.popup} ref={popupRef}>
+            <div className={styles.info}>
+                <div className={styles.header}>Пищевая ценность на 100 г</div>
+                <div className={styles.main}>
+                    <div className={styles.calories}>
+                        <span>Энерг. ценность</span>
+                        <span>{calories} ккал</span>
+                    </div>
+                    <div className={styles.prot}>
+                        <span>Белки</span>
+                        <span>{prot} г</span>
+                    </div>
+                    <div className={styles.fat}>
+                        <span>Жиры</span>
+                        <span>{fat} г</span>
+                    </div>
+                    <div className={styles.carbo}>
+                        <span>Углеводы</span>
+                        <span>{carbo} г</span>
+                    </div>
+                </div>
+                <div className={styles.footer}>
+                    <span>Вес</span>
+                    <span>{weight} г</span>
+                </div>
+            </div>
+        </div>
+    )
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-            if (
-                !popupRef.current?.contains(event.target as Node) &&
-                !buttonRef.current?.contains(event.target as Node)
-            ) {
+            if (!popupRef.current?.contains(event.target as Node)) {
                 setIsOpened(false)
-                setIsActive(false)
             }
         }
 
         if (opened) {
-            document.addEventListener('mousedown', handleClickOutside)
+            document.addEventListener('click', handleClickOutside)
         } else {
-            document.removeEventListener('mousedown', handleClickOutside)
+            document.removeEventListener('click', handleClickOutside)
         }
 
         return () => {
-            document.removeEventListener('mousedown', handleClickOutside)
+            document.removeEventListener('click', handleClickOutside)
         }
     }, [opened])
 
@@ -56,42 +79,11 @@ export const ShowCalories: FC<ShowCaloriesPropsInterface> = ({
             <CustomButton
                 className='calories'
                 onClick={handleClick}
-                caloriesActive={isActive}
-                buttonRef={buttonRef}
+                caloriesActive={opened}
             >
                 <CaloriesIcon title='Энергетическая ценность' />
             </CustomButton>
-            {opened && (
-                <div className={styles.popup} ref={popupRef}>
-                    <div className={styles.info}>
-                        <div className={styles.header}>
-                            Пищевая ценность на 100 г
-                        </div>
-                        <div className={styles.main}>
-                            <div className={styles.calories}>
-                                <span>Энерг. ценность</span>
-                                <span>{calories} ккал</span>
-                            </div>
-                            <div className={styles.prot}>
-                                <span>Белки</span>
-                                <span>{prot} г</span>
-                            </div>
-                            <div className={styles.fat}>
-                                <span>Жиры</span>
-                                <span>{fat} г</span>
-                            </div>
-                            <div className={styles.carbo}>
-                                <span>Углеводы</span>
-                                <span>{carbo} г</span>
-                            </div>
-                        </div>
-                        <div className={styles.footer}>
-                            <span>Вес</span>
-                            <span>{weight} г</span>
-                        </div>
-                    </div>
-                </div>
-            )}
+            {caloriesPopupCondition}
         </div>
     )
 }

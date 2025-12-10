@@ -9,6 +9,7 @@ import {
     useFilters,
     usePizzasStore
 } from 'features/Pizzas'
+import { ShowCalories } from 'features/PizzasModal'
 import { PizzaCard } from 'entities/PizzaCard'
 import { priceFormat, useModal } from 'shared/lib'
 import { CustomButton, Dialog, Skeleton } from 'shared/ui'
@@ -87,6 +88,13 @@ export const Pizzas: FC = () => {
             <div
                 style={{ width: '100%', height: '100%', position: 'relative' }}
             >
+                <ShowCalories
+                    calories='335'
+                    prot='11.2'
+                    fat='11.2'
+                    carbo='11.2'
+                    weight='600'
+                />
                 <CustomButton
                     className='closeModal'
                     onClick={onClickCloseButton}
