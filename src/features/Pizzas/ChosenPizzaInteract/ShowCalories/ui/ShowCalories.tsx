@@ -19,14 +19,14 @@ export const ShowCalories: FC<ShowCaloriesPropsInterface> = ({
     fat,
     carbo
 }) => {
-    const [opened, setIsOpened] = useState(false)
+    const [isOpened, setIsOpened] = useState(false)
     const popupRef = useRef<HTMLDivElement>(null)
 
     const handleClick = () => {
         setIsOpened((prev) => !prev)
     }
 
-    const caloriesPopupCondition = opened && (
+    const caloriesPopupCondition = isOpened && (
         <div className={styles.popup} ref={popupRef}>
             <div className={styles.info}>
                 <div className={styles.header}>Пищевая ценность на 100 г</div>
@@ -63,7 +63,7 @@ export const ShowCalories: FC<ShowCaloriesPropsInterface> = ({
             }
         }
 
-        if (opened) {
+        if (isOpened) {
             document.addEventListener('click', handleClickOutside)
         } else {
             document.removeEventListener('click', handleClickOutside)
@@ -72,14 +72,14 @@ export const ShowCalories: FC<ShowCaloriesPropsInterface> = ({
         return () => {
             document.removeEventListener('click', handleClickOutside)
         }
-    }, [opened])
+    }, [isOpened])
 
     return (
         <div className={styles.calories}>
             <CustomButton
                 className='calories'
                 onClick={handleClick}
-                caloriesActive={opened}
+                caloriesActive={isOpened}
             >
                 <CaloriesIcon title='Энергетическая ценность' />
             </CustomButton>

@@ -1,4 +1,4 @@
-import { PizzasStoreProvider } from 'features/Pizzas'
+import { PizzasStoreProvider } from 'features/Pizzas/AllPizzasInteract'
 import '../styles/global.scss'
 import type { FC, ReactNode } from 'react'
 

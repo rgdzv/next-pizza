@@ -8,8 +8,11 @@ import {
     getPizzas,
     useFilters,
     usePizzasStore
-} from 'features/Pizzas'
-import { ShowCalories } from 'features/PizzasModal'
+} from 'features/Pizzas/AllPizzasInteract'
+import {
+    ChooseSizeType,
+    ShowCalories
+} from 'features/Pizzas/ChosenPizzaInteract'
 import { PizzaCard } from 'entities/PizzaCard'
 import { priceFormat, useModal } from 'shared/lib'
 import { CustomButton, Dialog, Skeleton } from 'shared/ui'
@@ -95,6 +98,7 @@ export const Pizzas: FC = () => {
                     carbo='11.2'
                     weight='600'
                 />
+                <ChooseSizeType />
                 <CustomButton
                     className='closeModal'
                     onClick={onClickCloseButton}
