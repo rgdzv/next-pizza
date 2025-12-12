@@ -3,14 +3,14 @@ import styles from './ChooseSizeType.module.scss'
 import type { FC } from 'react'
 import type { ChangeEvent } from 'react'
 
-const RADIOBOXES = [
+const SIZERADIOBOXES = [
     { label: '20 см', value: '20см' },
     { label: '25 см', value: '25см' },
     { label: '30 см', value: '30см' },
     { label: '35 см', value: '35см' }
 ]
 
-const TYPES = [{ label: 'традиционное' }, { label: 'тонкое' }]
+const TYPERADIOBOXES = [{ label: 'традиционное' }, { label: 'тонкое' }]
 
 // interface ChooseSizeTypePropsInterface {}
 
@@ -42,17 +42,17 @@ export const ChooseSizeType: FC = () => {
                                     : 'translateX(calc(0%))'
                     }}
                 ></div>
-                {RADIOBOXES.map((radiobox) => (
-                    <div key={radiobox.value} className={styles.sizeElement}>
+                {SIZERADIOBOXES.map((size) => (
+                    <div key={size.value} className={styles.sizeElement}>
                         <input
                             type='radio'
                             name='size'
-                            id={radiobox.value}
-                            value={radiobox.value}
-                            checked={valueSize === radiobox.value}
+                            id={size.value}
+                            value={size.value}
+                            checked={valueSize === size.value}
                             onChange={handleChangeSize}
                         />
-                        <label htmlFor={radiobox.value}>{radiobox.label}</label>
+                        <label htmlFor={size.value}>{size.label}</label>
                     </div>
                 ))}
             </div>
@@ -66,17 +66,17 @@ export const ChooseSizeType: FC = () => {
                                 : 'translateX(calc(0%))'
                     }}
                 ></div>
-                {TYPES.map((radiobox) => (
-                    <div key={radiobox.label} className={styles.typeElement}>
+                {TYPERADIOBOXES.map((type) => (
+                    <div key={type.label} className={styles.typeElement}>
                         <input
                             type='radio'
-                            name='size'
-                            id={radiobox.label}
-                            value={radiobox.label}
-                            checked={valueType === radiobox.label}
+                            name='type'
+                            id={type.label}
+                            value={type.label}
+                            checked={valueType === type.label}
                             onChange={handleChangeType}
                         />
-                        <label htmlFor={radiobox.label}>{radiobox.label}</label>
+                        <label htmlFor={type.label}>{type.label}</label>
                     </div>
                 ))}
             </div>
