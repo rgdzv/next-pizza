@@ -20,10 +20,6 @@
 
 .sizeElement,
 .typeElement {
-    input {
-        display: none;
-    }
-
     label {
         cursor: pointer;
         user-select: none;
@@ -39,6 +35,15 @@
 
         font-size: 13px;
         font-weight: 700;
+    }
+
+    input {
+        display: none;
+
+        &:disabled + label {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
     }
 }
 
