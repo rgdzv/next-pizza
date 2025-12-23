@@ -1,13 +1,10 @@
-import type { PizzaOptions } from '../types/types'
+import type { Options } from '../types/types'
 
-export const SIZESPIZZA: PizzaOptions[] = [
+export const SIZES: Options[] = [
     { value: '20' },
     { value: '25' },
     { value: '30' },
     { value: '35' }
 ]
 
-export const TYPESPIZZA: PizzaOptions[] = [
-    { value: 'традиционное' },
-    { value: 'тонкое' }
-]
+export const TYPES: Options[] = [{ value: 'традиционное' }, { value: 'тонкое' }]

@@ -223,3 +223,27 @@
         }
     }
 }
+
+.size {
+    z-index: 1;
+
+    width: 25%;
+    height: 100%;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.type {
+    z-index: 1;
+
+    width: 50%;
+    height: 100%;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+}

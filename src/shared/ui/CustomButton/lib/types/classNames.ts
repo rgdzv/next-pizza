@@ -9,3 +9,5 @@ export type ButtonClassNameType =
     | 'sortArrow'
     | 'closeModal'
     | 'calories'
+    | 'size'
+    | 'type'

@@ -1,3 +1,3 @@
-export interface PizzaOptions {
+export interface Options {
     value: string
 }

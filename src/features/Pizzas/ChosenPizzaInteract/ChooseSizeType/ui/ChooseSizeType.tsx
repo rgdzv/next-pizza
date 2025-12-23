@@ -1,47 +1,26 @@
 import { useState } from 'react'
-import { SIZESPIZZA, TYPESPIZZA } from '../lib/const/const'
+import { CustomButton } from 'shared/ui'
+import { SIZES, TYPES } from '../lib/const/const'
 import styles from './ChooseSizeType.module.scss'
 import type { FC } from 'react'
-import type { ChangeEvent } from 'react'
 
 // interface ChooseSizeTypePropsInterface {}
 
 export const ChooseSizeType: FC = () => {
-    const [valueSize, setValueSize] = useState(SIZESPIZZA[2].value)
-    const [valueType, setValueType] = useState(TYPESPIZZA[0].value)
+    const [selectedSize, setSelectedSize] = useState(SIZES[2].value)
+    const [selectedType, setSelectedType] = useState(TYPES[0].value)
 
-    const handleChangeSize = (e: ChangeEvent<HTMLInputElement>) => {
-        const newSize = e.target.value
-        setValueSize(newSize)
+    const handleChangeSize = (newSize: string) => {
+        setSelectedSize(newSize)
 
         if (newSize === '20' || newSize === '25') {
-            setValueType('традиционное')
+            setSelectedType(TYPES[0].value)
         }
     }
 
-    const handleChangeType = (e: ChangeEvent<HTMLInputElement>) => {
-        setValueType(e.target.value)
+    const handleChangeType = (newType: string) => {
+        setSelectedType(newType)
     }
-
-    const isThinTypeDisabled = valueSize === '20' || valueSize === '25'
-
-    // const handleLabelKeyDown =
-    //     (sizeValue: string) => (e: KeyboardEvent) => {
-    //         if (e.key === 'Enter' || e.key === ' ') {
-    //             // Находим соответствующий input и устанавливаем ему checked = true
-    //             const inputElement = document.getElementById(
-    //                 sizeValue
-    //             ) as HTMLInputElement | null
-    //             if (inputElement) {
-    //                 inputElement.checked = true // Устанавливаем input как выбранный
-    //                 handleChangeSize({
-    //                     target: inputElement
-    //                 } as ChangeEvent<HTMLInputElement>) // Вызываем обработчик изменения размера
-    //             } else {
-    //                 console.error(`Input с id ${sizeValue} не найден`)
-    //             }
-    //         }
-    //     }
 
     return (
         <div className={styles.wrapper}>
@@ -50,28 +29,28 @@ export const ChooseSizeType: FC = () => {
                     className={styles.backLayoutSize}
                     style={{
                         transform:
-                            valueSize === '25'
+                            selectedSize === '25'
                                 ? 'translateX(100%)'
-                                : valueSize === '30'
+                                : selectedSize === '30'
                                   ? 'translateX(200%)'
-                                  : valueSize === '35'
+                                  : selectedSize === '35'
                                     ? 'translateX(300%)'
                                     : 'translateX(0%)'
                     }}
                 ></div>
-                {SIZESPIZZA.map((size) => {
+                {SIZES.map((size) => {
+                    const handleClickSize = () => {
+                        handleChangeSize(size.value)
+                    }
+
                     return (
-                        <div key={size.value} className={styles.sizeElement}>
-                            <input
-                                type='radio'
-                                name='size'
-                                id={size.value}
-                                value={size.value}
-                                checked={valueSize === size.value}
-                                onChange={handleChangeSize}
-                            />
-                            <label htmlFor={size.value}>{size.value} см</label>
-                        </div>
+                        <CustomButton
+                            key={size.value}
+                            className='size'
+                            onClick={handleClickSize}
+                        >
+                            {size.value}
+                        </CustomButton>
                     )
                 })}
             </div>
@@ -80,27 +59,31 @@ export const ChooseSizeType: FC = () => {
                     className={styles.backLayoutType}
                     style={{
                         transform:
-                            valueType === 'тонкое'
+                            selectedType === 'тонкое'
                                 ? 'translateX(100%)'
                                 : 'translateX(0%)'
                     }}
                 ></div>
-                {TYPESPIZZA.map((type) => (
-                    <div key={type.value} className={styles.typeElement}>
-                        <input
-                            type='radio'
-                            name='type'
-                            id={type.value}
-                            value={type.value}
-                            checked={valueType === type.value}
-                            onChange={handleChangeType}
-                            disabled={
-                                type.value === 'тонкое' && isThinTypeDisabled
-                            }
-                        />
-                        <label htmlFor={type.value}>{type.value}</label>
-                    </div>
-                ))}
+                {TYPES.map((type) => {
+                    const handleClickType = () => {
+                        handleChangeType(type.value)
+                    }
+
+                    const selectedSizeConditions =
+                        type.value === 'тонкое' &&
+                        (selectedSize === '20' || selectedSize === '25')
+
+                    return (
+                        <CustomButton
+                            key={type.value}
+                            className='type'
+                            onClick={handleClickType}
+                            disabled={selectedSizeConditions}
+                        >
+                            {type.value}
+                        </CustomButton>
+                    )
+                })}
             </div>
         </div>
     )
