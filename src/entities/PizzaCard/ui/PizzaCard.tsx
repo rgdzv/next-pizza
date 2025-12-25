@@ -6,7 +6,7 @@ import type { Pizza } from '../lib/types/pizza'
 interface PizzaCardPropsInterface {
     pizza: Pizza
     pizzaCardPrice: string
-    handleSelectPizza: (pizza: Pizza) => void
+    handleSelectPizza: () => void
 }
 
 export const PizzaCard: FC<PizzaCardPropsInterface> = ({
@@ -29,12 +29,7 @@ export const PizzaCard: FC<PizzaCardPropsInterface> = ({
                 <span className={styles.pizzaCardFooterPrice}>
                     от {pizzaCardPrice}
                 </span>
-                <CustomButton
-                    className='primary'
-                    onClick={() => {
-                        handleSelectPizza(pizza)
-                    }}
-                >
+                <CustomButton className='primary' onClick={handleSelectPizza}>
                     Выбрать
                 </CustomButton>
             </div>

@@ -4,8 +4,6 @@ import { SIZES, TYPES } from '../lib/const/const'
 import styles from './ChooseSizeType.module.scss'
 import type { FC } from 'react'
 
-// interface ChooseSizeTypePropsInterface {}
-
 export const ChooseSizeType: FC = () => {
     const [selectedSize, setSelectedSize] = useState(SIZES[2].value)
     const [selectedType, setSelectedType] = useState(TYPES[0].value)

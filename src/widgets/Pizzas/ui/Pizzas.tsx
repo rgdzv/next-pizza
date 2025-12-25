@@ -1,5 +1,5 @@
 'use client'
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import classNames from 'classnames'
 import {
     getError,
@@ -9,14 +9,9 @@ import {
     useFilters,
     usePizzasStore
 } from 'features/Pizzas/AllPizzasInteract'
-import {
-    ChooseSizeType,
-    ShowCalories
-} from 'features/Pizzas/ChosenPizzaInteract'
 import { PizzaCard } from 'entities/PizzaCard'
-import { priceFormat, useModal } from 'shared/lib'
-import { CustomButton, Dialog, Skeleton } from 'shared/ui'
-import { CrossIcon } from 'shared/assets'
+import { priceFormat } from 'shared/lib'
+import { CustomButton, Skeleton } from 'shared/ui'
 import styles from './Pizzas.module.scss'
 import type { Pizza } from 'entities/PizzaCard'
 import type { FC } from 'react'
@@ -27,27 +22,16 @@ export const Pizzas: FC = () => {
     const error = usePizzasStore(getError)
     const hasMore = usePizzasStore(getHasMore)
     const { fetchData, fetchDataNextPage } = useFilters()
-    const {
-        isModalOpen,
-        openModal,
-        closeModal,
-        dialogRef,
-        onClickCloseButton,
-        onClickOutside
-    } = useModal()
     const [selectedPizza, setSelectedPizza] = useState<Pizza | null>(null)
 
-    const handleSelectPizza = useCallback(
-        (pizza: Pizza) => {
-            openModal()
-            setSelectedPizza(pizza)
-        },
-        [openModal]
-    )
     console.log(selectedPizza)
 
     const pizzas = data?.map((pizza) => {
         const pizzaCardPrice = priceFormat(Number(pizza.price[0]))
+
+        const handleSelectPizza = () => {
+            setSelectedPizza(pizza)
+        }
 
         return (
             <PizzaCard
@@ -81,34 +65,6 @@ export const Pizzas: FC = () => {
         </div>
     )
 
-    const modalWithPizzaCondition = isModalOpen && (
-        <Dialog
-            dialogRef={dialogRef}
-            onClose={closeModal}
-            onClick={onClickOutside}
-            className='pizzaModal'
-        >
-            <div
-                style={{ width: '100%', height: '100%', position: 'relative' }}
-            >
-                <ShowCalories
-                    calories='335'
-                    prot='11.2'
-                    fat='11.2'
-                    carbo='11.2'
-                    weight='600'
-                />
-                <ChooseSizeType />
-                <CustomButton
-                    className='closeModal'
-                    onClick={onClickCloseButton}
-                >
-                    <CrossIcon title='Закрыть окно' />
-                </CustomButton>
-            </div>
-        </Dialog>
-    )
-
     const pizzasClassName = classNames(styles.pizzas, {
         [styles.noPizzasLeft]: !hasMore
     })
@@ -138,7 +94,6 @@ export const Pizzas: FC = () => {
         <main className={pizzasClassName}>
             <div className={styles.pizzasContent}>{pizzas}</div>
             {pizzasFetchButtonCondition}
-            {modalWithPizzaCondition}
         </main>
     )
 }
