@@ -1,6 +1,7 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import classNames from 'classnames'
+import { PizzaModal } from 'widgets/PizzaModal'
 import {
     getError,
     getHasMore,
@@ -10,10 +11,10 @@ import {
     usePizzasStore
 } from 'features/Pizzas/AllPizzasInteract'
 import { PizzaCard } from 'entities/PizzaCard'
-import { priceFormat } from 'shared/lib'
+import { priceFormat, useModal } from 'shared/lib'
 import { CustomButton, Skeleton } from 'shared/ui'
 import styles from './Pizzas.module.scss'
-import type { Pizza } from 'entities/PizzaCard'
+// import type { Pizza } from 'entities/PizzaCard'
 import type { FC } from 'react'
 
 export const Pizzas: FC = () => {
@@ -22,15 +23,24 @@ export const Pizzas: FC = () => {
     const error = usePizzasStore(getError)
     const hasMore = usePizzasStore(getHasMore)
     const { fetchData, fetchDataNextPage } = useFilters()
-    const [selectedPizza, setSelectedPizza] = useState<Pizza | null>(null)
+    // const [selectedPizza, setSelectedPizza] = useState<Pizza | null>(null)
+    const {
+        isModalOpen,
+        openModal,
+        closeModal,
+        dialogRef,
+        onClickCloseButton,
+        onClickOutside
+    } = useModal()
 
-    console.log(selectedPizza)
+    // console.log(selectedPizza)
 
     const pizzas = data?.map((pizza) => {
         const pizzaCardPrice = priceFormat(Number(pizza.price[0]))
 
         const handleSelectPizza = () => {
-            setSelectedPizza(pizza)
+            // setSelectedPizza(pizza)
+            openModal()
         }
 
         return (
@@ -94,6 +104,13 @@ export const Pizzas: FC = () => {
         <main className={pizzasClassName}>
             <div className={styles.pizzasContent}>{pizzas}</div>
             {pizzasFetchButtonCondition}
+            <PizzaModal
+                isModalOpen={isModalOpen}
+                closeModal={closeModal}
+                dialogRef={dialogRef}
+                onClickCloseButton={onClickCloseButton}
+                onClickOutside={onClickOutside}
+            />
         </main>
     )
 }

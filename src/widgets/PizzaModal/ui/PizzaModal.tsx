@@ -3,23 +3,25 @@ import {
     ShowCalories
 } from 'features/Pizzas/ChosenPizzaInteract'
 import { CustomButton, Dialog } from 'shared/ui'
-import { useModal } from 'shared/lib'
 import { CrossIcon } from 'shared/assets'
-import styles from './PizzaChoose.module.scss'
-import type { FC } from 'react'
+import styles from './PizzaModal.module.scss'
+import type { FC, MouseEvent, RefObject } from 'react'
 
-// interface PizzaModalPropsInterface {}
+interface PizzaModalPropsInterface {
+    isModalOpen: boolean
+    closeModal: () => void
+    dialogRef: RefObject<HTMLDialogElement | null>
+    onClickOutside: (e: MouseEvent<HTMLDialogElement>) => void
+    onClickCloseButton: () => void
+}
 
-export const PizzaModal: FC = () => {
-    const {
-        isModalOpen,
-        // openModal,
-        closeModal,
-        dialogRef,
-        onClickCloseButton,
-        onClickOutside
-    } = useModal()
-
+export const PizzaModal: FC<PizzaModalPropsInterface> = ({
+    isModalOpen,
+    closeModal,
+    dialogRef,
+    onClickCloseButton,
+    onClickOutside
+}) => {
     return (
         isModalOpen && (
             <Dialog
