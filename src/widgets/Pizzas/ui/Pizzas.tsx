@@ -1,5 +1,5 @@
 'use client'
-import { useEffect } from 'react'
+import { useCallback, useEffect } from 'react'
 import classNames from 'classnames'
 import { PizzaModal } from 'widgets/PizzaModal'
 import {
@@ -33,15 +33,13 @@ export const Pizzas: FC = () => {
         onClickOutside
     } = useModal()
 
-    // console.log(selectedPizza)
+    const handleSelectPizza = useCallback(() => {
+        // setSelectedPizza(pizza)
+        openModal()
+    }, [openModal])
 
     const pizzas = data?.map((pizza) => {
         const pizzaCardPrice = priceFormat(Number(pizza.price[0]))
-
-        const handleSelectPizza = () => {
-            // setSelectedPizza(pizza)
-            openModal()
-        }
 
         return (
             <PizzaCard

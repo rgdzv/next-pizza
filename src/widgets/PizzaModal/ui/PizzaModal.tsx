@@ -22,34 +22,34 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
     onClickCloseButton,
     onClickOutside
 }) => {
+    if (!isModalOpen) return null
+
     return (
-        isModalOpen && (
-            <Dialog
-                dialogRef={dialogRef}
-                onClose={closeModal}
-                onClick={onClickOutside}
-                className='pizzaModal'
-            >
-                <div className={styles.pizzaModal}>
-                    <div></div>
-                    <div>
-                        <ShowCalories
-                            calories='335'
-                            prot='11.2'
-                            fat='11.2'
-                            carbo='11.2'
-                            weight='600'
-                        />
-                        <ChooseSizeType />
-                    </div>
-                    <CustomButton
-                        className='closeModal'
-                        onClick={onClickCloseButton}
-                    >
-                        <CrossIcon title='Закрыть окно' />
-                    </CustomButton>
+        <Dialog
+            dialogRef={dialogRef}
+            onClose={closeModal}
+            onClick={onClickOutside}
+            className='pizzaModal'
+        >
+            <div className={styles.pizzaModal}>
+                <div></div>
+                <div>
+                    <ShowCalories
+                        calories='335'
+                        prot='11.2'
+                        fat='11.2'
+                        carbo='11.2'
+                        weight='600'
+                    />
+                    <ChooseSizeType />
                 </div>
-            </Dialog>
-        )
+                <CustomButton
+                    className='closeModal'
+                    onClick={onClickCloseButton}
+                >
+                    <CrossIcon title='Закрыть окно' />
+                </CustomButton>
+            </div>
+        </Dialog>
     )
 }
