@@ -16,13 +16,13 @@ export const useModal = (): UseModalResult => {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const dialogRef = useRef<HTMLDialogElement>(null)
 
-    const openModal = (): void => {
+    const openModal = useCallback(() => {
         setIsModalOpen(true)
-    }
+    }, [])
 
-    const closeModal = (): void => {
+    const closeModal = useCallback(() => {
         setIsModalOpen(false)
-    }
+    }, [])
 
     const onClickOutside = useCallback(
         (e: MouseEvent<HTMLDialogElement>): void => {
