@@ -13,6 +13,7 @@ export const Skeleton: FC<SkeletonPropsInterface> = ({ className }) => {
         <div className={finalClassName}>
             <div className={styles.image}></div>
             <div className={styles.title}></div>
+            <div className={styles.rating}></div>
             <div className={styles.description}></div>
             <div className={styles.footer}></div>
         </div>

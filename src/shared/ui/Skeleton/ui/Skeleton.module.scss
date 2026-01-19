@@ -40,6 +40,7 @@
 
 .image,
 .title,
+.rating,
 .description,
 .footer {
     composes: skeleton
@@ -60,6 +61,11 @@
 
     .title {
         height: 1.375em;
+        border-radius: 15px;
+    }
+
+    .rating {
+        height: 0.9375em;
         border-radius: 15px;
     }
 

@@ -20,6 +20,43 @@ export const ChooseSizeType: FC = () => {
         setSelectedType(newType)
     }
 
+    const sizes = SIZES.map((size) => {
+        const handleClickSize = () => {
+            handleChangeSize(size.value)
+        }
+
+        return (
+            <CustomButton
+                key={size.value}
+                className='size'
+                onClick={handleClickSize}
+            >
+                {size.value}
+            </CustomButton>
+        )
+    })
+
+    const types = TYPES.map((type) => {
+        const handleClickType = () => {
+            handleChangeType(type.value)
+        }
+
+        const selectedSizeConditions =
+            type.value === 'тонкое' &&
+            (selectedSize === '20' || selectedSize === '25')
+
+        return (
+            <CustomButton
+                key={type.value}
+                className='type'
+                onClick={handleClickType}
+                disabled={selectedSizeConditions}
+            >
+                {type.value}
+            </CustomButton>
+        )
+    })
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.size}>
@@ -36,21 +73,7 @@ export const ChooseSizeType: FC = () => {
                                     : 'translateX(0%)'
                     }}
                 ></div>
-                {SIZES.map((size) => {
-                    const handleClickSize = () => {
-                        handleChangeSize(size.value)
-                    }
-
-                    return (
-                        <CustomButton
-                            key={size.value}
-                            className='size'
-                            onClick={handleClickSize}
-                        >
-                            {size.value}
-                        </CustomButton>
-                    )
-                })}
+                {sizes}
             </div>
             <div className={styles.type}>
                 <div
@@ -62,26 +85,7 @@ export const ChooseSizeType: FC = () => {
                                 : 'translateX(0%)'
                     }}
                 ></div>
-                {TYPES.map((type) => {
-                    const handleClickType = () => {
-                        handleChangeType(type.value)
-                    }
-
-                    const selectedSizeConditions =
-                        type.value === 'тонкое' &&
-                        (selectedSize === '20' || selectedSize === '25')
-
-                    return (
-                        <CustomButton
-                            key={type.value}
-                            className='type'
-                            onClick={handleClickType}
-                            disabled={selectedSizeConditions}
-                        >
-                            {type.value}
-                        </CustomButton>
-                    )
-                })}
+                {types}
             </div>
         </div>
     )
