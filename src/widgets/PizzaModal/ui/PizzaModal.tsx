@@ -32,8 +32,14 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
             className='pizzaModal'
         >
             <div className={styles.pizzaModal}>
-                <div></div>
-                <div>
+                <div className={styles.pizzaImage}></div>
+                <div className={styles.pizzaInfo}>
+                    <h1>Пицца с хреном</h1>
+                    <span>20 см, традиционное тесто, 250 г</span>
+                    <div className={styles.pizzaIngredients}>
+                        Свиная шейка, красный лук, маринованные огурчики,
+                        моцарелла, соус сливочный хрен, фирменный соус альфредо
+                    </div>
                     <ShowCalories
                         calories='335'
                         prot='11.2'
