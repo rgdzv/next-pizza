@@ -1,17 +1,23 @@
 
 :root {
+    // Font
     --font-family: 'Nunito';
     --font-size: 16px;
     --font-line-height: 1;
     --font-weight: 400;
     --font: var(--font-weight) var(--font-size) / var(--font-line-height) var(--font-family);
+
+    // Background
     --background-color-primary: #FFBF9B;
     --background-color-secondary: #FFF;
     --background-color-third: #F9F9F9;
     --background-color-basket: #F4F1EE;
     --background-color-skeleton: #EBEBEB;
     --background-color-skeleton-move: #DFDFDF;
+
+    // Text
     --text-color-primary: #000;
     --text-color-secondary: #535353;
     --text-color-third: #FE5F00;
+    --text-color-default: #FFF;
 }

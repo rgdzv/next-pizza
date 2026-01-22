@@ -16,8 +16,6 @@
         padding: 14px;
         border-radius: 12px;
 
-        color: var(--background-color-secondary);
-
         opacity: 0.9;
         background-color: #666;
 
@@ -39,33 +37,46 @@
         }
 
         .info {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 700;
 
             .header {
                 margin-bottom: 12px;
+                color: var(--text-color-default);
                 opacity: 0.5;
             }
 
             .main {
                 display: flex;
                 flex-direction: column;
-                row-gap: 8px;
-                margin-bottom: 15px;
+                row-gap: 10px;
+                margin-bottom: 20px;
 
-                .calories, 
+                .energy, 
                 .prot, 
                 .fat, 
                 .carbo {
                     display: flex;
                     justify-content: space-between;
-                    width: 100%;
+                    
+                    span {
+                        font-size: 13px;
+                        font-weight: 700;
+                        color: var(--text-color-default);
+                    }
                 }
             }
 
             .footer {
                 display: flex;
                 justify-content: space-between;
+
+                /* stylelint-disable-next-line no-descending-specificity */
+                span {
+                    font-size: 13px;
+                    font-weight: 700;
+                    color: var(--text-color-default);
+                }
             }
         }
     }

@@ -31,7 +31,7 @@ export const ShowCalories: FC<ShowCaloriesPropsInterface> = ({
             <div className={styles.info}>
                 <div className={styles.header}>Пищевая ценность на 100 г</div>
                 <div className={styles.main}>
-                    <div className={styles.calories}>
+                    <div className={styles.energy}>
                         <span>Энерг. ценность</span>
                         <span>{calories} ккал</span>
                     </div>

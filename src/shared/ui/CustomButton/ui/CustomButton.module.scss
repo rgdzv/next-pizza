@@ -41,11 +41,11 @@
     }
 
     &:hover:enabled {
-        color: var(--background-color-secondary);
+        color: var(--text-color-default);
         background-color: var(--text-color-third);
 
         svg {
-            fill: var(--background-color-secondary);
+            fill: var(--text-color-default);
         }
     }
 
@@ -79,7 +79,7 @@
     svg {
         width: 25px;
         height: 25px;
-        fill: var(--background-color-secondary);
+        fill: var(--text-color-default);
     }
 
     &:hover {
@@ -196,7 +196,7 @@
     padding: 12px;
     border-radius: 22px;
 
-    background-color: var(--background-color-secondary);
+    background-color: var(--text-color-default);
 
     &:hover {
         background-color: var(--background-color-third);
