@@ -41,8 +41,10 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
                         carbo='11.2'
                         weight='600'
                     />
-                    <h1>Пицца с хреном</h1>
-                    <span>20 см, традиционное тесто, 250 г</span>
+                    <h1 className={styles.pizzaInfoTitle}>Пицца с хреном</h1>
+                    <span className={styles.pizzaInfoSubtitle}>
+                        20 см, традиционное тесто, 250 г
+                    </span>
                     <div className={styles.pizzaIngredients}>
                         Свиная шейка, красный лук, маринованные огурчики,
                         моцарелла, соус сливочный хрен, фирменный соус альфредо

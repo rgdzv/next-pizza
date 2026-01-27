@@ -5,31 +5,40 @@
     height: 100%;
 
     .pizzaImage {
-        width: 530px;
+        min-width: 530px;
     }
 
     .pizzaInfo {
         position: relative;
 
+        overflow: hidden auto;
+
+        // scrollbar-width: thin;
         display: flex;
         flex-direction: column;
         flex-grow: 1;
-        row-gap: 10px;
 
         padding: 30px;
+        border-radius: 20px;
 
-        h1 {
-            font-size: 24px;
+        background-color: var(--background-color-pizza-modal-info);
+
+        .pizzaInfoTitle {
+            margin-bottom: 8px;
+            font-size: 26px;
             font-weight: 700;
         }
 
-        span {
-            font-size: 14px;
+        .pizzaInfoSubtitle {
+            margin-bottom: 8px;
+            font-size: 16px;
             color: var(--text-color-secondary);
         }
     }
 
     .pizzaIngredients {
-        font-size: 14px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 600;
     }
 }
