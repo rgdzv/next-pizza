@@ -247,3 +247,13 @@
         cursor: not-allowed;
     }
 }
+
+.ingredient {
+    border-bottom: 2px dotted var(--text-color-primary);
+    font-weight: 500;
+    line-height: 1.2;
+
+    &.ingredientRemoved {
+        color: red;
+    }
+}

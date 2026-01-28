@@ -11,3 +11,4 @@ export type ButtonClassNameType =
     | 'calories'
     | 'size'
     | 'type'
+    | 'ingredient'

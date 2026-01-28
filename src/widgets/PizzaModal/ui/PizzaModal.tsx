@@ -1,9 +1,10 @@
+import { useState } from 'react'
 import {
     ChooseSizeType,
     ShowCalories
 } from 'features/Pizzas/ChosenPizzaInteract'
 import { CustomButton, Dialog } from 'shared/ui'
-import { CrossIcon } from 'shared/assets'
+import { CrossIcon, RemoveIngredient, ReturnIngredient } from 'shared/assets'
 import styles from './PizzaModal.module.scss'
 import type { FC, MouseEvent, RefObject } from 'react'
 
@@ -22,6 +23,12 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
     onClickCloseButton,
     onClickOutside
 }) => {
+    const [isRemoved, setIsRemoved] = useState(false)
+
+    const toggleIngredient = () => {
+        setIsRemoved((prev) => !prev)
+    }
+
     if (!isModalOpen) return null
 
     return (
@@ -46,8 +53,20 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
                         20 см, традиционное тесто, 250 г
                     </span>
                     <div className={styles.pizzaIngredients}>
-                        Свиная шейка, красный лук, маринованные огурчики,
-                        моцарелла, соус сливочный хрен, фирменный соус альфредо
+                        <CustomButton
+                            className='ingredient'
+                            onClick={toggleIngredient}
+                            ingredientRemoved={isRemoved}
+                        >
+                            Свиная шейка&nbsp;
+                            {isRemoved ? (
+                                <ReturnIngredient title='Вернуть' />
+                            ) : (
+                                <RemoveIngredient title='Убрать' />
+                            )}
+                        </CustomButton>
+                        , красный лук, маринованные огурчики, моцарелла, соус
+                        сливочный хрен, фирменный соус альфредо
                     </div>
                     <ChooseSizeType />
                 </div>

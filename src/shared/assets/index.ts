@@ -15,6 +15,8 @@ import ArrowsUpDownIcon from './images/arrows-up-down-icon.svg'
 import ArrowUpIcon from './images/arrow-up-icon.svg'
 import ArrowDownIcon from './images/arrow-down-icon.svg'
 import CaloriesIcon from './images/calories-icon.svg'
+import RemoveIngredient from './images/remove-ing-icon.svg'
+import ReturnIngredient from './images/return-ing-icon.svg'
 
 export {
     ArrowLeftIcon,
@@ -33,5 +35,7 @@ export {
     ArrowsUpDownIcon,
     ArrowUpIcon,
     ArrowDownIcon,
-    CaloriesIcon
+    CaloriesIcon,
+    RemoveIngredient,
+    ReturnIngredient
 }
