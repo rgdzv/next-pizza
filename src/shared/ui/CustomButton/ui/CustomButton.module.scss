@@ -249,11 +249,13 @@
 }
 
 .ingredient {
-    border-bottom: 2px dotted var(--text-color-primary);
     font-weight: 500;
     line-height: 1.2;
+    text-decoration: underline dotted;
+    text-underline-offset: 3px;
 
     &.ingredientRemoved {
-        color: red;
+        border-bottom: none;
+        text-decoration: line-through
     }
 }

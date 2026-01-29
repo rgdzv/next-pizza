@@ -40,23 +40,5 @@
         margin-bottom: 20px;
         font-size: 16px;
         font-weight: 600;
-
-        a {
-            cursor: pointer;
-
-            position: relative;
-
-            margin: 0;
-            padding: 0;
-            border: none;
-
-            font-size: 16px;
-            color: var(--text-color-primary);
-            text-decoration: underline dotted;
-            text-underline-offset: 3px;
-
-            background: transparent;
-            outline: none;
-        }
     }
 }

@@ -25,7 +25,18 @@
                     "1": 690,
                     "2": 790
                 }
-            }
+            },
+            "ingredients": [
+                {
+                    "name": "двойная порция классических колбасок",
+                    "removable": false
+                },
+                { "name": "красный лук", "removable": true },
+                { "name": "томаты", "removable": false },
+                { "name": "соус барбекю", "removable": true },
+                { "name": "моцарелла", "removable": true },
+                { "name": "фирменный томатный соус", "removable": false }
+            ]
         },
         {
             "id": "2",
@@ -52,7 +63,19 @@
                     "1": 690,
                     "2": 790
                 }
-            }
+            },
+            "ingredients": [
+                {
+                    "name": "креветки",
+                    "removable": true
+                },
+                { "name": "томаты", "removable": true },
+                { "name": "шампиньоны", "removable": true },
+                { "name": "соус песто", "removable": false },
+                { "name": "моцарелла", "removable": false },
+                { "name": "итальянские травы", "removable": true },
+                { "name": "фирменный томатный соус", "removable": false }
+            ]
         },
         {
             "id": "3",
@@ -79,7 +102,16 @@
                     "1": 690,
                     "2": 790
                 }
-            }
+            },
+            "ingredients": [
+                {
+                    "name": "cыр блю чиз",
+                    "removable": true
+                },
+                { "name": "сыры чеддер и пармезан", "removable": true },
+                { "name": "моцарелла", "removable": false },
+                { "name": "фирменный соус альфредо", "removable": false }
+            ]
         },
         {
             "id": "4",
@@ -106,7 +138,19 @@
                     "1": 690,
                     "2": 790
                 }
-            }
+            },
+            "ingredients": [
+                {
+                    "name": "цыпленок",
+                    "removable": false
+                },
+                { "name": "маринованные огурчики", "removable": true },
+                { "name": "красный лук", "removable": true },
+                { "name": "соус гриль", "removable": false },
+                { "name": "моцарелла", "removable": false },
+                { "name": "чеснок", "removable": true },
+                { "name": "фирменный соус альфредо", "removable": false }
+            ]
         },
         {
             "id": "5",
@@ -133,7 +177,16 @@
                     "1": 690,
                     "2": 790
                 }
-            }
+            },
+            "ingredients": [
+                {
+                    "name": "креветки",
+                    "removable": false
+                },
+                { "name": "сыр блю чиз", "removable": true },
+                { "name": "моцарелла", "removable": false },
+                { "name": "фирменный соус альфредо", "removable": true }
+            ]
         },
         {
             "id": "6",
@@ -160,7 +213,15 @@
                     "1": 690,
                     "2": 790
                 }
-            }
+            },
+            "ingredients": [
+                {
+                    "name": "моцарелла",
+                    "removable": false
+                },
+                { "name": "сыры чеддер и пармезан", "removable": false },
+                { "name": "фирменный соус альфредо", "removable": false }
+            ]
         },
         {
             "id": "7",
@@ -187,7 +248,16 @@
                     "1": 690,
                     "2": 790
                 }
-            }
+            },
+            "ingredients": [
+                {
+                    "name": "пикантная пепперони",
+                    "removable": true
+                },
+                { "name": "увеличенная порция моцареллы", "removable": false },
+                { "name": "томаты", "removable": true },
+                { "name": "фирменный томатный соус", "removable": false }
+            ]
         },
         {
             "id": "8",
@@ -214,7 +284,16 @@
                     "1": 690,
                     "2": 790
                 }
-            }
+            },
+            "ingredients": [
+                {
+                    "name": "острые колбаски чоризо",
+                    "removable": true
+                },
+                { "name": "сладкий перец", "removable": false },
+                { "name": "моцарелла", "removable": true },
+                { "name": "фирменный томатный соус", "removable": false }
+            ]
         },
         {
             "id": "9",
@@ -241,7 +320,16 @@
                     "1": 690,
                     "2": 790
                 }
-            }
+            },
+            "ingredients": [
+                {
+                    "name": "ветчина",
+                    "removable": true
+                },
+                { "name": "шампиньоны", "removable": true },
+                { "name": "увеличенная порция моцареллы", "removable": false },
+                { "name": "фирменный томатный соус", "removable": false }
+            ]
         },
         {
             "id": "10",
@@ -268,7 +356,15 @@
                     "1": 690,
                     "2": 790
                 }
-            }
+            },
+            "ingredients": [
+                {
+                    "name": "цыпленок",
+                    "removable": true
+                },
+                { "name": "моцарелла", "removable": false },
+                { "name": "фирменный соус альфредо", "removable": false }
+            ]
         },
         {
             "id": "11",
@@ -295,7 +391,15 @@
                     "1": 690,
                     "2": 790
                 }
-            }
+            },
+            "ingredients": [
+                {
+                    "name": "ветчина",
+                    "removable": false
+                },
+                { "name": "моцарелла", "removable": false },
+                { "name": "фирменный соус альфредо", "removable": false }
+            ]
         },
         {
             "id": "12",
@@ -322,7 +426,21 @@
                     "1": 690,
                     "2": 790
                 }
-            }
+            },
+            "ingredients": [
+                {
+                    "name": "цыпленок",
+                    "removable": true
+                },
+                { "name": "острые колбаски чоризо", "removable": true },
+                { "name": "соус бургер", "removable": false },
+                { "name": "сладкий перец", "removable": true },
+                { "name": "красный лук", "removable": true },
+                { "name": "томаты", "removable": true },
+                { "name": "моцарелла", "removable": false },
+                { "name": "соус ранч", "removable": false },
+                { "name": "чеснок", "removable": true }
+            ]
         },
         {
             "id": "13",
@@ -349,7 +467,18 @@
                     "1": 690,
                     "2": 790
                 }
-            }
+            },
+            "ingredients": [
+                {
+                    "name": "креветки",
+                    "removable": true
+                },
+                { "name": "ананасы", "removable": true },
+                { "name": "соус сладкий чили", "removable": false },
+                { "name": "сладкий перец", "removable": true },
+                { "name": "моцарелла", "removable": false },
+                { "name": "фирменный соус альфредо", "removable": false }
+            ]
         },
         {
             "id": "14",
@@ -376,7 +505,19 @@
                     "1": 690,
                     "2": 790
                 }
-            }
+            },
+            "ingredients": [
+                {
+                    "name": "пряная говядина",
+                    "removable": false
+                },
+                { "name": "шампиньоны", "removable": true },
+                { "name": "ароматный грибной соус", "removable": false },
+                { "name": "маринованные огурчики", "removable": true },
+                { "name": "моцарелла", "removable": false },
+                { "name": "красный лук", "removable": false },
+                { "name": "фирменный соус альфредо", "removable": false }
+            ]
         },
         {
             "id": "15",
@@ -403,7 +544,20 @@
                     "1": 690,
                     "2": 790
                 }
-            }
+            },
+            "ingredients": [
+                {
+                    "name": "бекон",
+                    "removable": true
+                },
+                { "name": "сыры чеддер и пармезан", "removable": true },
+                { "name": "моцарелла", "removable": false },
+                { "name": "томаты", "removable": true },
+                { "name": "красный лук", "removable": true },
+                { "name": "чеснок", "removable": true },
+                { "name": "фирменный соус альфредо", "removable": false },
+                { "name": "итальянские травы", "removable": true }
+            ]
         },
         {
             "id": "16",
@@ -412,7 +566,7 @@
             "sizes": [0, 1, 2],
             "category": 5,
             "rating": 1,
-            "description": "Цыпленок, шампиньоны, ароматный грибной соус, лук, сухой чеснок, моцарелла, смесь сыров чеддер и пармезан, фирменный соус альфредо",
+            "description": "Цыпленок, шампиньоны, ароматный грибной соус, лук, чеснок, моцарелла, смесь сыров чеддер и пармезан, фирменный соус альфредо",
             "imgSrc": "https://media.dodostatic.net/image/r:292x292/11ee7d6175c10773bfe36e56d48df7e3.jpg",
             "price": {
                 "0": 619,
@@ -430,7 +584,20 @@
                     "1": 690,
                     "2": 790
                 }
-            }
+            },
+            "ingredients": [
+                {
+                    "name": "цыпленок",
+                    "removable": true
+                },
+                { "name": "шампиньоны", "removable": true },
+                { "name": "ароматный грибной соус", "removable": false },
+                { "name": "лук", "removable": true },
+                { "name": "чеснок", "removable": true },
+                { "name": "моцарелла", "removable": false },
+                { "name": "смесь сыров чеддер и пармезан", "removable": true },
+                { "name": "фирменный соус альфредо", "removable": true }
+            ]
         }
     ]
 }
