@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
     ChooseSizeType,
     ShowCalories
@@ -6,6 +6,7 @@ import {
 import { CustomButton, Dialog } from 'shared/ui'
 import { CrossIcon, RemoveIngredient, ReturnIngredient } from 'shared/assets'
 import styles from './PizzaModal.module.scss'
+import type { Pizza } from 'entities/PizzaCard'
 import type { FC, MouseEvent, RefObject } from 'react'
 
 interface PizzaModalPropsInterface {
@@ -14,20 +15,58 @@ interface PizzaModalPropsInterface {
     dialogRef: RefObject<HTMLDialogElement | null>
     onClickOutside: (e: MouseEvent<HTMLDialogElement>) => void
     onClickCloseButton: () => void
+    selectedPizza: Pizza | null
 }
+
+type RemovedIngredients = Record<string, boolean>
 
 export const PizzaModal: FC<PizzaModalPropsInterface> = ({
     isModalOpen,
     closeModal,
     dialogRef,
     onClickCloseButton,
-    onClickOutside
+    onClickOutside,
+    selectedPizza
 }) => {
-    const [isRemoved, setIsRemoved] = useState(false)
+    const [isRemoved, setIsRemoved] = useState<RemovedIngredients>()
 
-    const toggleIngredient = () => {
-        setIsRemoved((prev) => !prev)
+    const toggleIngredient = (ingName: string) => {
+        setIsRemoved((prev) => ({
+            ...prev,
+            [ingName]: !prev?.[ingName]
+        }))
     }
+
+    const ingredients = selectedPizza?.ingredients.map((ingredient, index) => {
+        if (ingredient.removable) {
+            return (
+                <CustomButton
+                    key={ingredient.name}
+                    className='ingredient'
+                    onClick={() => {
+                        toggleIngredient(ingredient.name)
+                    }}
+                    ingredientRemoved={isRemoved?.[ingredient.name]}
+                >
+                    {ingredient.name}&nbsp;
+                    {isRemoved?.[ingredient.name] ? (
+                        <ReturnIngredient title='Вернуть' />
+                    ) : (
+                        <RemoveIngredient title='Убрать' />
+                    )}
+                </CustomButton>
+            )
+        }
+        return index === selectedPizza.ingredients.length - 1
+            ? ingredient.name
+            : `${ingredient.name}, `
+    })
+
+    useEffect(() => {
+        if (!isModalOpen) {
+            setIsRemoved({})
+        }
+    }, [isModalOpen])
 
     if (!isModalOpen) return null
 
@@ -52,22 +91,7 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
                     <span className={styles.pizzaInfoSubtitle}>
                         20 см, традиционное тесто, 250 г
                     </span>
-                    <div className={styles.pizzaIngredients}>
-                        <CustomButton
-                            className='ingredient'
-                            onClick={toggleIngredient}
-                            ingredientRemoved={isRemoved}
-                        >
-                            Свиная шейка&nbsp;
-                            {isRemoved ? (
-                                <ReturnIngredient title='Вернуть' />
-                            ) : (
-                                <RemoveIngredient title='Убрать' />
-                            )}
-                        </CustomButton>
-                        , красный лук, маринованные огурчики, моцарелла, соус
-                        сливочный хрен, фирменный соус альфредо
-                    </div>
+                    <div className={styles.pizzaIngredients}>{ingredients}</div>
                     <ChooseSizeType />
                 </div>
                 <CustomButton

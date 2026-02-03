@@ -28,7 +28,7 @@
             },
             "ingredients": [
                 {
-                    "name": "двойная порция классических колбасок",
+                    "name": "Двойная порция классических колбасок",
                     "removable": false
                 },
                 { "name": "красный лук", "removable": true },
@@ -66,7 +66,7 @@
             },
             "ingredients": [
                 {
-                    "name": "креветки",
+                    "name": "Креветки",
                     "removable": true
                 },
                 { "name": "томаты", "removable": true },
@@ -105,7 +105,7 @@
             },
             "ingredients": [
                 {
-                    "name": "cыр блю чиз",
+                    "name": "Сыр блю чиз",
                     "removable": true
                 },
                 { "name": "сыры чеддер и пармезан", "removable": true },
@@ -141,7 +141,7 @@
             },
             "ingredients": [
                 {
-                    "name": "цыпленок",
+                    "name": "Цыпленок",
                     "removable": false
                 },
                 { "name": "маринованные огурчики", "removable": true },
@@ -180,7 +180,7 @@
             },
             "ingredients": [
                 {
-                    "name": "креветки",
+                    "name": "Креветки",
                     "removable": false
                 },
                 { "name": "сыр блю чиз", "removable": true },
@@ -216,7 +216,7 @@
             },
             "ingredients": [
                 {
-                    "name": "моцарелла",
+                    "name": "Моцарелла",
                     "removable": false
                 },
                 { "name": "сыры чеддер и пармезан", "removable": false },
@@ -251,7 +251,7 @@
             },
             "ingredients": [
                 {
-                    "name": "пикантная пепперони",
+                    "name": "Пикантная пепперони",
                     "removable": true
                 },
                 { "name": "увеличенная порция моцареллы", "removable": false },
@@ -287,7 +287,7 @@
             },
             "ingredients": [
                 {
-                    "name": "острые колбаски чоризо",
+                    "name": "Острые колбаски чоризо",
                     "removable": true
                 },
                 { "name": "сладкий перец", "removable": false },
@@ -323,7 +323,7 @@
             },
             "ingredients": [
                 {
-                    "name": "ветчина",
+                    "name": "Ветчина",
                     "removable": true
                 },
                 { "name": "шампиньоны", "removable": true },
@@ -359,7 +359,7 @@
             },
             "ingredients": [
                 {
-                    "name": "цыпленок",
+                    "name": "Цыпленок",
                     "removable": true
                 },
                 { "name": "моцарелла", "removable": false },
@@ -394,7 +394,7 @@
             },
             "ingredients": [
                 {
-                    "name": "ветчина",
+                    "name": "Ветчина",
                     "removable": false
                 },
                 { "name": "моцарелла", "removable": false },
@@ -429,7 +429,7 @@
             },
             "ingredients": [
                 {
-                    "name": "цыпленок",
+                    "name": "Цыпленок",
                     "removable": true
                 },
                 { "name": "острые колбаски чоризо", "removable": true },
@@ -470,7 +470,7 @@
             },
             "ingredients": [
                 {
-                    "name": "креветки",
+                    "name": "Креветки",
                     "removable": true
                 },
                 { "name": "ананасы", "removable": true },
@@ -508,7 +508,7 @@
             },
             "ingredients": [
                 {
-                    "name": "пряная говядина",
+                    "name": "Пряная говядина",
                     "removable": false
                 },
                 { "name": "шампиньоны", "removable": true },
@@ -547,7 +547,7 @@
             },
             "ingredients": [
                 {
-                    "name": "бекон",
+                    "name": "Бекон",
                     "removable": true
                 },
                 { "name": "сыры чеддер и пармезан", "removable": true },
@@ -587,7 +587,7 @@
             },
             "ingredients": [
                 {
-                    "name": "цыпленок",
+                    "name": "Цыпленок",
                     "removable": true
                 },
                 { "name": "шампиньоны", "removable": true },
