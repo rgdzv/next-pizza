@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import {
     ChooseSizeType,
     ShowCalories
@@ -40,21 +40,23 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
     const ingredients = selectedPizza?.ingredients.map((ingredient, index) => {
         if (ingredient.removable) {
             return (
-                <CustomButton
-                    key={ingredient.name}
-                    className='ingredient'
-                    onClick={() => {
-                        toggleIngredient(ingredient.name)
-                    }}
-                    ingredientRemoved={isRemoved?.[ingredient.name]}
-                >
-                    {ingredient.name}&nbsp;
+                <Fragment key={ingredient.name}>
+                    <CustomButton
+                        className='ingredient'
+                        onClick={() => {
+                            toggleIngredient(ingredient.name)
+                        }}
+                        ingredientRemoved={isRemoved?.[ingredient.name]}
+                    >
+                        {ingredient.name}&nbsp;
+                    </CustomButton>
                     {isRemoved?.[ingredient.name] ? (
                         <ReturnIngredient title='Вернуть' />
                     ) : (
                         <RemoveIngredient title='Убрать' />
                     )}
-                </CustomButton>
+                    {index < selectedPizza.ingredients.length - 1 ? ', ' : ''}
+                </Fragment>
             )
         }
         return index === selectedPizza.ingredients.length - 1

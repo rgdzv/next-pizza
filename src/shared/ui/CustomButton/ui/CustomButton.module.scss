@@ -249,6 +249,8 @@
 }
 
 .ingredient {
+    display: inline-block;
+
     font-weight: 500;
     line-height: 1.2;
     text-decoration: underline dotted;
