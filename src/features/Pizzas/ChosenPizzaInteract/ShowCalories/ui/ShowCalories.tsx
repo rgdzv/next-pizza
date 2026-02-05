@@ -2,22 +2,15 @@ import { useEffect, useRef, useState } from 'react'
 import { CaloriesIcon } from 'shared/assets'
 import { CustomButton } from 'shared/ui'
 import styles from './ShowCalories.module.scss'
+import type { Nutrition } from 'entities/PizzaCard'
 import type { FC } from 'react'
 
 interface ShowCaloriesPropsInterface {
-    calories: string
-    weight: string
-    prot: string
-    fat: string
-    carbo: string
+    nutritionValue: Nutrition
 }
 
 export const ShowCalories: FC<ShowCaloriesPropsInterface> = ({
-    calories,
-    weight,
-    prot,
-    fat,
-    carbo
+    nutritionValue
 }) => {
     const [isOpened, setIsOpened] = useState(false)
     const popupRef = useRef<HTMLDivElement>(null)
@@ -33,24 +26,24 @@ export const ShowCalories: FC<ShowCaloriesPropsInterface> = ({
                 <div className={styles.main}>
                     <div className={styles.energy}>
                         <span>Энерг. ценность</span>
-                        <span>{calories} ккал</span>
+                        <span>{nutritionValue.calories} ккал</span>
                     </div>
                     <div className={styles.prot}>
                         <span>Белки</span>
-                        <span>{prot} г</span>
+                        <span>{nutritionValue.prot} г</span>
                     </div>
                     <div className={styles.fat}>
                         <span>Жиры</span>
-                        <span>{fat} г</span>
+                        <span>{nutritionValue.fat} г</span>
                     </div>
                     <div className={styles.carbo}>
                         <span>Углеводы</span>
-                        <span>{carbo} г</span>
+                        <span>{nutritionValue.carbo} г</span>
                     </div>
                 </div>
                 <div className={styles.footer}>
                     <span>Вес</span>
-                    <span>{weight} г</span>
+                    <span>{nutritionValue.weight} г</span>
                 </div>
             </div>
         </div>

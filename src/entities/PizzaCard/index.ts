@@ -1,2 +1,7 @@
 export { PizzaCard } from './ui/PizzaCard'
-export type { Pizza } from './lib/types/pizza'
+export type {
+    Pizza,
+    Nutrition,
+    PizzaTypeKeys,
+    PizzaSizeKeys
+} from './lib/types/pizza'

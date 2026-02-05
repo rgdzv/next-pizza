@@ -6,7 +6,12 @@ import {
 import { CustomButton, Dialog } from 'shared/ui'
 import { CrossIcon, RemoveIngredient, ReturnIngredient } from 'shared/assets'
 import styles from './PizzaModal.module.scss'
-import type { Pizza } from 'entities/PizzaCard'
+import type {
+    Nutrition,
+    Pizza,
+    PizzaSizeKeys,
+    PizzaTypeKeys
+} from 'entities/PizzaCard'
 import type { FC, MouseEvent, RefObject } from 'react'
 
 interface PizzaModalPropsInterface {
@@ -29,6 +34,9 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
     selectedPizza
 }) => {
     const [isRemoved, setIsRemoved] = useState<RemovedIngredients>()
+    const [subtitleSize, setSubtitleSize] = useState<PizzaSizeKeys>('30')
+    const [subtitleType, setSubtitleType] =
+        useState<PizzaTypeKeys>('традиционное')
 
     const toggleIngredient = (ingName: string) => {
         setIsRemoved((prev) => ({
@@ -37,36 +45,61 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
         }))
     }
 
+    const setSize = (size: PizzaSizeKeys) => {
+        setSubtitleSize(size)
+    }
+
+    const setType = (type: PizzaTypeKeys) => {
+        setSubtitleType(type)
+    }
+
+    const nutritionValue = selectedPizza?.nutrition[subtitleType][
+        subtitleSize
+    ] as Nutrition
+
     const ingredients = selectedPizza?.ingredients.map((ingredient, index) => {
         if (ingredient.removable) {
+            const handleToggleIngredient = () => {
+                toggleIngredient(ingredient.name)
+            }
+
+            const removeImgCondition = isRemoved?.[ingredient.name] ? (
+                <ReturnIngredient title='Вернуть' />
+            ) : (
+                <RemoveIngredient title='Убрать' />
+            )
+
+            const commaAfterBtnIngCondition =
+                index < selectedPizza.ingredients.length - 1 ? ', ' : ''
+
             return (
                 <Fragment key={ingredient.name}>
                     <CustomButton
                         className='ingredient'
-                        onClick={() => {
-                            toggleIngredient(ingredient.name)
-                        }}
+                        onClick={handleToggleIngredient}
                         ingredientRemoved={isRemoved?.[ingredient.name]}
                     >
                         {ingredient.name}&nbsp;
                     </CustomButton>
-                    {isRemoved?.[ingredient.name] ? (
-                        <ReturnIngredient title='Вернуть' />
-                    ) : (
-                        <RemoveIngredient title='Убрать' />
-                    )}
-                    {index < selectedPizza.ingredients.length - 1 ? ', ' : ''}
+                    {removeImgCondition}
+                    {commaAfterBtnIngCondition}
                 </Fragment>
             )
         }
-        return index === selectedPizza.ingredients.length - 1
-            ? ingredient.name
-            : `${ingredient.name}, `
+
+        const commaAfterIngCondition =
+            index === selectedPizza.ingredients.length - 1
+                ? ingredient.name
+                : `${ingredient.name}, `
+
+        return commaAfterIngCondition
     })
 
     useEffect(() => {
         if (!isModalOpen) {
             setIsRemoved({})
+            setSubtitleSize('30')
+            setSubtitleType('традиционное')
         }
     }, [isModalOpen])
 
@@ -82,19 +115,16 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
             <div className={styles.pizzaModal}>
                 <div className={styles.pizzaImage}></div>
                 <div className={styles.pizzaInfo}>
-                    <ShowCalories
-                        calories='335'
-                        prot='11.2'
-                        fat='11.2'
-                        carbo='11.2'
-                        weight='600'
-                    />
-                    <h1 className={styles.pizzaInfoTitle}>Пицца с хреном</h1>
+                    <ShowCalories nutritionValue={nutritionValue} />
+                    <h1 className={styles.pizzaInfoTitle}>
+                        {selectedPizza?.title}
+                    </h1>
                     <span className={styles.pizzaInfoSubtitle}>
-                        20 см, традиционное тесто, 250 г
+                        {subtitleSize} см, {subtitleType} тесто,{' '}
+                        {nutritionValue.weight} г
                     </span>
                     <div className={styles.pizzaIngredients}>{ingredients}</div>
-                    <ChooseSizeType />
+                    <ChooseSizeType setSize={setSize} setType={setType} />
                 </div>
                 <CustomButton
                     className='closeModal'
