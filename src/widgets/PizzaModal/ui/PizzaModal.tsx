@@ -23,8 +23,6 @@ interface PizzaModalPropsInterface {
     selectedPizza: Pizza | null
 }
 
-type RemovedIngredients = Record<string, boolean>
-
 export const PizzaModal: FC<PizzaModalPropsInterface> = ({
     isModalOpen,
     closeModal,
@@ -33,7 +31,7 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
     onClickOutside,
     selectedPizza
 }) => {
-    const [isRemoved, setIsRemoved] = useState<RemovedIngredients>()
+    const [isRemoved, setIsRemoved] = useState<Record<string, boolean>>()
     const [subtitleSize, setSubtitleSize] = useState<PizzaSizeKeys>('30')
     const [subtitleType, setSubtitleType] =
         useState<PizzaTypeKeys>('традиционное')
