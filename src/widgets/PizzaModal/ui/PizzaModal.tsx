@@ -130,6 +130,11 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
                 >
                     <CrossIcon title='Закрыть окно' />
                 </CustomButton>
+                {/* <CustomButton
+                    className='primary'
+                >
+                    В корзину за 
+                </CustomButton> */}
             </div>
         </Dialog>
     )

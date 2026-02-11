@@ -34,7 +34,9 @@ export const Pizzas: FC = () => {
     } = useModal()
 
     const pizzas = data?.map((pizza) => {
-        const pizzaCardPrice = priceFormat(Number(pizza.price[0]))
+        const pizzaCardPrice = priceFormat(
+            Number(pizza.nutrition.традиционное[20].price)
+        )
 
         const handleSelectPizza = () => {
             setSelectedPizza(pizza)

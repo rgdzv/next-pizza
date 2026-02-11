@@ -12,6 +12,7 @@ export interface Nutrition {
     fat: string
     carbo: string
     weight: string
+    price: string
 }
 
 export interface Pizza {
@@ -23,7 +24,6 @@ export interface Pizza {
     rating: number
     imgSrc: string
     description: string
-    price: Record<string, number>
     weight: Record<string, Record<string, number>>
     ingredients: Ingredients[]
     nutrition: Record<PizzaTypeKeys, Record<PizzaSizeKeys, Nutrition>>
