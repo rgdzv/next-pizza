@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import { CaloriesIcon } from 'shared/assets'
+import { CaloriesCard } from 'entities/CaloriesCard'
 import { CustomButton } from 'shared/ui'
+import { CaloriesIcon } from 'shared/assets'
 import styles from './ShowCalories.module.scss'
 import type { Nutrition } from 'entities/PizzaCard'
 import type { FC } from 'react'
@@ -20,33 +21,14 @@ export const ShowCalories: FC<ShowCaloriesPropsInterface> = ({
     }
 
     const caloriesPopupCondition = isOpened && (
-        <div className={styles.popup} ref={popupRef}>
-            <div className={styles.info}>
-                <div className={styles.header}>Пищевая ценность на 100 г</div>
-                <div className={styles.main}>
-                    <div className={styles.energy}>
-                        <span>Энерг. ценность</span>
-                        <span>{nutritionValue.calories} ккал</span>
-                    </div>
-                    <div className={styles.prot}>
-                        <span>Белки</span>
-                        <span>{nutritionValue.prot} г</span>
-                    </div>
-                    <div className={styles.fat}>
-                        <span>Жиры</span>
-                        <span>{nutritionValue.fat} г</span>
-                    </div>
-                    <div className={styles.carbo}>
-                        <span>Углеводы</span>
-                        <span>{nutritionValue.carbo} г</span>
-                    </div>
-                </div>
-                <div className={styles.footer}>
-                    <span>Вес</span>
-                    <span>{nutritionValue.weight} г</span>
-                </div>
-            </div>
-        </div>
+        <CaloriesCard
+            popupRef={popupRef}
+            calories={nutritionValue.calories}
+            carbo={nutritionValue.carbo}
+            fat={nutritionValue.fat}
+            prot={nutritionValue.prot}
+            weight={nutritionValue.weight}
+        />
     )
 
     useEffect(() => {

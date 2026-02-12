@@ -123,6 +123,9 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
                     </span>
                     <div className={styles.pizzaIngredients}>{ingredients}</div>
                     <ChooseSizeType setSize={setSize} setType={setType} />
+                    <span className={styles.pizzaInfoAddIngredients}>
+                        Добавить по вкусу
+                    </span>
                 </div>
                 <CustomButton
                     className='closeModal'

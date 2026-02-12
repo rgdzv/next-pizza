@@ -1,0 +1,86 @@
+.popup {
+    position: absolute;
+    z-index: 3;
+    top: 33px;
+    right: -15px;
+
+    width: 220px;
+    padding: 14px;
+    border-radius: 12px;
+
+    opacity: 0.9;
+    background-color: #666;
+
+    animation: 0.3s 
+        ease 0s 1 normal none running fade-from-bottom;
+
+    &::before {
+        content: " ";
+
+        position: absolute;
+        top: -5px;
+        right: 15px;
+        transform: rotate(45deg);
+
+        width: 20px;
+        height: 20px;
+
+        background: #666;
+    }
+
+    .info {
+        font-size: 13px;
+        font-weight: 700;
+
+        .header {
+            margin-bottom: 12px;
+            color: var(--text-color-default);
+            opacity: 0.5;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            margin-bottom: 20px;
+
+            .energy, 
+            .prot, 
+            .fat, 
+            .carbo {
+                display: flex;
+                justify-content: space-between;
+                    
+                span {
+                    font-size: 13px;
+                    font-weight: 700;
+                    color: var(--text-color-default);
+                }
+            }
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+
+            /* stylelint-disable-next-line no-descending-specificity */
+            span {
+                font-size: 13px;
+                font-weight: 700;
+                color: var(--text-color-default);
+            }
+        }
+    }
+}
+
+@keyframes fade-from-bottom {
+    0% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 0.9;
+    }
+}
