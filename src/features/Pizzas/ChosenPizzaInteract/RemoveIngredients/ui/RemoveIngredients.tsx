@@ -33,9 +33,6 @@ export const RemoveIngredients: FC<RemoveIngredientsPropsInterface> = ({
                 <RemoveIngredient title='Убрать' />
             )
 
-            const commaAfterBtnIngCondition =
-                index < selectedPizza.ingredients.length - 1 ? ', ' : ''
-
             return (
                 <Fragment key={ingredient.name}>
                     <CustomButton
@@ -46,7 +43,7 @@ export const RemoveIngredients: FC<RemoveIngredientsPropsInterface> = ({
                         {ingredient.name}&nbsp;
                     </CustomButton>
                     {removeImgCondition}
-                    {commaAfterBtnIngCondition}
+                    {', '}
                 </Fragment>
             )
         }

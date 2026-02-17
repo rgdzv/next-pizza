@@ -35,7 +35,7 @@ export const Pizzas: FC = () => {
 
     const pizzas = data?.map((pizza) => {
         const pizzaCardPrice = priceFormat(
-            Number(pizza.nutrition.традиционное[20].price)
+            Number(pizza.details.традиционное[20].price)
         )
 
         const handleSelectPizza = () => {

@@ -44,9 +44,8 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
         setSubtitleType(type)
     }
 
-    const nutritionValue = selectedPizza?.nutrition[subtitleType][
-        subtitleSize
-    ] as Nutrition
+    const nutritionValue = selectedPizza?.details[subtitleType][subtitleSize]
+        .nutrition as Nutrition
 
     useEffect(() => {
         if (!isModalOpen) {
@@ -72,7 +71,7 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
                         {selectedPizza?.title}
                     </h1>
                     <span className={styles.pizzaInfoSubtitle}>
-                        {subtitleSize} см, {subtitleType} тесто,{' '}
+                        {subtitleSize} см, {subtitleType} тесто,&nbsp;
                         {nutritionValue.weight} г
                     </span>
                     <RemoveIngredients selectedPizza={selectedPizza} />
