@@ -1,0 +1,5 @@
+.addIngredients {
+    display: grid;
+    grid-template-columns: repeat(3, 106px);
+    gap: 8px;
+}

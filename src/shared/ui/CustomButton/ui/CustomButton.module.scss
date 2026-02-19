@@ -261,3 +261,30 @@
         text-decoration: line-through
     }
 }
+
+.ingredientCard {
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 8px;
+    border: 1px solid var(--background-color-secondary);
+    border-radius: 12px;
+
+    background-color: var(--background-color-secondary);
+    box-shadow: rgb(6 5 50 / 12%) 0 4px 20px;
+
+    img {
+        width: 88px;
+        height: 88px;
+    }
+
+    span {
+        font-size: 13px;
+        line-height: 1;
+
+        &:last-child {
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+}

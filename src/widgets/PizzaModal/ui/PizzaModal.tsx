@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import {
+    AddIngredients,
     ChooseSizeType,
     RemoveIngredients,
     ShowCalories
@@ -79,6 +80,7 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
                     <span className={styles.pizzaInfoAddIngredients}>
                         Добавить по вкусу
                     </span>
+                    <AddIngredients />
                 </div>
                 <CustomButton
                     className='closeModal'
