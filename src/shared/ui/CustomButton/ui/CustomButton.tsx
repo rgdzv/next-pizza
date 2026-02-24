@@ -12,6 +12,7 @@ interface ButtonPropsInterface extends ButtonHTMLAttributes<HTMLButtonElement> {
     sortOptionActive?: boolean
     caloriesActive?: boolean
     ingredientRemoved?: boolean
+    ingredientAdded?: boolean
 }
 
 export const CustomButton: FC<ButtonPropsInterface> = memo(
@@ -23,6 +24,7 @@ export const CustomButton: FC<ButtonPropsInterface> = memo(
         sortOptionActive,
         caloriesActive,
         ingredientRemoved,
+        ingredientAdded,
         ...otherProps
     }) => {
         const buttonClassName = classNames(
@@ -32,7 +34,8 @@ export const CustomButton: FC<ButtonPropsInterface> = memo(
                 [styles.categoryActive]: categoryActive,
                 [styles.sortArrowActive]: sortOptionActive,
                 [styles.caloriesActive]: caloriesActive,
-                [styles.ingredientRemoved]: ingredientRemoved
+                [styles.ingredientRemoved]: ingredientRemoved,
+                [styles.ingredientAdded]: ingredientAdded
             }
         )
 

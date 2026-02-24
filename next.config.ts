@@ -35,6 +35,13 @@ const nextConfig: NextConfig = {
                 port: '',
                 pathname: '/image/**',
                 search: ''
+            },
+            {
+                protocol: 'https',
+                hostname: 'cdn.dodostatic.net',
+                port: '',
+                pathname: '/static/Img/**',
+                search: ''
             }
         ]
     }

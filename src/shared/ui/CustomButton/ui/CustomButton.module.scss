@@ -263,9 +263,13 @@
 }
 
 .ingredientCard {
+    position: relative;
+
     flex-direction: column;
     gap: 8px;
 
+    width: auto;
+    height: 100%;
     padding: 8px;
     border: 1px solid var(--background-color-secondary);
     border-radius: 12px;
@@ -273,18 +277,36 @@
     background-color: var(--background-color-secondary);
     box-shadow: rgb(6 5 50 / 12%) 0 4px 20px;
 
-    img {
-        width: 88px;
-        height: 88px;
-    }
-
     span {
+        user-select: none;
         font-size: 13px;
         line-height: 1;
 
         &:last-child {
+            display: flex;
+            flex-grow: 1;
+            align-items: flex-end;
+
             font-size: 16px;
             font-weight: 600;
+        }
+    }
+
+    svg {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+
+        opacity: 0;
+
+        fill: var(--text-color-third);
+    }
+
+    &.ingredientAdded {
+        border-color: var(--text-color-third);
+
+        svg {
+            opacity: 1;
         }
     }
 }

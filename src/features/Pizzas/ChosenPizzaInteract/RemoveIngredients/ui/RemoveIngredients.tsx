@@ -14,7 +14,7 @@ export const RemoveIngredients: FC<RemoveIngredientsPropsInterface> = ({
 }) => {
     const [isRemoved, setIsRemoved] = useState<Record<string, boolean>>()
 
-    const toggleIngredient = (ingName: string) => {
+    const removeIngredient = (ingName: string) => {
         setIsRemoved((prev) => ({
             ...prev,
             [ingName]: !prev?.[ingName]
@@ -23,8 +23,8 @@ export const RemoveIngredients: FC<RemoveIngredientsPropsInterface> = ({
 
     const ingredients = selectedPizza?.ingredients.map((ingredient, index) => {
         if (ingredient.removable) {
-            const handleToggleIngredient = () => {
-                toggleIngredient(ingredient.name)
+            const handleRemoveIngredient = () => {
+                removeIngredient(ingredient.name)
             }
 
             const removeImgCondition = isRemoved?.[ingredient.name] ? (
@@ -37,7 +37,7 @@ export const RemoveIngredients: FC<RemoveIngredientsPropsInterface> = ({
                 <Fragment key={ingredient.name}>
                     <CustomButton
                         className='ingredient'
-                        onClick={handleToggleIngredient}
+                        onClick={handleRemoveIngredient}
                         ingredientRemoved={isRemoved?.[ingredient.name]}
                     >
                         {ingredient.name}&nbsp;

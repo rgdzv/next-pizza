@@ -5,3 +5,4 @@ export type CustomImageClassNameType =
     | 'basketEmpty'
     | 'basketPizzaCard'
     | 'pizzaCard'
+    | 'pizzaIngredient'

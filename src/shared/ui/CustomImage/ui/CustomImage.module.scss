@@ -3,7 +3,8 @@
 .mini,
 .basketEmpty,
 .basketPizzaCard,
-.pizzaCard {
+.pizzaCard,
+.pizzaIngredient {
     position: relative;
 }
 
@@ -44,4 +45,9 @@
     &:hover {
         transform: translateY(5px);
     }
+}
+
+.pizzaIngredient {
+    width: 88px;
+    height: 88px;
 }

@@ -17,6 +17,7 @@ import ArrowDownIcon from './images/arrow-down-icon.svg'
 import CaloriesIcon from './images/calories-icon.svg'
 import RemoveIngredient from './images/remove-ing-icon.svg'
 import ReturnIngredient from './images/return-ing-icon.svg'
+import IngredientAdded from './images/ingredient-added-icon.svg'
 
 export {
     ArrowLeftIcon,
@@ -37,5 +38,6 @@ export {
     ArrowDownIcon,
     CaloriesIcon,
     RemoveIngredient,
-    ReturnIngredient
+    ReturnIngredient,
+    IngredientAdded
 }
