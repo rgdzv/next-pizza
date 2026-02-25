@@ -1,32 +1,28 @@
-import { CustomButton, CustomImage } from 'shared/ui'
+import { CustomButton } from 'shared/ui'
 import { IngredientAdded } from 'shared/assets'
-import type { FC } from 'react'
+import type { FC, ReactNode } from 'react'
 
 interface IngredientCardPropsInterface {
     item: Record<string, string>
-    addIngredient: (ingName: string) => void
+    handleAddIngredient: () => void
     ingredientAdded: boolean
+    ingredientImage: ReactNode
 }
 
 export const IngredientCard: FC<IngredientCardPropsInterface> = ({
     item,
-    addIngredient,
-    ingredientAdded
+    handleAddIngredient,
+    ingredientAdded,
+    ingredientImage
 }) => {
     return (
         <CustomButton
             className='ingredientCard'
             ingredientAdded={ingredientAdded}
-            onClick={() => {
-                addIngredient(item.name)
-            }}
+            onClick={handleAddIngredient}
         >
             <IngredientAdded title='Добавлено' />
-            <CustomImage
-                className='pizzaIngredient'
-                src={item.src}
-                alt={item.name}
-            />
+            {ingredientImage}
             <span>{item.name}</span>
             <span>{item.price} ₽</span>
         </CustomButton>

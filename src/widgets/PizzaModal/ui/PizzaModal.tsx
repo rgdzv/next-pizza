@@ -33,25 +33,24 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
     onClickOutside,
     selectedPizza
 }) => {
-    const [subtitleSize, setSubtitleSize] = useState<PizzaSizeKeys>('30')
-    const [subtitleType, setSubtitleType] =
-        useState<PizzaTypeKeys>('традиционное')
+    const [pizzaSize, setPizzaSize] = useState<PizzaSizeKeys>('30')
+    const [pizzaType, setPizzaType] = useState<PizzaTypeKeys>('традиционное')
 
     const setSize = (size: PizzaSizeKeys) => {
-        setSubtitleSize(size)
+        setPizzaSize(size)
     }
 
     const setType = (type: PizzaTypeKeys) => {
-        setSubtitleType(type)
+        setPizzaType(type)
     }
 
-    const nutritionValue = selectedPizza?.details[subtitleType][subtitleSize]
+    const nutritionValue = selectedPizza?.details[pizzaType][pizzaSize]
         .nutrition as Nutrition
 
     useEffect(() => {
         if (!isModalOpen) {
-            setSubtitleSize('30')
-            setSubtitleType('традиционное')
+            setPizzaSize('30')
+            setPizzaType('традиционное')
         }
     }, [isModalOpen])
 
@@ -72,7 +71,7 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
                         {selectedPizza?.title}
                     </h1>
                     <span className={styles.pizzaInfoSubtitle}>
-                        {subtitleSize} см, {subtitleType} тесто,&nbsp;
+                        {pizzaSize} см, {pizzaType} тесто,&nbsp;
                         {nutritionValue.weight} г
                     </span>
                     <RemoveIngredients selectedPizza={selectedPizza} />

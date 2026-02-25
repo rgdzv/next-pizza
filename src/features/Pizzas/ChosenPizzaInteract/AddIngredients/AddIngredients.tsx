@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { IngredientCard } from 'entities/IngredientCard'
+import { CustomImage } from 'shared/ui'
 import styles from './AddIngredients.module.scss'
 
 const ITEMS = [
@@ -11,31 +12,6 @@ const ITEMS = [
     {
         src: 'https://cdn.dodostatic.net/static/Img/Ingredients/01991530635b73ecb1a22658b49e1653.png',
         name: 'Пряная говядина',
-        price: '115'
-    },
-    {
-        src: 'https://cdn.dodostatic.net/static/Img/Ingredients/0199ae74f2fd783b8fb21bb0af7d09e6.png',
-        name: 'Моцарелла',
-        price: '115'
-    },
-    {
-        src: 'https://cdn.dodostatic.net/static/Img/Ingredients/0199ae74f2fd783b8fb21bb0af7d09e6.png',
-        name: 'Моцарелла',
-        price: '115'
-    },
-    {
-        src: 'https://cdn.dodostatic.net/static/Img/Ingredients/0199ae74f2fd783b8fb21bb0af7d09e6.png',
-        name: 'Моцарелла',
-        price: '115'
-    },
-    {
-        src: 'https://cdn.dodostatic.net/static/Img/Ingredients/0199ae74f2fd783b8fb21bb0af7d09e6.png',
-        name: 'Моцарелла',
-        price: '115'
-    },
-    {
-        src: 'https://cdn.dodostatic.net/static/Img/Ingredients/0199ae74f2fd783b8fb21bb0af7d09e6.png',
-        name: 'Моцарелла',
         price: '115'
     },
     {
@@ -55,14 +31,29 @@ export const AddIngredients = () => {
         }))
     }
 
-    const ingredients = ITEMS.map((item) => (
-        <IngredientCard
-            key={item.name}
-            item={item}
-            addIngredient={addIngredient}
-            ingredientAdded={isAdded[item.name]}
-        ></IngredientCard>
-    ))
+    const ingredients = ITEMS.map((item) => {
+        const handleAddIngredient = () => {
+            addIngredient(item.name)
+        }
+
+        const ingredientImage = (
+            <CustomImage
+                className='pizzaIngredient'
+                src={item.src}
+                alt={item.name}
+            />
+        )
+
+        return (
+            <IngredientCard
+                key={item.name}
+                ingredientImage={ingredientImage}
+                item={item}
+                handleAddIngredient={handleAddIngredient}
+                ingredientAdded={isAdded[item.name]}
+            ></IngredientCard>
+        )
+    })
 
     return <div className={styles.addIngredients}>{ingredients}</div>
 }

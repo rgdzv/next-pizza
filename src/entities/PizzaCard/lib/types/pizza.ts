@@ -22,8 +22,6 @@ export interface Details {
 export interface Pizza {
     id: string
     title: string
-    types: number[]
-    sizes: number[]
     category: number
     rating: number
     imgSrc: string
