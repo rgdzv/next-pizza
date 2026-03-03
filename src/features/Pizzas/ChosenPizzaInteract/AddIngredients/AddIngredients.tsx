@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { IngredientCard } from 'entities/IngredientCard'
-import { CustomImage } from 'shared/ui'
 import styles from './AddIngredients.module.scss'
 
 const ITEMS = [
@@ -36,18 +35,9 @@ export const AddIngredients = () => {
             addIngredient(item.name)
         }
 
-        const ingredientImage = (
-            <CustomImage
-                className='pizzaIngredient'
-                src={item.src}
-                alt={item.name}
-            />
-        )
-
         return (
             <IngredientCard
                 key={item.name}
-                ingredientImage={ingredientImage}
                 item={item}
                 handleAddIngredient={handleAddIngredient}
                 ingredientAdded={isAdded[item.name]}

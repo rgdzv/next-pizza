@@ -53,7 +53,7 @@
             opacity: 0;
             background-color: #00000080;
             backdrop-filter: blur(2px);
-            transition: opacity 100ms forwards;
+            transition: opacity 100ms ease-out;
         }
 
         &[open] {
@@ -61,7 +61,7 @@
 
             &::backdrop {
                 opacity: 1;
-                transition: opacity 100ms forwards;
+                transition: opacity 100ms ease-out;
             }
 
             @starting-style {
