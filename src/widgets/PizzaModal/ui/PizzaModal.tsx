@@ -75,7 +75,12 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
                         {nutritionValue.weight} г
                     </span>
                     <RemoveIngredients selectedPizza={selectedPizza} />
-                    <ChooseSizeType setSize={setSize} setType={setType} />
+                    <ChooseSizeType
+                        pizzaSize={pizzaSize}
+                        pizzaType={pizzaType}
+                        setSize={setSize}
+                        setType={setType}
+                    />
                     <span className={styles.pizzaInfoAddIngredients}>
                         Добавить по вкусу
                     </span>

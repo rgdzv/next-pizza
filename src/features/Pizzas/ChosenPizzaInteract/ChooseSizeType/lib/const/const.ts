@@ -1,10 +1,2 @@
-import type { Options } from '../types/types'
-
-export const SIZES: Options[] = [
-    { value: '20' },
-    { value: '25' },
-    { value: '30' },
-    { value: '35' }
-]
-
-export const TYPES: Options[] = [{ value: 'традиционное' }, { value: 'тонкое' }]
+export const SIZES: string[] = ['20', '25', '30', '35']
+export const TYPES: string[] = ['традиционное', 'тонкое']
