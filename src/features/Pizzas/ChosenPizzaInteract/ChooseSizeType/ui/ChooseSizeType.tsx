@@ -1,5 +1,5 @@
 import { CustomButton } from 'shared/ui'
-import { SIZES, TYPES } from '../lib/const/const'
+import { SIZES, TYPES } from '../lib/const/shapes'
 import styles from './ChooseSizeType.module.scss'
 import type { PizzaSizeKeys, PizzaTypeKeys } from 'entities/PizzaCard'
 import type { FC } from 'react'
