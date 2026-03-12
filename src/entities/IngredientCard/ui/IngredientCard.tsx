@@ -1,15 +1,16 @@
 import { CustomButton, CustomImage } from 'shared/ui'
 import { IngredientAdded } from 'shared/assets'
+import type { IngredientInfo } from '../lib/types/ingredientInfo'
 import type { FC } from 'react'
 
 interface IngredientCardPropsInterface {
-    item: Record<string, string>
+    ingredient: IngredientInfo
     handleAddIngredient: () => void
     ingredientAdded: boolean
 }
 
 export const IngredientCard: FC<IngredientCardPropsInterface> = ({
-    item,
+    ingredient,
     handleAddIngredient,
     ingredientAdded
 }) => {
@@ -22,11 +23,11 @@ export const IngredientCard: FC<IngredientCardPropsInterface> = ({
             <IngredientAdded title='Добавлено' />
             <CustomImage
                 className='pizzaIngredient'
-                src={item.src}
-                alt={item.name}
+                src={ingredient.src}
+                alt={ingredient.name}
             />
-            <span>{item.name}</span>
-            <span>{item.price} ₽</span>
+            <span>{ingredient.name}</span>
+            <span>{ingredient.price} ₽</span>
         </CustomButton>
     )
 }

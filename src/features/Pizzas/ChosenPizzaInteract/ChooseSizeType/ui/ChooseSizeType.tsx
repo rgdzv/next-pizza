@@ -1,3 +1,4 @@
+import { PizzaSize, PizzaType } from 'entities/PizzaCard'
 import { CustomButton } from 'shared/ui'
 import { SIZES, TYPES } from '../lib/const/shapes'
 import styles from './ChooseSizeType.module.scss'
@@ -18,8 +19,8 @@ export const ChooseSizeType: FC<ChooseSizeTypePropsInterface> = ({
 }) => {
     const handleChangeSize = (newSize: PizzaSizeKeys) => {
         setSize(newSize)
-        if (newSize === '20' || newSize === '25') {
-            setType('традиционное')
+        if (newSize === PizzaSize.EXTRA_SMALL || newSize === PizzaSize.SMALL) {
+            setType(PizzaType.TRADITIONAL)
         }
     }
 
@@ -45,7 +46,9 @@ export const ChooseSizeType: FC<ChooseSizeTypePropsInterface> = ({
         }
 
         const selectedSizeConditions =
-            type === 'тонкое' && (pizzaSize === '20' || pizzaSize === '25')
+            type === PizzaType.THIN &&
+            (pizzaSize === PizzaSize.EXTRA_SMALL ||
+                pizzaSize === PizzaSize.SMALL)
 
         return (
             <CustomButton
@@ -66,11 +69,11 @@ export const ChooseSizeType: FC<ChooseSizeTypePropsInterface> = ({
                     className={styles.backLayoutSize}
                     style={{
                         transform:
-                            pizzaSize === '25'
+                            pizzaSize === PizzaSize.SMALL
                                 ? 'translateX(100%)'
-                                : pizzaSize === '30'
+                                : pizzaSize === PizzaSize.MIDDLE
                                   ? 'translateX(200%)'
-                                  : pizzaSize === '35'
+                                  : pizzaSize === PizzaSize.LARGE
                                     ? 'translateX(300%)'
                                     : 'translateX(0%)'
                     }}
@@ -82,7 +85,7 @@ export const ChooseSizeType: FC<ChooseSizeTypePropsInterface> = ({
                     className={styles.backLayoutType}
                     style={{
                         transform:
-                            pizzaType === 'тонкое'
+                            pizzaType === PizzaType.THIN
                                 ? 'translateX(100%)'
                                 : 'translateX(0%)'
                     }}

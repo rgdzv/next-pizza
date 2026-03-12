@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { IngredientCard } from 'entities/IngredientCard'
+import { PizzaSize, PizzaType } from 'entities/PizzaCard'
 import {
     ADDITIONAL_INGREDIENTS,
-    ADDITIONAL_INGREDIENTS_PRICES
+    ADDITIONAL_INGREDIENTS_PRICES,
+    DEFAULT_PRICE
 } from '../lib/const/ingredients'
 import styles from './AddIngredients.module.scss'
 import type { FC } from 'react'
@@ -26,31 +28,41 @@ export const AddIngredients: FC<AddIngredientsPropsInterface> = ({
         }))
     }
 
-    const ingredients = ADDITIONAL_INGREDIENTS.map((item) => {
-        const sizeTypeCombination = `${pizzaType}_${pizzaSize}`
+    const shouldShowAllIngredients =
+        pizzaType === PizzaType.TRADITIONAL &&
+        (pizzaSize === PizzaSize.MIDDLE || pizzaSize === PizzaSize.LARGE)
+
+    const sizeTypeCombination = `${pizzaType}_${pizzaSize}`
+
+    const filteredIngredients = ADDITIONAL_INGREDIENTS.filter(
+        (_, index) => shouldShowAllIngredients || index !== 0
+    )
+
+    const finalIngredients = filteredIngredients.map((ingredient) => {
         const priceCombination =
-            ADDITIONAL_INGREDIENTS_PRICES[item.id][sizeTypeCombination]
+            ADDITIONAL_INGREDIENTS_PRICES[ingredient.id][sizeTypeCombination] ??
+            DEFAULT_PRICE
 
         const handleAddIngredient = () => {
-            addIngredient(item.name)
+            addIngredient(ingredient.name)
         }
 
-        const itemFinal = {
-            id: item.id,
-            name: item.name,
-            src: item.src,
+        const ingredientFinal = {
+            id: ingredient.id,
+            name: ingredient.name,
+            src: ingredient.src,
             price: priceCombination
         }
 
         return (
             <IngredientCard
-                key={item.id}
-                item={itemFinal}
+                key={ingredient.id}
+                ingredient={ingredientFinal}
                 handleAddIngredient={handleAddIngredient}
-                ingredientAdded={isAdded[item.name]}
+                ingredientAdded={isAdded[ingredient.name]}
             ></IngredientCard>
         )
     })
 
-    return <div className={styles.addIngredients}>{ingredients}</div>
+    return <div className={styles.addIngredients}>{finalIngredients}</div>
 }

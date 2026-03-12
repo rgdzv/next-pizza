@@ -5,3 +5,5 @@ export type {
     PizzaTypeKeys,
     PizzaSizeKeys
 } from './lib/types/pizza'
+
+export { PizzaSize, PizzaType } from './lib/const/pizzaShape'

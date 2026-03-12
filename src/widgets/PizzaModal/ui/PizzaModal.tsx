@@ -5,6 +5,7 @@ import {
     RemoveIngredients,
     ShowCalories
 } from 'features/Pizzas/ChosenPizzaInteract'
+import { PizzaSize, PizzaType } from 'entities/PizzaCard'
 import { CustomButton, Dialog } from 'shared/ui'
 import { CrossIcon } from 'shared/assets'
 import styles from './PizzaModal.module.scss'
@@ -33,8 +34,10 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
     onClickOutside,
     selectedPizza
 }) => {
-    const [pizzaSize, setPizzaSize] = useState<PizzaSizeKeys>('30')
-    const [pizzaType, setPizzaType] = useState<PizzaTypeKeys>('традиционное')
+    const [pizzaSize, setPizzaSize] = useState<PizzaSizeKeys>(PizzaSize.MIDDLE)
+    const [pizzaType, setPizzaType] = useState<PizzaTypeKeys>(
+        PizzaType.TRADITIONAL
+    )
 
     const setSize = (size: PizzaSizeKeys) => {
         setPizzaSize(size)
@@ -49,8 +52,8 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
 
     useEffect(() => {
         if (!isModalOpen) {
-            setPizzaSize('30')
-            setPizzaType('традиционное')
+            setPizzaSize(PizzaSize.MIDDLE)
+            setPizzaType(PizzaType.TRADITIONAL)
         }
     }, [isModalOpen])
 

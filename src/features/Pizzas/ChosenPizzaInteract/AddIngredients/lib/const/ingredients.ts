@@ -3,6 +3,8 @@ import type {
     AdditionalIngredientsPrice
 } from '../types/addIngredients'
 
+export const DEFAULT_PRICE = '0'
+
 export const ADDITIONAL_INGREDIENTS: AdditionalIngredients[] = [
     {
         id: 'cheese_border',
@@ -67,7 +69,7 @@ export const ADDITIONAL_INGREDIENTS: AdditionalIngredients[] = [
     {
         id: 'pickled_cucumbers',
         src: 'https://cdn.dodostatic.net/static/Img/Ingredients/0199152e33ee7722ac038fa5bc26e630.png',
-        name: 'Маринованный огурчики'
+        name: 'Соленые огурчики'
     },
     {
         id: 'fresh_tomatoes',
