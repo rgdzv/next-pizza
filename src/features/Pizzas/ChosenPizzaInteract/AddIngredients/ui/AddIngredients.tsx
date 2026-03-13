@@ -47,7 +47,7 @@ export const AddIngredients: FC<AddIngredientsPropsInterface> = ({
             addIngredient(ingredient.name)
         }
 
-        const ingredientFinal = {
+        const ingredientData = {
             id: ingredient.id,
             name: ingredient.name,
             src: ingredient.src,
@@ -57,7 +57,7 @@ export const AddIngredients: FC<AddIngredientsPropsInterface> = ({
         return (
             <IngredientCard
                 key={ingredient.id}
-                ingredient={ingredientFinal}
+                ingredient={ingredientData}
                 handleAddIngredient={handleAddIngredient}
                 ingredientAdded={isAdded[ingredient.name]}
             ></IngredientCard>

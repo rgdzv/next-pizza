@@ -7,7 +7,7 @@ import {
 } from 'features/Pizzas/ChosenPizzaInteract'
 import { PizzaSize, PizzaType } from 'entities/PizzaCard'
 import { CustomButton, Dialog } from 'shared/ui'
-import { CrossIcon } from 'shared/assets'
+import { CrossIcon, LargeTemplate, MiddleTemplate } from 'shared/assets'
 import styles from './PizzaModal.module.scss'
 import type {
     Nutrition,
@@ -67,7 +67,19 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
             className='pizzaModal'
         >
             <div className={styles.pizzaModal}>
-                <div className={styles.pizzaImage}></div>
+                <div className={styles.pizzaImage}>
+                    {pizzaSize === PizzaSize.EXTRA_SMALL && (
+                        <div className={styles.pizzaImageMiddleTemplate}>
+                            <MiddleTemplate />
+                        </div>
+                    )}
+                    {(pizzaSize === PizzaSize.EXTRA_SMALL ||
+                        pizzaSize === PizzaSize.SMALL) && (
+                        <div className={styles.pizzaImageLargeTemplate}>
+                            <LargeTemplate />
+                        </div>
+                    )}
+                </div>
                 <div className={styles.pizzaInfo}>
                     <ShowCalories nutritionValue={nutritionValue} />
                     <h1 className={styles.pizzaInfoTitle}>
