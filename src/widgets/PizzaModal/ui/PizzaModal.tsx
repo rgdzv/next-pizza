@@ -50,6 +50,19 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
     const nutritionValue = selectedPizza?.details[pizzaType][pizzaSize]
         .nutrition as Nutrition
 
+    const middleTemplateShowCondition = pizzaSize === PizzaSize.EXTRA_SMALL && (
+        <div className={styles.pizzaImageMiddleTemplate}>
+            <MiddleTemplate />
+        </div>
+    )
+
+    const smallTemplateShowCondition = (pizzaSize === PizzaSize.EXTRA_SMALL ||
+        pizzaSize === PizzaSize.SMALL) && (
+        <div className={styles.pizzaImageLargeTemplate}>
+            <LargeTemplate />
+        </div>
+    )
+
     useEffect(() => {
         if (!isModalOpen) {
             setPizzaSize(PizzaSize.MIDDLE)
@@ -68,17 +81,8 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
         >
             <div className={styles.pizzaModal}>
                 <div className={styles.pizzaImage}>
-                    {pizzaSize === PizzaSize.EXTRA_SMALL && (
-                        <div className={styles.pizzaImageMiddleTemplate}>
-                            <MiddleTemplate />
-                        </div>
-                    )}
-                    {(pizzaSize === PizzaSize.EXTRA_SMALL ||
-                        pizzaSize === PizzaSize.SMALL) && (
-                        <div className={styles.pizzaImageLargeTemplate}>
-                            <LargeTemplate />
-                        </div>
-                    )}
+                    {middleTemplateShowCondition}
+                    {smallTemplateShowCondition}
                 </div>
                 <div className={styles.pizzaInfo}>
                     <ShowCalories nutritionValue={nutritionValue} />
