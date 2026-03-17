@@ -6,3 +6,7 @@ export type CustomImageClassNameType =
     | 'basketPizzaCard'
     | 'pizzaCard'
     | 'pizzaIngredient'
+    | 'pizzaModalExtraSmall'
+    | 'pizzaModalSmall'
+    | 'pizzaModalMiddle'
+    | 'pizzaModalLarge'

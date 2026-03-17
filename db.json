@@ -635,85 +635,95 @@
         },
         {
             "id": "8",
-            "title": "Чоризо фреш",
-            "category": 2,
+            "title": "Овощи и грибы",
+            "category": 4,
             "rating": 9,
-            "description": "Острые колбаски чоризо, сладкий перец, моцарелла, фирменный томатный соус",
-            "imgSrc": "https://media.dodostatic.net/image/r:292x292/11ee7d61706d472f9a5d71eb94149304.jpg",
+            "description": "Шампиньоны, томаты, сладкий перец, красный лук, кубики брынзы, моцарелла, фирменный томатный соус, итальянские травы",
+            "imgSrc": "https://media.dodostatic.net/image/r:292x292/0198bf29e76179b88bdbf2ec5527bba3.jpg",
             "details": {
                 "тонкое": {
                     "30": {
                         "nutrition": {
-                            "calories": "264.2",
-                            "prot": "12.5",
-                            "fat": "11.4",
-                            "carbo": "27.9",
-                            "weight": "470"
+                            "calories": "201.3",
+                            "prot": "8.8",
+                            "fat": "6.8",
+                            "carbo": "24.8",
+                            "weight": "530"
                         },
-                        "price": "1199"
+                        "price": "919",
+                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf29f44c75079fd3563920094ded.jpg"
                     },
                     "35": {
                         "nutrition": {
-                            "calories": "256.7",
-                            "prot": "11.9",
-                            "fat": "10.9",
-                            "carbo": "27.8",
-                            "weight": "690"
+                            "calories": "202.4",
+                            "prot": "8.6",
+                            "fat": "6.5",
+                            "carbo": "26",
+                            "weight": "740"
                         },
-                        "price": "1399"
+                        "price": "1059",
+                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf2a1b67782f98556b53861f31ae.jpg"
                     }
                 },
                 "традиционное": {
                     "20": {
                         "nutrition": {
-                            "calories": "277.8",
-                            "prot": "12.7",
-                            "fat": "11",
-                            "carbo": "32",
-                            "weight": "240"
+                            "calories": "240.7",
+                            "prot": "11",
+                            "fat": "8.4",
+                            "carbo": "34.5",
+                            "weight": "220"
                         },
-                        "price": "539"
+                        "price": "399",
+                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf29cb9973d991ff76366be809b0.jpg"
                     },
                     "25": {
                         "nutrition": {
-                            "calories": "251",
-                            "prot": "11",
-                            "fat": "9.2",
-                            "carbo": "31.1",
-                            "weight": "400"
+                            "calories": "214.9",
+                            "prot": "8.5",
+                            "fat": "6.3",
+                            "carbo": "29.7",
+                            "weight": "420"
                         },
-                        "price": "859"
+                        "price": "609",
+                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf29d77077d5ae97f55c6859f7e2.jpg"
                     },
                     "30": {
                         "nutrition": {
-                            "calories": "252",
-                            "prot": "10.9",
-                            "fat": "9.6",
-                            "carbo": "30.7",
-                            "weight": "600"
+                            "calories": "220.9",
+                            "prot": "8.8",
+                            "fat": "6.5",
+                            "carbo": "30.2",
+                            "weight": "610"
                         },
-                        "price": "1199"
+                        "price": "919",
+                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf29e76179b88bdbf2ec5527bba3.jpg"
                     },
                     "35": {
                         "nutrition": {
-                            "calories": "250.9",
-                            "prot": "10.9",
-                            "fat": "9.6",
-                            "carbo": "30.1",
-                            "weight": "820"
+                            "calories": "205.9",
+                            "prot": "8.1",
+                            "fat": "6",
+                            "carbo": "28.5",
+                            "weight": "870"
                         },
-                        "price": "1399"
+                        "price": "1059",
+                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf2a02ab75a7b30c9483c3ec011c.jpg"
                     }
                 }
             },
             "ingredients": [
                 {
-                    "name": "Острые колбаски чоризо",
+                    "name": "Шампиньоны",
                     "removable": true
                 },
-                { "name": "сладкий перец", "removable": false },
-                { "name": "моцарелла", "removable": true },
-                { "name": "фирменный томатный соус", "removable": false }
+                { "name": "томаты", "removable": true },
+                { "name": "сладкий перец", "removable": true },
+                { "name": "красный лук", "removable": true },
+                { "name": "кубики брынзы", "removable": true },
+                { "name": "моцарелла", "removable": false },
+                { "name": "фирменный томатный соус", "removable": false },
+                { "name": "итальянские травы", "removable": true }
             ]
         },
         {
@@ -1168,11 +1178,11 @@
         },
         {
             "id": "14",
-            "title": "Бефстроганов",
-            "category": 1,
+            "title": "Диабло",
+            "category": 2,
             "rating": 5,
-            "description": "Пряная говядина, шампиньоны, ароматный грибной соус, маринованные огурчики, моцарелла, красный лук, фирменный соус альфредо",
-            "imgSrc": "https://media.dodostatic.net/image/r:292x292/01953ced168c758399984df8561623a3.jpg",
+            "description": "Острые колбаски чоризо, острый перец халапеньо, соус барбекю, пряная говядина, томаты, сладкий перец, красный лук, моцарелла, фирменный томатный соус",
+            "imgSrc": "https://media.dodostatic.net/image/r:292x292/0198bf439a007604880d0231be87cd3e.jpg",
             "details": {
                 "тонкое": {
                     "30": {
@@ -1183,73 +1193,81 @@
                             "carbo": "28",
                             "weight": "510"
                         },
-                        "price": "1009"
+                        "price": "1029",
+                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf43a9a572f280871a255a23ec1f.jpg"
                     },
                     "35": {
                         "nutrition": {
-                            "calories": "225",
+                            "calories": "225.8",
                             "prot": "9.7",
                             "fat": "8.6",
                             "carbo": "27.4",
                             "weight": "750"
                         },
-                        "price": "1119"
+                        "price": "1199",
+                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf43c52970879c7600791e4cab9f.jpg"
                     }
                 },
                 "традиционное": {
                     "20": {
                         "nutrition": {
-                            "calories": "229",
+                            "calories": "229.4",
                             "prot": "9.8",
                             "fat": "8.5",
                             "carbo": "28.4",
                             "weight": "280"
                         },
-                        "price": "479"
+                        "price": "479",
+                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf438dac76cf9f87eaf3e2031882.jpg"
                     },
                     "25": {
                         "nutrition": {
-                            "calories": "238",
+                            "calories": "238.1",
                             "prot": "9.7",
                             "fat": "8.3",
                             "carbo": "31.1",
                             "weight": "420"
                         },
-                        "price": "659"
+                        "price": "679",
+                        "img": "https://media.dodostatic.net/image/r:292x292/019aa66143f872e48783de326e66c182.jpg"
                     },
                     "30": {
                         "nutrition": {
-                            "calories": "243",
+                            "calories": "243.8",
                             "prot": "9.9",
                             "fat": "8.4",
                             "carbo": "32",
                             "weight": "610"
                         },
-                        "price": "1009"
+                        "price": "1029",
+                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf439a007604880d0231be87cd3e.jpg"
                     },
                     "35": {
                         "nutrition": {
-                            "calories": "217",
+                            "calories": "217.5",
                             "prot": "8.8",
                             "fat": "7.5",
                             "carbo": "28.7",
                             "weight": "910"
                         },
-                        "price": "1119"
+                        "price": "1199",
+                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf43b32c78dfa507633da97df419.jpg"
                     }
                 }
             },
             "ingredients": [
                 {
-                    "name": "Пряная говядина",
-                    "removable": false
+                    "name": "острые колбаски чоризо",
+                    "removable": true
                 },
-                { "name": "шампиньоны", "removable": true },
-                { "name": "ароматный грибной соус", "removable": false },
-                { "name": "маринованные огурчики", "removable": true },
+                { "name": "острый перец халапеньо", "removable": true },
+                { "name": "соус барбекю", "removable": false },
+                { "name": "томаты", "removable": true },
+                { "name": "сладкий перец", "removable": true },
+                { "name": "красный лук", "removable": true },
                 { "name": "моцарелла", "removable": false },
-                { "name": "красный лук", "removable": false },
-                { "name": "фирменный соус альфредо", "removable": false }
+                { "name": "фирменный томатный соус", "removable": false },
+                { "name": "пряная говядина", "removable": true }
             ]
         },
         {

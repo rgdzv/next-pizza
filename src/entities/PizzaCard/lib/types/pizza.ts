@@ -20,6 +20,7 @@ export type PizzaSizeKeys = '20' | '25' | '30' | '35'
 export interface Details {
     nutrition: Nutrition
     price: string
+    img: string
 }
 export interface Nutrition {
     calories: string
