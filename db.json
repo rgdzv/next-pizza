@@ -6,7 +6,7 @@
             "category": 5,
             "rating": 10,
             "description": "Цыпленок, красный лук, сладкий перец, соус терияки, сыр моцарелла, фирменный соус альфредо",
-            "imgSrc": "https://media.dodostatic.net/image/r:292x292/019a10a0c9ab792190a97768688bc6e9.jpg",
+            "imgSrc": "https://media.dodostatic.net/image/r:584x584/019a10a0c9ab792190a97768688bc6e9.jpg",
             "details": {
                 "тонкое": {
                     "30": {
@@ -18,7 +18,7 @@
                             "weight": "430"
                         },
                         "price": "799",
-                        "img": "https://media.dodostatic.net/image/r:292x292/019a10a0d04478e2888f2049f683286e.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/019a10a0d04478e2888f2049f683286e.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -29,7 +29,7 @@
                             "weight": "630"
                         },
                         "price": "979",
-                        "img": "https://media.dodostatic.net/image/r:292x292/019a10a0ead476fa8b2a69b9af466c31.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/019a10a0ead476fa8b2a69b9af466c31.jpg"
                     }
                 },
                 "традиционное": {
@@ -42,7 +42,7 @@
                             "weight": "230"
                         },
                         "price": "379",
-                        "img": "https://media.dodostatic.net/image/r:292x292/019a10a0ba967817ab2dad8bef60807e.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/019a10a0ba967817ab2dad8bef60807e.jpg"
                     },
                     "25": {
                         "nutrition": {
@@ -53,7 +53,7 @@
                             "weight": "350"
                         },
                         "price": "519",
-                        "img": "https://media.dodostatic.net/image/r:292x292/019a10a0c04379429f3a07a9df0478ed.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/019a10a0c04379429f3a07a9df0478ed.jpg"
                     },
                     "30": {
                         "nutrition": {
@@ -64,7 +64,7 @@
                             "weight": "530"
                         },
                         "price": "799",
-                        "img": "https://media.dodostatic.net/image/r:292x292/019a10a0c9ab792190a97768688bc6e9.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/019a10a0c9ab792190a97768688bc6e9.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -75,7 +75,7 @@
                             "weight": "730"
                         },
                         "price": "979",
-                        "img": "https://media.dodostatic.net/image/r:292x292/019a10a0e54870b0ae63dca748223369.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/019a10a0e54870b0ae63dca748223369.jpg"
                     }
                 }
             },
@@ -97,7 +97,7 @@
             "category": 3,
             "rating": 8,
             "description": "Креветки, томаты, шампиньоны, соус песто, моцарелла, итальянские травы, фирменный томатный соус",
-            "imgSrc": "https://media.dodostatic.net/image/r:292x292/019591b642d87304a62d322945990861.jpg",
+            "imgSrc": "https://media.dodostatic.net/image/r:584x584/019591b642d87304a62d322945990861.jpg",
             "details": {
                 "тонкое": {
                     "30": {
@@ -109,7 +109,7 @@
                             "weight": "490"
                         },
                         "price": "1129",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf4d2c25799584e880b35987fc63.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4d2c25799584e880b35987fc63.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -120,7 +120,7 @@
                             "weight": "710"
                         },
                         "price": "1319",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf4d479a76d68d33d6e7483d59d7.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4d479a76d68d33d6e7483d59d7.jpg"
                     }
                 },
                 "традиционное": {
@@ -133,7 +133,7 @@
                             "weight": "270"
                         },
                         "price": "519",
-                        "img": "https://media.dodostatic.net/image/r:292x292/019aa665e67971e1b5f2f1eb059c72d4.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/019aa665e67971e1b5f2f1eb059c72d4.jpg"
                     },
                     "25": {
                         "nutrition": {
@@ -144,7 +144,7 @@
                             "weight": "430"
                         },
                         "price": "749",
-                        "img": "https://media.dodostatic.net/image/r:292x292/019aa665ed82723f9d06ad2e01e4e6cd.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/019aa665ed82723f9d06ad2e01e4e6cd.jpg"
                     },
                     "30": {
                         "nutrition": {
@@ -155,7 +155,7 @@
                             "weight": "610"
                         },
                         "price": "1129",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf4d218b75d4a3e667fc2f6d7643.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4d218b75d4a3e667fc2f6d7643.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -166,7 +166,7 @@
                             "weight": "860"
                         },
                         "price": "1319",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf4d40af763397802e21641fe6c4.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4d40af763397802e21641fe6c4.jpg"
                     }
                 }
             },
@@ -189,7 +189,7 @@
             "category": 4,
             "rating": 6,
             "description": "Сыр блю чиз, сыры чеддер и пармезан, моцарелла, фирменный соус альфредо",
-            "imgSrc": "https://media.dodostatic.net/image/r:292x292/11ee7d612a1c13cbbfcc286c332d7762.jpg",
+            "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ee7d612a1c13cbbfcc286c332d7762.jpg",
             "details": {
                 "тонкое": {
                     "30": {
@@ -201,7 +201,7 @@
                             "weight": "410"
                         },
                         "price": "839",
-                        "img": "https://media.dodostatic.net/image/r:292x292/019a109fe772705d8fa18388e8b1b4ed.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/019a109fe772705d8fa18388e8b1b4ed.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -212,7 +212,7 @@
                             "weight": "590"
                         },
                         "price": "1029",
-                        "img": "https://media.dodostatic.net/image/r:292x292/019a10a0035774a0a49c7ceba96fff8c.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/019a10a0035774a0a49c7ceba96fff8c.jpg"
                     }
                 },
                 "традиционное": {
@@ -225,7 +225,7 @@
                             "weight": "210"
                         },
                         "price": "399",
-                        "img": "https://media.dodostatic.net/image/r:292x292/019a109fd8377130ba60d317ae7e210f.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/019a109fd8377130ba60d317ae7e210f.jpg"
                     },
                     "25": {
                         "nutrition": {
@@ -236,7 +236,7 @@
                             "weight": "340"
                         },
                         "price": "569",
-                        "img": "https://media.dodostatic.net/image/r:292x292/019a109fd0a6782896f5f7af9fc598c8.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/019a109fd0a6782896f5f7af9fc598c8.jpg"
                     },
                     "30": {
                         "nutrition": {
@@ -247,7 +247,7 @@
                             "weight": "510"
                         },
                         "price": "839",
-                        "img": "https://media.dodostatic.net/image/r:292x292/019a109fe01672189d029a725ba99705.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/019a109fe01672189d029a725ba99705.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -258,7 +258,7 @@
                             "weight": "700"
                         },
                         "price": "1029",
-                        "img": "https://media.dodostatic.net/image/r:292x292/019a109ffdba7421b9e1fffbcb7ceb35.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/019a109ffdba7421b9e1fffbcb7ceb35.jpg"
                     }
                 }
             },
@@ -278,7 +278,7 @@
             "category": 2,
             "rating": 3,
             "description": "Пикантный сливочный хрен, свиная шейка, красный лук, маринованные огурчики",
-            "imgSrc": "https://media.dodostatic.net/image/r:292x292/0199b8e98ec871ab8a443887a3e1a136.jpg",
+            "imgSrc": "https://media.dodostatic.net/image/r:584x584/0199b8e98ec871ab8a443887a3e1a136.jpg",
             "details": {
                 "тонкое": {
                     "30": {
@@ -290,7 +290,7 @@
                             "weight": "460"
                         },
                         "price": "999",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0199b8e996e27404abe6db25e1403104.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0199b8e996e27404abe6db25e1403104.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -301,7 +301,7 @@
                             "weight": "690"
                         },
                         "price": "1299",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0199b8e94fe079939510d6fbedf696c2.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0199b8e94fe079939510d6fbedf696c2.jpg"
                     }
                 },
                 "традиционное": {
@@ -314,7 +314,7 @@
                             "weight": "250"
                         },
                         "price": "479",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0199b8e98207712d84f462e8a91620fe.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0199b8e98207712d84f462e8a91620fe.jpg"
                     },
                     "25": {
                         "nutrition": {
@@ -325,7 +325,7 @@
                             "weight": "390"
                         },
                         "price": "699",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0199b8e987e376b493fa2e86ad8cf640.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0199b8e987e376b493fa2e86ad8cf640.jpg"
                     },
                     "30": {
                         "nutrition": {
@@ -336,7 +336,7 @@
                             "weight": "560"
                         },
                         "price": "999",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0199b8e98ec871ab8a443887a3e1a136.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0199b8e98ec871ab8a443887a3e1a136.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -347,7 +347,7 @@
                             "weight": "790"
                         },
                         "price": "1299",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0199b8e962437394af2be19011be48f6.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0199b8e962437394af2be19011be48f6.jpg"
                     }
                 }
             },
@@ -369,7 +369,7 @@
             "category": 1,
             "rating": 5,
             "description": "Ветчина, маринованные огурчики, томаты, красный лук, чеснок, соус бургер, моцарелла, фирменный томатный соус",
-            "imgSrc": "https://media.dodostatic.net/image/r:292x292/0199b77856ec79a986a2d582c2678fff.jpg",
+            "imgSrc": "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.jpg",
             "details": {
                 "тонкое": {
                     "30": {
@@ -381,7 +381,7 @@
                             "weight": "540"
                         },
                         "price": "829",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf3fb33973f78f8af9892f86df62.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf3fb33973f78f8af9892f86df62.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -392,7 +392,7 @@
                             "weight": "780"
                         },
                         "price": "1029",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf3fd6af726a867a1446960cbba9.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf3fd6af726a867a1446960cbba9.jpg"
                     }
                 },
                 "традиционное": {
@@ -405,7 +405,7 @@
                             "weight": "260"
                         },
                         "price": "399",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0199f21016d6752ab86898d951dbb718.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0199f21016d6752ab86898d951dbb718.jpg"
                     },
                     "25": {
                         "nutrition": {
@@ -416,7 +416,7 @@
                             "weight": "420"
                         },
                         "price": "559",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf3fa48e74e68ad91d64302fd588.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf3fa48e74e68ad91d64302fd588.jpg"
                     },
                     "30": {
                         "nutrition": {
@@ -427,7 +427,7 @@
                             "weight": "630"
                         },
                         "price": "829",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0199b77856ec79a986a2d582c2678fff.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -438,7 +438,7 @@
                             "weight": "890"
                         },
                         "price": "1029",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf3fc88370f281bc3a8cfff64518.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf3fc88370f281bc3a8cfff64518.jpg"
                     }
                 }
             },
@@ -462,7 +462,7 @@
             "category": 4,
             "rating": 2,
             "description": "Моцарелла, сыры чеддер и пармезан, фирменный соус альфредо",
-            "imgSrc": "https://media.dodostatic.net/image/r:292x292/11ee7d610d2925109ab2e1c92cc5383c.jpg",
+            "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ee7d610d2925109ab2e1c92cc5383c.jpg",
             "details": {
                 "тонкое": {
                     "30": {
@@ -474,7 +474,7 @@
                             "weight": "360"
                         },
                         "price": "619",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf40f3da72bd8d205ff00cc3613e.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf40f3da72bd8d205ff00cc3613e.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -485,7 +485,7 @@
                             "weight": "530"
                         },
                         "price": "799",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf410ffa72d9b35802f9f0c97c43.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf410ffa72d9b35802f9f0c97c43.jpg"
                     }
                 },
                 "традиционное": {
@@ -498,7 +498,7 @@
                             "weight": "180"
                         },
                         "price": "289",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf40dc1574eca41f1be918150dff.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf40dc1574eca41f1be918150dff.jpg"
                     },
                     "25": {
                         "nutrition": {
@@ -509,7 +509,7 @@
                             "weight": "310"
                         },
                         "price": "339",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf40e2987242886716627224c196.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf40e2987242886716627224c196.jpg"
                     },
                     "30": {
                         "nutrition": {
@@ -520,7 +520,7 @@
                             "weight": "470"
                         },
                         "price": "619",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf40eb1171aabe90b1b3ce07c0c5.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf40eb1171aabe90b1b3ce07c0c5.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -531,7 +531,7 @@
                             "weight": "640"
                         },
                         "price": "779",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf4107ab727ca78f5f0a80f9966f.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4107ab727ca78f5f0a80f9966f.jpg"
                     }
                 }
             },
@@ -550,7 +550,7 @@
             "category": 2,
             "rating": 7,
             "description": "Пикантная пепперони, увеличенная порция моцареллы, томаты, фирменный томатный соус",
-            "imgSrc": "https://media.dodostatic.net/image/r:292x292/11ee7d612fc7b7fca5be822752bee1e5.jpg",
+            "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ee7d612fc7b7fca5be822752bee1e5.jpg",
             "details": {
                 "тонкое": {
                     "30": {
@@ -562,7 +562,7 @@
                             "weight": "480"
                         },
                         "price": "629",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf57389e72eb81e75f8fda42db70.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf57389e72eb81e75f8fda42db70.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -573,7 +573,7 @@
                             "weight": "670"
                         },
                         "price": "749",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf576c45725cac227fd81cd6abfd.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf576c45725cac227fd81cd6abfd.jpg"
                     }
                 },
                 "традиционное": {
@@ -586,7 +586,7 @@
                             "weight": "230"
                         },
                         "price": "289",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0199f218497b75e9af21dba387e3b14b.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0199f218497b75e9af21dba387e3b14b.jpg"
                     },
                     "25": {
                         "nutrition": {
@@ -597,7 +597,7 @@
                             "weight": "370"
                         },
                         "price": "369",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf572a8f77118a19836d5f75e235.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf572a8f77118a19836d5f75e235.jpg"
                     },
                     "30": {
                         "nutrition": {
@@ -608,7 +608,7 @@
                             "weight": "580"
                         },
                         "price": "629",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf57bc517218ab93c762f4b0193e.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf57bc517218ab93c762f4b0193e.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -619,7 +619,7 @@
                             "weight": "780"
                         },
                         "price": "749",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf574bf879bdb7fbad84b39cd3e2.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf574bf879bdb7fbad84b39cd3e2.jpg"
                     }
                 }
             },
@@ -639,7 +639,7 @@
             "category": 4,
             "rating": 9,
             "description": "Шампиньоны, томаты, сладкий перец, красный лук, кубики брынзы, моцарелла, фирменный томатный соус, итальянские травы",
-            "imgSrc": "https://media.dodostatic.net/image/r:292x292/0198bf29e76179b88bdbf2ec5527bba3.jpg",
+            "imgSrc": "https://media.dodostatic.net/image/r:584x584/0198bf29e76179b88bdbf2ec5527bba3.jpg",
             "details": {
                 "тонкое": {
                     "30": {
@@ -651,7 +651,7 @@
                             "weight": "530"
                         },
                         "price": "919",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf29f44c75079fd3563920094ded.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf29f44c75079fd3563920094ded.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -662,7 +662,7 @@
                             "weight": "740"
                         },
                         "price": "1059",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf2a1b67782f98556b53861f31ae.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2a1b67782f98556b53861f31ae.jpg"
                     }
                 },
                 "традиционное": {
@@ -675,7 +675,7 @@
                             "weight": "220"
                         },
                         "price": "399",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf29cb9973d991ff76366be809b0.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf29cb9973d991ff76366be809b0.jpg"
                     },
                     "25": {
                         "nutrition": {
@@ -686,7 +686,7 @@
                             "weight": "420"
                         },
                         "price": "609",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf29d77077d5ae97f55c6859f7e2.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf29d77077d5ae97f55c6859f7e2.jpg"
                     },
                     "30": {
                         "nutrition": {
@@ -697,7 +697,7 @@
                             "weight": "610"
                         },
                         "price": "919",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf29e76179b88bdbf2ec5527bba3.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf29e76179b88bdbf2ec5527bba3.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -708,7 +708,7 @@
                             "weight": "870"
                         },
                         "price": "1059",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf2a02ab75a7b30c9483c3ec011c.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2a02ab75a7b30c9483c3ec011c.jpg"
                     }
                 }
             },
@@ -732,7 +732,7 @@
             "category": 1,
             "rating": 4,
             "description": "Ветчина, шампиньоны, увеличенная порция моцареллы, фирменный томатный соус",
-            "imgSrc": "https://media.dodostatic.net/image/r:292x292/11ef5b10b39bbbbda9f8c4e4ff1b067c.jpg",
+            "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ef5b10b39bbbbda9f8c4e4ff1b067c.jpg",
             "details": {
                 "тонкое": {
                     "30": {
@@ -744,7 +744,7 @@
                             "weight": "370"
                         },
                         "price": "799",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf41a6f273148459771824eab950.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf41a6f273148459771824eab950.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -755,7 +755,7 @@
                             "weight": "550"
                         },
                         "price": "989",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf41d0d174ab9949445631f692f7.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf41d0d174ab9949445631f692f7.jpg"
                     }
                 },
                 "традиционное": {
@@ -768,7 +768,7 @@
                             "weight": "190"
                         },
                         "price": "369",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf418bcb70c183b988f3cc9ca605.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf418bcb70c183b988f3cc9ca605.jpg"
                     },
                     "25": {
                         "nutrition": {
@@ -779,7 +779,7 @@
                             "weight": "320"
                         },
                         "price": "519",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf4190af77a1b80fd4519b70729a.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4190af77a1b80fd4519b70729a.jpg"
                     },
                     "30": {
                         "nutrition": {
@@ -790,7 +790,7 @@
                             "weight": "480"
                         },
                         "price": "799",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198c659b357718f9c77ad0dc392dadf.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198c659b357718f9c77ad0dc392dadf.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -801,7 +801,7 @@
                             "weight": "630"
                         },
                         "price": "989",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf41c9c37894828208b0d2154647.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf41c9c37894828208b0d2154647.jpg"
                     }
                 }
             },
@@ -821,7 +821,7 @@
             "category": 5,
             "rating": 3,
             "description": "Цыпленок, моцарелла, фирменный соус альфредо",
-            "imgSrc": "https://media.dodostatic.net/image/r:292x292/11ee7d614cbe0530b7234b6d7a6e5f8e.jpg",
+            "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ee7d614cbe0530b7234b6d7a6e5f8e.jpg",
             "details": {
                 "тонкое": {
                     "30": {
@@ -833,7 +833,7 @@
                             "weight": "430"
                         },
                         "price": "749",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf3e48527603ae064ff5994c99f3.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf3e48527603ae064ff5994c99f3.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -844,7 +844,7 @@
                             "weight": "610"
                         },
                         "price": "869",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf3e62ab78d88f34d70f2f5ba902.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf3e62ab78d88f34d70f2f5ba902.jpg"
                     }
                 },
                 "традиционное": {
@@ -857,7 +857,7 @@
                             "weight": "190"
                         },
                         "price": "349",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0199f2169f4c762da384921acd03c950.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0199f2169f4c762da384921acd03c950.jpg"
                     },
                     "25": {
                         "nutrition": {
@@ -868,7 +868,7 @@
                             "weight": "360"
                         },
                         "price": "489",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf3e3bec72d2997d447502c2e3ee.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf3e3bec72d2997d447502c2e3ee.jpg"
                     },
                     "30": {
                         "nutrition": {
@@ -879,7 +879,7 @@
                             "weight": "520"
                         },
                         "price": "749",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf3e424371b49f0b8d7dbe320a70.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf3e424371b49f0b8d7dbe320a70.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -890,7 +890,7 @@
                             "weight": "710"
                         },
                         "price": "869",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf3e5cc077b49d3968b9fe3d7b99.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf3e5cc077b49d3968b9fe3d7b99.jpg"
                     }
                 }
             },
@@ -909,7 +909,7 @@
             "category": 1,
             "rating": 6,
             "description": "Ветчина, моцарелла, фирменный соус альфредо",
-            "imgSrc": "https://media.dodostatic.net/image/r:292x292/11ee7d60fda22358ac33c6a44eb093a2.jpg",
+            "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ee7d60fda22358ac33c6a44eb093a2.jpg",
             "details": {
                 "тонкое": {
                     "30": {
@@ -921,7 +921,7 @@
                             "weight": "370"
                         },
                         "price": "709",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf284e0e74ffb47b0a668686351b.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf284e0e74ffb47b0a668686351b.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -932,7 +932,7 @@
                             "weight": "550"
                         },
                         "price": "839",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf28744a788e8ea8e1efa999caf6.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf28744a788e8ea8e1efa999caf6.jpg"
                     }
                 },
                 "традиционное": {
@@ -945,7 +945,7 @@
                             "weight": "190"
                         },
                         "price": "339",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf2824e4797e898804ed01ef1cb7.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2824e4797e898804ed01ef1cb7.jpg"
                     },
                     "25": {
                         "nutrition": {
@@ -956,7 +956,7 @@
                             "weight": "320"
                         },
                         "price": "479",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf28326a76069673951c0086b4f8.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf28326a76069673951c0086b4f8.jpg"
                     },
                     "30": {
                         "nutrition": {
@@ -967,7 +967,7 @@
                             "weight": "480"
                         },
                         "price": "709",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf283b2372ea8e7cfc8adae9ea84.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf283b2372ea8e7cfc8adae9ea84.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -978,7 +978,7 @@
                             "weight": "630"
                         },
                         "price": "839",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf2859e1745d8b2bde952cf1283f.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2859e1745d8b2bde952cf1283f.jpg"
                     }
                 }
             },
@@ -997,7 +997,7 @@
             "category": 2,
             "rating": 8,
             "description": "Цыпленок, острые колбаски чоризо, соус бургер, сладкий перец, красный лук, томаты, моцарелла, соус ранч, чеснок",
-            "imgSrc": "https://media.dodostatic.net/image/r:292x292/019591a0591d7642b97bf6ed6da45252.jpg",
+            "imgSrc": "https://media.dodostatic.net/image/r:584x584/019591a0591d7642b97bf6ed6da45252.jpg",
             "details": {
                 "тонкое": {
                     "30": {
@@ -1009,7 +1009,7 @@
                             "weight": "460"
                         },
                         "price": "969",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf2e637f77198d981810a1d0e1bd.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2e637f77198d981810a1d0e1bd.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -1020,7 +1020,7 @@
                             "weight": "650"
                         },
                         "price": "1159",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf2e910172f1a0c13d2cd564daa7.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2e910172f1a0c13d2cd564daa7.jpg"
                     }
                 },
                 "традиционное": {
@@ -1033,7 +1033,7 @@
                             "weight": "240"
                         },
                         "price": "469",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0199f20f177175a48ccae95b042effdc.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0199f20f177175a48ccae95b042effdc.jpg"
                     },
                     "25": {
                         "nutrition": {
@@ -1044,7 +1044,7 @@
                             "weight": "370"
                         },
                         "price": "669",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf2e4f9c7980a5390fb80de3fb04.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2e4f9c7980a5390fb80de3fb04.jpg"
                     },
                     "30": {
                         "nutrition": {
@@ -1055,7 +1055,7 @@
                             "weight": "570"
                         },
                         "price": "969",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf2e5d2973a4bf5ec61161496f91.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2e5d2973a4bf5ec61161496f91.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -1066,7 +1066,7 @@
                             "weight": "760"
                         },
                         "price": "1159",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf2e84ed7564b0265013a4e43711.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2e84ed7564b0265013a4e43711.jpg"
                     }
                 }
             },
@@ -1091,7 +1091,7 @@
             "category": 3,
             "rating": 2,
             "description": "Креветки, ананасы, соус сладкий чили, сладкий перец, моцарелла, фирменный соус альфредо",
-            "imgSrc": "https://media.dodostatic.net/image/r:292x292/0194d4fd39bb7352bfa5de2219e88b9b.jpg",
+            "imgSrc": "https://media.dodostatic.net/image/r:584x584/0194d4fd39bb7352bfa5de2219e88b9b.jpg",
             "details": {
                 "тонкое": {
                     "30": {
@@ -1103,7 +1103,7 @@
                             "weight": "480"
                         },
                         "price": "1049",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf51514f713eb56a13a60fdf1d78.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf51514f713eb56a13a60fdf1d78.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -1114,7 +1114,7 @@
                             "weight": "710"
                         },
                         "price": "1209",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf5185477302b275c6e03b5172ec.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf5185477302b275c6e03b5172ec.jpg"
                     }
                 },
                 "традиционное": {
@@ -1127,7 +1127,7 @@
                             "weight": "260"
                         },
                         "price": "509",
-                        "img": "https://media.dodostatic.net/image/r:292x292/019a1099cee173b4977f5e958549b6b3.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/019a1099cee173b4977f5e958549b6b3.jpg"
                     },
                     "25": {
                         "nutrition": {
@@ -1138,7 +1138,7 @@
                             "weight": "390"
                         },
                         "price": "719",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf513fd572f9817983cc29259aa9.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf513fd572f9817983cc29259aa9.jpg"
                     },
                     "30": {
                         "nutrition": {
@@ -1149,7 +1149,7 @@
                             "weight": "630"
                         },
                         "price": "1049",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf5147f27780a3290a82692e7a36.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf5147f27780a3290a82692e7a36.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -1160,7 +1160,7 @@
                             "weight": "800"
                         },
                         "price": "1209",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf515a4b7823a8d822ceccf29ea5.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf515a4b7823a8d822ceccf29ea5.jpg"
                     }
                 }
             },
@@ -1182,7 +1182,7 @@
             "category": 2,
             "rating": 5,
             "description": "Острые колбаски чоризо, острый перец халапеньо, соус барбекю, пряная говядина, томаты, сладкий перец, красный лук, моцарелла, фирменный томатный соус",
-            "imgSrc": "https://media.dodostatic.net/image/r:292x292/0198bf439a007604880d0231be87cd3e.jpg",
+            "imgSrc": "https://media.dodostatic.net/image/r:584x584/0198bf439a007604880d0231be87cd3e.jpg",
             "details": {
                 "тонкое": {
                     "30": {
@@ -1194,7 +1194,7 @@
                             "weight": "510"
                         },
                         "price": "1029",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf43a9a572f280871a255a23ec1f.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf43a9a572f280871a255a23ec1f.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -1205,7 +1205,7 @@
                             "weight": "750"
                         },
                         "price": "1199",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf43c52970879c7600791e4cab9f.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf43c52970879c7600791e4cab9f.jpg"
                     }
                 },
                 "традиционное": {
@@ -1218,7 +1218,7 @@
                             "weight": "280"
                         },
                         "price": "479",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf438dac76cf9f87eaf3e2031882.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf438dac76cf9f87eaf3e2031882.jpg"
                     },
                     "25": {
                         "nutrition": {
@@ -1229,7 +1229,7 @@
                             "weight": "420"
                         },
                         "price": "679",
-                        "img": "https://media.dodostatic.net/image/r:292x292/019aa66143f872e48783de326e66c182.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/019aa66143f872e48783de326e66c182.jpg"
                     },
                     "30": {
                         "nutrition": {
@@ -1240,7 +1240,7 @@
                             "weight": "610"
                         },
                         "price": "1029",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf439a007604880d0231be87cd3e.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf439a007604880d0231be87cd3e.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -1251,13 +1251,13 @@
                             "weight": "910"
                         },
                         "price": "1199",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf43b32c78dfa507633da97df419.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf43b32c78dfa507633da97df419.jpg"
                     }
                 }
             },
             "ingredients": [
                 {
-                    "name": "острые колбаски чоризо",
+                    "name": "Острые колбаски чоризо",
                     "removable": true
                 },
                 { "name": "острый перец халапеньо", "removable": true },
@@ -1276,7 +1276,7 @@
             "category": 1,
             "rating": 7,
             "description": "Бекон, сыры чеддер и пармезан, моцарелла, томаты, красный лук, чеснок, фирменный соус альфредо, итальянские травы",
-            "imgSrc": "https://media.dodostatic.net/image/r:292x292/019591b13a1a724b90092c16d9b1c05a.jpg",
+            "imgSrc": "https://media.dodostatic.net/image/r:584x584/019591b13a1a724b90092c16d9b1c05a.jpg",
             "details": {
                 "тонкое": {
                     "30": {
@@ -1288,7 +1288,7 @@
                             "weight": "520"
                         },
                         "price": "1009",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf2b11d17553b5ad83befb476632.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2b11d17553b5ad83befb476632.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -1299,7 +1299,7 @@
                             "weight": "710"
                         },
                         "price": "1119",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf2b3be9737f94e700a75aaf786a.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2b3be9737f94e700a75aaf786a.jpg"
                     }
                 },
                 "традиционное": {
@@ -1312,7 +1312,7 @@
                             "weight": "220"
                         },
                         "price": "479",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf2adf8d75e7b6ceb4d0834c16a5.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2adf8d75e7b6ceb4d0834c16a5.jpg"
                     },
                     "25": {
                         "nutrition": {
@@ -1323,7 +1323,7 @@
                             "weight": "410"
                         },
                         "price": "659",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf2aec0173979677b991c86a96ac.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2aec0173979677b991c86a96ac.jpg"
                     },
                     "30": {
                         "nutrition": {
@@ -1334,7 +1334,7 @@
                             "weight": "590"
                         },
                         "price": "1009",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf2b03447079941f2d5ac6e986a9.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2b03447079941f2d5ac6e986a9.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -1345,7 +1345,7 @@
                             "weight": "800"
                         },
                         "price": "1119",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf2b2f8a72938d1d3475aa698261.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2b2f8a72938d1d3475aa698261.jpg"
                     }
                 }
             },
@@ -1369,7 +1369,7 @@
             "category": 5,
             "rating": 1,
             "description": "Цыпленок, шампиньоны, ароматный грибной соус, лук, чеснок, моцарелла, смесь сыров чеддер и пармезан, фирменный соус альфредо",
-            "imgSrc": "https://media.dodostatic.net/image/r:292x292/11ee7d6175c10773bfe36e56d48df7e3.jpg",
+            "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ee7d6175c10773bfe36e56d48df7e3.jpg",
             "details": {
                 "тонкое": {
                     "30": {
@@ -1381,7 +1381,7 @@
                             "weight": "510"
                         },
                         "price": "929",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf4e7005769c860df156c9aa8c57.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4e7005769c860df156c9aa8c57.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -1392,7 +1392,7 @@
                             "weight": "730"
                         },
                         "price": "1069",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf4e8fa177b6af11ec656d38b1d8.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4e8fa177b6af11ec656d38b1d8.jpg"
                     }
                 },
                 "традиционное": {
@@ -1405,7 +1405,7 @@
                             "weight": "260"
                         },
                         "price": "429",
-                        "img": "https://media.dodostatic.net/image/r:292x292/019aa655a60670f7aa3b1fd3287f040d.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/019aa655a60670f7aa3b1fd3287f040d.jpg"
                     },
                     "25": {
                         "nutrition": {
@@ -1416,7 +1416,7 @@
                             "weight": "430"
                         },
                         "price": "619",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf4e607f703fa5210df267488be0.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4e607f703fa5210df267488be0.jpg"
                     },
                     "30": {
                         "nutrition": {
@@ -1427,7 +1427,7 @@
                             "weight": "630"
                         },
                         "price": "929",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf4e67f474f991f04a46a49af5e6.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4e67f474f991f04a46a49af5e6.jpg"
                     },
                     "35": {
                         "nutrition": {
@@ -1438,7 +1438,7 @@
                             "weight": "820"
                         },
                         "price": "1069",
-                        "img": "https://media.dodostatic.net/image/r:292x292/0198bf4e79bb776092f98426e15d9060.jpg"
+                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4e79bb776092f98426e15d9060.jpg"
                     }
                 }
             },

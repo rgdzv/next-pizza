@@ -50,10 +50,12 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
     const nutritionValue = selectedPizza?.details[pizzaType][pizzaSize]
         .nutrition as Nutrition
 
+    const pizzaPrice = selectedPizza?.details[pizzaType][pizzaSize].price
+
     const pizzaModalImage = selectedPizza?.details[pizzaType][pizzaSize]
         .img as string
 
-    const pizzaModalClassNameCondition =
+    const pizzaModalImageClassName =
         pizzaSize === PizzaSize.EXTRA_SMALL
             ? 'pizzaModalExtraSmall'
             : pizzaSize === PizzaSize.SMALL
@@ -94,7 +96,7 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
             <div className={styles.pizzaModal}>
                 <div className={styles.pizzaImage}>
                     <CustomImage
-                        className={pizzaModalClassNameCondition}
+                        className={pizzaModalImageClassName}
                         src={pizzaModalImage}
                         alt={pizzaModalImage}
                     />
@@ -102,28 +104,35 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
                     {smallTemplateShowCondition}
                 </div>
                 <div className={styles.pizzaInfo}>
-                    <ShowCalories nutritionValue={nutritionValue} />
-                    <h1 className={styles.pizzaInfoTitle}>
-                        {selectedPizza?.title}
-                    </h1>
-                    <span className={styles.pizzaInfoSubtitle}>
-                        {pizzaSize} см, {pizzaType} тесто,&nbsp;
-                        {nutritionValue.weight} г
-                    </span>
-                    <RemoveIngredients selectedPizza={selectedPizza} />
-                    <ChooseSizeType
-                        pizzaSize={pizzaSize}
-                        pizzaType={pizzaType}
-                        setSize={setSize}
-                        setType={setType}
-                    />
-                    <span className={styles.pizzaInfoAddIngredients}>
-                        Добавить по вкусу
-                    </span>
-                    <AddIngredients
-                        pizzaType={pizzaType}
-                        pizzaSize={pizzaSize}
-                    />
+                    <div className={styles.pizzaInfoBlock}>
+                        <ShowCalories nutritionValue={nutritionValue} />
+                        <h1 className={styles.pizzaInfoTitle}>
+                            {selectedPizza?.title}
+                        </h1>
+                        <span className={styles.pizzaInfoSubtitle}>
+                            {pizzaSize} см, {pizzaType} тесто,&nbsp;
+                            {nutritionValue.weight} г
+                        </span>
+                        <RemoveIngredients selectedPizza={selectedPizza} />
+                        <ChooseSizeType
+                            pizzaSize={pizzaSize}
+                            pizzaType={pizzaType}
+                            setSize={setSize}
+                            setType={setType}
+                        />
+                        <span className={styles.pizzaInfoAddIngredients}>
+                            Добавить по вкусу
+                        </span>
+                        <AddIngredients
+                            pizzaType={pizzaType}
+                            pizzaSize={pizzaSize}
+                        />
+                    </div>
+                    <div className={styles.pizzaPriceButton}>
+                        <CustomButton className='price'>
+                            В корзину за {pizzaPrice} ₽
+                        </CustomButton>
+                    </div>
                 </div>
                 <CustomButton
                     className='closeModal'

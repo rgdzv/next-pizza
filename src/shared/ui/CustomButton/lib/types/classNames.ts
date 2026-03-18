@@ -13,3 +13,4 @@ export type ButtonClassNameType =
     | 'type'
     | 'ingredient'
     | 'ingredientCard'
+    | 'price'

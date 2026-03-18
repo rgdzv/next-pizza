@@ -27,7 +27,7 @@
 
     padding: 8px 20px;
     border: 1px solid var(--text-color-third);
-    border-radius: 15px;
+    border-radius: 9999px;
 
     font-weight: 600;
     line-height: 1;
@@ -308,5 +308,24 @@
         svg {
             opacity: 1;
         }
+    }
+}
+
+.price {
+    width: 100%;
+    padding: 12px 48px;
+    border: 1px solid var(--text-color-third);
+    border-radius: 9999px;
+
+    font-weight: 600;
+    line-height: 1;
+    color: var(--text-color-default);
+
+    background-color: var(--text-color-third);
+
+    transition: all .1s linear;
+
+    &:active:enabled {
+        box-shadow: inset 0 0 10px #0000004D;
     }
 }

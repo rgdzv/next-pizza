@@ -33,7 +33,7 @@ export const ADDITIONAL_INGREDIENTS: AdditionalIngredients[] = [
     },
     {
         id: 'pepper_jalapeno',
-        src: 'https://cdn.dodostatic.net/static/Img/Ingredients/0199153050ea707cbed48b92097e095f.png',
+        src: 'https://cdn.dodostatic.net/static/Img/Ingredients/0199152c7eb27553a08f57c8c9861ac3.png',
         name: 'Острый перец халапеньо'
     },
     {

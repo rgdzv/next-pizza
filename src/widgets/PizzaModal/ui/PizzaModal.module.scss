@@ -25,38 +25,42 @@
     .pizzaInfo {
         position: relative;
 
-        overflow: hidden auto;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
+        overflow: auto;
 
         padding: 30px;
-        border-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
 
         background-color: var(--background-color-pizza-modal-info);
 
-        .pizzaInfoTitle {
-            margin-bottom: 8px;
-            font-size: 26px;
-            font-weight: 700;
+        .pizzaInfoBlock {
+            // overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+
+            .pizzaInfoTitle {
+                margin-bottom: 8px;
+                font-size: 26px;
+                font-weight: 700;
+            }
+
+            .pizzaInfoSubtitle {
+                margin-bottom: 8px;
+                font-size: 16px;
+                color: var(--text-color-secondary);
+            }
+
+            .pizzaInfoAddIngredients {
+                margin-bottom: 15px;
+                font-size: 20px;
+                font-weight: 700;
+            }
         }
 
-        .pizzaInfoSubtitle {
-            margin-bottom: 8px;
-            font-size: 16px;
-            color: var(--text-color-secondary);
-        }
-
-        .pizzaInfoAddIngredients {
-            margin-bottom: 15px;
-            font-size: 20px;
-            font-weight: 700;
-        }
+        .pizzaPriceButton {
+            width: 100%;
+        }   
     }
-
-    .pizzaIngredients {
-        margin-bottom: 20px;
-        font-size: 16px;
-        font-weight: 600;
-    }
+    
 }
