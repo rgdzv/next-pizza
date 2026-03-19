@@ -2,16 +2,17 @@
 @use 'variables';
 @use 'fonts';
 
+html:has(dialog[open]) {
+    scrollbar-gutter: unset;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
 body {
     display: flex;
     justify-content: center;
     padding: 45px;
     background-color: var(--background-color-primary);
-}
-
-html:has(dialog[open]) {
-    overflow: hidden;
-    padding-right: 10px;
 }
 
 .container {
