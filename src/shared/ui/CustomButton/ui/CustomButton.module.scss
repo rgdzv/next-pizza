@@ -1,5 +1,7 @@
 /* stylelint-disable no-descending-specificity */
 .button {
+    user-select: none;
+
     display: flex;
     align-items: center;
     justify-content: center;
