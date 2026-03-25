@@ -1,3 +1,4 @@
+'use client'
 import { Fragment, useState } from 'react'
 import { RemoveIngredient, ReturnIngredient } from 'shared/assets'
 import { CustomButton } from 'shared/ui'

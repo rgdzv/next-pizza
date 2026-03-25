@@ -1,6 +1,6 @@
 import { Basket } from 'widgets/Basket'
 import { LoginDropDown } from 'features/Authorization'
-import { SearchPizzas } from 'features/Pizzas/AllPizzasInteract'
+import { SearchPizzas } from 'features/Pizzas/AllPizzas'
 import { PizzaLogoIcon, ShoppingCartIcon } from 'shared/assets'
 import { CustomButton } from 'shared/ui'
 import { useModal } from 'shared/lib'

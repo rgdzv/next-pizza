@@ -1,5 +1,6 @@
-import { PizzasStoreProvider } from 'features/Pizzas/AllPizzasInteract'
+import { PizzasStoreProvider } from 'features/Pizzas/AllPizzas'
 import '../styles/global.scss'
+import { ChosenPizzaStoreProvider } from 'features/Pizzas/ChosenPizza'
 import type { FC, ReactNode } from 'react'
 
 interface RootLayoutProps {
@@ -11,7 +12,9 @@ export const RootLayout: FC<RootLayoutProps> = ({ children }) => {
         <html lang='ru'>
             <body>
                 <PizzasStoreProvider>
-                    <div className='container'>{children}</div>
+                    <ChosenPizzaStoreProvider>
+                        <div className='container'>{children}</div>
+                    </ChosenPizzaStoreProvider>
                 </PizzasStoreProvider>
             </body>
         </html>

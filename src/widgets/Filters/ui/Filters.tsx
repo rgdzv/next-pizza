@@ -1,7 +1,4 @@
-import {
-    SortPizzas,
-    SwitchCategoryPizzas
-} from 'features/Pizzas/AllPizzasInteract'
+import { SortPizzas, SwitchCategoryPizzas } from 'features/Pizzas/AllPizzas'
 import styles from './Filters.module.scss'
 import type { FC } from 'react'
 

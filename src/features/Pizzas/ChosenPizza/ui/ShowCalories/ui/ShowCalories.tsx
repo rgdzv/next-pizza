@@ -1,3 +1,4 @@
+'use client'
 import { useEffect, useRef, useState } from 'react'
 import { CaloriesCard } from 'entities/CaloriesCard'
 import { CustomButton } from 'shared/ui'

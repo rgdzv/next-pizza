@@ -4,7 +4,7 @@ import {
     ChooseSizeType,
     RemoveIngredients,
     ShowCalories
-} from 'features/Pizzas/ChosenPizzaInteract'
+} from 'features/Pizzas/ChosenPizza'
 import { PizzaSize, PizzaType } from 'entities/PizzaCard'
 import { CustomButton, CustomImage, Dialog } from 'shared/ui'
 import { CrossIcon, LargeTemplate, MiddleTemplate } from 'shared/assets'

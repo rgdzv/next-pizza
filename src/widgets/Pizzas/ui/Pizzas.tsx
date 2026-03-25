@@ -9,8 +9,8 @@ import {
     getPizzas,
     useFilters,
     usePizzasStore
-} from 'features/Pizzas/AllPizzasInteract'
-import { PizzaCard } from 'entities/PizzaCard'
+} from 'features/Pizzas/AllPizzas'
+import { PizzaCard, PizzaSize, PizzaType } from 'entities/PizzaCard'
 import { priceFormat, useModal } from 'shared/lib'
 import { CustomButton, Skeleton } from 'shared/ui'
 import styles from './Pizzas.module.scss'
@@ -35,7 +35,10 @@ export const Pizzas: FC = () => {
 
     const pizzas = data?.map((pizza) => {
         const pizzaCardPrice = priceFormat(
-            Number(pizza.details.традиционное[20].price)
+            Number(
+                pizza.details[PizzaType.TRADITIONAL][PizzaSize.EXTRA_SMALL]
+                    .price
+            )
         )
 
         const handleSelectPizza = () => {

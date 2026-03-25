@@ -1,3 +1,4 @@
+'use client'
 import { useState } from 'react'
 import { IngredientCard } from 'entities/IngredientCard'
 import { PizzaSize, PizzaType } from 'entities/PizzaCard'
