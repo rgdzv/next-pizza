@@ -1,6 +1,7 @@
 import { devtools } from 'zustand/middleware'
 import { createStore } from 'zustand'
 import { PizzaSize, PizzaType } from 'entities/PizzaCard'
+import type { Pizza, PizzaSizeKeys, PizzaTypeKeys } from 'entities/PizzaCard'
 import type { ChosenPizzaState, ChosenPizzaStore } from '../../lib/types/store'
 
 export const defaultInitState: ChosenPizzaState = {
@@ -16,10 +17,13 @@ export const createChosenPizzaStore = (
         devtools(
             (set) => ({
                 ...initState,
-                setSize: (newSize: string) => {
+                setPizza: (newPizza: Pizza) => {
+                    set(() => ({ pizza: newPizza }))
+                },
+                setPizzaSize: (newSize: PizzaSizeKeys) => {
                     set(() => ({ pizzaSize: newSize }))
                 },
-                setType: (newType: string) => {
+                setPizzaType: (newType: PizzaTypeKeys) => {
                     set(() => ({ pizzaType: newType }))
                 }
             }),

@@ -3,12 +3,12 @@ import { Fragment } from 'react'
 import { CloseButton } from '@headlessui/react'
 import { PopoverElement, CustomButton } from 'shared/ui'
 import { ArrowDownIcon, ArrowsUpDownIcon, ArrowUpIcon } from 'shared/assets'
-import { useFilters } from '../../lib/hooks/useFilters'
+import { usePizzas } from '../../lib/hooks/usePizzas'
 import { SORTLIST } from './lib/const/sortList'
 import type { FC } from 'react'
 
 export const SortPizzas: FC = () => {
-    const { sortingObj, onChangeSortingObj } = useFilters()
+    const { sortingObj, onChangeSortingObj } = usePizzas()
 
     const sortOptions = SORTLIST.map((item) => {
         const handleSortOrder = (order: 'asc' | 'desc') => () => {

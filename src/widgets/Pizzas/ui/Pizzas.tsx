@@ -1,29 +1,19 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import classNames from 'classnames'
 import { PizzaModal } from 'widgets/PizzaModal'
-import {
-    getError,
-    getHasMore,
-    getIsLoading,
-    getPizzas,
-    useFilters,
-    usePizzasStore
-} from 'features/Pizzas/AllPizzas'
+import { usePizzas } from 'features/Pizzas/AllPizzas'
+import { useChosenPizza } from 'features/Pizzas/ChosenPizza'
 import { PizzaCard, PizzaSize, PizzaType } from 'entities/PizzaCard'
 import { priceFormat, useModal } from 'shared/lib'
 import { CustomButton, Skeleton } from 'shared/ui'
 import styles from './Pizzas.module.scss'
-import type { Pizza } from 'entities/PizzaCard'
 import type { FC } from 'react'
 
 export const Pizzas: FC = () => {
-    const data = usePizzasStore(getPizzas)
-    const isLoading = usePizzasStore(getIsLoading)
-    const error = usePizzasStore(getError)
-    const hasMore = usePizzasStore(getHasMore)
-    const { fetchData, fetchDataNextPage } = useFilters()
-    const [selectedPizza, setSelectedPizza] = useState<Pizza | null>(null)
+    const { data, isLoading, error, hasMore, fetchData, fetchDataNextPage } =
+        usePizzas()
+    const { setChosenPizza } = useChosenPizza()
     const {
         isModalOpen,
         openModal,
@@ -42,7 +32,7 @@ export const Pizzas: FC = () => {
         )
 
         const handleSelectPizza = () => {
-            setSelectedPizza(pizza)
+            setChosenPizza(pizza)
             openModal()
         }
 
@@ -113,7 +103,6 @@ export const Pizzas: FC = () => {
                 dialogRef={dialogRef}
                 onClickCloseButton={onClickCloseButton}
                 onClickOutside={onClickOutside}
-                selectedPizza={selectedPizza}
             />
         </main>
     )

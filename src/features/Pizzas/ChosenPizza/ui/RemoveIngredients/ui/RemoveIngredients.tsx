@@ -7,7 +7,7 @@ import type { FC } from 'react'
 import type { Pizza } from 'entities/PizzaCard'
 
 interface RemoveIngredientsPropsInterface {
-    selectedPizza: Pizza | null
+    selectedPizza: Pizza | undefined
 }
 
 export const RemoveIngredients: FC<RemoveIngredientsPropsInterface> = ({

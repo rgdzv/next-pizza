@@ -1,0 +1,17 @@
+.pizzaImage {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 530px;
+        
+    .pizzaImageMiddleTemplate {
+        position: absolute;
+    }
+
+    .pizzaImageLargeTemplate {
+        position: absolute;
+    }
+}

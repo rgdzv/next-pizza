@@ -10,10 +10,18 @@ import { getSetSortingObj } from '../../model/store/selectors/getSetSortingObj/g
 import { getSetCategory } from '../../model/store/selectors/getSetCategory/getSetCategory'
 import { usePizzasStore } from '../../model/store/provider/pizzas-store-provider'
 import { getSetPage } from '../../model/store/selectors/getSetPage/getSetPage'
-import type { ChangeEvent } from 'react'
+import { getPizzas } from '../../model/store/selectors/getPizzas/getPizzas'
+import { getIsLoading } from '../../model/store/selectors/getIsLoading/getIsLoading'
+import { getError } from '../../model/store/selectors/getError/getError'
+import { getHasMore } from '../../model/store/selectors/getHasMore/getHasMore'
 import type { StateSortingObj } from '../types/store'
+import type { ChangeEvent } from 'react'
 
-export const useFilters = () => {
+export const usePizzas = () => {
+    const data = usePizzasStore(getPizzas)
+    const isLoading = usePizzasStore(getIsLoading)
+    const error = usePizzasStore(getError)
+    const hasMore = usePizzasStore(getHasMore)
     const searchValue = usePizzasStore(getSearchValue)
     const category = usePizzasStore(getCategory)
     const sortingObj = usePizzasStore(getSortingObj)
@@ -60,6 +68,10 @@ export const useFilters = () => {
     )
 
     return {
+        data,
+        isLoading,
+        error,
+        hasMore,
         fetchData,
         fetchDataNextPage,
         searchValue,

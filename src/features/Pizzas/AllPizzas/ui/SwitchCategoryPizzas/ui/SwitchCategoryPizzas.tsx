@@ -1,11 +1,11 @@
 import { CustomButton } from 'shared/ui'
 import { CATEGORIESLIST } from '../lib/const/categoriesList'
-import { useFilters } from '../../../lib/hooks/useFilters'
+import { usePizzas } from '../../../lib/hooks/usePizzas'
 import styles from './SwitchCategoryPizzas.module.scss'
 import type { FC } from 'react'
 
 export const SwitchCategoryPizzas: FC = () => {
-    const { category, onChangeCategory } = useFilters()
+    const { category, onChangeCategory } = usePizzas()
 
     const categories = CATEGORIESLIST.map((categ, ind) => {
         const onClick = () => {

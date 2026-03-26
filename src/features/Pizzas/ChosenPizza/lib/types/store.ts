@@ -1,14 +1,15 @@
-import type { Pizza } from 'entities/PizzaCard'
+import type { Pizza, PizzaSizeKeys, PizzaTypeKeys } from 'entities/PizzaCard'
 
 export interface ChosenPizzaState {
     pizza: Pizza | undefined
-    pizzaSize: string
-    pizzaType: string
+    pizzaSize: PizzaSizeKeys
+    pizzaType: PizzaTypeKeys
 }
 
 export interface ChosenPizzaActions {
-    setPizzaSize: (newSize: string) => void
-    setPizzaType: (newType: string) => void
+    setPizza: (newPizza: Pizza) => void
+    setPizzaSize: (newSize: PizzaSizeKeys) => void
+    setPizzaType: (newType: PizzaTypeKeys) => void
 }
 
 export type ChosenPizzaStore = ChosenPizzaState & ChosenPizzaActions

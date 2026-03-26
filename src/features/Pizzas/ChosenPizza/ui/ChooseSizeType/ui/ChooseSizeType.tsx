@@ -8,8 +8,8 @@ import type { FC } from 'react'
 interface ChooseSizeTypePropsInterface {
     pizzaSize: PizzaSizeKeys
     pizzaType: PizzaTypeKeys
-    setSize: (size: PizzaSizeKeys) => void
-    setType: (type: PizzaTypeKeys) => void
+    setSize: (newSize: PizzaSizeKeys) => void
+    setType: (newType: PizzaTypeKeys) => void
 }
 export const ChooseSizeType: FC<ChooseSizeTypePropsInterface> = ({
     pizzaSize,

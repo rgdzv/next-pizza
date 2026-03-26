@@ -1,10 +1,10 @@
 import { ComboBoxElement, CustomButton } from 'shared/ui'
 import { SearchIcon } from 'shared/assets'
-import { useFilters } from '../../lib/hooks/useFilters'
+import { usePizzas } from '../../lib/hooks/usePizzas'
 import type { ChangeEvent, FC } from 'react'
 
 export const SearchPizzas: FC = () => {
-    const { searchValue, onChangeInput } = useFilters()
+    const { searchValue, onChangeInput } = usePizzas()
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         onChangeInput(e)

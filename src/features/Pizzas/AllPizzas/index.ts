@@ -1,4 +1,4 @@
-export { useFilters } from './lib/hooks/useFilters'
+export { usePizzas } from './lib/hooks/usePizzas'
 export { PizzasStoreProvider } from './model/store/provider/pizzas-store-provider'
 export { usePizzasStore } from './model/store/provider/pizzas-store-provider'
 export { SortPizzas } from './ui/SortPizzas/SortPizzas'
