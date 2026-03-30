@@ -65,5 +65,12 @@ export const AddIngredients: FC<AddIngredientsPropsInterface> = ({
         )
     })
 
-    return <div className={styles.addIngredients}>{finalIngredients}</div>
+    return (
+        <div className={styles.pizzaInfoAddIngredients}>
+            <span className={styles.pizzaInfoAddIngredientsTitle}>
+                Добавить по вкусу
+            </span>
+            <div className={styles.pizzaAddIngredients}>{finalIngredients}</div>
+        </div>
+    )
 }

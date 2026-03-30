@@ -2,18 +2,23 @@ import { PizzaSize } from 'entities/PizzaCard'
 import { CustomImage } from 'shared/ui'
 import { LargeTemplate, MiddleTemplate } from 'shared/assets'
 import styles from './ShowPizzaImage.module.scss'
-import type { PizzaSizeKeys } from 'entities/PizzaCard'
+import type { Pizza, PizzaSizeKeys, PizzaTypeKeys } from 'entities/PizzaCard'
 import type { FC } from 'react'
 
 interface ShowPizzaImagePropsInterface {
     pizzaSize: PizzaSizeKeys
-    pizzaModalImage: string
+    pizzaType: PizzaTypeKeys
+    chosenPizza: Pizza | undefined
 }
 
 export const ShowPizzaImage: FC<ShowPizzaImagePropsInterface> = ({
     pizzaSize,
-    pizzaModalImage
+    pizzaType,
+    chosenPizza
 }) => {
+    const pizzaModalImage = chosenPizza?.details[pizzaType][pizzaSize]
+        .img as string
+
     const pizzaModalImageClassName =
         pizzaSize === PizzaSize.EXTRA_SMALL
             ? 'pizzaModalExtraSmall'

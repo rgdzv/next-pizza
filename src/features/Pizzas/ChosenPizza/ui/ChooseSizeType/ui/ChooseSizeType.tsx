@@ -30,7 +30,7 @@ export const ChooseSizeType: FC<ChooseSizeTypePropsInterface> = ({
 
     const sizes = SIZES.map((size) => {
         const handleClickSize = () => {
-            handleChangeSize(size as PizzaSizeKeys)
+            handleChangeSize(size)
         }
 
         return (
@@ -42,7 +42,7 @@ export const ChooseSizeType: FC<ChooseSizeTypePropsInterface> = ({
 
     const types = TYPES.map((type) => {
         const handleClickType = () => {
-            handleChangeType(type as PizzaTypeKeys)
+            handleChangeType(type)
         }
 
         const selectedSizeConditions =
@@ -63,7 +63,7 @@ export const ChooseSizeType: FC<ChooseSizeTypePropsInterface> = ({
     })
 
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.pizzaInfoSizeType}>
             <div className={styles.size}>
                 <div
                     className={styles.backLayoutSize}

@@ -5,13 +5,13 @@ import {
     RemoveIngredients,
     ShowCalories,
     ShowPizzaImage,
+    ShowPizzaTitle,
     useChosenPizza
 } from 'features/Pizzas/ChosenPizza'
 import { PizzaSize, PizzaType } from 'entities/PizzaCard'
 import { CustomButton, Dialog } from 'shared/ui'
 import { CrossIcon } from 'shared/assets'
 import styles from './PizzaModal.module.scss'
-import type { Nutrition } from 'entities/PizzaCard'
 import type { FC, MouseEvent, RefObject } from 'react'
 
 interface PizzaModalPropsInterface {
@@ -32,13 +32,7 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
     const { chosenPizza, pizzaSize, pizzaType, setPizzaSize, setPizzaType } =
         useChosenPizza()
 
-    const nutritionValue = chosenPizza?.details[pizzaType][pizzaSize]
-        .nutrition as Nutrition
-
     const pizzaPrice = chosenPizza?.details[pizzaType][pizzaSize].price
-
-    const pizzaModalImage = chosenPizza?.details[pizzaType][pizzaSize]
-        .img as string
 
     useEffect(() => {
         if (!isModalOpen) {
@@ -59,27 +53,27 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
             <div className={styles.pizzaModal}>
                 <ShowPizzaImage
                     pizzaSize={pizzaSize}
-                    pizzaModalImage={pizzaModalImage}
+                    pizzaType={pizzaType}
+                    chosenPizza={chosenPizza}
                 />
                 <div className={styles.pizzaInfo}>
-                    <ShowCalories nutritionValue={nutritionValue} />
-                    <h1 className={styles.pizzaInfoTitle}>
-                        {chosenPizza?.title}
-                    </h1>
-                    <span className={styles.pizzaInfoSubtitle}>
-                        {pizzaSize} см, {pizzaType} тесто,&nbsp;
-                        {nutritionValue.weight} г
-                    </span>
-                    <RemoveIngredients selectedPizza={chosenPizza} />
+                    <ShowCalories
+                        pizzaSize={pizzaSize}
+                        pizzaType={pizzaType}
+                        chosenPizza={chosenPizza}
+                    />
+                    <ShowPizzaTitle
+                        pizzaSize={pizzaSize}
+                        pizzaType={pizzaType}
+                        chosenPizza={chosenPizza}
+                    />
+                    <RemoveIngredients chosenPizza={chosenPizza} />
                     <ChooseSizeType
                         pizzaSize={pizzaSize}
                         pizzaType={pizzaType}
                         setSize={setPizzaSize}
                         setType={setPizzaType}
                     />
-                    <span className={styles.pizzaInfoAddIngredients}>
-                        Добавить по вкусу
-                    </span>
                     <AddIngredients
                         pizzaType={pizzaType}
                         pizzaSize={pizzaSize}

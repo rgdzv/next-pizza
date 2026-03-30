@@ -7,11 +7,11 @@ import type { FC } from 'react'
 import type { Pizza } from 'entities/PizzaCard'
 
 interface RemoveIngredientsPropsInterface {
-    selectedPizza: Pizza | undefined
+    chosenPizza: Pizza | undefined
 }
 
 export const RemoveIngredients: FC<RemoveIngredientsPropsInterface> = ({
-    selectedPizza
+    chosenPizza
 }) => {
     const [isRemoved, setIsRemoved] = useState<Record<string, boolean>>()
 
@@ -22,7 +22,7 @@ export const RemoveIngredients: FC<RemoveIngredientsPropsInterface> = ({
         }))
     }
 
-    const ingredients = selectedPizza?.ingredients.map((ingredient, index) => {
+    const ingredients = chosenPizza?.ingredients.map((ingredient, index) => {
         if (ingredient.removable) {
             const handleRemoveIngredient = () => {
                 removeIngredient(ingredient.name)
@@ -50,12 +50,14 @@ export const RemoveIngredients: FC<RemoveIngredientsPropsInterface> = ({
         }
 
         const commaAfterIngCondition =
-            index === selectedPizza.ingredients.length - 1
+            index === chosenPizza.ingredients.length - 1
                 ? ingredient.name
                 : `${ingredient.name}, `
 
         return commaAfterIngCondition
     })
 
-    return <div className={styles.pizzaIngredients}>{ingredients}</div>
+    return (
+        <div className={styles.pizzaInfoRemoveIngredients}>{ingredients}</div>
+    )
 }

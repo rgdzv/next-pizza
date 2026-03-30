@@ -4,15 +4,24 @@ import { CaloriesCard } from 'entities/CaloriesCard'
 import { CustomButton } from 'shared/ui'
 import { CaloriesIcon } from 'shared/assets'
 import styles from './ShowCalories.module.scss'
-import type { Nutrition } from 'entities/PizzaCard'
+import type {
+    Nutrition,
+    Pizza,
+    PizzaSizeKeys,
+    PizzaTypeKeys
+} from 'entities/PizzaCard'
 import type { FC } from 'react'
 
 interface ShowCaloriesPropsInterface {
-    nutritionValue: Nutrition
+    pizzaSize: PizzaSizeKeys
+    pizzaType: PizzaTypeKeys
+    chosenPizza: Pizza | undefined
 }
 
 export const ShowCalories: FC<ShowCaloriesPropsInterface> = ({
-    nutritionValue
+    pizzaSize,
+    pizzaType,
+    chosenPizza
 }) => {
     const [isOpened, setIsOpened] = useState(false)
     const popupRef = useRef<HTMLDivElement>(null)
@@ -20,6 +29,9 @@ export const ShowCalories: FC<ShowCaloriesPropsInterface> = ({
     const handleClick = () => {
         setIsOpened((prev) => !prev)
     }
+
+    const nutritionValue = chosenPizza?.details[pizzaType][pizzaSize]
+        .nutrition as Nutrition
 
     const caloriesPopupCondition = isOpened && (
         <CaloriesCard
@@ -41,8 +53,6 @@ export const ShowCalories: FC<ShowCaloriesPropsInterface> = ({
 
         if (isOpened) {
             document.addEventListener('click', handleClickOutside)
-        } else {
-            document.removeEventListener('click', handleClickOutside)
         }
 
         return () => {
