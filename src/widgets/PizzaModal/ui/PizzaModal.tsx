@@ -1,14 +1,11 @@
-import { useEffect } from 'react'
 import {
     AddIngredients,
+    AddToBasket,
     ChooseSizeType,
     RemoveIngredients,
-    ShowCalories,
     ShowPizzaImage,
-    ShowPizzaTitle,
-    useChosenPizza
+    ShowPizzaTitle
 } from 'features/Pizzas/ChosenPizza'
-import { PizzaSize, PizzaType } from 'entities/PizzaCard'
 import { CustomButton, Dialog } from 'shared/ui'
 import { CrossIcon } from 'shared/assets'
 import styles from './PizzaModal.module.scss'
@@ -29,18 +26,6 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
     onClickCloseButton,
     onClickOutside
 }) => {
-    const { chosenPizza, pizzaSize, pizzaType, setPizzaSize, setPizzaType } =
-        useChosenPizza()
-
-    const pizzaPrice = chosenPizza?.details[pizzaType][pizzaSize].price
-
-    useEffect(() => {
-        if (!isModalOpen) {
-            setPizzaSize(PizzaSize.MIDDLE)
-            setPizzaType(PizzaType.TRADITIONAL)
-        }
-    }, [isModalOpen, setPizzaSize, setPizzaType])
-
     if (!isModalOpen) return null
 
     return (
@@ -51,38 +36,13 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
             className='pizzaModal'
         >
             <div className={styles.pizzaModal}>
-                <ShowPizzaImage
-                    pizzaSize={pizzaSize}
-                    pizzaType={pizzaType}
-                    chosenPizza={chosenPizza}
-                />
+                <ShowPizzaImage />
                 <div className={styles.pizzaInfo}>
-                    <ShowCalories
-                        pizzaSize={pizzaSize}
-                        pizzaType={pizzaType}
-                        chosenPizza={chosenPizza}
-                    />
-                    <ShowPizzaTitle
-                        pizzaSize={pizzaSize}
-                        pizzaType={pizzaType}
-                        chosenPizza={chosenPizza}
-                    />
-                    <RemoveIngredients chosenPizza={chosenPizza} />
-                    <ChooseSizeType
-                        pizzaSize={pizzaSize}
-                        pizzaType={pizzaType}
-                        setSize={setPizzaSize}
-                        setType={setPizzaType}
-                    />
-                    <AddIngredients
-                        pizzaType={pizzaType}
-                        pizzaSize={pizzaSize}
-                    />
-                    <div className={styles.pizzaPriceButton}>
-                        <CustomButton className='price'>
-                            В корзину за {pizzaPrice} ₽
-                        </CustomButton>
-                    </div>
+                    <ShowPizzaTitle />
+                    <RemoveIngredients />
+                    <ChooseSizeType />
+                    <AddIngredients />
+                    <AddToBasket />
                 </div>
                 <CustomButton
                     className='closeModal'

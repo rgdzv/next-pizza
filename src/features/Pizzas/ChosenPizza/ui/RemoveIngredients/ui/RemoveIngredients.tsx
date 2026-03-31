@@ -2,18 +2,13 @@
 import { Fragment, useState } from 'react'
 import { RemoveIngredient, ReturnIngredient } from 'shared/assets'
 import { CustomButton } from 'shared/ui'
+import { useChosenPizza } from '../../../lib/hooks/useChosenPizza'
 import styles from './RemoveIngredients.module.scss'
 import type { FC } from 'react'
-import type { Pizza } from 'entities/PizzaCard'
 
-interface RemoveIngredientsPropsInterface {
-    chosenPizza: Pizza | undefined
-}
-
-export const RemoveIngredients: FC<RemoveIngredientsPropsInterface> = ({
-    chosenPizza
-}) => {
+export const RemoveIngredients: FC = () => {
     const [isRemoved, setIsRemoved] = useState<Record<string, boolean>>()
+    const { chosenPizza } = useChosenPizza()
 
     const removeIngredient = (ingName: string) => {
         setIsRemoved((prev) => ({

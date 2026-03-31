@@ -1,31 +1,24 @@
 import { PizzaSize, PizzaType } from 'entities/PizzaCard'
 import { CustomButton } from 'shared/ui'
 import { SIZES, TYPES } from '../lib/const/shapes'
+import { useChosenPizza } from '../../../lib/hooks/useChosenPizza'
 import styles from './ChooseSizeType.module.scss'
-import type { PizzaSizeKeys, PizzaTypeKeys } from 'entities/PizzaCard'
 import type { FC } from 'react'
+import type { PizzaSizeKeys, PizzaTypeKeys } from 'entities/PizzaCard'
 
-interface ChooseSizeTypePropsInterface {
-    pizzaSize: PizzaSizeKeys
-    pizzaType: PizzaTypeKeys
-    setSize: (newSize: PizzaSizeKeys) => void
-    setType: (newType: PizzaTypeKeys) => void
-}
-export const ChooseSizeType: FC<ChooseSizeTypePropsInterface> = ({
-    pizzaSize,
-    pizzaType,
-    setSize,
-    setType
-}) => {
+export const ChooseSizeType: FC = () => {
+    const { pizzaSize, pizzaType, setPizzaSize, setPizzaType } =
+        useChosenPizza()
+
     const handleChangeSize = (newSize: PizzaSizeKeys) => {
-        setSize(newSize)
+        setPizzaSize(newSize)
         if (newSize === PizzaSize.EXTRA_SMALL || newSize === PizzaSize.SMALL) {
-            setType(PizzaType.TRADITIONAL)
+            setPizzaType(PizzaType.TRADITIONAL)
         }
     }
 
     const handleChangeType = (newType: PizzaTypeKeys) => {
-        setType(newType)
+        setPizzaType(newType)
     }
 
     const sizes = SIZES.map((size) => {

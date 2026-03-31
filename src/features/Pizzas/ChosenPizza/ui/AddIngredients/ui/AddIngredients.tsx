@@ -7,19 +7,12 @@ import {
     ADDITIONAL_INGREDIENTS_PRICES,
     DEFAULT_PRICE
 } from '../lib/const/ingredients'
+import { useChosenPizza } from '../../../lib/hooks/useChosenPizza'
 import styles from './AddIngredients.module.scss'
 import type { FC } from 'react'
-import type { PizzaSizeKeys, PizzaTypeKeys } from 'entities/PizzaCard'
 
-interface AddIngredientsPropsInterface {
-    pizzaSize: PizzaSizeKeys
-    pizzaType: PizzaTypeKeys
-}
-
-export const AddIngredients: FC<AddIngredientsPropsInterface> = ({
-    pizzaSize,
-    pizzaType
-}) => {
+export const AddIngredients: FC = () => {
+    const { pizzaSize, pizzaType } = useChosenPizza()
     const [isAdded, setIsAdded] = useState<Record<string, boolean>>({})
 
     const addIngredient = (ingName: string) => {
