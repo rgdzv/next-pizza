@@ -7,7 +7,8 @@ import type { ChosenPizzaState, ChosenPizzaStore } from '../../lib/types/store'
 export const defaultInitState: ChosenPizzaState = {
     pizza: undefined,
     pizzaSize: PizzaSize.MIDDLE,
-    pizzaType: PizzaType.TRADITIONAL
+    pizzaType: PizzaType.TRADITIONAL,
+    pizzaIngredientPrice: 0
 }
 
 export const createChosenPizzaStore = (
@@ -25,6 +26,18 @@ export const createChosenPizzaStore = (
                 },
                 setPizzaType: (newType: PizzaTypeKeys) => {
                     set(() => ({ pizzaType: newType }))
+                },
+                setPlusIngredientPrice: (ingPrice: number) => {
+                    set((state) => ({
+                        pizzaIngredientPrice:
+                            state.pizzaIngredientPrice + ingPrice
+                    }))
+                },
+                setMinusIngredientPrice: (ingPrice: number) => {
+                    set((state) => ({
+                        pizzaIngredientPrice:
+                            state.pizzaIngredientPrice - ingPrice
+                    }))
                 }
             }),
             { name: 'ChosenPizza' }

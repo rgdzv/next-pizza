@@ -12,7 +12,12 @@ import styles from './AddIngredients.module.scss'
 import type { FC } from 'react'
 
 export const AddIngredients: FC = () => {
-    const { pizzaSize, pizzaType } = useChosenPizza()
+    const {
+        pizzaSize,
+        pizzaType,
+        setPlusIngredientPrice,
+        setMinusIngredientPrice
+    } = useChosenPizza()
     const [isAdded, setIsAdded] = useState<Record<string, boolean>>({})
 
     const addIngredient = (ingName: string) => {
@@ -39,6 +44,12 @@ export const AddIngredients: FC = () => {
 
         const handleAddIngredient = () => {
             addIngredient(ingredient.name)
+            if (!isAdded[ingredient.name]) {
+                setPlusIngredientPrice(Number(priceCombination))
+            }
+            if (isAdded[ingredient.name]) {
+                setMinusIngredientPrice(Number(priceCombination))
+            }
         }
 
         const ingredientData = {
