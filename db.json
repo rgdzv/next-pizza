@@ -8,7 +8,7 @@
             "description": "Цыпленок, красный лук, сладкий перец, соус терияки, сыр моцарелла, фирменный соус альфредо",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/019a10a0c9ab792190a97768688bc6e9.jpg",
             "details": {
-                "тонкое": {
+                "thin": {
                     "30": {
                         "nutrition": {
                             "calories": "254.9",
@@ -32,7 +32,7 @@
                         "img": "https://media.dodostatic.net/image/r:584x584/019a10a0ead476fa8b2a69b9af466c31.jpg"
                     }
                 },
-                "традиционное": {
+                "traditional": {
                     "20": {
                         "nutrition": {
                             "calories": "262",
@@ -99,7 +99,7 @@
             "description": "Креветки, томаты, шампиньоны, соус песто, моцарелла, итальянские травы, фирменный томатный соус",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/019591b642d87304a62d322945990861.jpg",
             "details": {
-                "тонкое": {
+                "thin": {
                     "30": {
                         "nutrition": {
                             "calories": "226",
@@ -123,7 +123,7 @@
                         "img": "https://media.dodostatic.net/image/r:584x584/0198bf4d479a76d68d33d6e7483d59d7.jpg"
                     }
                 },
-                "традиционное": {
+                "traditional": {
                     "20": {
                         "nutrition": {
                             "calories": "220",
@@ -191,7 +191,7 @@
             "description": "Сыр блю чиз, сыры чеддер и пармезан, моцарелла, фирменный соус альфредо",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ee7d612a1c13cbbfcc286c332d7762.jpg",
             "details": {
-                "тонкое": {
+                "thin": {
                     "30": {
                         "nutrition": {
                             "calories": "312",
@@ -215,7 +215,7 @@
                         "img": "https://media.dodostatic.net/image/r:584x584/019a10a0035774a0a49c7ceba96fff8c.jpg"
                     }
                 },
-                "традиционное": {
+                "traditional": {
                     "20": {
                         "nutrition": {
                             "calories": "303",
@@ -280,7 +280,7 @@
             "description": "Пикантный сливочный хрен, свиная шейка, красный лук, маринованные огурчики",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/0199b8e98ec871ab8a443887a3e1a136.jpg",
             "details": {
-                "тонкое": {
+                "thin": {
                     "30": {
                         "nutrition": {
                             "calories": "286",
@@ -304,7 +304,7 @@
                         "img": "https://media.dodostatic.net/image/r:584x584/0199b8e94fe079939510d6fbedf696c2.jpg"
                     }
                 },
-                "традиционное": {
+                "traditional": {
                     "20": {
                         "nutrition": {
                             "calories": "279.9",
@@ -371,7 +371,7 @@
             "description": "Ветчина, маринованные огурчики, томаты, красный лук, чеснок, соус бургер, моцарелла, фирменный томатный соус",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.jpg",
             "details": {
-                "тонкое": {
+                "thin": {
                     "30": {
                         "nutrition": {
                             "calories": "206.1",
@@ -395,7 +395,7 @@
                         "img": "https://media.dodostatic.net/image/r:584x584/0198bf3fd6af726a867a1446960cbba9.jpg"
                     }
                 },
-                "традиционное": {
+                "traditional": {
                     "20": {
                         "nutrition": {
                             "calories": "229.6",
@@ -464,7 +464,7 @@
             "description": "Моцарелла, сыры чеддер и пармезан, фирменный соус альфредо",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ee7d610d2925109ab2e1c92cc5383c.jpg",
             "details": {
-                "тонкое": {
+                "thin": {
                     "30": {
                         "nutrition": {
                             "calories": "304",
@@ -488,7 +488,7 @@
                         "img": "https://media.dodostatic.net/image/r:584x584/0198bf410ffa72d9b35802f9f0c97c43.jpg"
                     }
                 },
-                "традиционное": {
+                "traditional": {
                     "20": {
                         "nutrition": {
                             "calories": "328",
@@ -552,7 +552,7 @@
             "description": "Пикантная пепперони, увеличенная порция моцареллы, томаты, фирменный томатный соус",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ee7d612fc7b7fca5be822752bee1e5.jpg",
             "details": {
-                "тонкое": {
+                "thin": {
                     "30": {
                         "nutrition": {
                             "calories": "263",
@@ -576,7 +576,7 @@
                         "img": "https://media.dodostatic.net/image/r:584x584/0198bf576c45725cac227fd81cd6abfd.jpg"
                     }
                 },
-                "традиционное": {
+                "traditional": {
                     "20": {
                         "nutrition": {
                             "calories": "298",
@@ -641,7 +641,7 @@
             "description": "Шампиньоны, томаты, сладкий перец, красный лук, кубики брынзы, моцарелла, фирменный томатный соус, итальянские травы",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/0198bf29e76179b88bdbf2ec5527bba3.jpg",
             "details": {
-                "тонкое": {
+                "thin": {
                     "30": {
                         "nutrition": {
                             "calories": "201.3",
@@ -665,7 +665,7 @@
                         "img": "https://media.dodostatic.net/image/r:584x584/0198bf2a1b67782f98556b53861f31ae.jpg"
                     }
                 },
-                "традиционное": {
+                "traditional": {
                     "20": {
                         "nutrition": {
                             "calories": "240.7",
@@ -734,7 +734,7 @@
             "description": "Ветчина, шампиньоны, увеличенная порция моцареллы, фирменный томатный соус",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ef5b10b39bbbbda9f8c4e4ff1b067c.jpg",
             "details": {
-                "тонкое": {
+                "thin": {
                     "30": {
                         "nutrition": {
                             "calories": "290",
@@ -758,7 +758,7 @@
                         "img": "https://media.dodostatic.net/image/r:584x584/0198bf41d0d174ab9949445631f692f7.jpg"
                     }
                 },
-                "традиционное": {
+                "traditional": {
                     "20": {
                         "nutrition": {
                             "calories": "306",
@@ -823,7 +823,7 @@
             "description": "Цыпленок, моцарелла, фирменный соус альфредо",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ee7d614cbe0530b7234b6d7a6e5f8e.jpg",
             "details": {
-                "тонкое": {
+                "thin": {
                     "30": {
                         "nutrition": {
                             "calories": "248",
@@ -847,7 +847,7 @@
                         "img": "https://media.dodostatic.net/image/r:584x584/0198bf3e62ab78d88f34d70f2f5ba902.jpg"
                     }
                 },
-                "традиционное": {
+                "traditional": {
                     "20": {
                         "nutrition": {
                             "calories": "312",
@@ -911,7 +911,7 @@
             "description": "Ветчина, моцарелла, фирменный соус альфредо",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ee7d60fda22358ac33c6a44eb093a2.jpg",
             "details": {
-                "тонкое": {
+                "thin": {
                     "30": {
                         "nutrition": {
                             "calories": "290",
@@ -935,7 +935,7 @@
                         "img": "https://media.dodostatic.net/image/r:584x584/0198bf28744a788e8ea8e1efa999caf6.jpg"
                     }
                 },
-                "традиционное": {
+                "traditional": {
                     "20": {
                         "nutrition": {
                             "calories": "306",
@@ -999,7 +999,7 @@
             "description": "Цыпленок, острые колбаски чоризо, соус бургер, сладкий перец, красный лук, томаты, моцарелла, соус ранч, чеснок",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/019591a0591d7642b97bf6ed6da45252.jpg",
             "details": {
-                "тонкое": {
+                "thin": {
                     "30": {
                         "nutrition": {
                             "calories": "282",
@@ -1023,7 +1023,7 @@
                         "img": "https://media.dodostatic.net/image/r:584x584/0198bf2e910172f1a0c13d2cd564daa7.jpg"
                     }
                 },
-                "традиционное": {
+                "traditional": {
                     "20": {
                         "nutrition": {
                             "calories": "280",
@@ -1093,7 +1093,7 @@
             "description": "Креветки, ананасы, соус сладкий чили, сладкий перец, моцарелла, фирменный соус альфредо",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/0194d4fd39bb7352bfa5de2219e88b9b.jpg",
             "details": {
-                "тонкое": {
+                "thin": {
                     "30": {
                         "nutrition": {
                             "calories": "235",
@@ -1117,7 +1117,7 @@
                         "img": "https://media.dodostatic.net/image/r:584x584/0198bf5185477302b275c6e03b5172ec.jpg"
                     }
                 },
-                "традиционное": {
+                "traditional": {
                     "20": {
                         "nutrition": {
                             "calories": "234",
@@ -1184,7 +1184,7 @@
             "description": "Острые колбаски чоризо, острый перец халапеньо, соус барбекю, пряная говядина, томаты, сладкий перец, красный лук, моцарелла, фирменный томатный соус",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/0198bf439a007604880d0231be87cd3e.jpg",
             "details": {
-                "тонкое": {
+                "thin": {
                     "30": {
                         "nutrition": {
                             "calories": "238",
@@ -1208,7 +1208,7 @@
                         "img": "https://media.dodostatic.net/image/r:584x584/0198bf43c52970879c7600791e4cab9f.jpg"
                     }
                 },
-                "традиционное": {
+                "traditional": {
                     "20": {
                         "nutrition": {
                             "calories": "229.4",
@@ -1278,7 +1278,7 @@
             "description": "Бекон, сыры чеддер и пармезан, моцарелла, томаты, красный лук, чеснок, фирменный соус альфредо, итальянские травы",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/019591b13a1a724b90092c16d9b1c05a.jpg",
             "details": {
-                "тонкое": {
+                "thin": {
                     "30": {
                         "nutrition": {
                             "calories": "305",
@@ -1302,7 +1302,7 @@
                         "img": "https://media.dodostatic.net/image/r:584x584/0198bf2b3be9737f94e700a75aaf786a.jpg"
                     }
                 },
-                "традиционное": {
+                "traditional": {
                     "20": {
                         "nutrition": {
                             "calories": "325",
@@ -1371,7 +1371,7 @@
             "description": "Цыпленок, шампиньоны, ароматный грибной соус, лук, чеснок, моцарелла, чеддер и пармезан, фирменный соус альфредо",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ee7d6175c10773bfe36e56d48df7e3.jpg",
             "details": {
-                "тонкое": {
+                "thin": {
                     "30": {
                         "nutrition": {
                             "calories": "243",
@@ -1395,7 +1395,7 @@
                         "img": "https://media.dodostatic.net/image/r:584x584/0198bf4e8fa177b6af11ec656d38b1d8.jpg"
                     }
                 },
-                "традиционное": {
+                "traditional": {
                     "20": {
                         "nutrition": {
                             "calories": "241",

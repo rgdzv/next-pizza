@@ -35,22 +35,22 @@ export const ChooseSizeType: FC = () => {
 
     const types = TYPES.map((type) => {
         const handleClickType = () => {
-            handleChangeType(type)
+            handleChangeType(type.id)
         }
 
         const selectedSizeConditions =
-            type === PizzaType.THIN &&
+            type.id === PizzaType.THIN &&
             (pizzaSize === PizzaSize.EXTRA_SMALL ||
                 pizzaSize === PizzaSize.SMALL)
 
         return (
             <CustomButton
-                key={type}
+                key={type.id}
                 className='type'
                 onClick={handleClickType}
                 disabled={selectedSizeConditions}
             >
-                {type}
+                {type.name}
             </CustomButton>
         )
     })

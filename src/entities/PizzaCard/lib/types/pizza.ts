@@ -14,7 +14,7 @@ interface Ingredients {
     removable: boolean
 }
 
-export type PizzaTypeKeys = 'традиционное' | 'тонкое'
+export type PizzaTypeKeys = 'traditional' | 'thin'
 export type PizzaSizeKeys = '20' | '25' | '30' | '35'
 
 export interface Details {

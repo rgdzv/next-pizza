@@ -1,6 +1,6 @@
 export enum PizzaType {
-    TRADITIONAL = 'традиционное',
-    THIN = 'тонкое'
+    TRADITIONAL = 'traditional',
+    THIN = 'thin'
 }
 
 export enum PizzaSize {
