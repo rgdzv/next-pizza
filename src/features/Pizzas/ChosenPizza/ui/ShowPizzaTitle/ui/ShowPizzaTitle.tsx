@@ -31,6 +31,9 @@ export const ShowPizzaTitle: FC = () => {
         />
     )
 
+    const pizzaTypeTranslated =
+        pizzaType === 'traditional' ? 'традиционное' : 'тонкое'
+
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (!popupRef.current?.contains(event.target as Node)) {
@@ -61,7 +64,7 @@ export const ShowPizzaTitle: FC = () => {
             </div>
             <h1 className={styles.pizzaInfoTitle}>{chosenPizza?.title}</h1>
             <span className={styles.pizzaInfoSubtitle}>
-                {pizzaSize} см, {pizzaType} тесто,&nbsp;
+                {pizzaSize} см, {pizzaTypeTranslated} тесто,&nbsp;
                 {nutritionValue.weight} г
             </span>
         </div>
