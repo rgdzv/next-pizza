@@ -8,6 +8,7 @@ import { getSetPizza } from '../../model/store/selectors/getSetPizza/getSetPizza
 import { getSetPizzaSize } from '../../model/store/selectors/getSetPizzaSize/getSetPizzaSize'
 import { getSetPizzaType } from '../../model/store/selectors/getSetPizzaType/getSetPizzaType'
 import { getSetPlusIngredientPrice } from '../../model/store/selectors/getSetPlusIngredientPrice/getSetPlusIngredientPrice'
+import { getSetUpdateIngredientPrice } from '../../model/store/selectors/getSetUpdateIngredientPrice/getSetUpdateIngredientPrice'
 
 export const useChosenPizza = () => {
     const chosenPizza = useChosenPizzaStore(getPizza)
@@ -23,6 +24,9 @@ export const useChosenPizza = () => {
     const setMinusIngredientPrice = useChosenPizzaStore(
         getSetMinusIngredientPrice
     )
+    const setUpdateIngredientPrice = useChosenPizzaStore(
+        getSetUpdateIngredientPrice
+    )
 
     return {
         chosenPizza,
@@ -33,6 +37,7 @@ export const useChosenPizza = () => {
         setPizzaType,
         pizzaIngredientPrice,
         setPlusIngredientPrice,
-        setMinusIngredientPrice
+        setMinusIngredientPrice,
+        setUpdateIngredientPrice
     }
 }

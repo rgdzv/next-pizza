@@ -13,6 +13,7 @@ export interface ChosenPizzaActions {
     setPizzaType: (newType: PizzaTypeKeys) => void
     setPlusIngredientPrice: (ingPrice: number) => void
     setMinusIngredientPrice: (ingPrice: number) => void
+    setUpdateIngredientPrice: (newPrice: number) => void
 }
 
 export type ChosenPizzaStore = ChosenPizzaState & ChosenPizzaActions

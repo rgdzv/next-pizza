@@ -38,6 +38,11 @@ export const createChosenPizzaStore = (
                         pizzaIngredientPrice:
                             state.pizzaIngredientPrice - ingPrice
                     }))
+                },
+                setUpdateIngredientPrice: (newPrice: number) => {
+                    set(() => ({
+                        pizzaIngredientPrice: newPrice
+                    }))
                 }
             }),
             { name: 'ChosenPizza' }

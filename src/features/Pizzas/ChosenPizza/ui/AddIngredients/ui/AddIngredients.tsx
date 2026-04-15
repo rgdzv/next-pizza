@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { IngredientCard } from 'entities/IngredientCard'
 import { PizzaSize, PizzaType } from 'entities/PizzaCard'
 import {
@@ -16,7 +16,8 @@ export const AddIngredients: FC = () => {
         pizzaSize,
         pizzaType,
         setPlusIngredientPrice,
-        setMinusIngredientPrice
+        setMinusIngredientPrice,
+        setUpdateIngredientPrice
     } = useChosenPizza()
     const [isAdded, setIsAdded] = useState<Record<string, boolean>>({})
 
@@ -68,6 +69,27 @@ export const AddIngredients: FC = () => {
             ></IngredientCard>
         )
     })
+
+    useEffect(() => {
+        let totalPrice = 0
+
+        Object.keys(isAdded).forEach((ingredientName) => {
+            if (isAdded[ingredientName]) {
+                const ingredient = ADDITIONAL_INGREDIENTS.find(
+                    (ing) => ing.name === ingredientName
+                )
+                if (ingredient) {
+                    const priceCombination =
+                        ADDITIONAL_INGREDIENTS_PRICES[ingredient.id][
+                            sizeTypeCombination
+                        ] ?? DEFAULT_PRICE
+                    totalPrice += Number(priceCombination)
+                }
+            }
+        })
+
+        setUpdateIngredientPrice(totalPrice)
+    }, [pizzaSize, isAdded, sizeTypeCombination, setUpdateIngredientPrice])
 
     return (
         <div className={styles.pizzaInfoAddIngredients}>
