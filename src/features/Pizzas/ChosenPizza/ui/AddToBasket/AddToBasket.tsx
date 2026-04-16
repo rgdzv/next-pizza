@@ -6,7 +6,6 @@ import type { FC } from 'react'
 export const AddToBasket: FC = () => {
     const { chosenPizza, pizzaSize, pizzaType, pizzaIngredientPrice } =
         useChosenPizza()
-    console.log(pizzaIngredientPrice)
 
     const pizzaPrice =
         Number(chosenPizza?.details[pizzaType][pizzaSize].price) +

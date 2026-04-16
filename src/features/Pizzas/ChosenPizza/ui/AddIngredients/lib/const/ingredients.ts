@@ -7,11 +7,6 @@ export const DEFAULT_PRICE = '0'
 
 export const ADDITIONAL_INGREDIENTS: AdditionalIngredients[] = [
     {
-        id: 'cheese_border',
-        src: 'https://cdn.dodostatic.net/static/Img/Ingredients/0199152f20c570859ff617c0a6ef03d3.png',
-        name: 'Сырный бортик'
-    },
-    {
         id: 'spicy_beef',
         src: 'https://cdn.dodostatic.net/static/Img/Ingredients/01991530635b73ecb1a22658b49e1653.png',
         name: 'Пряная говядина'
@@ -114,10 +109,6 @@ export const ADDITIONAL_INGREDIENTS: AdditionalIngredients[] = [
 ]
 
 export const ADDITIONAL_INGREDIENTS_PRICES: AdditionalIngredientsPrice = {
-    cheese_border: {
-        traditional_30: '205',
-        traditional_35: '229'
-    },
     spicy_beef: {
         thin_30: '119',
         thin_35: '155',

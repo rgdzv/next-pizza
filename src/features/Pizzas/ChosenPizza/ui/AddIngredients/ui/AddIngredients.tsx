@@ -1,7 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { IngredientCard } from 'entities/IngredientCard'
-import { PizzaSize, PizzaType } from 'entities/PizzaCard'
 import {
     ADDITIONAL_INGREDIENTS,
     ADDITIONAL_INGREDIENTS_PRICES,
@@ -28,17 +27,9 @@ export const AddIngredients: FC = () => {
         }))
     }
 
-    const shouldShowAllIngredients =
-        pizzaType === PizzaType.TRADITIONAL &&
-        (pizzaSize === PizzaSize.MIDDLE || pizzaSize === PizzaSize.LARGE)
-
     const sizeTypeCombination = `${pizzaType}_${pizzaSize}`
 
-    const filteredIngredients = ADDITIONAL_INGREDIENTS.filter(
-        (_, index) => shouldShowAllIngredients || index !== 0
-    )
-
-    const finalIngredients = filteredIngredients.map((ingredient) => {
+    const finalIngredients = ADDITIONAL_INGREDIENTS.map((ingredient) => {
         const priceCombination =
             ADDITIONAL_INGREDIENTS_PRICES[ingredient.id][sizeTypeCombination] ??
             DEFAULT_PRICE
@@ -71,22 +62,21 @@ export const AddIngredients: FC = () => {
     })
 
     useEffect(() => {
-        let totalPrice = 0
-
-        Object.keys(isAdded).forEach((ingredientName) => {
-            if (isAdded[ingredientName]) {
+        const totalPrice = Object.entries(isAdded).reduce(
+            (sum, [ingredientName, added]) => {
+                if (!added) return sum
                 const ingredient = ADDITIONAL_INGREDIENTS.find(
                     (ing) => ing.name === ingredientName
                 )
-                if (ingredient) {
-                    const priceCombination =
-                        ADDITIONAL_INGREDIENTS_PRICES[ingredient.id][
-                            sizeTypeCombination
-                        ] ?? DEFAULT_PRICE
-                    totalPrice += Number(priceCombination)
-                }
-            }
-        })
+                if (!ingredient) return sum
+                const price =
+                    ADDITIONAL_INGREDIENTS_PRICES[ingredient.id][
+                        sizeTypeCombination
+                    ] ?? DEFAULT_PRICE
+                return sum + Number(price)
+            },
+            0
+        )
 
         setUpdateIngredientPrice(totalPrice)
     }, [pizzaSize, isAdded, sizeTypeCombination, setUpdateIngredientPrice])
