@@ -37,13 +37,16 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
         >
             <div className={styles.pizzaModal}>
                 <ShowPizzaImage />
-                <div className={styles.pizzaInfo}>
-                    <ShowPizzaTitle />
-                    <RemoveIngredients />
-                    <ChooseSizeType />
-                    <AddIngredients />
-                    <AddToBasket />
+                <div className={styles.pizzaInfoWrapper}>
+                    <div className={styles.pizzaInfo}>
+                        <ShowPizzaTitle />
+                        <RemoveIngredients />
+                        <ChooseSizeType />
+                        <AddIngredients />
+                        <AddToBasket />
+                    </div>
                 </div>
+
                 <CustomButton
                     className='closeModal'
                     onClick={onClickCloseButton}
