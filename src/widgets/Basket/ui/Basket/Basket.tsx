@@ -1,3 +1,4 @@
+import { useBasketPizza } from 'features/Pizzas/BasketPizzas'
 import { BasketPizzaCard } from 'entities/BasketPizzaCard'
 import { priceFormat } from 'shared/lib'
 import { CustomButton, Dialog } from 'shared/ui'
@@ -7,29 +8,6 @@ import { BasketContent } from '../BasketContent/BasketContent'
 import { productDeclension } from '../../lib/helpers/productDeclension'
 import type { FC, MouseEvent, RefObject } from 'react'
 
-const BASKET_PIZZAS = [
-    {
-        id: '1',
-        title: 'Пепперони-фреш',
-        description: '30 см, традиционное тесто, 300 г',
-        imgSrc: '',
-        price: '500'
-    },
-    {
-        id: '2',
-        title: 'Пепперони-фреш',
-        description: '30 см, традиционное тесто, 300 г',
-        imgSrc: '',
-        price: '500'
-    },
-    {
-        id: '3',
-        title: 'Пепперони-фреш',
-        description: '30 см, традиционное тесто, 300 г',
-        imgSrc: '',
-        price: '500'
-    }
-]
 interface BasketPropsInterface {
     dialogRef: RefObject<HTMLDialogElement | null>
     closeModal: () => void
@@ -43,31 +21,37 @@ export const Basket: FC<BasketPropsInterface> = ({
     onClickCloseButton,
     onClickOutside
 }) => {
-    const basketProductNumber = productDeclension(11)
-    const basketFinalSum = priceFormat(2142)
+    const {
+        pizzasInBasket,
+        addPizzaToBasket,
+        removePizzaFromBasket,
+        totalPrice
+    } = useBasketPizza()
 
-    const pizzas = BASKET_PIZZAS.map((pizza) => {
-        const pizzaWithFormattedPrice = {
-            ...pizza,
-            price: priceFormat(Number(pizza.price))
-        }
-
+    const pizzas = pizzasInBasket?.map((pizza) => {
         return (
-            <BasketPizzaCard pizza={pizzaWithFormattedPrice} key={pizza.id} />
+            <BasketPizzaCard
+                key={pizza.id}
+                pizza={pizza}
+                addPizzaToBasket={addPizzaToBasket}
+                removePizzaFromBasket={removePizzaFromBasket}
+            />
         )
     })
 
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-    const showBasketPizzasCondition = pizzas ? (
-        <BasketContent
-            productQuantity={basketProductNumber}
-            basketFinalSum={basketFinalSum}
-            pizzas={pizzas}
-        />
-    ) : (
-        <BasketEmpty />
-    )
-    console.log(showBasketPizzasCondition)
+    const basketPizzasLength = productDeclension(Number(pizzasInBasket?.length))
+    const basketFinalSum = priceFormat(totalPrice)
+
+    const showBasketPizzasCondition =
+        pizzas && pizzas.length !== 0 ? (
+            <BasketContent
+                basketPizzasLength={basketPizzasLength}
+                basketFinalSum={basketFinalSum}
+                pizzas={pizzas}
+            />
+        ) : (
+            <BasketEmpty />
+        )
 
     return (
         <Dialog
@@ -77,7 +61,7 @@ export const Basket: FC<BasketPropsInterface> = ({
             className='sidebar'
         >
             <>
-                {/* {showBasketPizzasCondition} */}
+                {showBasketPizzasCondition}
                 <CustomButton className='close' onClick={onClickCloseButton}>
                     <CrossIcon title='Закрыть' />
                 </CustomButton>

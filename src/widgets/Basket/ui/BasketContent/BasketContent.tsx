@@ -4,13 +4,13 @@ import styles from './BasketContent.module.scss'
 import type { FC, ReactNode } from 'react'
 
 interface BasketContentPropsInterface {
-    productQuantity: string
+    basketPizzasLength: string
     basketFinalSum: string
     pizzas: ReactNode
 }
 
 export const BasketContent: FC<BasketContentPropsInterface> = ({
-    productQuantity,
+    basketPizzasLength,
     basketFinalSum,
     pizzas
 }) => {
@@ -19,7 +19,7 @@ export const BasketContent: FC<BasketContentPropsInterface> = ({
             <div className={styles.basketContentHeader}>
                 <span>
                     <strong>
-                        {productQuantity} на {basketFinalSum}
+                        {basketPizzasLength} на {basketFinalSum}
                     </strong>
                 </span>
             </div>
@@ -29,7 +29,7 @@ export const BasketContent: FC<BasketContentPropsInterface> = ({
                     <span>Итого :</span>
                     <span>{basketFinalSum}</span>
                 </div>
-                <CustomButton className='primary'>
+                <CustomButton className='order'>
                     <span>Оформить заказ</span>
                     <ArrowRightIcon title='Вправо' />
                 </CustomButton>

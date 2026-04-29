@@ -1,16 +1,38 @@
 import { CustomButton, CustomImage } from 'shared/ui'
 import { CrossIcon, MinusIcon, PlusIcon } from 'shared/assets'
+import { priceFormat } from 'shared/lib'
 import styles from './BasketPizzaCard.module.scss'
 import type { BasketPizza } from '../lib/types/basketPizza'
 import type { FC } from 'react'
 
 interface BasketPizzaCardPropsInterface {
     pizza: BasketPizza
+    addPizzaToBasket: (pizza: BasketPizza) => void
+    removePizzaFromBasket: (
+        pizza: BasketPizza,
+        removeImmediately?: boolean
+    ) => void
 }
 
 export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
-    pizza
+    pizza,
+    addPizzaToBasket,
+    removePizzaFromBasket
 }) => {
+    const handleAddPizza = () => {
+        addPizzaToBasket(pizza)
+    }
+
+    const handleMinusPizza = () => {
+        removePizzaFromBasket(pizza)
+    }
+
+    const handleRemovePizzaImmediately = () => {
+        removePizzaFromBasket(pizza, true)
+    }
+
+    const formattedPrice = priceFormat(pizza.totalPriceForCount as number)
+
     return (
         <div className={styles.basketPizzaCard}>
             <CustomImage
@@ -24,26 +46,39 @@ export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
                         {pizza.title}
                     </span>
                     <span className={styles.basketPizzaCardInfoSubtitle}>
-                        {pizza.description}
+                        {pizza.size} см,{' '}
+                        {pizza.type === 'traditional'
+                            ? 'традиционное '
+                            : 'тонкое '}
+                        тесто, {pizza.weight} г
                     </span>
                 </div>
                 <div className={styles.basketPizzaCardFooter}>
                     <span className={styles.basketPizzaCardSum}>
-                        {pizza.price}
+                        {formattedPrice}
                     </span>
                     <div className={styles.basketPizzaCardCountBtn}>
-                        <CustomButton className='counter'>
+                        <CustomButton
+                            className='counter'
+                            onClick={handleMinusPizza}
+                        >
                             <MinusIcon title='Убавить' />
                         </CustomButton>
-                        <span>10</span>
-                        <CustomButton className='counter'>
+                        <span>{pizza.count}</span>
+                        <CustomButton
+                            className='counter'
+                            onClick={handleAddPizza}
+                        >
                             <PlusIcon title='Прибавить' />
                         </CustomButton>
                     </div>
                 </div>
             </div>
             <div className={styles.basketPizzaCardRight}>
-                <CustomButton className='delete'>
+                <CustomButton
+                    className='delete'
+                    onClick={handleRemovePizzaImmediately}
+                >
                     <CrossIcon title='Удалить' />
                 </CustomButton>
             </div>

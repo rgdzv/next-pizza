@@ -37,7 +37,7 @@ export const useChosenPizzaStore = <T,>(
 
     if (!chosenPizzaStoreContext) {
         throw new Error(
-            `usePizzasStore must be used within PizzasStoreProvider`
+            `useChosenPizzaStore must be used within ChosenPizzaStoreProvider`
         )
     }
 
