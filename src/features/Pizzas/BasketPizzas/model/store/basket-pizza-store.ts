@@ -127,6 +127,12 @@ export const createBasketPizzaStore = (
                             }
                         }
                     })
+                },
+                removeAllPizzas: () => {
+                    set(() => ({
+                        pizzasInBasket: undefined,
+                        totalPrice: 0
+                    }))
                 }
             }),
             { name: 'BasketPizza' }

@@ -2,21 +2,24 @@
     position: relative;
 
     display: flex;
-    gap: 25px;
+    flex-direction: column;
+    gap: 15px;
 
     padding: 15px;
 
     background-color: var(--background-color-secondary);
 
-    .basketPizzaCardCenter {
+    .basketPizzaCardTop {
         display: flex;
-        flex-direction: column;
         gap: 25px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgb(226 226 233);
 
         .basketPizzaCardInfo {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
+            justify-content: center;
 
             .basketPizzaCardInfoTitle {
                 font-size: 16px;
@@ -29,39 +32,41 @@
                 color: var(--text-color-secondary)
             }
         }
+    }
 
-        .basketPizzaCardFooter {
+    .basketPizzaCardFooter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .basketPizzaCardSum {
+            font-weight: 700;
+            color: var(--text-color-primary)
+        }
+
+        .basketPizzaCardCountBtn {
             display: flex;
+            gap: 10px;
             align-items: center;
-            justify-content: space-between;
 
-            .basketPizzaCardSum {
+            padding: 5px;
+            border-radius: 15px;
+
+            background-color: var(--background-color-basket);
+
+            span {
+                width: 20px;
                 font-weight: 700;
-                color: var(--text-color-primary)
-            }
-
-            .basketPizzaCardCountBtn {
-                display: flex;
-                gap: 15px;
-                align-items: center;
-
-                padding: 5px;
-                border-radius: 15px;
-
-                background-color: var(--background-color-basket);
-
-                span {
-                    font-weight: 700;
-                    color: var(--text-color-primary)
-                }
+                color: var(--text-color-primary);
+                text-align: center;
             }
         }
     }
 
-    .basketPizzaCardRight {
+    .basketPizzaCardButton {
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 15px;
+        right: 15px;
     }
     
 }

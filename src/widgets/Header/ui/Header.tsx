@@ -1,7 +1,8 @@
 import { Basket } from 'widgets/Basket'
-import { LoginDropDown } from 'features/Authorization'
+// import { LoginDropDown } from 'features/Authorization'
 import { SearchPizzas } from 'features/Pizzas/AllPizzas'
-import { PizzaLogoIcon, ShoppingCartIcon } from 'shared/assets'
+import { useBasketPizza } from 'features/Pizzas/BasketPizzas'
+import { PizzaLogoIcon } from 'shared/assets'
 import { CustomButton } from 'shared/ui'
 import { useModal } from 'shared/lib'
 import { Logo } from '../../Logo'
@@ -17,6 +18,15 @@ export const Header: FC = () => {
         onClickOutside
     } = useModal()
 
+    const { pizzasInBasket } = useBasketPizza()
+
+    const buttonCondition = pizzasInBasket?.length ? (
+        <>
+            <i></i>
+            <span>{pizzasInBasket.length}</span>
+        </>
+    ) : null
+
     return (
         <header className={styles.header}>
             <Logo
@@ -26,9 +36,10 @@ export const Header: FC = () => {
             />
             <SearchPizzas />
             <div className={styles.headerRight}>
-                <LoginDropDown />
-                <CustomButton className='primary' onClick={openModal}>
-                    <ShoppingCartIcon title='Корзина' />
+                {/* <LoginDropDown /> */}
+                <CustomButton className='basket' onClick={openModal}>
+                    Корзина
+                    {buttonCondition}
                 </CustomButton>
             </div>
             <Basket
