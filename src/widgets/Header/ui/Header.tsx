@@ -19,13 +19,18 @@ export const Header: FC = () => {
     } = useModal()
 
     const { pizzasInBasket } = useBasketPizza()
+    const numberOfPizzasForOrder = pizzasInBasket?.reduce(
+        (acc, item) => acc + item.count,
+        0
+    )
 
-    const buttonCondition = pizzasInBasket?.length ? (
-        <>
-            <i></i>
-            <span>{pizzasInBasket.length}</span>
-        </>
-    ) : null
+    const buttonCondition =
+        numberOfPizzasForOrder && numberOfPizzasForOrder > 0 ? (
+            <>
+                <i></i>
+                <span>{numberOfPizzasForOrder}</span>
+            </>
+        ) : null
 
     return (
         <header className={styles.header}>

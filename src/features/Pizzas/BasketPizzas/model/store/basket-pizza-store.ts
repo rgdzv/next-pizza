@@ -13,7 +13,7 @@ export const createBasketPizzaStore = (
 ) => {
     return createStore<BasketPizzaStore>()(
         devtools(
-            (set) => ({
+            (set, _, store) => ({
                 ...initState,
                 addPizzaToBasket: (pizza: BasketPizza) => {
                     set((state) => {
@@ -24,18 +24,18 @@ export const createBasketPizzaStore = (
 
                         if (isPizzaInBasket) {
                             const updatedPizzas = state.pizzasInBasket?.map(
-                                (p) => {
-                                    if (p.id === pizza.id) {
-                                        const newCount = p.count + 1
+                                (item) => {
+                                    if (item.id === pizza.id) {
+                                        const newCount = item.count + 1
                                         const totalPriceForCount =
-                                            newCount * p.price
+                                            newCount * item.price
                                         return {
-                                            ...p,
+                                            ...item,
                                             count: newCount,
                                             totalPriceForCount
                                         }
                                     }
-                                    return p
+                                    return item
                                 }
                             )
                             newTotalPrice += pizza.price
@@ -66,7 +66,7 @@ export const createBasketPizzaStore = (
                 },
                 removePizzaFromBasket: (
                     pizza: BasketPizza,
-                    removeImmediately = false
+                    removeCompletely = false
                 ) => {
                     set((state) => {
                         const isPizzaInBasket = state.pizzasInBasket?.find(
@@ -75,7 +75,7 @@ export const createBasketPizzaStore = (
 
                         let newTotalPrice = state.totalPrice
 
-                        if (removeImmediately && isPizzaInBasket) {
+                        if (removeCompletely && isPizzaInBasket) {
                             const updatedPizzas = state.pizzasInBasket?.filter(
                                 (obj) => obj.id !== pizza.id
                             )
@@ -91,18 +91,18 @@ export const createBasketPizzaStore = (
 
                         if (isPizzaInBasket && isPizzaInBasket.count > 1) {
                             const updatedPizzas = state.pizzasInBasket?.map(
-                                (p) => {
-                                    if (p.id === pizza.id) {
-                                        const newCount = p.count - 1
+                                (item) => {
+                                    if (item.id === pizza.id) {
+                                        const newCount = item.count - 1
                                         const totalPriceForCount =
-                                            newCount * p.price
+                                            newCount * item.price
                                         return {
-                                            ...p,
+                                            ...item,
                                             count: newCount,
                                             totalPriceForCount
                                         }
                                     }
-                                    return p
+                                    return item
                                 }
                             )
 
@@ -129,10 +129,7 @@ export const createBasketPizzaStore = (
                     })
                 },
                 removeAllPizzas: () => {
-                    set(() => ({
-                        pizzasInBasket: undefined,
-                        totalPrice: 0
-                    }))
+                    set(store.getInitialState())
                 }
             }),
             { name: 'BasketPizza' }

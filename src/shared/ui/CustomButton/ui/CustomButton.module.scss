@@ -105,6 +105,22 @@
     }
 }
 
+.remove {
+    width: 25px;
+    height: 25px;
+
+    svg {
+        fill: var(--text-color-secondary);
+        transition: fill .1s linear;
+    }
+
+    &:hover {
+        svg {
+            fill: var(--text-color-primary)
+        }
+    }
+}
+
 .counter {
     width: 24px;
     height: 24px;

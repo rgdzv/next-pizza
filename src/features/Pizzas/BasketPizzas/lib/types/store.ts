@@ -11,7 +11,7 @@ export interface BasketPizzaActions {
         pizza: BasketPizza,
         removeImmediately?: boolean
     ) => void
-    removaAllPizzas: () => void
+    removeAllPizzas: () => void
 }
 
 export type BasketPizzaStore = BasketPizzaState & BasketPizzaActions

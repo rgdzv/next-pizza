@@ -37,7 +37,7 @@ export const AddToBasket: FC<AddToBasketPropsInterface> = ({ closeModal }) => {
         setOrderIsSending(true)
         setTimeout(() => {
             setOrderIsSending(true)
-        }, 1500)
+        }, 300)
     }
 
     const handleAddPizzaToBasket = () => {
@@ -45,7 +45,7 @@ export const AddToBasket: FC<AddToBasketPropsInterface> = ({ closeModal }) => {
         updateButtonContent()
         setTimeout(() => {
             closeModal()
-        }, 2000)
+        }, 500)
     }
 
     const formattedPrice = priceFormat(pizzaPrice)

@@ -25,33 +25,57 @@ export const Basket: FC<BasketPropsInterface> = ({
         pizzasInBasket,
         addPizzaToBasket,
         removePizzaFromBasket,
+        removeAllPizzas,
         totalPrice
     } = useBasketPizza()
 
     const pizzas = pizzasInBasket?.map((pizza) => {
+        const handleAddPizza = () => {
+            addPizzaToBasket(pizza)
+        }
+
+        const handleRemovePizza = () => {
+            removePizzaFromBasket(pizza)
+        }
+
+        const handleRemovePizzaCompletely = () => {
+            removePizzaFromBasket(pizza, true)
+        }
+
+        const formattedPrice = priceFormat(pizza.totalPriceForCount as number)
+
         return (
             <BasketPizzaCard
                 key={pizza.id}
                 pizza={pizza}
-                addPizzaToBasket={addPizzaToBasket}
-                removePizzaFromBasket={removePizzaFromBasket}
+                handleAddPizza={handleAddPizza}
+                handleRemovePizza={handleRemovePizza}
+                handleRemovePizzaCompletely={handleRemovePizzaCompletely}
+                formattedPrice={formattedPrice}
             />
         )
     })
 
-    const basketPizzasLength = productDeclension(Number(pizzasInBasket?.length))
+    const numberOfPizzasInBasket = pizzasInBasket?.reduce(
+        (acc, item) => acc + item.count,
+        0
+    )
+
+    const basketPizzasLength = productDeclension(
+        numberOfPizzasInBasket as number
+    )
     const basketFinalSum = priceFormat(totalPrice)
 
-    const showBasketPizzasCondition =
-        pizzas && pizzas.length !== 0 ? (
-            <BasketContent
-                basketPizzasLength={basketPizzasLength}
-                basketFinalSum={basketFinalSum}
-                pizzas={pizzas}
-            />
-        ) : (
-            <BasketEmpty />
-        )
+    const showBasketPizzasCondition = pizzas?.length ? (
+        <BasketContent
+            basketPizzasLength={basketPizzasLength}
+            basketFinalSum={basketFinalSum}
+            pizzas={pizzas}
+            removeAllPizzas={removeAllPizzas}
+        />
+    ) : (
+        <BasketEmpty />
+    )
 
     return (
         <Dialog

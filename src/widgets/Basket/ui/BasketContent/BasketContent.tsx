@@ -1,5 +1,5 @@
-import { ArrowRightIcon } from 'shared/assets'
 import { CustomButton } from 'shared/ui'
+import { BigCrossIcon } from 'shared/assets'
 import styles from './BasketContent.module.scss'
 import type { FC, ReactNode } from 'react'
 
@@ -7,12 +7,14 @@ interface BasketContentPropsInterface {
     basketPizzasLength: string
     basketFinalSum: string
     pizzas: ReactNode
+    removeAllPizzas: () => void
 }
 
 export const BasketContent: FC<BasketContentPropsInterface> = ({
     basketPizzasLength,
     basketFinalSum,
-    pizzas
+    pizzas,
+    removeAllPizzas
 }) => {
     return (
         <div className={styles.basketContent}>
@@ -22,6 +24,9 @@ export const BasketContent: FC<BasketContentPropsInterface> = ({
                         {basketPizzasLength} на {basketFinalSum}
                     </strong>
                 </span>
+                <CustomButton className='remove' onClick={removeAllPizzas}>
+                    <BigCrossIcon title='Удалить' />
+                </CustomButton>
             </div>
             <div className={styles.basketContentList}>{pizzas}</div>
             <div className={styles.basketContentFooter}>
@@ -31,7 +36,6 @@ export const BasketContent: FC<BasketContentPropsInterface> = ({
                 </div>
                 <CustomButton className='order'>
                     <span>Оформить заказ</span>
-                    <ArrowRightIcon title='Вправо' />
                 </CustomButton>
             </div>
         </div>

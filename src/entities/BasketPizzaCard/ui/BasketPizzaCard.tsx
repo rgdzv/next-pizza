@@ -1,38 +1,24 @@
 import { CustomButton, CustomImage } from 'shared/ui'
 import { CrossIcon, MinusIcon, PlusIcon } from 'shared/assets'
-import { priceFormat } from 'shared/lib'
 import styles from './BasketPizzaCard.module.scss'
 import type { BasketPizza } from '../lib/types/basketPizza'
 import type { FC } from 'react'
 
 interface BasketPizzaCardPropsInterface {
     pizza: BasketPizza
-    addPizzaToBasket: (pizza: BasketPizza) => void
-    removePizzaFromBasket: (
-        pizza: BasketPizza,
-        removeImmediately?: boolean
-    ) => void
+    handleAddPizza: () => void
+    handleRemovePizza: () => void
+    handleRemovePizzaCompletely: () => void
+    formattedPrice: string
 }
 
 export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
     pizza,
-    addPizzaToBasket,
-    removePizzaFromBasket
+    handleAddPizza,
+    handleRemovePizza,
+    handleRemovePizzaCompletely,
+    formattedPrice
 }) => {
-    const handleAddPizza = () => {
-        addPizzaToBasket(pizza)
-    }
-
-    const handleMinusPizza = () => {
-        removePizzaFromBasket(pizza)
-    }
-
-    const handleRemovePizzaImmediately = () => {
-        removePizzaFromBasket(pizza, true)
-    }
-
-    const formattedPrice = priceFormat(pizza.totalPriceForCount as number)
-
     return (
         <div className={styles.basketPizzaCard}>
             <div className={styles.basketPizzaCardTop}>
@@ -61,7 +47,7 @@ export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
                 <div className={styles.basketPizzaCardCountBtn}>
                     <CustomButton
                         className='counter'
-                        onClick={handleMinusPizza}
+                        onClick={handleRemovePizza}
                     >
                         <MinusIcon title='Убавить' />
                     </CustomButton>
@@ -78,7 +64,7 @@ export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
             <div className={styles.basketPizzaCardButton}>
                 <CustomButton
                     className='delete'
-                    onClick={handleRemovePizzaImmediately}
+                    onClick={handleRemovePizzaCompletely}
                 >
                     <CrossIcon title='Удалить' />
                 </CustomButton>

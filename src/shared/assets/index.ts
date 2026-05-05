@@ -20,6 +20,7 @@ import ReturnIngredient from './images/return-ing-icon.svg'
 import IngredientAdded from './images/ingredient-added-icon.svg'
 import MiddleTemplate from './images/middle-template-icon.svg'
 import LargeTemplate from './images/large-template-icon.svg'
+import BigCrossIcon from './images/big-cross-icon.svg'
 
 export {
     ArrowLeftIcon,
@@ -43,5 +44,6 @@ export {
     ReturnIngredient,
     IngredientAdded,
     MiddleTemplate,
-    LargeTemplate
+    LargeTemplate,
+    BigCrossIcon
 }
