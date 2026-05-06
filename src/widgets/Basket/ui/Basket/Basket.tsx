@@ -44,6 +44,8 @@ export const Basket: FC<BasketPropsInterface> = ({
 
         const formattedPrice = priceFormat(pizza.totalPriceForCount as number)
 
+        const ingredients = pizza.ingredients.join(', ')
+
         return (
             <BasketPizzaCard
                 key={pizza.id}
@@ -51,6 +53,7 @@ export const Basket: FC<BasketPropsInterface> = ({
                 handleAddPizza={handleAddPizza}
                 handleRemovePizza={handleRemovePizza}
                 handleRemovePizzaCompletely={handleRemovePizzaCompletely}
+                ingredients={ingredients}
                 formattedPrice={formattedPrice}
             />
         )

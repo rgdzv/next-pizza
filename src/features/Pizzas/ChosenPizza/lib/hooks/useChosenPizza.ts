@@ -1,8 +1,10 @@
 import { useChosenPizzaStore } from '../../model/store/provider/chosen-pizza-store-provider'
+import { getIngredients } from '../../model/store/selectors/getIngredients/getIngredients'
 import { getPizza } from '../../model/store/selectors/getPizza/getPizza'
 import { getPizzaIngredientPrice } from '../../model/store/selectors/getPizzaIngredientPrice/getPizzaIngredientPrice'
 import { getPizzaSize } from '../../model/store/selectors/getPizzaSize/getPizzaSize'
 import { getPizzaType } from '../../model/store/selectors/getPizzaType/getPizzaType'
+import { getSetIngredient } from '../../model/store/selectors/getSetIngredient/getSetIngredient'
 import { getSetMinusIngredientPrice } from '../../model/store/selectors/getSetMinusIngredientPrice/getSetMinusIngredientPrice'
 import { getSetPizza } from '../../model/store/selectors/getSetPizza/getSetPizza'
 import { getSetPizzaSize } from '../../model/store/selectors/getSetPizzaSize/getSetPizzaSize'
@@ -18,6 +20,8 @@ export const useChosenPizza = () => {
     const setPizzaSize = useChosenPizzaStore(getSetPizzaSize)
     const setPizzaType = useChosenPizzaStore(getSetPizzaType)
     const pizzaIngredientPrice = useChosenPizzaStore(getPizzaIngredientPrice)
+    const ingredients = useChosenPizzaStore(getIngredients)
+    const setIngredient = useChosenPizzaStore(getSetIngredient)
     const setPlusIngredientPrice = useChosenPizzaStore(
         getSetPlusIngredientPrice
     )
@@ -35,6 +39,8 @@ export const useChosenPizza = () => {
         pizzaType,
         setPizzaSize,
         setPizzaType,
+        ingredients,
+        setIngredient,
         pizzaIngredientPrice,
         setPlusIngredientPrice,
         setMinusIngredientPrice,

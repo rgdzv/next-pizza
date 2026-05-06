@@ -10,4 +10,5 @@ export interface BasketPizza {
     weight: string
     count: number
     totalPriceForCount?: number
+    ingredients: string[]
 }

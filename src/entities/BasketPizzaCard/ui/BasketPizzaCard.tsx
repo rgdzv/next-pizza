@@ -9,6 +9,7 @@ interface BasketPizzaCardPropsInterface {
     handleAddPizza: () => void
     handleRemovePizza: () => void
     handleRemovePizzaCompletely: () => void
+    ingredients: string
     formattedPrice: string
 }
 
@@ -17,6 +18,7 @@ export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
     handleAddPizza,
     handleRemovePizza,
     handleRemovePizzaCompletely,
+    ingredients,
     formattedPrice
 }) => {
     return (
@@ -38,6 +40,20 @@ export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
                             : 'тонкое '}
                         тесто, {pizza.weight} г
                     </span>
+                    {ingredients ? (
+                        <>
+                            <span className={styles.basketPizzaCardInfoOption}>
+                                Дополнительно:
+                            </span>
+                            <span
+                                className={
+                                    styles.basketPizzaCardInfoIngredients
+                                }
+                            >
+                                {ingredients}
+                            </span>
+                        </>
+                    ) : null}
                 </div>
             </div>
             <div className={styles.basketPizzaCardFooter}>

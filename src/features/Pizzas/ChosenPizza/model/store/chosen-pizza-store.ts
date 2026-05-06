@@ -8,6 +8,7 @@ export const defaultInitState: ChosenPizzaState = {
     pizza: undefined,
     pizzaSize: PizzaSize.MIDDLE,
     pizzaType: PizzaType.TRADITIONAL,
+    ingredients: [],
     pizzaIngredientPrice: 0
 }
 
@@ -26,6 +27,22 @@ export const createChosenPizzaStore = (
                 },
                 setPizzaType: (newType: PizzaTypeKeys) => {
                     set(() => ({ pizzaType: newType }))
+                },
+                setIngredient: (ingName: string | null) => {
+                    set((state) => {
+                        if (ingName === null) {
+                            return { ingredients: [] }
+                        }
+                        const isIngredientAdded =
+                            state.ingredients.includes(ingName)
+
+                        const updatedIngredients = isIngredientAdded
+                            ? state.ingredients.filter(
+                                  (item) => item !== ingName
+                              )
+                            : [...state.ingredients, ingName]
+                        return { ingredients: updatedIngredients }
+                    })
                 },
                 setPlusIngredientPrice: (ingPrice: number) => {
                     set((state) => ({

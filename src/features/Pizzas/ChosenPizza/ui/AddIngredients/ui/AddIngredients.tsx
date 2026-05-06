@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { IngredientCard } from 'entities/IngredientCard'
 import {
     ADDITIONAL_INGREDIENTS,
@@ -14,18 +14,12 @@ export const AddIngredients: FC = () => {
     const {
         pizzaSize,
         pizzaType,
+        ingredients,
+        setIngredient,
         setPlusIngredientPrice,
         setMinusIngredientPrice,
         setUpdateIngredientPrice
     } = useChosenPizza()
-    const [isAdded, setIsAdded] = useState<Record<string, boolean>>({})
-
-    const addIngredient = (ingName: string) => {
-        setIsAdded((prev) => ({
-            ...prev,
-            [ingName]: !prev[ingName]
-        }))
-    }
 
     const sizeTypeCombination = `${pizzaType}_${pizzaSize}`
 
@@ -35,11 +29,11 @@ export const AddIngredients: FC = () => {
             DEFAULT_PRICE
 
         const handleAddIngredient = () => {
-            addIngredient(ingredient.name)
-            if (!isAdded[ingredient.name]) {
+            setIngredient(ingredient.name)
+            if (!ingredients.includes(ingredient.name)) {
                 setPlusIngredientPrice(Number(priceCombination))
             }
-            if (isAdded[ingredient.name]) {
+            if (ingredients.includes(ingredient.name)) {
                 setMinusIngredientPrice(Number(priceCombination))
             }
         }
@@ -56,30 +50,27 @@ export const AddIngredients: FC = () => {
                 key={ingredient.id}
                 ingredient={ingredientData}
                 handleAddIngredient={handleAddIngredient}
-                ingredientAdded={isAdded[ingredient.name]}
+                ingredientAdded={ingredients.includes(ingredient.name)}
             ></IngredientCard>
         )
     })
 
     useEffect(() => {
-        const totalPrice = Object.entries(isAdded).reduce(
-            (sum, [ingredientName, added]) => {
-                if (!added) return sum
-                const ingredient = ADDITIONAL_INGREDIENTS.find(
-                    (ing) => ing.name === ingredientName
-                )
-                if (!ingredient) return sum
-                const price =
-                    ADDITIONAL_INGREDIENTS_PRICES[ingredient.id][
-                        sizeTypeCombination
-                    ] ?? DEFAULT_PRICE
-                return sum + Number(price)
-            },
-            0
-        )
+        const totalPrice = ingredients.reduce((sum, ingredientName) => {
+            if (!ingredientName) return sum
+            const ingredient = ADDITIONAL_INGREDIENTS.find(
+                (ing) => ing.name === ingredientName
+            )
+            if (!ingredient) return sum
+            const price =
+                ADDITIONAL_INGREDIENTS_PRICES[ingredient.id][
+                    sizeTypeCombination
+                ] ?? DEFAULT_PRICE
+            return sum + Number(price)
+        }, 0)
 
         setUpdateIngredientPrice(totalPrice)
-    }, [pizzaSize, isAdded, sizeTypeCombination, setUpdateIngredientPrice])
+    }, [pizzaSize, ingredients, sizeTypeCombination, setUpdateIngredientPrice])
 
     return (
         <div className={styles.pizzaInfoAddIngredients}>

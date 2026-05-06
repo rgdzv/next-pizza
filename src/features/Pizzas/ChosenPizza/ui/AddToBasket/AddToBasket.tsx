@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { useBasketPizza } from 'features/Pizzas/BasketPizzas'
+import { PizzaSize, PizzaType } from 'entities/PizzaCard'
 import { CustomButton } from 'shared/ui'
 import { priceFormat } from 'shared/lib'
 import { useChosenPizza } from '../../lib/hooks/useChosenPizza'
@@ -12,8 +13,16 @@ interface AddToBasketPropsInterface {
 }
 
 export const AddToBasket: FC<AddToBasketPropsInterface> = ({ closeModal }) => {
-    const { chosenPizza, pizzaSize, pizzaType, pizzaIngredientPrice } =
-        useChosenPizza()
+    const {
+        chosenPizza,
+        pizzaSize,
+        pizzaType,
+        ingredients,
+        pizzaIngredientPrice,
+        setPizzaSize,
+        setPizzaType,
+        setIngredient
+    } = useChosenPizza()
     const { addPizzaToBasket } = useBasketPizza()
     const [orderIsSending, setOrderIsSending] = useState(false)
 
@@ -30,7 +39,10 @@ export const AddToBasket: FC<AddToBasketPropsInterface> = ({ closeModal }) => {
         price: pizzaPrice,
         weight: chosenPizza?.details[pizzaType][pizzaSize].nutrition
             .weight as string,
-        count: 1
+        count: 1,
+        ingredients: ingredients.map(
+            (item) => item.charAt(0).toLowerCase() + item.slice(1)
+        )
     }
 
     const updateButtonContent = () => {
@@ -45,6 +57,9 @@ export const AddToBasket: FC<AddToBasketPropsInterface> = ({ closeModal }) => {
         updateButtonContent()
         setTimeout(() => {
             closeModal()
+            setPizzaSize(PizzaSize.MIDDLE)
+            setPizzaType(PizzaType.TRADITIONAL)
+            setIngredient(null)
         }, 500)
     }
 
