@@ -16,6 +16,8 @@
     }
 
     .basketContentList {
+        scrollbar-width: thin;
+
         overflow: auto;
         display: flex;
         flex-direction: column;

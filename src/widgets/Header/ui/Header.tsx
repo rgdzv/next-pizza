@@ -3,9 +3,8 @@ import { Basket } from 'widgets/Basket'
 import { SearchPizzas } from 'features/Pizzas/AllPizzas'
 import { useBasketPizza } from 'features/Pizzas/BasketPizzas'
 import { PizzaLogoIcon } from 'shared/assets'
-import { CustomButton } from 'shared/ui'
+import { CustomButton, CustomImage } from 'shared/ui'
 import { useModal } from 'shared/lib'
-import { Logo } from '../../Logo'
 import styles from './Header.module.scss'
 import type { FC } from 'react'
 
@@ -34,11 +33,22 @@ export const Header: FC = () => {
 
     return (
         <header className={styles.header}>
-            <Logo
-                name='NEXT PIZZA'
-                slogan='вкусней уже некуда'
-                imgSrc={PizzaLogoIcon}
-            />
+            <div className={styles.headerLogo}>
+                <CustomImage
+                    src={PizzaLogoIcon}
+                    className='logo'
+                    alt='Логотип'
+                    sizes='35px 35px'
+                />
+                <div className={styles.headerLogoBlock}>
+                    <span className={styles.headerLogoBlockName}>
+                        NEXT PIZZA
+                    </span>
+                    <span className={styles.headerLogoBlockSlogan}>
+                        вкусней уже некуда
+                    </span>
+                </div>
+            </div>
             <SearchPizzas />
             <div className={styles.headerRight}>
                 {/* <LoginDropDown /> */}
