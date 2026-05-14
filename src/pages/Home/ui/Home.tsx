@@ -1,18 +1,18 @@
 'use client'
-import { Header } from 'widgets/Header'
 import { Filters } from 'widgets/Filters'
 import { Pizzas } from 'widgets/Pizzas'
-import styles from './HomePage.module.scss'
+import { HeaderContainer } from 'widgets/Containers'
+import styles from './Home.module.scss'
 import type { FC } from 'react'
 
-const HomePage: FC = () => {
+const Home: FC = () => {
     return (
         <div className={styles.home}>
-            <Header />
+            <HeaderContainer />
             <Filters />
             <Pizzas />
         </div>
     )
 }
 
-export default HomePage
+export default Home

@@ -1,22 +1,16 @@
-import { Basket } from 'widgets/Basket'
 // import { LoginDropDown } from 'features/Authorization'
 import { SearchPizzas } from 'features/Pizzas/AllPizzas'
 import { useBasketPizza } from 'features/Pizzas/BasketPizzas'
 import { PizzaLogoIcon } from 'shared/assets'
 import { CustomButton, CustomImage } from 'shared/ui'
-import { useModal } from 'shared/lib'
 import styles from './Header.module.scss'
 import type { FC } from 'react'
 
-export const Header: FC = () => {
-    const {
-        openModal,
-        closeModal,
-        dialogRef,
-        onClickCloseButton,
-        onClickOutside
-    } = useModal()
+interface HeaderPropsInterface {
+    openModal: () => void
+}
 
+export const Header: FC<HeaderPropsInterface> = ({ openModal }) => {
     const { pizzasInBasket } = useBasketPizza()
     const numberOfPizzasForOrder = pizzasInBasket?.reduce(
         (acc, item) => acc + item.count,
@@ -57,12 +51,6 @@ export const Header: FC = () => {
                     {buttonCondition}
                 </CustomButton>
             </div>
-            <Basket
-                dialogRef={dialogRef}
-                closeModal={closeModal}
-                onClickCloseButton={onClickCloseButton}
-                onClickOutside={onClickOutside}
-            />
         </header>
     )
 }
