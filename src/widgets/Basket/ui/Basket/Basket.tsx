@@ -87,12 +87,10 @@ export const Basket: FC<BasketPropsInterface> = ({
             onClick={onClickOutside}
             className='sidebar'
         >
-            <>
-                {showBasketPizzasCondition}
-                <CustomButton className='close' onClick={onClickCloseButton}>
-                    <CrossIcon title='Закрыть' />
-                </CustomButton>
-            </>
+            {showBasketPizzasCondition}
+            <CustomButton className='close' onClick={onClickCloseButton}>
+                <CrossIcon title='Закрыть' />
+            </CustomButton>
         </Dialog>
     )
 }

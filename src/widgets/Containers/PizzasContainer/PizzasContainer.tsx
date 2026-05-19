@@ -1,9 +1,9 @@
 import { useModal } from 'shared/lib'
-import { Header } from '../../Header'
-import { Basket } from '../../Basket'
+import { PizzaModal } from '../../PizzaModal'
+import { Pizzas } from '../../Pizzas'
 import type { FC } from 'react'
 
-export const HeaderContainer: FC = () => {
+export const PizzasContainer: FC = () => {
     const {
         isModalOpen,
         openModal,
@@ -14,11 +14,11 @@ export const HeaderContainer: FC = () => {
     } = useModal()
     return (
         <>
-            <Header openModal={openModal} />
+            <Pizzas openModal={openModal} />
             {isModalOpen && (
-                <Basket
-                    dialogRef={dialogRef}
+                <PizzaModal
                     closeModal={closeModal}
+                    dialogRef={dialogRef}
                     onClickCloseButton={onClickCloseButton}
                     onClickOutside={onClickOutside}
                 />

@@ -12,7 +12,6 @@ import styles from './PizzaModal.module.scss'
 import type { FC, MouseEvent, RefObject } from 'react'
 
 interface PizzaModalPropsInterface {
-    isModalOpen: boolean
     closeModal: () => void
     dialogRef: RefObject<HTMLDialogElement | null>
     onClickOutside: (e: MouseEvent<HTMLDialogElement>) => void
@@ -20,14 +19,11 @@ interface PizzaModalPropsInterface {
 }
 
 export const PizzaModal: FC<PizzaModalPropsInterface> = ({
-    isModalOpen,
     closeModal,
     dialogRef,
     onClickCloseButton,
     onClickOutside
 }) => {
-    if (!isModalOpen) return null
-
     return (
         <Dialog
             dialogRef={dialogRef}

@@ -1,27 +1,22 @@
 'use client'
 import { useEffect } from 'react'
 import classNames from 'classnames'
-import { PizzaModal } from 'widgets/PizzaModal'
 import { usePizzas } from 'features/Pizzas/AllPizzas'
 import { useChosenPizza } from 'features/Pizzas/ChosenPizza'
 import { PizzaCard, PizzaSize, PizzaType } from 'entities/PizzaCard'
-import { priceFormat, useModal } from 'shared/lib'
+import { priceFormat } from 'shared/lib'
 import { CustomButton, Skeleton } from 'shared/ui'
 import styles from './Pizzas.module.scss'
 import type { FC } from 'react'
 
-export const Pizzas: FC = () => {
+interface PizzasProprInterface {
+    openModal: () => void
+}
+
+export const Pizzas: FC<PizzasProprInterface> = ({ openModal }) => {
     const { data, isLoading, error, hasMore, fetchData, fetchDataNextPage } =
         usePizzas()
     const { setChosenPizza } = useChosenPizza()
-    const {
-        isModalOpen,
-        openModal,
-        closeModal,
-        dialogRef,
-        onClickCloseButton,
-        onClickOutside
-    } = useModal()
 
     const pizzas = data?.map((pizza) => {
         const pizzaCardPrice = priceFormat(
@@ -97,13 +92,6 @@ export const Pizzas: FC = () => {
         <main className={pizzasClassName}>
             <div className={styles.pizzasContent}>{pizzas}</div>
             {pizzasFetchButtonCondition}
-            <PizzaModal
-                isModalOpen={isModalOpen}
-                closeModal={closeModal}
-                dialogRef={dialogRef}
-                onClickCloseButton={onClickCloseButton}
-                onClickOutside={onClickOutside}
-            />
         </main>
     )
 }
