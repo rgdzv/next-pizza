@@ -12,22 +12,22 @@ import styles from './PizzaModal.module.scss'
 import type { FC, MouseEvent, RefObject } from 'react'
 
 interface PizzaModalPropsInterface {
-    closeModal: () => void
     dialogRef: RefObject<HTMLDialogElement | null>
+    closeDialog: () => void
     onClickOutside: (e: MouseEvent<HTMLDialogElement>) => void
     onClickCloseButton: () => void
 }
 
 export const PizzaModal: FC<PizzaModalPropsInterface> = ({
-    closeModal,
     dialogRef,
+    closeDialog,
     onClickCloseButton,
     onClickOutside
 }) => {
     return (
         <Dialog
             dialogRef={dialogRef}
-            onClose={closeModal}
+            onClose={closeDialog}
             onClick={onClickOutside}
             className='pizzaModal'
         >
@@ -39,7 +39,7 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
                         <RemoveIngredients />
                         <ChooseSizeType />
                         <AddIngredients />
-                        <AddToBasket closeModal={closeModal} />
+                        <AddToBasket closeModal={closeDialog} />
                     </div>
                 </div>
 

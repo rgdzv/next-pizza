@@ -3,25 +3,25 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type { MouseEvent, RefObject } from 'react'
 
-interface UseModalResult {
-    isModalOpen: boolean
-    openModal: () => void
-    closeModal: () => void
+interface UseDialogResult {
+    isDialogOpen: boolean
+    openDialog: () => void
+    closeDialog: () => void
     dialogRef: RefObject<HTMLDialogElement | null>
     onClickOutside: (e: MouseEvent<HTMLDialogElement>) => void
     onClickCloseButton: () => void
 }
 
-export const useModal = (): UseModalResult => {
-    const [isModalOpen, setIsModalOpen] = useState(false)
+export const useDialog = (): UseDialogResult => {
+    const [isDialogOpen, setIsDialogOpen] = useState(false)
     const dialogRef = useRef<HTMLDialogElement>(null)
 
-    const openModal = useCallback(() => {
-        setIsModalOpen(true)
+    const openDialog = useCallback(() => {
+        setIsDialogOpen(true)
     }, [])
 
-    const closeModal = useCallback(() => {
-        setIsModalOpen(false)
+    const closeDialog = useCallback(() => {
+        setIsDialogOpen(false)
     }, [])
 
     const onClickOutside = useCallback(
@@ -40,15 +40,15 @@ export const useModal = (): UseModalResult => {
     useEffect(() => {
         if (!dialogRef.current) return
 
-        if (isModalOpen) {
+        if (isDialogOpen) {
             dialogRef.current.showModal()
         }
-    }, [isModalOpen])
+    }, [isDialogOpen])
 
     return {
-        isModalOpen,
-        openModal,
-        closeModal,
+        isDialogOpen,
+        openDialog,
+        closeDialog,
         dialogRef,
         onClickOutside,
         onClickCloseButton

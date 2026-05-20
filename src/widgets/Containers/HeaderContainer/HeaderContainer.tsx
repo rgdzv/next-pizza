@@ -1,28 +1,25 @@
-import { useModal } from 'shared/lib'
+import { useDialog } from 'shared/lib'
 import { Header } from '../../Header'
 import { Basket } from '../../Basket'
 import type { FC } from 'react'
 
 export const HeaderContainer: FC = () => {
     const {
-        isModalOpen,
-        openModal,
-        closeModal,
+        openDialog,
+        closeDialog,
         dialogRef,
         onClickCloseButton,
         onClickOutside
-    } = useModal()
+    } = useDialog()
     return (
         <>
-            <Header openModal={openModal} />
-            {isModalOpen && (
-                <Basket
-                    dialogRef={dialogRef}
-                    closeModal={closeModal}
-                    onClickCloseButton={onClickCloseButton}
-                    onClickOutside={onClickOutside}
-                />
-            )}
+            <Header openDialog={openDialog} />
+            <Basket
+                dialogRef={dialogRef}
+                closeDialog={closeDialog}
+                onClickCloseButton={onClickCloseButton}
+                onClickOutside={onClickOutside}
+            />
         </>
     )
 }

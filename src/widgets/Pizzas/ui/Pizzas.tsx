@@ -10,10 +10,10 @@ import styles from './Pizzas.module.scss'
 import type { FC } from 'react'
 
 interface PizzasProprInterface {
-    openModal: () => void
+    openDialog: () => void
 }
 
-export const Pizzas: FC<PizzasProprInterface> = ({ openModal }) => {
+export const Pizzas: FC<PizzasProprInterface> = ({ openDialog }) => {
     const { data, isLoading, error, hasMore, fetchData, fetchDataNextPage } =
         usePizzas()
     const { setChosenPizza } = useChosenPizza()
@@ -28,7 +28,7 @@ export const Pizzas: FC<PizzasProprInterface> = ({ openModal }) => {
 
         const handleSelectPizza = () => {
             setChosenPizza(pizza)
-            openModal()
+            openDialog()
         }
 
         return (

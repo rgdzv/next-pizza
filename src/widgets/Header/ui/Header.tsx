@@ -7,10 +7,10 @@ import styles from './Header.module.scss'
 import type { FC } from 'react'
 
 interface HeaderPropsInterface {
-    openModal: () => void
+    openDialog: () => void
 }
 
-export const Header: FC<HeaderPropsInterface> = ({ openModal }) => {
+export const Header: FC<HeaderPropsInterface> = ({ openDialog }) => {
     const { pizzasInBasket } = useBasketPizza()
     const numberOfPizzasForOrder = pizzasInBasket?.reduce(
         (acc, item) => acc + item.count,
@@ -46,7 +46,7 @@ export const Header: FC<HeaderPropsInterface> = ({ openModal }) => {
             <SearchPizzas />
             <div className={styles.headerRight}>
                 {/* <LoginDropDown /> */}
-                <CustomButton className='basket' onClick={openModal}>
+                <CustomButton className='basket' onClick={openDialog}>
                     Корзина
                     {buttonCondition}
                 </CustomButton>

@@ -10,14 +10,14 @@ import type { FC, MouseEvent, RefObject } from 'react'
 
 interface BasketPropsInterface {
     dialogRef: RefObject<HTMLDialogElement | null>
-    closeModal: () => void
+    closeDialog: () => void
     onClickCloseButton: () => void
     onClickOutside: (e: MouseEvent<HTMLDialogElement>) => void
 }
 
 export const Basket: FC<BasketPropsInterface> = ({
     dialogRef,
-    closeModal,
+    closeDialog,
     onClickCloseButton,
     onClickOutside
 }) => {
@@ -83,7 +83,7 @@ export const Basket: FC<BasketPropsInterface> = ({
     return (
         <Dialog
             dialogRef={dialogRef}
-            onClose={closeModal}
+            onClose={closeDialog}
             onClick={onClickOutside}
             className='sidebar'
         >
