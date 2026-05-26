@@ -1,4 +1,4 @@
-import { useDialog } from 'shared/lib'
+import { useDialog } from 'shared/ui'
 import { Header } from '../../Header'
 import { Basket } from '../../Basket'
 import type { FC } from 'react'

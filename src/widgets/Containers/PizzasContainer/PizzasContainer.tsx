@@ -1,4 +1,4 @@
-import { useDialog } from 'shared/lib'
+import { useDialog } from 'shared/ui'
 import { PizzaModal } from '../../PizzaModal'
 import { Pizzas } from '../../Pizzas'
 import type { FC } from 'react'
