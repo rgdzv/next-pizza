@@ -1,4 +1,8 @@
 export { usePizzas } from './lib/hooks/usePizzas'
+export { useCategory } from './lib/hooks/useCategory'
+export { useSort } from './lib/hooks/useSort'
+export { useFetchData } from './lib/hooks/useFetchData'
+export { useSearch } from './lib/hooks/useSearch'
 export { PizzasStoreProvider } from './model/store/provider/pizzas-store-provider'
 export { usePizzasStore } from './model/store/provider/pizzas-store-provider'
 export { SortPizzas } from './ui/SortPizzas/SortPizzas'

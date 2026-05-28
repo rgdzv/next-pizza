@@ -1,7 +1,7 @@
 'use client'
 import { useEffect } from 'react'
 import classNames from 'classnames'
-import { usePizzas } from 'features/Pizzas/AllPizzas'
+import { useFetchData, usePizzas } from 'features/Pizzas/AllPizzas'
 import { useChosenPizza } from 'features/Pizzas/ChosenPizza'
 import { PizzaCard, PizzaSize, PizzaType } from 'entities/PizzaCard'
 import { priceFormat } from 'shared/lib'
@@ -14,8 +14,8 @@ interface PizzasProprInterface {
 }
 
 export const Pizzas: FC<PizzasProprInterface> = ({ openDialog }) => {
-    const { data, isLoading, error, hasMore, fetchData, fetchDataNextPage } =
-        usePizzas()
+    const { data, isLoading, error, hasMore } = usePizzas()
+    const { fetchData, fetchDataNextPage } = useFetchData()
     const { setChosenPizza } = useChosenPizza()
 
     const pizzas = data?.map((pizza) => {

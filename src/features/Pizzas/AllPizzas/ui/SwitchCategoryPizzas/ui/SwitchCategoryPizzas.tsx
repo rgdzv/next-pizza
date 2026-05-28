@@ -1,13 +1,13 @@
 import { CustomButton } from 'shared/ui'
 import { CATEGORIESLIST } from '../lib/const/categoriesList'
-import { usePizzas } from '../../../lib/hooks/usePizzas'
+import { useCategory } from '../../../lib/hooks/useCategory'
 import styles from './SwitchCategoryPizzas.module.scss'
 import type { FC } from 'react'
 
 export const SwitchCategoryPizzas: FC = () => {
-    const { category, onChangeCategory } = usePizzas()
+    const { category, onChangeCategory } = useCategory()
 
-    const categories = CATEGORIESLIST.map((categ, ind) => {
+    const categories = CATEGORIESLIST.map((item, ind) => {
         const onClick = () => {
             onChangeCategory(ind)
         }
@@ -15,13 +15,13 @@ export const SwitchCategoryPizzas: FC = () => {
         const categoryActive = category === ind
 
         return (
-            <li key={categ}>
+            <li key={item}>
                 <CustomButton
                     className='category'
                     categoryActive={categoryActive}
                     onClick={onClick}
                 >
-                    {categ}
+                    {item}
                 </CustomButton>
             </li>
         )
