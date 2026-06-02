@@ -26,7 +26,8 @@ export const Basket: FC<BasketPropsInterface> = ({
         addPizzaToBasket,
         removePizzaFromBasket,
         removeAllPizzas,
-        totalPrice
+        totalPrice,
+        totalCount
     } = useBasketPizza()
 
     const pizzas = pizzasInBasket?.map((pizza) => {
@@ -59,14 +60,7 @@ export const Basket: FC<BasketPropsInterface> = ({
         )
     })
 
-    const numberOfPizzasInBasket = pizzasInBasket?.reduce(
-        (acc, item) => acc + item.count,
-        0
-    )
-
-    const basketPizzasLength = productDeclension(
-        numberOfPizzasInBasket as number
-    )
+    const basketPizzasLength = productDeclension(totalCount)
     const basketFinalSum = priceFormat(totalPrice)
 
     const showBasketPizzasCondition = pizzas?.length ? (

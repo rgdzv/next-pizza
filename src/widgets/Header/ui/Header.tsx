@@ -11,19 +11,14 @@ interface HeaderPropsInterface {
 }
 
 export const Header: FC<HeaderPropsInterface> = ({ openDialog }) => {
-    const { pizzasInBasket } = useBasketPizza()
-    const numberOfPizzasForOrder = pizzasInBasket?.reduce(
-        (acc, item) => acc + item.count,
-        0
-    )
+    const { totalCount } = useBasketPizza()
 
-    const buttonCondition =
-        numberOfPizzasForOrder && numberOfPizzasForOrder > 0 ? (
-            <>
-                <i></i>
-                <span>{numberOfPizzasForOrder}</span>
-            </>
-        ) : null
+    const buttonCondition = totalCount ? (
+        <>
+            <i></i>
+            <span>{totalCount}</span>
+        </>
+    ) : null
 
     return (
         <header className={styles.header}>

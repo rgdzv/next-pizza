@@ -3,6 +3,7 @@ import type { BasketPizza } from 'entities/BasketPizzaCard'
 export interface BasketPizzaState {
     pizzasInBasket: BasketPizza[] | undefined
     totalPrice: number
+    totalCount: number
 }
 
 export interface BasketPizzaActions {

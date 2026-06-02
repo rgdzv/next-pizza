@@ -3,6 +3,7 @@ import { getAddPizzaToBasket } from '../../model/store/selectors/getAddPizzaToBa
 import { getPizzasInBasket } from '../../model/store/selectors/getPizzasInBasket/getPizzasInBasket'
 import { getRemoveAllPizzas } from '../../model/store/selectors/getRemoveAllPizzas/getRemoveAllPizzas'
 import { getRemovePizzaFromBasket } from '../../model/store/selectors/getRemovePizzaFromBasket/getRemovePizzaFromBasket'
+import { getTotalCount } from '../../model/store/selectors/getTotalCount/getTotalCount'
 import { getTotalPrice } from '../../model/store/selectors/getTotalPrice/getTotalPrice'
 
 export const useBasketPizza = () => {
@@ -11,12 +12,14 @@ export const useBasketPizza = () => {
     const removePizzaFromBasket = useBasketPizzaStore(getRemovePizzaFromBasket)
     const totalPrice = useBasketPizzaStore(getTotalPrice)
     const removeAllPizzas = useBasketPizzaStore(getRemoveAllPizzas)
+    const totalCount = useBasketPizzaStore(getTotalCount)
 
     return {
         pizzasInBasket,
         addPizzaToBasket,
         removePizzaFromBasket,
         totalPrice,
-        removeAllPizzas
+        removeAllPizzas,
+        totalCount
     }
 }

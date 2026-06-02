@@ -5,7 +5,8 @@ import type { BasketPizzaState, BasketPizzaStore } from '../../lib/types/store'
 
 export const defaultInitState: BasketPizzaState = {
     pizzasInBasket: undefined,
-    totalPrice: 0
+    totalPrice: 0,
+    totalCount: 0
 }
 
 export const createBasketPizzaStore = (
@@ -21,6 +22,7 @@ export const createBasketPizzaStore = (
                             (obj) => obj.id === pizza.id
                         )
                         let newTotalPrice = state.totalPrice
+                        let newTotalCount = state.totalCount
 
                         if (isPizzaInBasket) {
                             const updatedPizzas = state.pizzasInBasket?.map(
@@ -38,12 +40,15 @@ export const createBasketPizzaStore = (
                                     return item
                                 }
                             )
+
                             newTotalPrice += pizza.price
+                            newTotalCount += 1
 
                             return {
                                 ...state,
                                 pizzasInBasket: updatedPizzas,
-                                totalPrice: newTotalPrice
+                                totalPrice: newTotalPrice,
+                                totalCount: newTotalCount
                             }
                         } else {
                             const newPizza = {
@@ -51,7 +56,9 @@ export const createBasketPizzaStore = (
                                 count: 1,
                                 totalPriceForCount: pizza.price
                             }
+
                             newTotalPrice += pizza.price
+                            newTotalCount += 1
 
                             return {
                                 ...state,
@@ -59,7 +66,8 @@ export const createBasketPizzaStore = (
                                     ...(state.pizzasInBasket ?? []),
                                     { ...newPizza }
                                 ],
-                                totalPrice: newTotalPrice
+                                totalPrice: newTotalPrice,
+                                totalCount: newTotalCount
                             }
                         }
                     })
@@ -74,6 +82,7 @@ export const createBasketPizzaStore = (
                         )
 
                         let newTotalPrice = state.totalPrice
+                        let newTotalCount = state.totalCount
 
                         if (removeCompletely && isPizzaInBasket) {
                             const updatedPizzas = state.pizzasInBasket?.filter(
@@ -81,11 +90,13 @@ export const createBasketPizzaStore = (
                             )
 
                             newTotalPrice -= isPizzaInBasket.count * pizza.price
+                            newTotalCount -= isPizzaInBasket.count
 
                             return {
                                 ...state,
                                 pizzasInBasket: updatedPizzas,
-                                totalPrice: newTotalPrice
+                                totalPrice: newTotalPrice,
+                                totalCount: newTotalCount
                             }
                         }
 
@@ -107,11 +118,13 @@ export const createBasketPizzaStore = (
                             )
 
                             newTotalPrice -= pizza.price
+                            newTotalCount -= 1
 
                             return {
                                 ...state,
                                 pizzasInBasket: updatedPizzas,
-                                totalPrice: newTotalPrice
+                                totalPrice: newTotalPrice,
+                                totalCount: newTotalCount
                             }
                         } else {
                             const updatedPizzas = state.pizzasInBasket?.filter(
@@ -119,11 +132,13 @@ export const createBasketPizzaStore = (
                             )
 
                             newTotalPrice -= pizza.price
+                            newTotalCount -= 1
 
                             return {
                                 ...state,
                                 pizzasInBasket: updatedPizzas,
-                                totalPrice: newTotalPrice
+                                totalPrice: newTotalPrice,
+                                totalCount: newTotalCount
                             }
                         }
                     })
