@@ -5,24 +5,20 @@ import { PizzaSize, PizzaType } from 'entities/PizzaCard'
 import { CustomButton } from 'shared/ui'
 import { priceFormat } from 'shared/lib'
 import { useChosenPizza } from '../../lib/hooks/useChosenPizza'
+import { useSizeType } from '../../lib/hooks/useSizeType'
+import { useIngredients } from '../../lib/hooks/useIngredients'
 import styles from './AddToBasket.module.scss'
 import type { FC } from 'react'
 
 interface AddToBasketPropsInterface {
-    closeModal: () => void
+    closeDialog: () => void
 }
 
-export const AddToBasket: FC<AddToBasketPropsInterface> = ({ closeModal }) => {
-    const {
-        chosenPizza,
-        pizzaSize,
-        pizzaType,
-        ingredients,
-        pizzaIngredientPrice,
-        setPizzaSize,
-        setPizzaType,
-        setIngredient
-    } = useChosenPizza()
+export const AddToBasket: FC<AddToBasketPropsInterface> = ({ closeDialog }) => {
+    const { chosenPizza } = useChosenPizza()
+    const { ingredients, pizzaIngredientPrice, setIngredient } =
+        useIngredients()
+    const { pizzaSize, pizzaType, setPizzaSize, setPizzaType } = useSizeType()
     const { addPizzaToBasket } = useBasketPizza()
     const [orderIsSending, setOrderIsSending] = useState(false)
 
@@ -56,7 +52,7 @@ export const AddToBasket: FC<AddToBasketPropsInterface> = ({ closeModal }) => {
         addPizzaToBasket(pizzaToBasket)
         updateButtonContent()
         setTimeout(() => {
-            closeModal()
+            closeDialog()
             setPizzaSize(PizzaSize.MIDDLE)
             setPizzaType(PizzaType.TRADITIONAL)
             setIngredient(null)

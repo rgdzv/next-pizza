@@ -6,21 +6,20 @@ import {
     ADDITIONAL_INGREDIENTS_PRICES,
     DEFAULT_PRICE
 } from '../lib/const/ingredients'
-import { useChosenPizza } from '../../../lib/hooks/useChosenPizza'
+import { useSizeType } from '../../../lib/hooks/useSizeType'
+import { useIngredients } from '../../../lib/hooks/useIngredients'
 import styles from './AddIngredients.module.scss'
 import type { FC } from 'react'
 
 export const AddIngredients: FC = () => {
     const {
-        pizzaSize,
-        pizzaType,
         ingredients,
         setIngredient,
         setPlusIngredientPrice,
         setMinusIngredientPrice,
         setUpdateIngredientPrice
-    } = useChosenPizza()
-
+    } = useIngredients()
+    const { pizzaSize, pizzaType } = useSizeType()
     const sizeTypeCombination = `${pizzaType}_${pizzaSize}`
 
     const finalIngredients = ADDITIONAL_INGREDIENTS.map((ingredient) => {

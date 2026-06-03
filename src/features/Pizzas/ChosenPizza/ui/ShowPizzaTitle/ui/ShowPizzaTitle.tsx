@@ -4,12 +4,14 @@ import { CaloriesCard } from 'entities/CaloriesCard'
 import { CustomButton } from 'shared/ui'
 import { CaloriesIcon } from 'shared/assets'
 import { useChosenPizza } from '../../../lib/hooks/useChosenPizza'
+import { useSizeType } from '../../../lib/hooks/useSizeType'
 import styles from './ShowPizzaTitle.module.scss'
 import type { FC } from 'react'
 import type { Nutrition } from 'entities/PizzaCard'
 
 export const ShowPizzaTitle: FC = () => {
-    const { chosenPizza, pizzaSize, pizzaType } = useChosenPizza()
+    const { chosenPizza } = useChosenPizza()
+    const { pizzaType, pizzaSize } = useSizeType()
     const [isOpened, setIsOpened] = useState(false)
     const popupRef = useRef<HTMLDivElement>(null)
 

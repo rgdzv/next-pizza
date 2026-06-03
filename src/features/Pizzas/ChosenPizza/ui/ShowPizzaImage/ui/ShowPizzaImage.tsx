@@ -1,11 +1,13 @@
-import { useChosenPizza } from 'features/Pizzas/ChosenPizza/lib/hooks/useChosenPizza'
 import { PizzaSize } from 'entities/PizzaCard'
 import { CustomImage } from 'shared/ui'
 import { LargeTemplate, MiddleTemplate } from 'shared/assets'
+import { useSizeType } from '../../../lib/hooks/useSizeType'
+import { useChosenPizza } from '../../../lib/hooks/useChosenPizza'
 import styles from './ShowPizzaImage.module.scss'
 
 export const ShowPizzaImage = () => {
-    const { chosenPizza, pizzaSize, pizzaType } = useChosenPizza()
+    const { chosenPizza } = useChosenPizza()
+    const { pizzaType, pizzaSize } = useSizeType()
 
     const pizzaModalImage = chosenPizza?.details[pizzaType][pizzaSize]
         .img as string

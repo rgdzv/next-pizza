@@ -39,7 +39,7 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
                         <RemoveIngredients />
                         <ChooseSizeType />
                         <AddIngredients />
-                        <AddToBasket closeModal={closeDialog} />
+                        <AddToBasket closeDialog={closeDialog} />
                     </div>
                 </div>
 
