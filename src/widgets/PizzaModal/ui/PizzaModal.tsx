@@ -4,8 +4,11 @@ import {
     ChooseSizeType,
     RemoveIngredients,
     ShowPizzaImage,
-    ShowPizzaTitle
+    ShowPizzaTitle,
+    useIngredients,
+    useSizeType
 } from 'features/Pizzas/ChosenPizza'
+import { PizzaSize, PizzaType } from 'entities/PizzaCard'
 import { CustomButton, Dialog } from 'shared/ui'
 import { CrossIcon } from 'shared/assets'
 import styles from './PizzaModal.module.scss'
@@ -24,10 +27,20 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
     onClickCloseButton,
     onClickOutside
 }) => {
+    const { setIngredient } = useIngredients()
+    const { setPizzaSize, setPizzaType } = useSizeType()
+
+    const handleClose = () => {
+        closeDialog()
+        setPizzaSize(PizzaSize.MIDDLE)
+        setPizzaType(PizzaType.TRADITIONAL)
+        setIngredient(null)
+    }
+
     return (
         <Dialog
             dialogRef={dialogRef}
-            onClose={closeDialog}
+            onClose={handleClose}
             onClick={onClickOutside}
             className='pizzaModal'
         >
