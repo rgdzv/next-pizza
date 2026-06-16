@@ -130,6 +130,7 @@ export default tseslint.config(
         }
     },
     {
-        ignores: ['node_modules/', 'config/', '.next']
+        ignores: ['node_modules/', 'config/', '.next', 'babel.config.js']
     }
 )
+

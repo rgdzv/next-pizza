@@ -21,7 +21,7 @@ export const Header: FC<HeaderPropsInterface> = ({ openDialog }) => {
     ) : null
 
     return (
-        <header className={styles.header}>
+        <header className={styles.header} data-testid='header'>
             <div className={styles.headerLogo}>
                 <CustomImage
                     src={PizzaLogoIcon}

@@ -33,7 +33,8 @@
         "next-env.d.ts",
         ".next/types/**/*.ts",
         "**/*.ts",
-        "**/*.tsx"
+        "**/*.tsx",
+        "babel.config.js"
     ],
     "exclude": ["node_modules"]
 }
