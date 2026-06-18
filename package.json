@@ -15,8 +15,8 @@
         "stylelint:fix": "stylelint --config config/stylelint/stylelint.config.mjs --ignore-path config/stylelint/.stylelintignore --fix \"**/*.scss\"",
         "prettier": "prettier --config config/prettier/prettier.config.mjs --ignore-path config/prettier/.prettierignore --check **/*.{ts,tsx,mjs,json}",
         "prettier:write": "prettier --config config/prettier/prettier.config.mjs --ignore-path config/prettier/.prettierignore --write **/*.{ts,tsx,mjs,json}",
-        "prepare": "husky",
-        "test": "jest"
+        "jest-unit": "jest",
+        "prepare": "husky"
     },
     "lint-staged": {
         "**/*.scss": "npm run stylelint:fix",

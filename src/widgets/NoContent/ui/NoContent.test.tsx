@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react'
-import { Header } from './Header'
+import { NoContent } from './NoContent'
 
-describe('Header', () => {
+describe('NoContent', () => {
     test('render', () => {
-        render(<Header openDialog={() => {}}></Header>)
+        render(<NoContent name='' message='' imgSrc='' />)
         const header = screen.getByTestId('header')
         expect(header).toBeInTheDocument()
     })

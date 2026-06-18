@@ -6,6 +6,7 @@ import nextPlugin from '@next/eslint-plugin-next'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
+import testingLibraryPlugin from 'eslint-plugin-testing-library'
 
 export default tseslint.config(
     eslint.configs.recommended,
@@ -130,7 +131,23 @@ export default tseslint.config(
         }
     },
     {
+        files: ['**/?(*.)+(spec|test).[jt]s?(x)'],
+        ...testingLibraryPlugin.configs['flat/react'],
+        rules: {
+            'testing-library/no-debugging-utils': [
+                'error',
+                {
+                    utilsToCheckFor: {
+                        debug: false,
+                        logRoles: true,
+                        logDOM: true
+                    }
+                }
+            ],
+            '@typescript-eslint/no-empty-function': 'off'
+        }
+    },
+    {
         ignores: ['node_modules/', 'config/', '.next', 'babel.config.js']
     }
 )
-
