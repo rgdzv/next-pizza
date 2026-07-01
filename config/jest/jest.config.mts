@@ -7,9 +7,9 @@ const config: Config = {
     clearMocks: true,
     coverageProvider: 'v8',
     rootDir: '../../',
-    setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+    setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
     testEnvironment: 'jsdom',
-    testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)']
+    testMatch: ['<rootDir>/src/**/*(*.)@(spec|test).[tj]s?(x)']
 }
 
 export default createJestConfig(config)
