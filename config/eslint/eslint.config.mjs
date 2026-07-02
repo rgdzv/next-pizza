@@ -148,6 +148,6 @@ export default tseslint.config(
         }
     },
     {
-        ignores: ['node_modules/', 'config/', '.next', 'babel.config.js']
+        ignores: ['node_modules/', 'config/', '.next', 'jest.config.mts']
     }
 )

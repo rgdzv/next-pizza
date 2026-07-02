@@ -30,5 +30,6 @@
     },
 
     // jest extension settings for project
-    "jest.runMode": "on-demand"
+    "jest.runMode": "on-demand",
+    "jest.jestCommandLine": "npx jest --config=config/jest/jest.config.mts"
 }
