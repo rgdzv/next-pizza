@@ -25,7 +25,7 @@ export const CustomInput: FC<CustomInputPropsInterface> = ({
     ])
 
     return (
-        <div className={wrapperClassName}>
+        <div className={wrapperClassName} data-testid='input-wrapper'>
             {icon}
             <input
                 className={styles.input}

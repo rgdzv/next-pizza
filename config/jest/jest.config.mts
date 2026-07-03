@@ -12,4 +12,17 @@ const config: Config = {
     testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)']
 }
 
-export default createJestConfig(config)
+const jestConfigWithOverrides = async () => {
+    const configFn = createJestConfig(config)
+    const res = await configFn()
+
+    res.moduleNameMapper = {
+        '\\.svg': '<rootDir>src/shared/tests/jest/mocks/svgr.tsx',
+        ...res.moduleNameMapper
+    }
+
+    return res
+}
+
+export default jestConfigWithOverrides
+

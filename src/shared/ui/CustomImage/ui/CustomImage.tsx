@@ -20,7 +20,7 @@ export const CustomImage: FC<CustomImagePropsInterface> = ({
     const wrapperClassName = styles[className]
 
     return (
-        <div className={wrapperClassName}>
+        <div className={wrapperClassName} data-testid='image-wrapper'>
             <Image src={src} alt={alt} fill={true} sizes={sizes} />
         </div>
     )

@@ -21,7 +21,7 @@ export const NoContent: FC<NoContentPropsInterface> = ({
     }
 
     return (
-        <div className={styles.noContent}>
+        <div className={styles.noContent} data-testid='no-content'>
             <div className={styles.noContentLeft}>
                 <div className={styles.noContentLeftHeader}>
                     <p className={styles.noContentLeftHeaderReason}>{name}</p>
