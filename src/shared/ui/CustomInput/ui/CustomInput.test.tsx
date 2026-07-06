@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import { render, screen } from '@testing-library/react'
-// import { userEvent } from '@testing-library/user-event'
+import { userEvent } from '@testing-library/user-event'
 import { SearchIcon } from '../../../assets'
 import { CustomInput } from './CustomInput'
+import type { ChangeEvent } from 'react'
 
 describe('Input', () => {
     test('render', () => {
@@ -86,20 +88,26 @@ describe('Input', () => {
         expect(inputWrapper).toContainElement(svgIcon)
     })
 
-    // test('input with typed value inside', async () => {
-    //     const user = userEvent.setup()
-    //     const handleChange = jest.fn()
+    test('input with typed value inside', async () => {
+        const user = userEvent.setup()
 
-    //     render(<CustomInput value='' onChange={handleChange} />)
+        const WrapperComponent = () => {
+            const [value, setValue] = useState('')
+            const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+                setValue(e.target.value)
+            }
 
-    //     const inputWrapper = screen.getByTestId('input-wrapper')
-    //     const input = screen.getByRole('textbox')
-    //     expect(inputWrapper).toBeInTheDocument()
-    //     expect(inputWrapper).toContainElement(input)
-    //     expect(input).toHaveValue('')
+            return <CustomInput value={value} onChange={handleChange} />
+        }
 
-    //     await user.type(input, 'test')
-    //     expect(handleChange).toHaveBeenCalledTimes(1)
-    //     expect(input).toHaveValue('test')
-    // })
+        render(<WrapperComponent />)
+
+        const inputWrapper = screen.getByTestId('input-wrapper')
+        const input = screen.getByRole('textbox')
+        expect(inputWrapper).toBeInTheDocument()
+        expect(inputWrapper).toContainElement(input)
+        expect(input).toHaveValue('')
+        await user.type(input, 'test')
+        expect(input).toHaveValue('test')
+    })
 })
