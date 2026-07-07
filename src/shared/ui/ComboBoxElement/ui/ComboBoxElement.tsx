@@ -27,7 +27,11 @@ export const ComboBoxElement: FC<ComboBoxElementPropsInterface> = ({
     ])
 
     return (
-        <Combobox as='div' className={comboWrapperClassName}>
+        <Combobox
+            as='div'
+            className={comboWrapperClassName}
+            data-testid='combobox-wrapper'
+        >
             {icon}
             <ComboboxInput
                 value={inputValue}
