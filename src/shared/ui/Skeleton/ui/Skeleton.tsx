@@ -10,7 +10,7 @@ export const Skeleton: FC<SkeletonPropsInterface> = ({ className }) => {
     const finalClassName = styles[className]
 
     return (
-        <div className={finalClassName}>
+        <div className={finalClassName} data-testid='skeleton'>
             <div className={styles.image}></div>
             <div className={styles.title}></div>
             <div className={styles.rating}></div>

@@ -22,7 +22,7 @@ export const PopoverElement: FC<PopoverElementPropsInterface> = ({
     )
 
     return (
-        <Popover as='div' className={popoverClassName}>
+        <Popover as='div' className={popoverClassName} data-testid='popover'>
             <PopoverButton as={Fragment}>{triggerButton}</PopoverButton>
             <PopoverPanel as='ul'>{options}</PopoverPanel>
         </Popover>
