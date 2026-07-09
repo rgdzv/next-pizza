@@ -130,7 +130,9 @@ describe('ComboBoxElement', () => {
         expect(comboboxWrapper).toBeInTheDocument()
         expect(comboboxWrapper).toContainElement(combobox)
         expect(combobox).toHaveValue('')
+
         await user.type(combobox, 'test')
+
         expect(combobox).toHaveValue('test')
     })
 })

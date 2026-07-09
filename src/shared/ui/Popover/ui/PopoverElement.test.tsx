@@ -55,7 +55,9 @@ describe('PopoverElement', () => {
         const button = screen.getByRole('button', { name: 'test' })
         expect(popover).toBeInTheDocument()
         expect(popover).toContainElement(button)
+
         await user.click(button)
+
         const list = screen.getByRole('list')
         const renderedOptions = screen.getAllByRole('listitem')
         expect(popover).toHaveAttribute('data-headlessui-state', 'open')
@@ -72,14 +74,18 @@ describe('PopoverElement', () => {
         const button = screen.getByRole('button', { name: 'test' })
         expect(popover).toBeInTheDocument()
         expect(popover).toContainElement(button)
+
         await user.click(button)
+
         const list = screen.getByRole('list')
         const renderedOptions = screen.getAllByRole('listitem')
         expect(popover).toHaveAttribute('data-headlessui-state', 'open')
         expect(list).toBeInTheDocument()
         expect(renderedOptions).toHaveLength(items.length)
         const firstOption = screen.getByRole('button', { name: '1' })
+
         await user.hover(firstOption)
+
         expect(firstOption).toHaveAttribute('data-headlessui-state', 'hover')
     })
 })

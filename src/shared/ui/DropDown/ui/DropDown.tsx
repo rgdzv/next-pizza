@@ -22,7 +22,7 @@ export const DropDown: FC<DropDownPropsInterface> = ({
     )
 
     return (
-        <Menu as='div' className={dropdownClassName}>
+        <Menu as='div' className={dropdownClassName} data-testid='dropdown'>
             <MenuButton as={Fragment}>{triggerButton}</MenuButton>
             <MenuItems as='ul'>{options}</MenuItems>
         </Menu>
