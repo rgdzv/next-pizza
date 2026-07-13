@@ -107,6 +107,7 @@ describe('Input', () => {
         expect(inputWrapper).toBeInTheDocument()
         expect(inputWrapper).toContainElement(input)
         expect(input).toHaveValue('')
+
         await user.type(input, 'test')
         expect(input).toHaveValue('test')
     })

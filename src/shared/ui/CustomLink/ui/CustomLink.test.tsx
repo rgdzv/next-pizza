@@ -37,7 +37,7 @@ describe('CustomLink', () => {
         expect(link).toHaveClass('disabled')
     })
 
-    // test('link navigates after click', async () => {
+    // test('link navigates properly after click', async () => {
     //     const user = userEvent.setup()
 
     //     render(<CustomLink href='somewhere'>Test</CustomLink>)
@@ -45,7 +45,9 @@ describe('CustomLink', () => {
     //     const link = screen.getByRole('link', { name: 'Test' })
     //     expect(link).toBeInTheDocument()
     //     expect(link).toHaveAttribute('href', 'somewhere')
+
     //     await user.click(link)
+    //     screen.debug()
 
     // })
 })
