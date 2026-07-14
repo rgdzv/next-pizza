@@ -5,7 +5,6 @@ export interface Pizza {
     rating: number
     imgSrc: string
     description: string
-    weight: Record<string, Record<string, number>>
     ingredients: Ingredients[]
     details: Record<PizzaTypeKeys, Record<PizzaSizeKeys, Details>>
 }
