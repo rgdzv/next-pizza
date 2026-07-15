@@ -19,7 +19,11 @@ export const CaloriesCard: FC<CaloriesCardPropsInterface> = ({
     weight
 }) => {
     return (
-        <div className={styles.popup} ref={popupRef}>
+        <div
+            className={styles.popup}
+            ref={popupRef}
+            data-testid='calories-card'
+        >
             <div className={styles.info}>
                 <div className={styles.header}>Пищевая ценность на 100 г</div>
                 <div className={styles.main}>

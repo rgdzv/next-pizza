@@ -22,7 +22,7 @@ export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
     formattedPrice
 }) => {
     return (
-        <div className={styles.basketPizzaCard}>
+        <div className={styles.basketPizzaCard} data-testid='basket-pizza-card'>
             <div className={styles.basketPizzaCardTop}>
                 <CustomImage
                     src={pizza.imgSrc}
@@ -64,6 +64,7 @@ export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
                     <CustomButton
                         className='counter'
                         onClick={handleRemovePizza}
+                        aria-label='Убавить'
                     >
                         <MinusIcon title='Убавить' />
                     </CustomButton>
@@ -72,6 +73,7 @@ export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
                         className='counter'
                         onClick={handleAddPizza}
                         disabled={pizza.count >= 20}
+                        aria-label='Прибавить'
                     >
                         <PlusIcon title='Прибавить' />
                     </CustomButton>
@@ -81,6 +83,7 @@ export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
                 <CustomButton
                     className='delete'
                     onClick={handleRemovePizzaCompletely}
+                    aria-label='Удалить'
                 >
                     <CrossIcon title='Удалить' />
                 </CustomButton>
