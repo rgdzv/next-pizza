@@ -28,7 +28,7 @@ export const SwitchCategoryPizzas: FC = () => {
     })
 
     return (
-        <div className={styles.categories}>
+        <div className={styles.categories} data-testid='switch-category'>
             <ul>{categories}</ul>
         </div>
     )

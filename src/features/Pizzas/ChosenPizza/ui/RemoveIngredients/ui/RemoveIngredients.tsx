@@ -53,6 +53,11 @@ export const RemoveIngredients: FC = () => {
     })
 
     return (
-        <div className={styles.pizzaInfoRemoveIngredients}>{ingredients}</div>
+        <div
+            className={styles.pizzaInfoRemoveIngredients}
+            data-testid='remove-ingredients'
+        >
+            {ingredients}
+        </div>
     )
 }

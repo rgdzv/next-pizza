@@ -55,7 +55,10 @@ export const ChooseSizeType: FC = () => {
     })
 
     return (
-        <div className={styles.pizzaInfoSizeType}>
+        <div
+            className={styles.pizzaInfoSizeType}
+            data-testid='choose-size-type'
+        >
             <div className={styles.size}>
                 <div
                     className={styles.backLayoutSize}

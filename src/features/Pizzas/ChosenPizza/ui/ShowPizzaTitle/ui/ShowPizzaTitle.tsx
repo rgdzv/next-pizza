@@ -53,7 +53,7 @@ export const ShowPizzaTitle: FC = () => {
     }, [isOpened])
 
     return (
-        <div className={styles.mainInfo}>
+        <div className={styles.mainInfo} data-testid='show-pizza-title'>
             <div className={styles.calories}>
                 <CustomButton
                     className='calories'

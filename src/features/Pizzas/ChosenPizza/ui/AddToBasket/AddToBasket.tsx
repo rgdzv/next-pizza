@@ -65,7 +65,7 @@ export const AddToBasket: FC<AddToBasketPropsInterface> = ({ closeDialog }) => {
         : `В корзину за ${formattedPrice}`
 
     return (
-        <div className={styles.pizzaPriceButton}>
+        <div className={styles.pizzaPriceButton} data-testid='add-to-basket'>
             <CustomButton
                 className='price'
                 onClick={handleAddPizzaToBasket}

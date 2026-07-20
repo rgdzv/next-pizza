@@ -72,7 +72,10 @@ export const AddIngredients: FC = () => {
     }, [pizzaSize, ingredients, sizeTypeCombination, setUpdateIngredientPrice])
 
     return (
-        <div className={styles.pizzaInfoAddIngredients}>
+        <div
+            className={styles.pizzaInfoAddIngredients}
+            data-testid='add-ingredients'
+        >
             <span className={styles.pizzaInfoAddIngredientsTitle}>
                 Добавить по вкусу
             </span>
