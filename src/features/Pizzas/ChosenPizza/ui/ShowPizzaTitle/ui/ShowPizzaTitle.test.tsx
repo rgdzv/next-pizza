@@ -1,18 +1,37 @@
-// import { render, screen } from '@testing-library/react'
-// import { ChosenPizzaStoreProvider } from '../../../model/store/provider/chosen-pizza-store-provider'
-// import { ShowPizzaTitle } from './ShowPizzaTitle'
+import { render, screen } from '@testing-library/react'
+import { ChosenPizzaStoreProvider } from '../../../model/store/provider/chosen-pizza-store-provider'
+import { ShowPizzaTitle } from './ShowPizzaTitle'
 
-// describe('ShowPizzaTitle', () => {
-//     test('render', () => {
-//         render(
-//             <ChosenPizzaStoreProvider>
-//                 <ShowPizzaTitle />
-//             </ChosenPizzaStoreProvider>
-//         )
+jest.mock('../../../lib/hooks/useChosenPizza', () => ({
+    useChosenPizza: () => ({
+        chosenPizza: {
+            title: 'Маргарита',
+            details: {
+                traditional: {
+                    '30': {
+                        nutrition: {
+                            calories: 200,
+                            carbo: 30,
+                            fat: 10,
+                            prot: 5,
+                            weight: 300
+                        }
+                    }
+                }
+            }
+        }
+    })
+}))
 
-//         const showPizzaTitle = screen.getByTestId('show-pizza-title')
-//         expect(showPizzaTitle).toBeInTheDocument()
+describe('ShowPizzaTitle', () => {
+    test('render', () => {
+        render(
+            <ChosenPizzaStoreProvider>
+                <ShowPizzaTitle />
+            </ChosenPizzaStoreProvider>
+        )
 
-//         screen.debug()
-//     })
-// })
+        const showPizzaTitle = screen.getByTestId('show-pizza-title')
+        expect(showPizzaTitle).toBeInTheDocument()
+    })
+})
