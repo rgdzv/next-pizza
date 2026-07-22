@@ -5,7 +5,10 @@ import type { FC } from 'react'
 
 export const BasketEmpty: FC = () => {
     return (
-        <div className={styles.basketEmptyBlockWrapper}>
+        <div
+            className={styles.basketEmptyBlockWrapper}
+            data-testid='basket-empty'
+        >
             <div className={styles.basketEmptyBlock}>
                 <CustomImage
                     src={BasketEmptyIcon}

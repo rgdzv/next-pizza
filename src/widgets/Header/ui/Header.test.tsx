@@ -4,14 +4,15 @@ import { PizzasStoreProvider } from 'features/Pizzas/AllPizzas'
 import { Header } from './Header'
 
 describe('Header', () => {
-    test('render Header component', () => {
+    test('render', () => {
         render(
             <PizzasStoreProvider>
                 <BasketPizzaStoreProvider>
-                    <Header openDialog={jest.fn()}></Header>
+                    <Header openDialog={jest.fn()} />
                 </BasketPizzaStoreProvider>
             </PizzasStoreProvider>
         )
+
         const header = screen.getByTestId('header')
         expect(header).toBeInTheDocument()
     })

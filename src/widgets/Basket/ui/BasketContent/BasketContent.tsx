@@ -17,14 +17,18 @@ export const BasketContent: FC<BasketContentPropsInterface> = ({
     removeAllPizzas
 }) => {
     return (
-        <div className={styles.basketContent}>
+        <div className={styles.basketContent} data-testid='basket-content'>
             <div className={styles.basketContentHeader}>
                 <span>
                     <strong>
                         {basketPizzasLength} на {basketFinalSum}
                     </strong>
                 </span>
-                <CustomButton className='remove' onClick={removeAllPizzas}>
+                <CustomButton
+                    className='remove'
+                    onClick={removeAllPizzas}
+                    aria-label='Удалить'
+                >
                     <BigCrossIcon title='Удалить' />
                 </CustomButton>
             </div>
