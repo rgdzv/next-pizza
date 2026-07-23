@@ -73,7 +73,7 @@ export const Pizzas: FC<PizzasProprInterface> = ({ openDialog }) => {
 
     if (isLoading) {
         return (
-            <main className={pizzasClassName}>
+            <main className={pizzasClassName} data-testid='pizzas-loading'>
                 <div className={styles.pizzasContent}>{pizzasSkeletons}</div>
                 {pizzasFetchButtonCondition}
             </main>
@@ -81,15 +81,23 @@ export const Pizzas: FC<PizzasProprInterface> = ({ openDialog }) => {
     }
 
     if (error) {
-        return <main className={styles.error}>{error}</main>
+        return (
+            <main className={styles.error} data-testid='pizzas-error'>
+                {error}
+            </main>
+        )
     }
 
     if (!pizzas?.length) {
-        return <main className={styles.error}>Пиццы не найдены!</main>
+        return (
+            <main className={styles.error} data-testid='no-pizzas'>
+                Пиццы не найдены!
+            </main>
+        )
     }
 
     return (
-        <main className={pizzasClassName}>
+        <main className={pizzasClassName} data-testid='pizzas'>
             <div className={styles.pizzasContent}>{pizzas}</div>
             {pizzasFetchButtonCondition}
         </main>
