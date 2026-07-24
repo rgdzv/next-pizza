@@ -6,7 +6,7 @@ import type { FC } from 'react'
 
 const Home: FC = () => {
     return (
-        <div className={styles.home}>
+        <div className={styles.home} data-testid='home'>
             <HeaderContainer />
             <Filters />
             <PizzasContainer />
