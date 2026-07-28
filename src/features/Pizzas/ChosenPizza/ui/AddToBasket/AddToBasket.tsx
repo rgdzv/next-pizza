@@ -1,12 +1,12 @@
 'use client'
 import { useState } from 'react'
-import { useBasketPizza } from 'features/Pizzas/BasketPizzas'
 import { PizzaSize, PizzaType } from 'entities/PizzaCard'
 import { CustomButton } from 'shared/ui'
 import { priceFormat } from 'shared/lib'
 import { useChosenPizza } from '../../lib/hooks/useChosenPizza'
 import { useSizeType } from '../../lib/hooks/useSizeType'
 import { useIngredients } from '../../lib/hooks/useIngredients'
+import { useBasketPizza } from '../../../BasketPizzas/lib/hooks/useBasketPizza'
 import styles from './AddToBasket.module.scss'
 import type { FC } from 'react'
 

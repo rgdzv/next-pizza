@@ -40,12 +40,30 @@
 
 .size {
     .backLayoutSize {
+        transform: translateX(0);
         width: 25%;
+
+        &.small {
+            transform: translateX(100%)
+        }
+
+        &.middle {
+            transform: translateX(200%)
+        }
+
+        &.large {
+            transform: translateX(300%)
+        }
     }
 }
 
 .type {
     .backLayoutType {
+        transform: translateX(0);
         width: 50%;
+
+        &.thin {
+            transform: translateX(100%)
+        }
     }
 }

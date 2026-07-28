@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import { PizzaSize, PizzaType } from 'entities/PizzaCard'
 import { CustomButton } from 'shared/ui'
 import { SIZES, TYPES } from '../lib/const/shapes'
@@ -54,37 +55,27 @@ export const ChooseSizeType: FC = () => {
         )
     })
 
+    const backLayoutSizeClassName = classNames(styles.backLayoutSize, {
+        [styles.small]: pizzaSize === PizzaSize.SMALL,
+        [styles.middle]: pizzaSize === PizzaSize.MIDDLE,
+        [styles.large]: pizzaSize === PizzaSize.LARGE
+    })
+
+    const backLayoutTypeClassName = classNames(styles.backLayoutType, {
+        [styles.thin]: pizzaType === PizzaType.THIN
+    })
+
     return (
         <div
             className={styles.pizzaInfoSizeType}
             data-testid='choose-size-type'
         >
             <div className={styles.size}>
-                <div
-                    className={styles.backLayoutSize}
-                    style={{
-                        transform:
-                            pizzaSize === PizzaSize.SMALL
-                                ? 'translateX(100%)'
-                                : pizzaSize === PizzaSize.MIDDLE
-                                  ? 'translateX(200%)'
-                                  : pizzaSize === PizzaSize.LARGE
-                                    ? 'translateX(300%)'
-                                    : 'translateX(0%)'
-                    }}
-                ></div>
+                <div className={backLayoutSizeClassName}></div>
                 {sizes}
             </div>
             <div className={styles.type}>
-                <div
-                    className={styles.backLayoutType}
-                    style={{
-                        transform:
-                            pizzaType === PizzaType.THIN
-                                ? 'translateX(100%)'
-                                : 'translateX(0%)'
-                    }}
-                ></div>
+                <div className={backLayoutTypeClassName}></div>
                 {types}
             </div>
         </div>
