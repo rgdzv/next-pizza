@@ -12,6 +12,7 @@ export const PizzasContainer: FC = () => {
         onClickCloseButton,
         onClickOutside
     } = useDialog()
+
     return (
         <>
             <Pizzas openDialog={openDialog} />

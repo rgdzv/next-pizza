@@ -11,6 +11,7 @@ export const HeaderContainer: FC = () => {
         onClickCloseButton,
         onClickOutside
     } = useDialog()
+
     return (
         <>
             <Header openDialog={openDialog} />
