@@ -18,13 +18,13 @@
         font-family: var(--font-family);
         font-size: var(--font-size);
         line-height: 1;
-        color: var(--text-color-primary);
+        color: var(--text-primary);
     
-        background-color: var(--background-color-third);
-        caret-color: var(--text-color-primary);
+        background-color: var(--bg-accent);
+        caret-color: var(--text-primary);
     
         &::placeholder {
-            color: var(--text-color-secondary);
+            color: var(--text-secondary);
         }
         
         &:focus {

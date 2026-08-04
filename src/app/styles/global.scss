@@ -1,18 +1,47 @@
 @use 'reset';
-@use 'variables';
 @use 'fonts';
 
-html:has(dialog[open]) {
-    scrollbar-gutter: unset;
-    overflow: hidden;
-    padding-right: 10px;
+:root {
+    // Font
+    --font-family: 'Nunito';
+    --font-size: 16px;
+    --font-line-height: 1;
+    --font-weight: 400;
+    --font: var(--font-weight) var(--font-size) / var(--font-line-height) var(--font-family);
+
+    // Background
+    --bg-primary: #FFBF9B;
+    --bg-secondary: #FFF;
+    --bg-accent: #F9F9F9;
+    --bg-accent2: #FCFCFC;
+    --bg-accent3: #F4F1EE;
+    --bg-skeleton: #EBEBEB;
+    --bg-skeleton-accent: #DFDFDF;
+
+    // Text
+    --text-primary: #000;
+    --text-secondary: #535353;
+    --text-third: #FE5F00;
+    --text-default: #FFF;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+    font: var(--font);
+
+    &:has(dialog[open]) {
+        scrollbar-gutter: unset;
+        overflow: hidden;
+        padding-right: 10px;
+    }
 }
 
 body {
     display: flex;
     justify-content: center;
     padding: 45px;
-    background-color: var(--background-color-primary);
+    background-color: var(--bg-primary);
 }
 
 .container {
@@ -20,8 +49,8 @@ body {
     max-width: 1440px;
     min-height: calc(100vh - 90px);
     padding: 45px;
-    border: 1px solid var(--background-color-secondary);
+    border: 1px solid var(--bg-secondary);
     border-radius: 30px;
 
-    background-color: var(--background-color-secondary);
+    background-color: var(--bg-secondary);
 }

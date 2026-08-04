@@ -8,20 +8,20 @@
         width: 100%;
         font-size: 22px;
         font-weight: 700;
-        color: var(--text-color-primary);
+        color: var(--text-primary);
     }
 
     .pizzaCardRating {
         width: 100%;
         font-size: 15px;
         font-weight: 600;
-        color: var(--text-color-secondary);
+        color: var(--text-secondary);
     }
 
     .pizzaCardStructure {
         font-size: 14px;
         line-height: 1.3;
-        color: var(--text-color-secondary);
+        color: var(--text-secondary);
     }
 
     .pizzaCardFooter {
@@ -35,7 +35,7 @@
         .pizzaCardFooterPrice {
             font-size: 20px;
             font-weight: 700;
-            color: var(--text-color-primary);
+            color: var(--text-primary);
         }
     }
 }

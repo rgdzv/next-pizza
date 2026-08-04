@@ -12,15 +12,15 @@
     }
 
     &.sort {
-        border: 1px solid var(--text-color-primary);
+        border: 1px solid var(--text-primary);
         border-radius: 9999px;
-        background-color: var(--background-color-third);
+        background-color: var(--bg-accent);
 
         ul {
             top: 40px;
             border: inherit;
             border-radius: 15px;
-            background-color: var(--background-color-third);
+            background-color: var(--bg-accent);
 
             li {
                 display: flex;

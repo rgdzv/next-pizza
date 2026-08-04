@@ -13,7 +13,7 @@
 
     font-family: var(--font-family);
     font-size: var(--font-size);
-    color: var(--text-color-primary);
+    color: var(--text-primary);
 
     background: none;
 
@@ -28,26 +28,26 @@
     gap: 5px;
 
     padding: 8px 20px;
-    border: 1px solid var(--text-color-third);
+    border: 1px solid var(--text-third);
     border-radius: 9999px;
 
     font-weight: 600;
     line-height: 1;
-    color: var(--text-color-third);
+    color: var(--text-third);
 
     transition: all .1s linear;
 
     svg {
-        fill: var(--text-color-third);
+        fill: var(--text-third);
         transition: fill .1s linear;
     }
 
     &:hover:enabled {
-        color: var(--text-color-default);
-        background-color: var(--text-color-third);
+        color: var(--text-default);
+        background-color: var(--text-third);
 
         svg {
-            fill: var(--text-color-default);
+            fill: var(--text-default);
         }
     }
 
@@ -62,7 +62,7 @@
     left: 20px;
 
     svg {
-        fill: var(--text-color-secondary);
+        fill: var(--text-secondary);
     }
 
     &:disabled {
@@ -81,7 +81,7 @@
     svg {
         width: 25px;
         height: 25px;
-        fill: var(--text-color-default);
+        fill: var(--text-default);
     }
 
     &:hover {
@@ -94,13 +94,13 @@
     height: 16px;
 
     svg {
-        fill: var(--text-color-secondary);
+        fill: var(--text-secondary);
         transition: fill .1s linear;
     }
 
     &:hover {
         svg {
-            fill: var(--text-color-primary)
+            fill: var(--text-primary)
         }
     }
 }
@@ -110,13 +110,13 @@
     height: 25px;
 
     svg {
-        fill: var(--text-color-secondary);
+        fill: var(--text-secondary);
         transition: fill .1s linear;
     }
 
     &:hover {
         svg {
-            fill: var(--text-color-primary)
+            fill: var(--text-primary)
         }
     }
 }
@@ -126,19 +126,19 @@
     height: 24px;
 
     svg {
-        color: var(--text-color-secondary);
+        color: var(--text-secondary);
         transition: color .1s linear;
     }
 
     &:hover {
         svg {
-            color: var(--text-color-primary)
+            color: var(--text-primary)
         }
     }
 
     &:hover:disabled {
         svg {
-            color: var(--text-color-secondary);
+            color: var(--text-secondary);
         }
     }
 
@@ -153,16 +153,16 @@
 
     font-weight: 700;
     line-height: 1;
-    color: var(--text-color-primary);
+    color: var(--text-primary);
 
     transition: color .1s linear;
 
     &:hover {
-        color: var(--text-color-third);
+        color: var(--text-third);
     }
 
     &.categoryActive {
-        color: var(--text-color-third);
+        color: var(--text-third);
     }
 }
 
@@ -174,43 +174,43 @@
 
     font-weight: 700;
     line-height: 1;
-    color: var(--text-color-primary);
+    color: var(--text-primary);
 
     svg {
-        fill: var(--text-color-primary);
+        fill: var(--text-primary);
     }
 
     span {
         &:last-child {
-            color: var(--text-color-third);
+            color: var(--text-third);
         }
     }
 }
 
 .sortArrow {
     padding: 5px;
-    border: 1px solid var(--text-color-secondary);
+    border: 1px solid var(--text-secondary);
     border-radius: 15px;
     transition: border-color .1s linear;
 
     svg {
-        color: var(--text-color-secondary);
+        color: var(--text-secondary);
         transition: color .1s linear;
     }
 
     &:hover {
-        border-color: var(--text-color-primary);
+        border-color: var(--text-primary);
 
         svg {
-            color: var(--text-color-primary);
+            color: var(--text-primary);
         }
     }
 
     &.sortArrowActive {
-        border-color: var(--text-color-primary);
+        border-color: var(--text-primary);
         
         svg {
-            color: var(--text-color-primary);
+            color: var(--text-primary);
         }
     }
 }
@@ -224,10 +224,10 @@
     padding: 12px;
     border-radius: 22px;
 
-    background-color: var(--text-color-default);
+    background-color: var(--text-default);
 
     &:hover {
-        background-color: var(--background-color-third);
+        background-color: var(--bg-accent);
     }
 }
 
@@ -299,10 +299,10 @@
     width: auto;
     height: 100%;
     padding: 8px;
-    border: 1px solid var(--background-color-secondary);
+    border: 1px solid var(--bg-secondary);
     border-radius: 12px;
 
-    background-color: var(--background-color-secondary);
+    background-color: var(--bg-secondary);
     box-shadow: rgb(6 5 50 / 12%) 0 4px 20px;
 
     span {
@@ -327,11 +327,11 @@
 
         opacity: 0;
 
-        fill: var(--text-color-third);
+        fill: var(--text-third);
     }
 
     &.ingredientAdded {
-        border-color: var(--text-color-third);
+        border-color: var(--text-third);
 
         svg {
             opacity: 1;
@@ -342,14 +342,14 @@
 .price {
     width: 100%;
     padding: 12px 48px;
-    border: 1px solid var(--text-color-third);
+    border: 1px solid var(--text-third);
     border-radius: 9999px;
 
     font-weight: 600;
     line-height: 1;
-    color: var(--text-color-default);
+    color: var(--text-default);
 
-    background-color: var(--text-color-third);
+    background-color: var(--text-third);
 
     transition: all .1s linear;
 
@@ -366,14 +366,14 @@
 .order {
     width: 100%;
     padding: 12px 48px;
-    border: 1px solid var(--text-color-third);
+    border: 1px solid var(--text-third);
     border-radius: 9999px;
 
     font-weight: 600;
     line-height: 1;
-    color: var(--text-color-default);
+    color: var(--text-default);
 
-    background-color: var(--text-color-third);
+    background-color: var(--text-third);
 
     transition: all .1s linear;
 
@@ -386,21 +386,21 @@
     gap: 8px;
 
     padding: 8px 20px;
-    border: 1px solid var(--text-color-third);
+    border: 1px solid var(--text-third);
     border-radius: 9999px;
 
     font-weight: 600;
     line-height: 1;
-    color: var(--text-color-default);
+    color: var(--text-default);
 
-    background-color: var(--text-color-third);
+    background-color: var(--text-third);
 
     transition: all .1s linear;
 
     i {
         width: 1px;
         height: 13px;
-        background-color: var(--text-color-default);
+        background-color: var(--text-default);
     }
 
     &:active:enabled {

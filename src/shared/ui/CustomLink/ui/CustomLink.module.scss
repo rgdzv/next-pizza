@@ -6,7 +6,7 @@
 
     font-family: var(--font-family);
     font-size: var(--font-size);
-    color: var(--text-color-primary);
+    color: var(--text-primary);
 
     &.disabled {
         pointer-events: none;
@@ -19,27 +19,27 @@
 .primary {
     width: max-content;
     padding: 8px 20px;
-    border: 1px solid var(--text-color-third);
+    border: 1px solid var(--text-third);
     border-radius: 9999px;
 
     font-size: 16px;
     font-weight: 600;
     line-height: 1;
-    color: var(--text-color-third);
+    color: var(--text-third);
 
     transition: all .1s linear;
 
     svg {
-        fill: var(--text-color-third);
+        fill: var(--text-third);
         transition: all .1s linear;
     }
 
     &:hover {
-        color: var(--text-color-default);
-        background-color: var(--text-color-third);
+        color: var(--text-default);
+        background-color: var(--text-third);
 
         svg {
-            fill: var(--text-color-default);
+            fill: var(--text-default);
         }
     }
 

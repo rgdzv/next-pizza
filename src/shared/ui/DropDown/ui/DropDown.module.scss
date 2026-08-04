@@ -11,9 +11,9 @@
     &.login {
         ul {
             top: 40px;
-            border: 1px solid var(--text-color-primary);
+            border: 1px solid var(--text-primary);
             border-radius: 15px;
-            background-color: var(--background-color-third);
+            background-color: var(--bg-accent);
             
 
             li {
@@ -26,7 +26,7 @@
                 text-align: center;
 
                 &[data-active] {
-                    color: var(--text-color-third);
+                    color: var(--text-third);
                     transition: color .1s linear;
                 }
             }
