@@ -34,8 +34,7 @@
 
         .header {
             margin-bottom: 12px;
-            color: var(--text-default);
-            opacity: 0.5;
+            color: var(--text-primary);
         }
 
         .main {
@@ -54,7 +53,7 @@
                 span {
                     font-size: 13px;
                     font-weight: 700;
-                    color: var(--text-default);
+                    color: var(--text-primary);
                 }
             }
         }
@@ -67,7 +66,7 @@
             span {
                 font-size: 13px;
                 font-weight: 700;
-                color: var(--text-default);
+                color: var(--text-primary);
             }
         }
     }

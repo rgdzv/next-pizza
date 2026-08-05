@@ -35,11 +35,11 @@
     }
 
     &:hover {
-        color: var(--text-default);
+        color: var(--text-primary);
         background-color: var(--text-third);
 
         svg {
-            fill: var(--text-default);
+            fill: var(--text-primary);
         }
     }
 

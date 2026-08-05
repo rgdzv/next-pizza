@@ -14,7 +14,6 @@
         line-height: 1;
         color: var(--text-primary);
     
-        background-color: var(--bg-accent);
         caret-color: var(--text-primary);
 
         &::placeholder {
@@ -40,7 +39,7 @@
     &.searchPizza {
         input {
             padding-left: 48px;
-            border: 1px solid var(--text-primary);
+            border: 1px solid var(--border);
         }
     }
 }

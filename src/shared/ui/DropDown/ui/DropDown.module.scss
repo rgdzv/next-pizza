@@ -11,10 +11,8 @@
     &.login {
         ul {
             top: 40px;
-            border: 1px solid var(--text-primary);
+            border: 1px solid var(--border);
             border-radius: 15px;
-            background-color: var(--bg-accent);
-            
 
             li {
                 cursor: pointer;
