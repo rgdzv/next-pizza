@@ -8,8 +8,7 @@
     padding: 14px;
     border-radius: 12px;
 
-    opacity: 0.9;
-    background-color: #666;
+    background-color: var(--bg-secondary);
 
     animation: 0.3s 
         ease 0s 1 normal none running fade-from-bottom;
@@ -25,7 +24,7 @@
         width: 20px;
         height: 20px;
 
-        background: #666;
+        background: var(--bg-secondary);
     }
 
     .info {

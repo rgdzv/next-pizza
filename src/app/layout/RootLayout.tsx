@@ -10,7 +10,7 @@ interface RootLayoutProps {
 
 export const RootLayout: FC<RootLayoutProps> = ({ children }) => {
     return (
-        <html lang='ru' data-theme='light'>
+        <html lang='ru' data-theme='dark'>
             <body>
                 <PizzasStoreProvider>
                     <ChosenPizzaStoreProvider>

@@ -1,0 +1,70 @@
+:root {
+    // Font
+    --font-family: 'Nunito';
+    --font-size: 16px;
+    --font-line-height: 1;
+    --font-weight: 400;
+    --font: var(--font-weight) var(--font-size) / var(--font-line-height) var(--font-family);
+
+    // Background
+    --bg: light-dark(#FFBF9B, #2E2E2E);
+    --bg-secondary: light-dark(#FFF, #3A3A3A);
+    --bg-accent: light-dark(#F9F9F9, #d6d6d6);
+    --bg-accent2: light-dark(#F4F1EE, #0B0E11);
+    --bg-skeleton: light-dark(#EBEBEB, #141414);
+    --bg-skeleton-accent: light-dark(#DFDFDF, #202020);
+    --border: light-dark(#000, #FFF);
+
+    // Text
+    --text-primary: light-dark(#000, #FFF);
+    --text-secondary: light-dark(#535353, #CCC);
+
+    // Additional
+    --additional: light-dark(#FE5F00, #FE5F00);
+    --additional2: light-dark(#FFF, #FFF);
+
+    color-scheme: light dark;
+}
+
+:root[data-theme="light"] {
+    // Background
+    --bg: #FFBF9B;
+    --bg-secondary: #FFF;
+    --bg-accent: #F9F9F9;
+    --bg-accent2: #F4F1EE;
+    --bg-skeleton: #EBEBEB;
+    --bg-skeleton-accent: #DFDFDF;
+    --border: #000;
+
+    // Text
+    --text-primary: #000;
+    --text-secondary: #535353;
+
+    // Additional
+    --additional: #FE5F00;
+    --additional2: #FFF;
+
+    color-scheme: light;
+
+}
+
+:root[data-theme="dark"] {
+    // Background
+    --bg: #2E2E2E;
+    --bg-secondary: #3A3A3A;
+    --bg-accent: #aaa9a9;
+    --bg-accent2: #0B0E11;
+    --bg-skeleton: #141414;
+    --bg-skeleton-accent: #202020;
+    --border: #FFF;
+
+    // Text
+    --text-primary: #FFF;
+    --text-secondary: #CCC;
+
+    // Additional
+    --additional: #FE5F00;
+    --additional2: #FFF;
+
+    color-scheme: dark;
+}

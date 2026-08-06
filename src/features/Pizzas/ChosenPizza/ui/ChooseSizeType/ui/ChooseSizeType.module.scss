@@ -17,7 +17,7 @@
     height: 32px;
     border-radius: 9999px;
 
-    background-color: #f3f3f7;
+    background-color: var(--bg-secondary);
 
     & > div {
         position: absolute;
@@ -27,11 +27,11 @@
 
         height: 100%;
         padding: 2px;
+        border: 1px solid var(--border);
         border-radius: 9999px;
 
         background-color: var(--bg-secondary);
         background-clip: content-box;
-        box-shadow: rgb(6 5 50 / 19%) 0 6px 20px;
 
         transition: transform 200ms ease-out;
     }

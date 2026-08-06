@@ -24,7 +24,7 @@
                 text-align: center;
 
                 &[data-active] {
-                    color: var(--text-third);
+                    color: var(--additional);
                     transition: color .1s linear;
                 }
             }

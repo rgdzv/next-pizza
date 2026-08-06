@@ -2,4 +2,11 @@
     margin-bottom: 20px;
     font-size: 16px;
     font-weight: 600;
+
+    svg {
+        fill: none;
+        stroke: var(--text-secondary);
+        stroke-linecap: round;
+        stroke-width: 1.2; 
+    }
 }

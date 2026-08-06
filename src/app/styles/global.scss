@@ -1,60 +1,6 @@
 @use 'reset';
 @use 'fonts';
-
-:root {
-    // Font
-    --font-family: 'Nunito';
-    --font-size: 16px;
-    --font-line-height: 1;
-    --font-weight: 400;
-    --font: var(--font-weight) var(--font-size) / var(--font-line-height) var(--font-family);
-
-    // Background
-    --bg: light-dark(#FFBF9B, #2E2E2E);
-    --bg-secondary: light-dark(#FFF, #3A3A3A);
-    --bg-accent: light-dark(#F9F9F9, #d6d6d6);
-    --bg-accent2: #FCFCFC;
-    --bg-accent3: #F4F1EE;
-    --bg-skeleton: #EBEBEB;
-    --bg-skeleton-accent: #DFDFDF;
-    --border: light-dark(#000, #FFF);
-
-    // Text
-    --text-primary: light-dark(#000, #FFF);
-    --text-secondary: light-dark(#535353, #CCC);
-    --text-third: #FE5F00;
-
-    color-scheme: light dark;
-}
-
-:root[data-theme="light"] {
-    // Background
-    --bg: #FFBF9B;
-    --bg-secondary: #FFF;
-    --bg-accent: #F9F9F9;
-    --border: #000;
-
-    // Text
-    --text-primary: #000;
-    --text-secondary: #535353;
-
-    color-scheme: light;
-
-}
-
-:root[data-theme="dark"] {
-    // Background
-    --bg: #2E2E2E;
-    --bg-secondary: #3A3A3A;
-    --bg-accent: #aaa9a9;
-    --border: #FFF;
-
-    // Text
-    --text-primary: #FFF;
-    --text-secondary: #CCC;
-
-    color-scheme: dark;
-}
+@use 'variables';
 
 html {
     scrollbar-width: thin;
