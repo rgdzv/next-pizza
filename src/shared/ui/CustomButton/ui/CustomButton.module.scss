@@ -234,21 +234,22 @@
 
 .calories {
     svg {
-        fill-opacity: 0.4;
+        fill: var(--additional3);
+        fill-opacity: 0.5;
         transition: all .1s linear;
     }
 
     &:hover {
         svg {
             transform: scale(1.1);
-            fill-opacity: 0.6;
+            fill-opacity: 1;
         }
     }
 
     &.caloriesActive {
         svg {
             transform: scale(1.1);
-            fill-opacity: 0.6;
+            fill-opacity: 1;
         }
     }
 }

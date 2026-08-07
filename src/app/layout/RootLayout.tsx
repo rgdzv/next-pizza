@@ -11,6 +11,13 @@ interface RootLayoutProps {
 export const RootLayout: FC<RootLayoutProps> = ({ children }) => {
     return (
         <html lang='ru' data-theme='dark'>
+            <head>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}})()`
+                    }}
+                />
+            </head>
             <body>
                 <PizzasStoreProvider>
                     <ChosenPizzaStoreProvider>

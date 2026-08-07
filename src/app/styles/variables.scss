@@ -20,8 +20,9 @@
     --text-secondary: light-dark(#535353, #CCC);
 
     // Additional
-    --additional: light-dark(#FE5F00, #FE5F00);
-    --additional2: light-dark(#FFF, #FFF);
+    --additional: #FE5F00;
+    --additional2: #FFF;
+    --additional3: #535353;
 
     color-scheme: light dark;
 }
@@ -40,10 +41,6 @@
     --text-primary: #000;
     --text-secondary: #535353;
 
-    // Additional
-    --additional: #FE5F00;
-    --additional2: #FFF;
-
     color-scheme: light;
 
 }
@@ -61,10 +58,6 @@
     // Text
     --text-primary: #FFF;
     --text-secondary: #CCC;
-
-    // Additional
-    --additional: #FE5F00;
-    --additional2: #FFF;
 
     color-scheme: dark;
 }
