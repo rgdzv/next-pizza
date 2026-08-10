@@ -1,3 +1,4 @@
+import { ThemeProvider } from 'next-themes'
 import { PizzasStoreProvider } from 'features/Pizzas/AllPizzas'
 import { ChosenPizzaStoreProvider } from 'features/Pizzas/ChosenPizza'
 import { BasketPizzaStoreProvider } from 'features/Pizzas/BasketPizzas'
@@ -10,22 +11,17 @@ interface RootLayoutProps {
 
 export const RootLayout: FC<RootLayoutProps> = ({ children }) => {
     return (
-        <html lang='ru' data-theme='dark'>
-            <head>
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}})()`
-                    }}
-                />
-            </head>
+        <html lang='ru' suppressHydrationWarning>
             <body>
-                <PizzasStoreProvider>
-                    <ChosenPizzaStoreProvider>
-                        <BasketPizzaStoreProvider>
-                            <div className='container'>{children}</div>
-                        </BasketPizzaStoreProvider>
-                    </ChosenPizzaStoreProvider>
-                </PizzasStoreProvider>
+                <ThemeProvider>
+                    <PizzasStoreProvider>
+                        <ChosenPizzaStoreProvider>
+                            <BasketPizzaStoreProvider>
+                                <div className='container'>{children}</div>
+                            </BasketPizzaStoreProvider>
+                        </ChosenPizzaStoreProvider>
+                    </PizzasStoreProvider>
+                </ThemeProvider>
             </body>
         </html>
     )

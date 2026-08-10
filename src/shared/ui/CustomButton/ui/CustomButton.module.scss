@@ -409,3 +409,23 @@
         transform: scale(0.95);
     }
 }
+
+.theme {
+    padding: 8px 20px;
+    border: 1px solid var(--additional);
+    border-radius: 9999px;
+
+    background-color: var(--additional);
+
+    transition: all .1s ease;
+
+    svg {
+        width: 18px;
+        height: 18px;
+        fill: var(--additional2);
+    }
+
+    &:active:enabled {
+        transform: scale(0.95);
+    }
+}

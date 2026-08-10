@@ -17,3 +17,4 @@ export type ButtonClassNameType =
     | 'order'
     | 'basket'
     | 'remove'
+    | 'theme'

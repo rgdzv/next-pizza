@@ -21,6 +21,8 @@ import IngredientAdded from './images/ingredient-added-icon.svg'
 import MiddleTemplate from './images/middle-template-icon.svg'
 import LargeTemplate from './images/large-template-icon.svg'
 import BigCrossIcon from './images/big-cross-icon.svg'
+import DarkThemeIcon from './images/dark-theme-icon.svg'
+import LightThemeIcon from './images/light-theme-icon.svg'
 
 export {
     ArrowLeftIcon,
@@ -45,5 +47,7 @@ export {
     IngredientAdded,
     MiddleTemplate,
     LargeTemplate,
-    BigCrossIcon
+    BigCrossIcon,
+    DarkThemeIcon,
+    LightThemeIcon
 }

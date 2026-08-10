@@ -1,8 +1,9 @@
 .header {
     display: grid;
     grid-area: header;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr auto auto;
     gap: 40px;
+    align-items: center;
 
     padding-bottom: 45px;
     border-bottom: 1px solid #EDEDED;
