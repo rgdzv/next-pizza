@@ -42,7 +42,8 @@
 .title,
 .rating,
 .description,
-.footer {
+.footer,
+.themeSwitcherSkeleton {
     composes: skeleton
 }
 
@@ -78,4 +79,10 @@
         height: 2.125em;
         border-radius: 15px;
     }
+}
+
+.themeSwitcherSkeleton {
+    width: 60px;
+    height: 36px;
+    border-radius: 9999px;
 }

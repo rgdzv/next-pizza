@@ -45,8 +45,8 @@ export const Header: FC<HeaderPropsInterface> = ({ openDialog }) => {
                     Корзина
                     {buttonCondition}
                 </CustomButton>
+                <ThemeSwitcher />
             </div>
-            <ThemeSwitcher />
         </header>
     )
 }

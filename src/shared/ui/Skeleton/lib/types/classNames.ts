@@ -1,1 +1,3 @@
-export type SkeletonClassNameType = 'pizzaCardSkeleton'
+export type SkeletonClassNameType =
+    | 'pizzaCardSkeleton'
+    | 'themeSwitcherSkeleton'
