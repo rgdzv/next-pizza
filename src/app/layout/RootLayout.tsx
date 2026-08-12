@@ -4,7 +4,6 @@ import { ChosenPizzaStoreProvider } from 'features/Pizzas/ChosenPizza'
 import { BasketPizzaStoreProvider } from 'features/Pizzas/BasketPizzas'
 import '../styles/global.scss'
 import type { FC, ReactNode } from 'react'
-
 interface RootLayoutProps {
     children: ReactNode
 }

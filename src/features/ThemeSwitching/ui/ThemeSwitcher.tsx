@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import { CustomButton } from 'shared/ui/CustomButton/ui/CustomButton'
 import { DarkThemeIcon, LightThemeIcon } from 'shared/assets'
-import { Skeleton } from 'shared/ui/Skeleton/ui/Skeleton'
+import { Skeleton } from 'shared/ui/Skeleton/ui/Skeleton' // FSDDDDDDDDDDDDDDDDDDDDD
 
 export const ThemeSwitcher = () => {
     const [mounted, setMounted] = useState(false)

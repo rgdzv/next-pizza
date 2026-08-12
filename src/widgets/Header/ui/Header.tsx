@@ -1,8 +1,9 @@
 // import { LoginDropDown } from 'features/Authorization'
 import { SearchPizzas } from 'features/Pizzas/AllPizzas'
 import { useBasketPizza } from 'features/Pizzas/BasketPizzas'
+import { ThemeSwitcher } from 'features/ThemeSwitching'
 import { PizzaLogoIcon } from 'shared/assets'
-import { CustomButton, CustomImage, ThemeSwitcher } from 'shared/ui'
+import { CustomButton, CustomImage } from 'shared/ui'
 import styles from './Header.module.scss'
 import type { FC } from 'react'
 
