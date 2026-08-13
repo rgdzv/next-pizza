@@ -12,15 +12,15 @@ export const RootLayout: FC<RootLayoutProps> = ({ children }) => {
     return (
         <html lang='ru' suppressHydrationWarning>
             <body>
-                <ThemeProvider>
-                    <PizzasStoreProvider>
-                        <ChosenPizzaStoreProvider>
-                            <BasketPizzaStoreProvider>
+                <PizzasStoreProvider>
+                    <ChosenPizzaStoreProvider>
+                        <BasketPizzaStoreProvider>
+                            <ThemeProvider disableTransitionOnChange>
                                 <div className='container'>{children}</div>
-                            </BasketPizzaStoreProvider>
-                        </ChosenPizzaStoreProvider>
-                    </PizzasStoreProvider>
-                </ThemeProvider>
+                            </ThemeProvider>
+                        </BasketPizzaStoreProvider>
+                    </ChosenPizzaStoreProvider>
+                </PizzasStoreProvider>
             </body>
         </html>
     )

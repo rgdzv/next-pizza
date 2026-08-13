@@ -8,78 +8,95 @@ export const fetchPizzas: StateCreator<
     [],
     [],
     Pick<PizzasActions, 'fetchPizzas'>
-> = (set, get) => ({
-    fetchPizzas: async () => {
-        const {
-            pizzas,
-            page,
-            perPage,
-            pizzasLeftOnServer,
-            searchValue,
-            category,
-            sortingObj
-        } = get()
+> = (set, get) => {
+    let timeoutId: ReturnType<typeof setTimeout> | null = null
 
-        set(
-            {
-                isLoading: true
-            },
-            false
-        )
+    return {
+        fetchPizzas: async () => {
+            if (timeoutId !== null) {
+                clearTimeout(timeoutId)
+            }
 
-        try {
             const {
-                data: { data, items }
-            } = await fetchPizzasAPI({
-                page: page,
-                perPage: perPage,
-                search: searchValue,
-                category: category,
-                sort: sortingObj.sortProperty,
-                order: sortingObj.order
-            })
+                pizzas,
+                page,
+                perPage,
+                pizzasLeftOnServer,
+                searchValue,
+                category,
+                sortingObj
+            } = get()
 
-            if (items !== pizzasLeftOnServer) {
+            set(
+                {
+                    isLoading: true
+                },
+                false
+            )
+
+            try {
+                const {
+                    data: { data, items }
+                } = await fetchPizzasAPI({
+                    page: page,
+                    perPage: perPage,
+                    search: searchValue,
+                    category: category,
+                    sort: sortingObj.sortProperty,
+                    order: sortingObj.order
+                })
+
+                if (items !== pizzasLeftOnServer) {
+                    set(
+                        {
+                            pizzasLeftOnServer: items
+                        },
+                        false
+                    )
+                }
+
+                const pizzasLeftOnServerUpdated = get().pizzasLeftOnServer
+
+                set(() => {
+                    const currentPizzas = pizzas ?? []
+
+                    const newPizzas =
+                        page === 1 ? data : [...currentPizzas, ...data]
+
+                    const hasMore = newPizzas.length < pizzasLeftOnServerUpdated
+
+                    timeoutId = setTimeout(() => {
+                        set({ isLoading: false })
+                        timeoutId = null
+                    }, 400)
+
+                    return {
+                        pizzas: newPizzas,
+                        error: undefined,
+                        hasMore: hasMore
+                    }
+                }, false)
+            } catch (error) {
+                if (timeoutId !== null) {
+                    clearTimeout(timeoutId)
+                    timeoutId = null
+                }
+
+                let errorMessage = 'An unexpected error occurred!'
+
+                if (isAxiosError(error)) {
+                    errorMessage = error.message
+                }
+
                 set(
                     {
-                        pizzasLeftOnServer: items
+                        pizzas: undefined,
+                        isLoading: false,
+                        error: errorMessage
                     },
                     false
                 )
             }
-
-            const pizzasLeftOnServerUpdated = get().pizzasLeftOnServer
-
-            set(() => {
-                const currentPizzas = pizzas ?? []
-
-                const newPizzas =
-                    page === 1 ? data : [...currentPizzas, ...data]
-
-                const hasMore = newPizzas.length < pizzasLeftOnServerUpdated
-
-                return {
-                    pizzas: newPizzas,
-                    isLoading: false,
-                    error: undefined,
-                    hasMore: hasMore
-                }
-            }, false)
-        } catch (error) {
-            let errorMessage = 'An unexpected error occurred!'
-
-            if (isAxiosError(error)) {
-                errorMessage = error.message
-            }
-
-            set(
-                {
-                    pizzas: undefined,
-                    isLoading: false,
-                    error: errorMessage
-                },
-                false
-            )
         }
     }
-})
+}
