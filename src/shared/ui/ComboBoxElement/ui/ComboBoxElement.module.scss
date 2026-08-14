@@ -11,7 +11,7 @@
     
         font-family: var(--font-family);
         font-size: var(--font-size);
-        line-height: 1;
+        line-height: 16px;
         color: var(--text-primary);
     
         caret-color: var(--text-primary);
@@ -38,6 +38,7 @@
 
     &.searchPizza {
         input {
+            height: 34px;
             padding-left: 48px;
             border: 1px solid var(--border);
         }
