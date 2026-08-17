@@ -1,4 +1,5 @@
 import { ThemeProvider } from 'next-themes'
+import { NextIntlClientProvider } from 'next-intl'
 import { PizzasStoreProvider } from 'features/Pizzas/AllPizzas'
 import { ChosenPizzaStoreProvider } from 'features/Pizzas/ChosenPizza'
 import { BasketPizzaStoreProvider } from 'features/Pizzas/BasketPizzas'
@@ -16,7 +17,9 @@ export const RootLayout: FC<RootLayoutProps> = ({ children }) => {
                     <ChosenPizzaStoreProvider>
                         <BasketPizzaStoreProvider>
                             <ThemeProvider disableTransitionOnChange>
-                                <div className='container'>{children}</div>
+                                <NextIntlClientProvider>
+                                    <div className='container'>{children}</div>
+                                </NextIntlClientProvider>
                             </ThemeProvider>
                         </BasketPizzaStoreProvider>
                     </ChosenPizzaStoreProvider>

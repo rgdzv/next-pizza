@@ -412,18 +412,31 @@
 
 .theme {
     padding: 8px 20px;
-    border: 1px solid var(--additional);
+    border: 1px solid var(--border);
     border-radius: 9999px;
-
-    background-color: var(--additional);
-
     transition: all .1s ease;
 
     svg {
-        width: 18px;
-        height: 18px;
-        fill: var(--additional2);
+        width: 16px;
+        height: 16px;
+        fill: var(--text-primary);
     }
+
+    &:active:enabled {
+        transform: scale(0.95);
+    }
+}
+
+.lang {
+    padding: 8px 20px;
+    border: 1px solid var(--border);
+    border-radius: 9999px;
+
+    line-height: 1;
+    color: var(--text-primary);
+
+
+    transition: all .1s ease;
 
     &:active:enabled {
         transform: scale(0.95);

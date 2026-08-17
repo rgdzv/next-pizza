@@ -1,7 +1,7 @@
 // import { LoginDropDown } from 'features/Authorization'
 import { SearchPizzas } from 'features/Pizzas/AllPizzas'
 import { useBasketPizza } from 'features/Pizzas/BasketPizzas'
-import { ThemeSwitcher } from 'features/ThemeSwitching'
+import { ThemeSwitcher, LangSwitcher } from 'features/Switchers'
 import { PizzaLogoIcon } from 'shared/assets'
 import { CustomButton, CustomImage } from 'shared/ui'
 import styles from './Header.module.scss'
@@ -42,11 +42,12 @@ export const Header: FC<HeaderPropsInterface> = ({ openDialog }) => {
             <SearchPizzas />
             <div className={styles.headerRight}>
                 {/* <LoginDropDown /> */}
+                <ThemeSwitcher />
+                <LangSwitcher />
                 <CustomButton className='basket' onClick={openDialog}>
                     Корзина
                     {buttonCondition}
                 </CustomButton>
-                <ThemeSwitcher />
             </div>
         </header>
     )
