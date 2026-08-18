@@ -18,4 +18,3 @@ export type ButtonClassNameType =
     | 'basket'
     | 'remove'
     | 'theme'
-    | 'lang'

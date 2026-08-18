@@ -1,5 +1,4 @@
 /*eslint-disable*/
-import createNextIntlPlugin from 'next-intl/plugin'
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
@@ -48,6 +47,4 @@ const nextConfig: NextConfig = {
     }
 }
 
-const withNextIntl = createNextIntlPlugin('src/shared/lib/i18n/request.ts')
-
-module.exports = withNextIntl(nextConfig)
+module.exports = nextConfig

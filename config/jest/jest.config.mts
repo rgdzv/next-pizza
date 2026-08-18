@@ -25,4 +25,3 @@ const jestConfigWithOverrides = async () => {
 }
 
 export default jestConfigWithOverrides
-
