@@ -27,10 +27,9 @@
 
         height: 100%;
         padding: 2px;
-        border: 1px solid var(--border);
         border-radius: 9999px;
 
-        background-color: var(--bg-secondary);
+        background-color: var(--bg-accent2);
         background-clip: content-box;
 
         transition: transform 200ms ease-out;
