@@ -42,5 +42,9 @@
             padding-left: 48px;
             border: 1px solid var(--border);
         }
+
+        @media screen and (width <= 1240px) {
+            grid-area: headerSearch
+        }
     }
 }

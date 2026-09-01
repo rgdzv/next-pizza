@@ -15,4 +15,16 @@
         align-items: center;
         justify-content: space-between;
     }
+
+    @media screen and (width <= 1240px) {
+        .filtersTitle {
+            text-align: center;
+        }
+
+        .filtersContent {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
 }

@@ -36,4 +36,23 @@
         gap: 5px;
         align-items: center;
     }
+
+    @media screen and (width <= 1240px) {
+        grid-template: auto auto / auto min-content;
+        grid-template-areas: "headerLogo headerLogo"
+            "headerSearch headerBasket";
+        gap: 30px;
+        padding-bottom: 35px;
+
+
+        .headerLogo {
+            grid-area: headerLogo;
+            justify-content: center;
+        }
+
+        .headerRight {
+            grid-area: headerBasket;
+            justify-content: end;
+        }
+    }
 }
