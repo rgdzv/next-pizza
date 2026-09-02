@@ -1,7 +1,7 @@
 .header {
     display: grid;
     grid-area: header;
-    grid-template-columns: auto 1fr auto ;
+    grid-template-columns: auto 1fr auto;
     gap: 40px;
     align-items: center;
 
@@ -11,7 +11,6 @@
     .headerLogo {
         display: flex;
         gap: 5px;
-        align-items: center;
 
         .headerLogoBlock {
             display: flex;
@@ -48,11 +47,26 @@
         .headerLogo {
             grid-area: headerLogo;
             justify-content: center;
+
+            .headerLogoBlock {
+                align-items: center;
+            }
         }
 
         .headerRight {
             grid-area: headerBasket;
             justify-content: end;
+        }
+    }
+
+    @media screen and (width <= 640px) {
+        grid-template: repeat(3, auto) / 1fr;
+        grid-template-areas: "headerLogo" 
+            "headerSearch" 
+            "headerBasket";
+
+        .headerRight {
+            justify-content: center;
         }
     }
 }

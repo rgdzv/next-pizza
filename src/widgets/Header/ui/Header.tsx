@@ -35,7 +35,7 @@ export const Header: FC<HeaderPropsInterface> = ({ openDialog }) => {
                         NEXT PIZZA
                     </span>
                     <span className={styles.headerLogoBlockSlogan}>
-                        вкусней уже некуда
+                        вкусная пицца
                     </span>
                 </div>
             </div>

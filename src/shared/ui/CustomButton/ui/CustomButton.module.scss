@@ -179,12 +179,21 @@
 
     svg {
         fill: var(--text-primary);
+
+        @media screen and (width <= 640px) {
+            display: none;
+        }
     }
 
     span {
         &:last-child {
             color: var(--additional);
         }
+    }
+
+    @media screen and (width <= 640px) {
+        flex-direction: column;
+        border-radius: 10px;
     }
 }
 

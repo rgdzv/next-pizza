@@ -13,6 +13,18 @@
         display: grid;
         grid-template: 1fr / repeat(4, 1fr);
         gap: 35px;
+
+        @media screen and (width <= 1240px) {
+            grid-template: 1fr / repeat(3, 1fr);
+        }
+
+        @media screen and (width <= 940px) {
+            grid-template: 1fr / repeat(2, 1fr);
+        }
+
+        @media screen and (width <= 640px) {
+            grid-template: 1fr / 1fr;
+        }
     }
 
     .pizzasFetchButton {
