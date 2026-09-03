@@ -18,38 +18,38 @@ export const RemoveIngredients: FC = () => {
     }
 
     const ingredients = chosenPizza?.ingredients.map((ingredient, index) => {
-        if (ingredient.removable) {
-            const handleRemoveIngredient = () => {
-                removeIngredient(ingredient.name)
-            }
-
-            const removeImgCondition = isRemoved?.[ingredient.name] ? (
-                <ReturnIngredient title='Вернуть' />
-            ) : (
-                <RemoveIngredient title='Убрать' />
-            )
-
-            return (
-                <Fragment key={ingredient.name}>
-                    <CustomButton
-                        className='ingredient'
-                        onClick={handleRemoveIngredient}
-                        ingredientRemoved={isRemoved?.[ingredient.name]}
-                    >
-                        {ingredient.name}&nbsp;
-                    </CustomButton>
-                    {removeImgCondition}
-                    {', '}
-                </Fragment>
-            )
+        const handleRemoveIngredient = () => {
+            removeIngredient(ingredient.name)
         }
 
-        const commaAfterIngCondition =
-            index === chosenPizza.ingredients.length - 1
-                ? ingredient.name
-                : `${ingredient.name}, `
+        const removeImgCondition = isRemoved?.[ingredient.name] ? (
+            <ReturnIngredient title='Вернуть' />
+        ) : (
+            <RemoveIngredient title='Убрать' />
+        )
 
-        return commaAfterIngCondition
+        return (
+            <Fragment key={ingredient.name}>
+                <CustomButton
+                    className={
+                        ingredient.removable
+                            ? 'ingredientRemovable'
+                            : 'ingredientNonRemovable'
+                    }
+                    onClick={
+                        ingredient.removable
+                            ? handleRemoveIngredient
+                            : undefined
+                    }
+                    ingredientRemoved={isRemoved?.[ingredient.name]}
+                >
+                    {ingredient.name}
+                    {ingredient.removable && '\u00A0'}
+                    {ingredient.removable && removeImgCondition}
+                </CustomButton>
+                {index !== chosenPizza.ingredients.length - 1 && ', '}
+            </Fragment>
+        )
     })
 
     return (
