@@ -17,4 +17,10 @@
     .pizzaImageLargeTemplate {
         position: absolute;
     }
+
+    @media screen and (width <= 1240px) {
+        min-width: min-content;
+        min-height: 502px;
+        border-radius: 20px 20px 0 0;
+    }
 }

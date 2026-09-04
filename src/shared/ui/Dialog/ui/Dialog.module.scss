@@ -72,5 +72,10 @@
                 }
             }
         }
+
+        @media screen and (width <= 1240px) {
+            width: 500px;
+            height: 800px;
+        }
     }
 }

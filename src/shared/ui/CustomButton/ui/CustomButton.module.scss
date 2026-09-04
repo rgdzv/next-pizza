@@ -239,6 +239,11 @@
     &:hover {
         background-color: var(--bg-accent);
     }
+
+    @media screen and (width <= 640px) {
+        top: -55px;
+        right: 0;
+    }
 }
 
 .calories {

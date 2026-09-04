@@ -22,5 +22,14 @@
 
             background-color: var(--bg-accent2);
         }
+
+    }
+    
+    @media screen and (width <= 1240px) {
+        flex-direction: column;
+
+        .pizzaInfoWrapper {
+            border-radius: 0 0 20px 20px;
+        }
     }
 }
