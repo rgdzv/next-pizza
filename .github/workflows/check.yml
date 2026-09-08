@@ -40,3 +40,19 @@ jobs:
               run: npm ci
             - name: unit test
               run: npm run jest-unit
+    build:
+        runs-on: ubuntu-latest
+        needs: [lint, RTL-test]
+        strategy:
+            matrix:
+                node-version: [24.x]
+        steps:
+            - uses: actions/checkout@v4
+            - name: Starting Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - name: install dependencies
+              run: npm ci
+            - name: build project (production)
+              run: npm run build
