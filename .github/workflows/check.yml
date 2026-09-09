@@ -57,6 +57,6 @@ jobs:
             - name: check src/pages directory
               run: |
                 ls -l src/pages
-                cat src/pages/Home.tsx
+                cat src/pages/index.tsx
             - name: build project (production)
               run: npm run build
