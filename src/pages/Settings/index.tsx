@@ -1,1 +1,1 @@
-export { default as Settings } from './ui/Settings'
+export { default } from './ui/Settings'
