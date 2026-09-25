@@ -29,12 +29,11 @@
         }
     },
     "include": [
-        "src/app/declarations/**/*.d.ts",
+        "src/app/lib/declarations/**/*.d.ts",
         "next-env.d.ts",
         ".next/types/**/*.ts",
         "**/*.ts",
-        "**/*.tsx",
-        "svg.js"
+        "**/*.tsx"
     ],
     "exclude": ["node_modules"]
 }
