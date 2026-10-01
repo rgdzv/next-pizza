@@ -1,3 +1,4 @@
+'use client'
 import { CustomButton } from 'shared/ui'
 import { BigCrossIcon } from 'shared/assets'
 import styles from './BasketContent.module.scss'

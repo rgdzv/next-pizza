@@ -1,3 +1,4 @@
+'use client'
 import { useBasketPizzaStore } from '../../model/store/provider/basket-pizza-store-provider'
 import { getAddPizzaToBasket } from '../../model/store/selectors/getAddPizzaToBasket/getAddPizzaToBasket'
 import { getPizzasInBasket } from '../../model/store/selectors/getPizzasInBasket/getPizzasInBasket'

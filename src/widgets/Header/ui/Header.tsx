@@ -1,3 +1,4 @@
+'use client'
 // import { LoginDropDown } from 'features/Authorization'
 import { SearchPizzas } from 'features/Pizzas/AllPizzas'
 import { useBasketPizza } from 'features/Pizzas/BasketPizzas'

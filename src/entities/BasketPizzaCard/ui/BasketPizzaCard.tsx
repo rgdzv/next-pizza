@@ -1,3 +1,4 @@
+'use client'
 import { CustomButton, CustomImage } from 'shared/ui'
 import { CrossIcon, MinusIcon, PlusIcon } from 'shared/assets'
 import styles from './BasketPizzaCard.module.scss'

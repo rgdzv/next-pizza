@@ -1,3 +1,4 @@
+'use client'
 import { useBasketPizza } from 'features/Pizzas/BasketPizzas'
 import { BasketPizzaCard } from 'entities/BasketPizzaCard'
 import { priceFormat } from 'shared/lib'

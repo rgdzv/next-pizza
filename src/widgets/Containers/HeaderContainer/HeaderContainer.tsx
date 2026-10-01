@@ -1,3 +1,4 @@
+'use client'
 import { useDialog } from 'shared/ui'
 import { Header } from '../../Header'
 import { Basket } from '../../Basket'

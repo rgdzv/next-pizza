@@ -1,3 +1,4 @@
+'use client'
 import { CustomImage } from 'shared/ui'
 import { BasketEmptyIcon } from 'shared/assets'
 import styles from './BasketEmpty.module.scss'

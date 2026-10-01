@@ -1,5 +1,5 @@
 import '../styles/global.scss'
-import { Providers } from '../ui/Providers/Providers'
+import { Providers } from 'features/Providers'
 import type { FC, ReactNode } from 'react'
 
 interface RootLayoutProps {
