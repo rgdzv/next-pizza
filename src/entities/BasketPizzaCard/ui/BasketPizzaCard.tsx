@@ -1,10 +1,8 @@
-'use client'
 import { CustomButton, CustomImage } from 'shared/ui'
 import { CrossIcon, MinusIcon, PlusIcon } from 'shared/assets'
 import styles from './BasketPizzaCard.module.scss'
 import type { BasketPizza } from '../lib/types/basketPizza'
 import type { FC } from 'react'
-
 interface BasketPizzaCardPropsInterface {
     pizza: BasketPizza
     handleAddPizza: () => void
