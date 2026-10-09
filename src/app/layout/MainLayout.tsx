@@ -1,3 +1,4 @@
+'use client'
 import { Providers } from 'features/Providers'
 import type { FC, ReactNode } from 'react'
 
