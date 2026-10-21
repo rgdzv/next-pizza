@@ -16,8 +16,8 @@ export const IngredientCard: FC<IngredientCardPropsInterface> = ({
 }) => {
     return (
         <CustomButton
-            className='ingredientCard'
-            ingredientAdded={ingredientAdded}
+            variant='ingredientCard'
+            data-active={ingredientAdded}
             onClick={handleAddIngredient}
         >
             <IngredientAdded title='Добавлено' />

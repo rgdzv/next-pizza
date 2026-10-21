@@ -54,7 +54,7 @@ export const Pizzas: FC<PizzasProprInterface> = ({ openDialog }) => {
     const pizzasFetchButtonCondition = hasMore && (
         <div className={styles.pizzasFetchButton}>
             <CustomButton
-                className='primary'
+                variant='primary'
                 onClick={handleNextPage}
                 disabled={isLoading}
             >

@@ -162,7 +162,7 @@
         color: var(--additional);
     }
 
-    &.categoryActive {
+    &[data-active='true'] {
         color: var(--additional);
     }
 }
@@ -216,7 +216,7 @@
         }
     }
 
-    &.sortArrowActive {
+    &[data-active='true'] {
         border-color: var(--border);
         
         svg {
@@ -260,7 +260,7 @@
         }
     }
 
-    &.caloriesActive {
+    &[data-active='true'] {
         svg {
             transform: scale(1.1);
             fill-opacity: 1;
@@ -300,7 +300,7 @@
     text-decoration: underline dotted;
     text-underline-offset: 3px;
 
-    &.ingredientRemoved {
+    &[data-active='true'] {
         border-bottom: none;
         text-decoration: line-through
     }
@@ -352,7 +352,7 @@
         fill: var(--additional);
     }
 
-    &.ingredientAdded {
+    &[data-active='true']{
         border-color: var(--additional);
 
         svg {

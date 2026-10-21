@@ -56,9 +56,9 @@ export const ShowPizzaTitle: FC = () => {
         <div className={styles.mainInfo} data-testid='show-pizza-title'>
             <div className={styles.calories}>
                 <CustomButton
-                    className='calories'
+                    variant='calories'
                     onClick={handleClick}
-                    caloriesActive={isOpened}
+                    data-active={isOpened}
                 >
                     <CaloriesIcon title='Энергетическая ценность' />
                 </CustomButton>

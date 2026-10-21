@@ -31,7 +31,7 @@ export const RemoveIngredients: FC = () => {
         return (
             <Fragment key={ingredient.name}>
                 <CustomButton
-                    className={
+                    variant={
                         ingredient.removable
                             ? 'ingredientRemovable'
                             : 'ingredientNonRemovable'
@@ -41,7 +41,7 @@ export const RemoveIngredients: FC = () => {
                             ? handleRemoveIngredient
                             : undefined
                     }
-                    ingredientRemoved={isRemoved?.[ingredient.name]}
+                    data-active={isRemoved?.[ingredient.name]}
                 >
                     {ingredient.name}
                     {ingredient.removable && '\u00A0'}

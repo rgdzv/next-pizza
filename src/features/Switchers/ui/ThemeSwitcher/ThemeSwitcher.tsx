@@ -29,7 +29,7 @@ export const ThemeSwitcher = () => {
 
     return (
         <>
-            <CustomButton className='theme' onClick={handleClick}>
+            <CustomButton variant='theme' onClick={handleClick}>
                 {iconCondition}
             </CustomButton>
         </>

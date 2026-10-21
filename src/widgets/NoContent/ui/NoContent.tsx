@@ -32,7 +32,7 @@ export const NoContent: FC<NoContentPropsInterface> = ({
                         <ArrowLeftIcon title='Влево' />
                         <span>На главную</span>
                     </CustomLink>
-                    <CustomButton className='primary' onClick={handleReload}>
+                    <CustomButton variant='primary' onClick={handleReload}>
                         Обновить
                     </CustomButton>
                 </div>

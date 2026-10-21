@@ -1,4 +1,4 @@
-export type ButtonClassNameType =
+export type ButtonVariantType =
     | 'primary'
     | 'search'
     | 'delete'

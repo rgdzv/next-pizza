@@ -2,49 +2,20 @@ import { memo } from 'react'
 import classNames from 'classnames'
 import styles from './CustomButton.module.scss'
 import type { ButtonHTMLAttributes, FC, ReactNode } from 'react'
-import type { ButtonClassNameType } from '../lib/types/classNames'
+import type { ButtonVariantType } from '../lib/types/variants'
 
 interface ButtonPropsInterface extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode
-    className?: ButtonClassNameType
-    disabled?: boolean
-    categoryActive?: boolean
-    sortOptionActive?: boolean
-    caloriesActive?: boolean
-    ingredientRemoved?: boolean
-    ingredientAdded?: boolean
+    variant: ButtonVariantType
+    'data-active'?: boolean
 }
 
 export const CustomButton: FC<ButtonPropsInterface> = memo(
-    ({
-        children,
-        className,
-        disabled,
-        categoryActive,
-        sortOptionActive,
-        caloriesActive,
-        ingredientRemoved,
-        ingredientAdded,
-        ...otherProps
-    }) => {
-        const buttonClassName = classNames(
-            styles.button,
-            styles[className as ButtonClassNameType],
-            {
-                [styles.categoryActive]: categoryActive,
-                [styles.sortArrowActive]: sortOptionActive,
-                [styles.caloriesActive]: caloriesActive,
-                [styles.ingredientRemoved]: ingredientRemoved,
-                [styles.ingredientAdded]: ingredientAdded
-            }
-        )
+    ({ children, variant, type = 'button', ...otherProps }) => {
+        const buttonClassName = classNames(styles.button, styles[variant])
 
         return (
-            <button
-                className={buttonClassName}
-                disabled={disabled}
-                {...otherProps}
-            >
+            <button type={type} className={buttonClassName} {...otherProps}>
                 {children}
             </button>
         )

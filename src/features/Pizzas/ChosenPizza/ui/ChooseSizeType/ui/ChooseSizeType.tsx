@@ -27,7 +27,7 @@ export const ChooseSizeType: FC = () => {
         }
 
         return (
-            <CustomButton key={size} className='size' onClick={handleClickSize}>
+            <CustomButton key={size} variant='size' onClick={handleClickSize}>
                 {size}
             </CustomButton>
         )
@@ -46,7 +46,7 @@ export const ChooseSizeType: FC = () => {
         return (
             <CustomButton
                 key={type.id}
-                className='type'
+                variant='type'
                 onClick={handleClickType}
                 disabled={selectedSizeConditions}
             >

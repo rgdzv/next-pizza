@@ -67,7 +67,7 @@ export const AddToBasket: FC<AddToBasketPropsInterface> = ({ closeDialog }) => {
     return (
         <div className={styles.pizzaPriceButton} data-testid='add-to-basket'>
             <CustomButton
-                className='price'
+                variant='price'
                 onClick={handleAddPizzaToBasket}
                 disabled={orderIsSending}
             >

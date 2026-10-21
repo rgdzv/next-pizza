@@ -44,7 +44,7 @@ export const Header: FC<HeaderPropsInterface> = ({ openDialog }) => {
             <div className={styles.headerRight}>
                 {/* <LoginDropDown /> */}
                 <ThemeSwitcher />
-                <CustomButton className='basket' onClick={openDialog}>
+                <CustomButton variant='basket' onClick={openDialog}>
                     Корзина
                     {buttonCondition}
                 </CustomButton>

@@ -28,10 +28,7 @@ export const PizzaCard: FC<PizzaCardPropsInterface> = memo(
                     <span className={styles.pizzaCardFooterPrice}>
                         от {pizzaCardPrice}
                     </span>
-                    <CustomButton
-                        className='primary'
-                        onClick={handleSelectPizza}
-                    >
+                    <CustomButton variant='primary' onClick={handleSelectPizza}>
                         Выбрать
                     </CustomButton>
                 </div>

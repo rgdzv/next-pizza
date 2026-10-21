@@ -17,8 +17,8 @@ export const SwitchCategoryPizzas: FC = () => {
         return (
             <li key={item}>
                 <CustomButton
-                    className='category'
-                    categoryActive={categoryActive}
+                    variant='category'
+                    data-active={categoryActive}
                     onClick={onClick}
                 >
                     {item}

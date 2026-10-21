@@ -11,7 +11,7 @@ export const SearchPizzas: FC = () => {
     }
 
     const icon = (
-        <CustomButton className='search' disabled>
+        <CustomButton variant='search' disabled>
             <SearchIcon title='Поиск пиццы' />
         </CustomButton>
     )

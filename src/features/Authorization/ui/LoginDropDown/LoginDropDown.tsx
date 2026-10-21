@@ -25,7 +25,7 @@ export const LoginDropDown: FC = () => {
     })
 
     const triggerButton = (
-        <CustomButton className='primary'>
+        <CustomButton variant='primary'>
             <ProfileIcon title='Профиль' />
             <span>Профиль</span>
         </CustomButton>
@@ -38,7 +38,7 @@ export const LoginDropDown: FC = () => {
             className='login'
         />
     ) : (
-        <CustomButton className='primary'>
+        <CustomButton variant='primary'>
             <ProfileIcon title='Профиль' />
             <span>Войти</span>
         </CustomButton>

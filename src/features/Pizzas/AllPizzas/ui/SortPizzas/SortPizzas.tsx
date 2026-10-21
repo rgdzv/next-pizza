@@ -26,18 +26,18 @@ export const SortPizzas: FC = () => {
             <li key={item.name}>
                 <CloseButton as={Fragment}>
                     <CustomButton
-                        className='sortArrow'
+                        variant='sortArrow'
                         onClick={handleSortOrder('asc')}
-                        sortOptionActive={isSortButtonActive('asc')}
+                        data-active={isSortButtonActive('asc')}
                     >
                         <ArrowUpIcon title='По возрастанию' />
                     </CustomButton>
                 </CloseButton>
                 <CloseButton as={Fragment}>
                     <CustomButton
-                        className='sortArrow'
+                        variant='sortArrow'
                         onClick={handleSortOrder('desc')}
-                        sortOptionActive={isSortButtonActive('desc')}
+                        data-active={isSortButtonActive('desc')}
                     >
                         <ArrowDownIcon title='По убыванию' />
                     </CustomButton>
@@ -48,7 +48,7 @@ export const SortPizzas: FC = () => {
     })
 
     const triggerButton = (
-        <CustomButton className='sort'>
+        <CustomButton variant='sort'>
             <ArrowsUpDownIcon title='Сортировка' />
             <span>Сортировка по:</span>
             <span>{sortingObj.name}</span>

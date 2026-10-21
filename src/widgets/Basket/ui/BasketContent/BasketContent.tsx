@@ -25,7 +25,7 @@ export const BasketContent: FC<BasketContentPropsInterface> = ({
                     </strong>
                 </span>
                 <CustomButton
-                    className='remove'
+                    variant='remove'
                     onClick={removeAllPizzas}
                     aria-label='Удалить'
                 >
@@ -38,7 +38,7 @@ export const BasketContent: FC<BasketContentPropsInterface> = ({
                     <span>Итого :</span>
                     <span>{basketFinalSum}</span>
                 </div>
-                <CustomButton className='order'>
+                <CustomButton variant='order'>
                     <span>Оформить заказ</span>
                 </CustomButton>
             </div>

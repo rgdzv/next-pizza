@@ -61,7 +61,7 @@ export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
                 </span>
                 <div className={styles.basketPizzaCardCountBtn}>
                     <CustomButton
-                        className='counter'
+                        variant='counter'
                         onClick={handleRemovePizza}
                         aria-label='Убавить'
                     >
@@ -69,7 +69,7 @@ export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
                     </CustomButton>
                     <span>{pizza.count}</span>
                     <CustomButton
-                        className='counter'
+                        variant='counter'
                         onClick={handleAddPizza}
                         disabled={pizza.count >= 20}
                         aria-label='Прибавить'
@@ -80,7 +80,7 @@ export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
             </div>
             <div className={styles.basketPizzaCardButton}>
                 <CustomButton
-                    className='delete'
+                    variant='delete'
                     onClick={handleRemovePizzaCompletely}
                     aria-label='Удалить'
                 >

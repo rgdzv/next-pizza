@@ -42,10 +42,7 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
                         <AddToBasket closeDialog={closeDialog} />
                     </div>
                 </div>
-                <CustomButton
-                    className='closeModal'
-                    onClick={onClickCloseButton}
-                >
+                <CustomButton variant='closeModal' onClick={onClickCloseButton}>
                     <CrossIcon title='Закрыть окно' />
                 </CustomButton>
             </div>
