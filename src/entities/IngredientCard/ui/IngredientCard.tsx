@@ -22,7 +22,7 @@ export const IngredientCard: FC<IngredientCardPropsInterface> = ({
         >
             <IngredientAdded title='Добавлено' />
             <CustomImage
-                className='pizzaIngredient'
+                variant='pizzaIngredient'
                 src={ingredient.src}
                 alt={ingredient.name}
             />

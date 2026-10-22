@@ -5,7 +5,7 @@ describe('Image', () => {
     test('render', () => {
         render(
             <CustomImage
-                className='pizzaCard'
+                variant='pizzaCard'
                 src='/example'
                 alt='example'
                 sizes='100px 100px'
@@ -23,9 +23,7 @@ describe('Image', () => {
         expect(image).toHaveAttribute('sizes', '100px 100px')
     })
     test('image without sizes prop', () => {
-        render(
-            <CustomImage className='pizzaCard' src='/example' alt='example' />
-        )
+        render(<CustomImage variant='pizzaCard' src='/example' alt='example' />)
 
         const imageWrapper = screen.getByTestId('image-wrapper')
         const image: HTMLImageElement = screen.getByRole('img')

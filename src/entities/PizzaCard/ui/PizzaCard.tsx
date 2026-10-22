@@ -16,7 +16,7 @@ export const PizzaCard: FC<PizzaCardPropsInterface> = memo(
                 <CustomImage
                     src={pizza.imgSrc}
                     alt={pizza.title}
-                    className='pizzaCard'
+                    variant='pizzaCard'
                     sizes='209px 209px'
                 />
                 <p className={styles.pizzaCardName}>{pizza.title}</p>

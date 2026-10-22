@@ -24,7 +24,7 @@ export const ThemeSwitcher = () => {
     }, [])
 
     if (!mounted) {
-        return <Skeleton className='themeSwitcherSkeleton' />
+        return <Skeleton variant='themeSwitcherSkeleton' />
     }
 
     return (

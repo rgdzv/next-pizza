@@ -12,15 +12,13 @@ import type { FC, MouseEvent, RefObject } from 'react'
 interface BasketPropsInterface {
     dialogRef: RefObject<HTMLDialogElement | null>
     closeDialog: () => void
-    onClickCloseButton: () => void
-    onClickOutside: (e: MouseEvent<HTMLDialogElement>) => void
+    onBackdropClick: (e: MouseEvent<HTMLDialogElement>) => void
 }
 
 export const Basket: FC<BasketPropsInterface> = ({
     dialogRef,
     closeDialog,
-    onClickCloseButton,
-    onClickOutside
+    onBackdropClick
 }) => {
     const {
         pizzasInBasket,
@@ -78,12 +76,11 @@ export const Basket: FC<BasketPropsInterface> = ({
     return (
         <Dialog
             dialogRef={dialogRef}
-            onClose={closeDialog}
-            onClick={onClickOutside}
-            className='sidebar'
+            onClick={onBackdropClick}
+            variant='sidebar'
         >
             {showBasketPizzasCondition}
-            <CustomButton variant='close' onClick={onClickCloseButton}>
+            <CustomButton variant='close' onClick={closeDialog}>
                 <CrossIcon title='Закрыть' />
             </CustomButton>
         </Dialog>

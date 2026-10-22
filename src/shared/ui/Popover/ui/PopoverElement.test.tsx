@@ -35,7 +35,7 @@ describe('PopoverElement', () => {
             <PopoverElement
                 triggerButton={trigger}
                 options={options}
-                className='sort'
+                variant='sort'
             />
         )
 

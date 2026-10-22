@@ -9,8 +9,7 @@ export const PizzasContainer: FC = () => {
         openDialog,
         closeDialog,
         dialogRef,
-        onClickCloseButton,
-        onClickOutside
+        onBackdropClick
     } = useDialog()
 
     return (
@@ -20,8 +19,7 @@ export const PizzasContainer: FC = () => {
                 <PizzaModal
                     dialogRef={dialogRef}
                     closeDialog={closeDialog}
-                    onClickCloseButton={onClickCloseButton}
-                    onClickOutside={onClickOutside}
+                    onBackdropClick={onBackdropClick}
                 />
             )}
         </>

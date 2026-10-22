@@ -36,7 +36,7 @@ export const ShowPizzaImage = () => {
     return (
         <div className={styles.pizzaImage} data-testid='show-pizza-image'>
             <CustomImage
-                className={pizzaModalImageClassName}
+                variant={pizzaModalImageClassName}
                 src={pizzaModalImage}
                 alt={pizzaModalImage}
             />

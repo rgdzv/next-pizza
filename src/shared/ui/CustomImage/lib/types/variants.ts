@@ -1,4 +1,4 @@
-export type CustomImageClassNameType =
+export type CustomImageVariantType =
     | 'notFound'
     | 'logo'
     | 'mini'

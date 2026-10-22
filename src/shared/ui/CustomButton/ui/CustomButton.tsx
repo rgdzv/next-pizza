@@ -6,13 +6,16 @@ import type { ButtonVariantType } from '../lib/types/variants'
 
 interface ButtonPropsInterface extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode
-    variant: ButtonVariantType
+    variant?: ButtonVariantType
     'data-active'?: boolean
 }
 
 export const CustomButton: FC<ButtonPropsInterface> = memo(
     ({ children, variant, type = 'button', ...otherProps }) => {
-        const buttonClassName = classNames(styles.button, styles[variant])
+        const buttonClassName = classNames(
+            styles.button,
+            variant && styles[variant]
+        )
 
         return (
             <button type={type} className={buttonClassName} {...otherProps}>

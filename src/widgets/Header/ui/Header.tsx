@@ -27,7 +27,7 @@ export const Header: FC<HeaderPropsInterface> = ({ openDialog }) => {
             <div className={styles.headerLogo}>
                 <CustomImage
                     src={PizzaLogoIcon}
-                    className='logo'
+                    variant='logo'
                     alt='Логотип'
                     sizes='35px 35px'
                 />

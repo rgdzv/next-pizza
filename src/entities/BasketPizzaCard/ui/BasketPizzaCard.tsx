@@ -26,7 +26,7 @@ export const BasketPizzaCard: FC<BasketPizzaCardPropsInterface> = ({
                 <CustomImage
                     src={pizza.imgSrc}
                     alt={pizza.title}
-                    className='basketPizzaCard'
+                    variant='basketPizzaCard'
                 />
                 <div className={styles.basketPizzaCardInfo}>
                     <span className={styles.basketPizzaCardInfoTitle}>

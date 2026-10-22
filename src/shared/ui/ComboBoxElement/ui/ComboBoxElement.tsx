@@ -2,11 +2,11 @@
 import { Combobox, ComboboxInput } from '@headlessui/react'
 import classNames from 'classnames'
 import styles from './ComboBoxElement.module.scss'
-import type { InputWrapperClassNameType } from '../lib/types/classNames'
+import type { InputWrapperVariantType } from '../lib/types/variants'
 import type { ChangeEvent, FC, ReactNode } from 'react'
 
 interface ComboBoxElementPropsInterface {
-    inputWrapperClassName?: InputWrapperClassNameType
+    variant?: InputWrapperVariantType
     type: string
     inputValue: string
     onInputChange: (e: ChangeEvent<HTMLInputElement>) => void
@@ -15,7 +15,7 @@ interface ComboBoxElementPropsInterface {
 }
 
 export const ComboBoxElement: FC<ComboBoxElementPropsInterface> = ({
-    inputWrapperClassName,
+    variant,
     type,
     inputValue,
     onInputChange,
@@ -23,7 +23,7 @@ export const ComboBoxElement: FC<ComboBoxElementPropsInterface> = ({
     icon
 }) => {
     const comboWrapperClassName = classNames(styles.comboWrapper, [
-        styles[inputWrapperClassName as InputWrapperClassNameType]
+        variant && styles[variant]
     ])
 
     return (

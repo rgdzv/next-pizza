@@ -28,7 +28,7 @@ export const NoContent: FC<NoContentPropsInterface> = ({
                     <p className={styles.noContentLeftHeaderMsg}>{message}</p>
                 </div>
                 <div className={styles.noContentLeftFooter}>
-                    <CustomLink href='/' className='primary'>
+                    <CustomLink href='/' variant='primary'>
                         <ArrowLeftIcon title='Влево' />
                         <span>На главную</span>
                     </CustomLink>
@@ -39,7 +39,7 @@ export const NoContent: FC<NoContentPropsInterface> = ({
             </div>
             <div className={styles.noContentRight}>
                 <CustomImage
-                    className='notFound'
+                    variant='notFound'
                     src={imgSrc}
                     alt='Не найдено'
                     sizes='340px 340px'

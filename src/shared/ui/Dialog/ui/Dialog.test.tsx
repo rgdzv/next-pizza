@@ -40,7 +40,7 @@ describe('Dialog', () => {
                 dialogRef={ref}
                 onClick={jest.fn()}
                 onClose={jest.fn()}
-                className='sidebar'
+                variant='sidebar'
             >
                 <div>Dialog content</div>
             </Dialog>
@@ -54,23 +54,13 @@ describe('Dialog', () => {
         const user = userEvent.setup()
 
         const WrapperComponent = () => {
-            const {
-                openDialog,
-                closeDialog,
-                dialogRef,
-                onClickCloseButton,
-                onClickOutside
-            } = useDialog()
+            const { openDialog, closeDialog, dialogRef } = useDialog()
 
             return (
                 <>
                     <button onClick={openDialog}>Open</button>
-                    <button onClick={onClickCloseButton}>Close</button>
-                    <Dialog
-                        dialogRef={dialogRef}
-                        onClose={closeDialog}
-                        onClick={onClickOutside}
-                    >
+                    <button onClick={closeDialog}>Close</button>
+                    <Dialog dialogRef={dialogRef}>
                         <div>Dialog content</div>
                     </Dialog>
                 </>
@@ -95,23 +85,14 @@ describe('Dialog', () => {
         const user = userEvent.setup()
 
         const WrapperComponent = () => {
-            const {
-                openDialog,
-                closeDialog,
-                dialogRef,
-                onClickCloseButton,
-                onClickOutside
-            } = useDialog()
+            const { openDialog, closeDialog, dialogRef, onBackdropClick } =
+                useDialog()
 
             return (
                 <>
                     <button onClick={openDialog}>Open</button>
-                    <button onClick={onClickCloseButton}>Close</button>
-                    <Dialog
-                        dialogRef={dialogRef}
-                        onClose={closeDialog}
-                        onClick={onClickOutside}
-                    >
+                    <button onClick={closeDialog}>Close</button>
+                    <Dialog dialogRef={dialogRef} onClick={onBackdropClick}>
                         <div>Dialog content</div>
                     </Dialog>
                 </>
@@ -135,35 +116,27 @@ describe('Dialog', () => {
         const user = userEvent.setup()
 
         const WrapperComponent = () => {
-            const {
-                openDialog,
-                closeDialog,
-                dialogRef,
-                onClickCloseButton,
-                onClickOutside
-            } = useDialog()
+            const { openDialog, closeDialog, dialogRef } = useDialog()
 
             useEffect(() => {
-                const handleKeyDown = (event: KeyboardEvent) => {
-                    if (event.key === 'Escape') {
-                        dialogRef.current?.close()
+                const handleKeyDown = (e: KeyboardEvent) => {
+                    if (e.key === 'Escape') {
+                        e.preventDefault()
+                        closeDialog()
                     }
                 }
+
                 document.addEventListener('keydown', handleKeyDown)
                 return () => {
                     document.removeEventListener('keydown', handleKeyDown)
                 }
-            }, [dialogRef])
+            }, [closeDialog])
 
             return (
                 <>
                     <button onClick={openDialog}>Open</button>
-                    <button onClick={onClickCloseButton}>Close</button>
-                    <Dialog
-                        dialogRef={dialogRef}
-                        onClose={closeDialog}
-                        onClick={onClickOutside}
-                    >
+                    <button onClick={closeDialog}>Close</button>
+                    <Dialog dialogRef={dialogRef}>
                         <div>Dialog content</div>
                     </Dialog>
                 </>

@@ -1,23 +1,23 @@
 import Image from 'next/image'
 import styles from './CustomImage.module.scss'
 import type { StaticImageData } from 'next/image'
-import type { CustomImageClassNameType } from '../lib/types/classNames'
+import type { CustomImageVariantType } from '../lib/types/variants'
 import type { FC } from 'react'
 
 interface CustomImagePropsInterface {
     src: string | StaticImageData
     alt: string
-    className: CustomImageClassNameType
+    variant?: CustomImageVariantType
     sizes?: string
 }
 
 export const CustomImage: FC<CustomImagePropsInterface> = ({
     src,
     alt,
-    className,
+    variant,
     sizes
 }) => {
-    const wrapperClassName = styles[className]
+    const wrapperClassName = variant && styles[variant]
 
     return (
         <div className={wrapperClassName} data-testid='image-wrapper'>

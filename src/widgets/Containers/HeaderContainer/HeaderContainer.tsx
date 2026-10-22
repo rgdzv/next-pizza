@@ -5,13 +5,7 @@ import { Basket } from '../../Basket'
 import type { FC } from 'react'
 
 export const HeaderContainer: FC = () => {
-    const {
-        openDialog,
-        closeDialog,
-        dialogRef,
-        onClickCloseButton,
-        onClickOutside
-    } = useDialog()
+    const { openDialog, closeDialog, dialogRef, onBackdropClick } = useDialog()
 
     return (
         <>
@@ -19,8 +13,7 @@ export const HeaderContainer: FC = () => {
             <Basket
                 dialogRef={dialogRef}
                 closeDialog={closeDialog}
-                onClickCloseButton={onClickCloseButton}
-                onClickOutside={onClickOutside}
+                onBackdropClick={onBackdropClick}
             />
         </>
     )

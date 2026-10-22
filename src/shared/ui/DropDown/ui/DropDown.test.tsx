@@ -52,7 +52,7 @@ describe('DropDown', () => {
             <DropDown
                 triggerButton={trigger}
                 options={options}
-                className='login'
+                variant='login'
             />
         )
 

@@ -14,22 +14,19 @@ import type { FC, MouseEvent, RefObject } from 'react'
 interface PizzaModalPropsInterface {
     dialogRef: RefObject<HTMLDialogElement | null>
     closeDialog: () => void
-    onClickOutside: (e: MouseEvent<HTMLDialogElement>) => void
-    onClickCloseButton: () => void
+    onBackdropClick: (e: MouseEvent<HTMLDialogElement>) => void
 }
 
 export const PizzaModal: FC<PizzaModalPropsInterface> = ({
     dialogRef,
     closeDialog,
-    onClickCloseButton,
-    onClickOutside
+    onBackdropClick
 }) => {
     return (
         <Dialog
             dialogRef={dialogRef}
-            onClose={closeDialog}
-            onClick={onClickOutside}
-            className='pizzaModal'
+            onClick={onBackdropClick}
+            variant='pizzaModal'
         >
             <div className={styles.pizzaModal}>
                 <ShowPizzaImage />
@@ -42,7 +39,7 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
                         <AddToBasket closeDialog={closeDialog} />
                     </div>
                 </div>
-                <CustomButton variant='closeModal' onClick={onClickCloseButton}>
+                <CustomButton variant='closeModal' onClick={closeDialog}>
                     <CrossIcon title='Закрыть окно' />
                 </CustomButton>
             </div>

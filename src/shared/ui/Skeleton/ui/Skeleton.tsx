@@ -1,15 +1,15 @@
 import styles from './Skeleton.module.scss'
-import type { SkeletonClassNameType } from '../lib/types/classNames'
+import type { SkeletonVariantType } from '../lib/types/variants'
 import type { FC } from 'react'
 
 interface SkeletonPropsInterface {
-    className: SkeletonClassNameType
+    variant: SkeletonVariantType
 }
 
-export const Skeleton: FC<SkeletonPropsInterface> = ({ className }) => {
-    const finalClassName = styles[className]
+export const Skeleton: FC<SkeletonPropsInterface> = ({ variant }) => {
+    const finalClassName = styles[variant]
 
-    if (className === 'pizzaCardSkeleton') {
+    if (variant === 'pizzaCardSkeleton') {
         return (
             <div className={finalClassName} data-testid='skeleton'>
                 <div className={styles.image}></div>

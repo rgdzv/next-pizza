@@ -43,9 +43,7 @@ export const Pizzas: FC<PizzasProprInterface> = ({ openDialog }) => {
 
     const pizzasSkeletons = new Array(8)
         .fill(0)
-        .map((_, index) => (
-            <Skeleton key={index} className='pizzaCardSkeleton' />
-        ))
+        .map((_, index) => <Skeleton key={index} variant='pizzaCardSkeleton' />)
 
     const handleNextPage = () => {
         fetchDataNextPage()

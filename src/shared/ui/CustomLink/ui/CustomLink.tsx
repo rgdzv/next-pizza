@@ -1,34 +1,26 @@
 import classNames from 'classnames'
 import Link from 'next/link'
 import styles from './CustomLink.module.scss'
-import type { LinkClassNameType } from '../lib/types/classNames'
-import type { FC, ReactNode } from 'react'
+import type { LinkVariantType } from '../lib/types/variants'
+import type { AnchorHTMLAttributes, FC, ReactNode } from 'react'
 
-interface CustomLinkPropsInterface {
+interface CustomLinkPropsInterface
+    extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {
     children: ReactNode
-    className?: LinkClassNameType
+    variant?: LinkVariantType
     href: string
-    disabled?: boolean
-    onClick?: () => void
 }
 
 export const CustomLink: FC<CustomLinkPropsInterface> = ({
     children,
-    className,
+    variant,
     href,
-    disabled,
-    onClick
+    ...otherProps
 }) => {
-    const linkClassName = classNames(
-        styles.link,
-        styles[className as LinkClassNameType],
-        {
-            [styles.disabled]: disabled
-        }
-    )
+    const linkClassName = classNames(styles.link, variant && styles[variant])
 
     return (
-        <Link href={href} className={linkClassName} onClick={onClick}>
+        <Link href={href} className={linkClassName} {...otherProps}>
             {children}
         </Link>
     )

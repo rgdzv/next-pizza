@@ -35,7 +35,7 @@ export const LoginDropDown: FC = () => {
         <DropDown
             triggerButton={triggerButton}
             options={dropdownOptions}
-            className='login'
+            variant='login'
         />
     ) : (
         <CustomButton variant='primary'>

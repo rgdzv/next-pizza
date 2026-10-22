@@ -7,8 +7,7 @@ interface UseDialogResult {
     openDialog: () => void
     closeDialog: () => void
     dialogRef: RefObject<HTMLDialogElement | null>
-    onClickOutside: (e: MouseEvent<HTMLDialogElement>) => void
-    onClickCloseButton: () => void
+    onBackdropClick: (e: MouseEvent<HTMLDialogElement>) => void
 }
 
 export const useDialog = (): UseDialogResult => {
@@ -18,29 +17,37 @@ export const useDialog = (): UseDialogResult => {
     const openDialog = useCallback(() => {
         setIsDialogOpen(true)
     }, [])
-
     const closeDialog = useCallback(() => {
         setIsDialogOpen(false)
     }, [])
 
-    const onClickOutside = useCallback(
-        (e: MouseEvent<HTMLDialogElement>): void => {
+    const onBackdropClick = useCallback(
+        (e: React.MouseEvent<HTMLDialogElement>) => {
             if (e.target === dialogRef.current) {
-                dialogRef.current.close()
+                closeDialog()
             }
         },
-        []
+        [closeDialog]
     )
 
-    const onClickCloseButton = useCallback(() => {
-        dialogRef.current?.close()
-    }, [])
-
     useEffect(() => {
-        if (!dialogRef.current) return
+        const dialog = dialogRef.current
+        if (!dialog) return
 
-        if (isDialogOpen) {
-            dialogRef.current.showModal()
+        if (isDialogOpen && !dialog.open) {
+            dialog.showModal()
+        } else if (!isDialogOpen && dialog.open) {
+            dialog.close()
+        }
+
+        const handleClose = () => {
+            setIsDialogOpen(false)
+        }
+
+        dialog.addEventListener('close', handleClose)
+
+        return () => {
+            dialog.removeEventListener('close', handleClose)
         }
     }, [isDialogOpen])
 
@@ -49,7 +56,6 @@ export const useDialog = (): UseDialogResult => {
         openDialog,
         closeDialog,
         dialogRef,
-        onClickOutside,
-        onClickCloseButton
+        onBackdropClick
     }
 }

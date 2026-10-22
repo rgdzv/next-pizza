@@ -59,7 +59,7 @@ describe('ComboBoxElement', () => {
                 type='text'
                 inputValue=''
                 onInputChange={jest.fn()}
-                inputWrapperClassName='searchPizza'
+                variant='searchPizza'
             />
         )
 

@@ -26,7 +26,7 @@ describe('IngredientCard', () => {
         expect(ingredientCard).toHaveClass('ingredientCard')
     })
 
-    test('button with class ingredientAdded when prop is true', () => {
+    test('button is active when ingredientAdded prop is true', () => {
         const handleIngredient = jest.fn()
 
         render(
@@ -40,7 +40,7 @@ describe('IngredientCard', () => {
         const ingredientCard = screen.getByRole('button')
         expect(ingredientCard).toBeInTheDocument()
         expect(ingredientCard).toHaveClass('ingredientCard')
-        expect(ingredientCard).toHaveClass('ingredientAdded')
+        expect(ingredientCard).toHaveAttribute('data-active', 'true')
     })
 
     test('button onClick is launched when click happens', async () => {

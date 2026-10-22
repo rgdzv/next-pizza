@@ -3,22 +3,22 @@ import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
 import classNames from 'classnames'
 import styles from './PopoverElement.module.scss'
 import type { FC, ReactNode } from 'react'
-import type { PopoverClassNameType } from '../lib/types/classNames'
+import type { PopoverVariantType } from '../lib/types/variants'
 
 interface PopoverElementPropsInterface {
     triggerButton: ReactNode
     options: ReactNode
-    className?: PopoverClassNameType
+    variant?: PopoverVariantType
 }
 
 export const PopoverElement: FC<PopoverElementPropsInterface> = ({
     triggerButton,
     options,
-    className
+    variant
 }) => {
     const popoverClassName = classNames(
         styles.popover,
-        styles[className as PopoverClassNameType]
+        variant && styles[variant]
     )
 
     return (

@@ -12,7 +12,7 @@ export const BasketEmpty: FC = () => {
             <div className={styles.basketEmptyBlock}>
                 <CustomImage
                     src={BasketEmptyIcon}
-                    className='basketEmpty'
+                    variant='basketEmpty'
                     alt='Корзина'
                 />
                 <span className={styles.basketEmptyName}>Корзина пустая</span>

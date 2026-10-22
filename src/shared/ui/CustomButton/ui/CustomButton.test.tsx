@@ -13,7 +13,7 @@ describe('Button', () => {
     })
 
     test('button with special class', () => {
-        render(<CustomButton className='primary'>Test</CustomButton>)
+        render(<CustomButton variant='primary'>Test</CustomButton>)
 
         const button = screen.getByRole('button', {
             name: 'Test'
@@ -22,14 +22,14 @@ describe('Button', () => {
         expect(button).toHaveClass('primary')
     })
 
-    test('button with special class from boolean prop', () => {
-        render(<CustomButton categoryActive={true}>Category</CustomButton>)
+    test('button with special attribute from boolean prop', () => {
+        render(<CustomButton data-active={true}>Category</CustomButton>)
 
         const button = screen.getByRole('button', {
             name: 'Category'
         })
         expect(button).toBeInTheDocument()
-        expect(button).toHaveClass('categoryActive')
+        expect(button).toHaveAttribute('data-active', 'true')
     })
 
     test('disabled button', () => {

@@ -37,11 +37,7 @@ describe('Input', () => {
 
     test('input wrapper with special class', () => {
         render(
-            <CustomInput
-                value=''
-                inputWrapperClassName='searchPizza'
-                onChange={jest.fn()}
-            />
+            <CustomInput value='' variant='searchPizza' onChange={jest.fn()} />
         )
 
         const inputWrapper = screen.getByTestId('input-wrapper')

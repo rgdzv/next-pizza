@@ -58,7 +58,7 @@ export const SortPizzas: FC = () => {
     return (
         <PopoverElement
             options={sortOptions}
-            className='sort'
+            variant='sort'
             triggerButton={triggerButton}
         />
     )
