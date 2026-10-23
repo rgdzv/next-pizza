@@ -1,11 +1,10 @@
 'use client'
-
 import { useCallback, useRef } from 'react'
 
 type CallBack = (...args: unknown[]) => void
 
 export function useDebounce(func: CallBack, delay: number): CallBack {
-    const timer = useRef<NodeJS.Timeout>(null)
+    const timer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
     return useCallback(
         (...args: unknown[]) => {
