@@ -15,7 +15,7 @@ export const fetchPizzasAPI = (params: fetchPizzasParams) => {
             _page: page,
             _per_page: perPage,
             'title:contains': search,
-            category: category > 0 ? category : null,
+            'category.id': category > 0 ? category : null,
             _sort: order === 'desc' ? `-${sort}` : sort
         }
     })

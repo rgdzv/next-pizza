@@ -1,11 +1,6 @@
-export enum PizzaType {
-    TRADITIONAL = 'traditional',
-    THIN = 'thin'
-}
+export const PIZZA_TYPES = {
+    TRADITIONAL: 'traditional',
+    THIN: 'thin'
+} as const
 
-export enum PizzaSize {
-    EXTRA_SMALL = '20',
-    SMALL = '25',
-    MIDDLE = '30',
-    LARGE = '35'
-}
+export const PIZZA_SIZES = [20, 25, 30, 35] as const

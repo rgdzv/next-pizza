@@ -1,9 +1,9 @@
 export { PizzaCard } from './ui/PizzaCard'
 export type {
     Pizza,
-    Nutrition,
-    PizzaTypeKeys,
-    PizzaSizeKeys
+    // Nutrition,
+    PizzaType,
+    PizzaSize
 } from './lib/types/pizza'
 
-export { PizzaSize, PizzaType } from './lib/const/pizzaShape'
+export { PIZZA_TYPES, PIZZA_SIZES } from './lib/const/pizzaShape'

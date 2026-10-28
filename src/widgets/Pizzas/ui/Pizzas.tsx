@@ -3,8 +3,7 @@ import { useEffect } from 'react'
 import classNames from 'classnames'
 import { useFetchData, usePizzas } from 'features/Pizzas/AllPizzas'
 import { useChosenPizza } from 'features/Pizzas/ChosenPizza'
-import { PizzaCard, PizzaSize, PizzaType } from 'entities/PizzaCard'
-import { priceFormat } from 'shared/lib'
+import { PizzaCard } from 'entities/PizzaCard'
 import { CustomButton, Skeleton } from 'shared/ui'
 import styles from './Pizzas.module.scss'
 import type { FC } from 'react'
@@ -19,13 +18,6 @@ export const Pizzas: FC<PizzasProprInterface> = ({ openDialog }) => {
     const { setChosenPizza } = useChosenPizza()
 
     const pizzas = data?.map((pizza) => {
-        const pizzaCardPrice = priceFormat(
-            Number(
-                pizza.details[PizzaType.TRADITIONAL][PizzaSize.EXTRA_SMALL]
-                    .price
-            )
-        )
-
         const handleSelectPizza = () => {
             setChosenPizza(pizza)
             openDialog()
@@ -35,7 +27,6 @@ export const Pizzas: FC<PizzasProprInterface> = ({ openDialog }) => {
             <PizzaCard
                 key={pizza.id}
                 pizza={pizza}
-                pizzaCardPrice={pizzaCardPrice}
                 handleSelectPizza={handleSelectPizza}
             />
         )

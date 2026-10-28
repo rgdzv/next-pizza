@@ -2,1459 +2,2145 @@
     "pizzas": [
         {
             "id": "1",
+            "slug": "teriyaki",
             "title": "Терияки",
-            "category": 5,
+            "category": { "id": 5, "slug": "chicken", "name": "С курицей" },
             "rating": 10,
             "description": "Цыпленок, красный лук, сладкий перец, соус терияки, сыр моцарелла, фирменный соус альфредо",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/019a10a0c9ab792190a97768688bc6e9.png",
-            "details": {
-                "thin": {
-                    "30": {
-                        "nutrition": {
-                            "calories": "254.9",
-                            "prot": "11",
-                            "fat": "9.7",
-                            "carbo": "23.1",
-                            "weight": "430"
-                        },
-                        "price": "799",
-                        "img": "https://media.dodostatic.net/image/r:584x584/019a10a0d04478e2888f2049f683286e.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "244",
-                            "prot": "10.3",
-                            "fat": "8.9",
-                            "carbo": "30.7",
-                            "weight": "630"
-                        },
-                        "price": "979",
-                        "img": "https://media.dodostatic.net/image/r:584x584/019a10a0ead476fa8b2a69b9af466c31.png"
-                    }
-                },
-                "traditional": {
-                    "20": {
-                        "nutrition": {
-                            "calories": "262",
-                            "prot": "11",
-                            "fat": "9.1",
-                            "carbo": "34",
-                            "weight": "230"
-                        },
-                        "price": "379",
-                        "img": "https://media.dodostatic.net/image/r:584x584/019a10a0ba967817ab2dad8bef60807e.png"
-                    },
-                    "25": {
-                        "nutrition": {
-                            "calories": "259.8",
-                            "prot": "10.2",
-                            "fat": "8.5",
-                            "carbo": "35.7",
-                            "weight": "350"
-                        },
-                        "price": "519",
-                        "img": "https://media.dodostatic.net/image/r:584x584/019a10a0c04379429f3a07a9df0478ed.png"
-                    },
-                    "30": {
-                        "nutrition": {
-                            "calories": "258.4",
-                            "prot": "10.2",
-                            "fat": "8.6",
-                            "carbo": "35.1",
-                            "weight": "530"
-                        },
-                        "price": "799",
-                        "img": "https://media.dodostatic.net/image/r:584x584/019a10a0c9ab792190a97768688bc6e9.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "249.8",
-                            "prot": "9.9",
-                            "fat": "8.2",
-                            "carbo": "34",
-                            "weight": "730"
-                        },
-                        "price": "979",
-                        "img": "https://media.dodostatic.net/image/r:584x584/019a10a0e54870b0ae63dca748223369.png"
-                    }
-                }
-            },
+            "minPrice": 379,
+            "isAvailable": true,
             "ingredients": [
+                { "id": "chicken", "name": "Цыпленок", "removable": true },
+                { "id": "red-onion", "name": "красный лук", "removable": true },
                 {
-                    "name": "Цыпленок",
+                    "id": "bell-pepper",
+                    "name": "сладкий перец",
                     "removable": true
                 },
-                { "name": "сладкий перец", "removable": true },
-                { "name": "красный лук", "removable": true },
-                { "name": "моцарелла", "removable": false },
-                { "name": "соус терияки", "removable": false },
-                { "name": "фирменный соус альфредо", "removable": false }
+                {
+                    "id": "teriyaki-sauce",
+                    "name": "соус терияки",
+                    "removable": false
+                },
+                { "id": "mozzarella", "name": "моцарелла", "removable": false },
+                {
+                    "id": "alfredo-sauce",
+                    "name": "фирменный соус альфредо",
+                    "removable": false
+                }
+            ],
+            "variants": [
+                {
+                    "id": "1-thin-30",
+                    "dough": "thin",
+                    "size": 30,
+                    "price": 799,
+                    "img": "https://media.dodostatic.net/image/r:584x584/019a10a0d04478e2888f2049f683286e.png",
+                    "weight": 430,
+                    "nutrition": {
+                        "calories": 254.9,
+                        "protein": 11,
+                        "fat": 9.7,
+                        "carbs": 23.1
+                    }
+                },
+                {
+                    "id": "1-thin-35",
+                    "dough": "thin",
+                    "size": 35,
+                    "price": 979,
+                    "img": "https://media.dodostatic.net/image/r:584x584/019a10a0ead476fa8b2a69b9af466c31.png",
+                    "weight": 630,
+                    "nutrition": {
+                        "calories": 244,
+                        "protein": 10.3,
+                        "fat": 8.9,
+                        "carbs": 30.7
+                    }
+                },
+                {
+                    "id": "1-trad-20",
+                    "dough": "traditional",
+                    "size": 20,
+                    "price": 379,
+                    "img": "https://media.dodostatic.net/image/r:584x584/019a10a0ba967817ab2dad8bef60807e.png",
+                    "weight": 230,
+                    "nutrition": {
+                        "calories": 262,
+                        "protein": 11,
+                        "fat": 9.1,
+                        "carbs": 34
+                    }
+                },
+                {
+                    "id": "1-trad-25",
+                    "dough": "traditional",
+                    "size": 25,
+                    "price": 519,
+                    "img": "https://media.dodostatic.net/image/r:584x584/019a10a0c04379429f3a07a9df0478ed.png",
+                    "weight": 350,
+                    "nutrition": {
+                        "calories": 259.8,
+                        "protein": 10.2,
+                        "fat": 8.5,
+                        "carbs": 35.7
+                    }
+                },
+                {
+                    "id": "1-trad-30",
+                    "dough": "traditional",
+                    "size": 30,
+                    "price": 799,
+                    "img": "https://media.dodostatic.net/image/r:584x584/019a10a0c9ab792190a97768688bc6e9.png",
+                    "weight": 530,
+                    "nutrition": {
+                        "calories": 258.4,
+                        "protein": 10.2,
+                        "fat": 8.6,
+                        "carbs": 35.1
+                    }
+                },
+                {
+                    "id": "1-trad-35",
+                    "dough": "traditional",
+                    "size": 35,
+                    "price": 979,
+                    "img": "https://media.dodostatic.net/image/r:584x584/019a10a0e54870b0ae63dca748223369.png",
+                    "weight": 730,
+                    "nutrition": {
+                        "calories": 249.8,
+                        "protein": 9.9,
+                        "fat": 8.2,
+                        "carbs": 34
+                    }
+                }
             ]
         },
         {
             "id": "2",
+            "slug": "shrimps-pesto",
             "title": "Креветки и песто",
-            "category": 3,
+            "category": { "id": 3, "slug": "shrimps", "name": "С креветками" },
             "rating": 8,
             "description": "Креветки, томаты, шампиньоны, соус песто, моцарелла, итальянские травы, фирменный томатный соус",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/019591b642d87304a62d322945990861.png",
-            "details": {
-                "thin": {
-                    "30": {
-                        "nutrition": {
-                            "calories": "226",
-                            "prot": "10.1",
-                            "fat": "9.2",
-                            "carbo": "25.7",
-                            "weight": "490"
-                        },
-                        "price": "1129",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4d2c25799584e880b35987fc63.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "215",
-                            "prot": "9.5",
-                            "fat": "8.1",
-                            "carbo": "26",
-                            "weight": "710"
-                        },
-                        "price": "1319",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4d479a76d68d33d6e7483d59d7.png"
-                    }
-                },
-                "traditional": {
-                    "20": {
-                        "nutrition": {
-                            "calories": "220",
-                            "prot": "9.5",
-                            "fat": "8",
-                            "carbo": "27.6",
-                            "weight": "270"
-                        },
-                        "price": "519",
-                        "img": "https://media.dodostatic.net/image/r:584x584/019aa665e67971e1b5f2f1eb059c72d4.png"
-                    },
-                    "25": {
-                        "nutrition": {
-                            "calories": "216",
-                            "prot": "9",
-                            "fat": "7.6",
-                            "carbo": "28.1",
-                            "weight": "430"
-                        },
-                        "price": "749",
-                        "img": "https://media.dodostatic.net/image/r:584x584/019aa665ed82723f9d06ad2e01e4e6cd.png"
-                    },
-                    "30": {
-                        "nutrition": {
-                            "calories": "226",
-                            "prot": "9.3",
-                            "fat": "8",
-                            "carbo": "29.3",
-                            "weight": "610"
-                        },
-                        "price": "1129",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4d218b75d4a3e667fc2f6d7643.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "210",
-                            "prot": "8.7",
-                            "fat": "7.2",
-                            "carbo": "27.8",
-                            "weight": "860"
-                        },
-                        "price": "1319",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4d40af763397802e21641fe6c4.png"
-                    }
-                }
-            },
+            "minPrice": 519,
+            "isAvailable": true,
             "ingredients": [
+                { "id": "shrimps", "name": "Креветки", "removable": true },
+                { "id": "tomatoes", "name": "томаты", "removable": true },
+                { "id": "mushrooms", "name": "шампиньоны", "removable": true },
                 {
-                    "name": "Креветки",
+                    "id": "pesto-sauce",
+                    "name": "соус песто",
+                    "removable": false
+                },
+                { "id": "mozzarella", "name": "моцарелла", "removable": false },
+                {
+                    "id": "italian-herbs",
+                    "name": "итальянские травы",
                     "removable": true
                 },
-                { "name": "томаты", "removable": true },
-                { "name": "шампиньоны", "removable": true },
-                { "name": "соус песто", "removable": false },
-                { "name": "моцарелла", "removable": false },
-                { "name": "итальянские травы", "removable": true },
-                { "name": "фирменный томатный соус", "removable": false }
+                {
+                    "id": "tomato-sauce",
+                    "name": "фирменный томатный соус",
+                    "removable": false
+                }
+            ],
+            "variants": [
+                {
+                    "id": "2-thin-30",
+                    "dough": "thin",
+                    "size": 30,
+                    "price": 1129,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf4d2c25799584e880b35987fc63.png",
+                    "weight": 490,
+                    "nutrition": {
+                        "calories": 226,
+                        "protein": 10.1,
+                        "fat": 9.2,
+                        "carbs": 25.7
+                    }
+                },
+                {
+                    "id": "2-thin-35",
+                    "dough": "thin",
+                    "size": 35,
+                    "price": 1319,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf4d479a76d68d33d6e7483d59d7.png",
+                    "weight": 710,
+                    "nutrition": {
+                        "calories": 215,
+                        "protein": 9.5,
+                        "fat": 8.1,
+                        "carbs": 26
+                    }
+                },
+                {
+                    "id": "2-trad-20",
+                    "dough": "traditional",
+                    "size": 20,
+                    "price": 519,
+                    "img": "https://media.dodostatic.net/image/r:584x584/019aa665e67971e1b5f2f1eb059c72d4.png",
+                    "weight": 270,
+                    "nutrition": {
+                        "calories": 220,
+                        "protein": 9.5,
+                        "fat": 8,
+                        "carbs": 27.6
+                    }
+                },
+                {
+                    "id": "2-trad-25",
+                    "dough": "traditional",
+                    "size": 25,
+                    "price": 749,
+                    "img": "https://media.dodostatic.net/image/r:584x584/019aa665ed82723f9d06ad2e01e4e6cd.png",
+                    "weight": 430,
+                    "nutrition": {
+                        "calories": 216,
+                        "protein": 9,
+                        "fat": 7.6,
+                        "carbs": 28.1
+                    }
+                },
+                {
+                    "id": "2-trad-30",
+                    "dough": "traditional",
+                    "size": 30,
+                    "price": 1129,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf4d218b75d4a3e667fc2f6d7643.png",
+                    "weight": 610,
+                    "nutrition": {
+                        "calories": 226,
+                        "protein": 9.3,
+                        "fat": 8,
+                        "carbs": 29.3
+                    }
+                },
+                {
+                    "id": "2-trad-35",
+                    "dough": "traditional",
+                    "size": 35,
+                    "price": 1319,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf4d40af763397802e21641fe6c4.png",
+                    "weight": 860,
+                    "nutrition": {
+                        "calories": 210,
+                        "protein": 8.7,
+                        "fat": 7.2,
+                        "carbs": 27.8
+                    }
+                }
             ]
         },
         {
             "id": "3",
+            "slug": "four-cheese",
             "title": "Четыре сыра",
-            "category": 4,
+            "category": {
+                "id": 4,
+                "slug": "vegetarian",
+                "name": "Вегетарианские"
+            },
             "rating": 6,
             "description": "Сыр блю чиз, сыры чеддер и пармезан, моцарелла, фирменный соус альфредо",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ee7d612a1c13cbbfcc286c332d7762.png",
-            "details": {
-                "thin": {
-                    "30": {
-                        "nutrition": {
-                            "calories": "312",
-                            "prot": "13.9",
-                            "fat": "14.6",
-                            "carbo": "29.1",
-                            "weight": "410"
-                        },
-                        "price": "839",
-                        "img": "https://media.dodostatic.net/image/r:584x584/019a109fe772705d8fa18388e8b1b4ed.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "314",
-                            "prot": "13.8",
-                            "fat": "14.6",
-                            "carbo": "29.7",
-                            "weight": "590"
-                        },
-                        "price": "1029",
-                        "img": "https://media.dodostatic.net/image/r:584x584/019a10a0035774a0a49c7ceba96fff8c.png"
-                    }
-                },
-                "traditional": {
-                    "20": {
-                        "nutrition": {
-                            "calories": "303",
-                            "prot": "12.4",
-                            "fat": "12.9",
-                            "carbo": "34.5",
-                            "weight": "210"
-                        },
-                        "price": "399",
-                        "img": "https://media.dodostatic.net/image/r:584x584/019a109fd8377130ba60d317ae7e210f.png"
-                    },
-                    "25": {
-                        "nutrition": {
-                            "calories": "299",
-                            "prot": "12.5",
-                            "fat": "12.4",
-                            "carbo": "34.4",
-                            "weight": "340"
-                        },
-                        "price": "569",
-                        "img": "https://media.dodostatic.net/image/r:584x584/019a109fd0a6782896f5f7af9fc598c8.png"
-                    },
-                    "30": {
-                        "nutrition": {
-                            "calories": "306",
-                            "prot": "12.5",
-                            "fat": "12.5",
-                            "carbo": "33.8",
-                            "weight": "510"
-                        },
-                        "price": "839",
-                        "img": "https://media.dodostatic.net/image/r:584x584/019a109fe01672189d029a725ba99705.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "298",
-                            "prot": "12.6",
-                            "fat": "12.9",
-                            "carbo": "32.9",
-                            "weight": "700"
-                        },
-                        "price": "1029",
-                        "img": "https://media.dodostatic.net/image/r:584x584/019a109ffdba7421b9e1fffbcb7ceb35.png"
-                    }
-                }
-            },
+            "minPrice": 399,
+            "isAvailable": true,
             "ingredients": [
                 {
+                    "id": "blue-cheese",
                     "name": "Сыр блю чиз",
                     "removable": true
                 },
-                { "name": "сыры чеддер и пармезан", "removable": true },
-                { "name": "моцарелла", "removable": false },
-                { "name": "фирменный соус альфредо", "removable": false }
+                {
+                    "id": "cheddar-parmesan",
+                    "name": "сыры чеддер и пармезан",
+                    "removable": true
+                },
+                { "id": "mozzarella", "name": "моцарелла", "removable": false },
+                {
+                    "id": "alfredo-sauce",
+                    "name": "фирменный соус альфредо",
+                    "removable": false
+                }
+            ],
+            "variants": [
+                {
+                    "id": "3-thin-30",
+                    "dough": "thin",
+                    "size": 30,
+                    "price": 839,
+                    "img": "https://media.dodostatic.net/image/r:584x584/019a109fe772705d8fa18388e8b1b4ed.png",
+                    "weight": 410,
+                    "nutrition": {
+                        "calories": 312,
+                        "protein": 13.9,
+                        "fat": 14.6,
+                        "carbs": 29.1
+                    }
+                },
+                {
+                    "id": "3-thin-35",
+                    "dough": "thin",
+                    "size": 35,
+                    "price": 1029,
+                    "img": "https://media.dodostatic.net/image/r:584x584/019a10a0035774a0a49c7ceba96fff8c.png",
+                    "weight": 590,
+                    "nutrition": {
+                        "calories": 314,
+                        "protein": 13.8,
+                        "fat": 14.6,
+                        "carbs": 29.7
+                    }
+                },
+                {
+                    "id": "3-trad-20",
+                    "dough": "traditional",
+                    "size": 20,
+                    "price": 399,
+                    "img": "https://media.dodostatic.net/image/r:584x584/019a109fd8377130ba60d317ae7e210f.png",
+                    "weight": 210,
+                    "nutrition": {
+                        "calories": 303,
+                        "protein": 12.4,
+                        "fat": 12.9,
+                        "carbs": 34.5
+                    }
+                },
+                {
+                    "id": "3-trad-25",
+                    "dough": "traditional",
+                    "size": 25,
+                    "price": 569,
+                    "img": "https://media.dodostatic.net/image/r:584x584/019a109fd0a6782896f5f7af9fc598c8.png",
+                    "weight": 340,
+                    "nutrition": {
+                        "calories": 299,
+                        "protein": 12.5,
+                        "fat": 12.4,
+                        "carbs": 34.4
+                    }
+                },
+                {
+                    "id": "3-trad-30",
+                    "dough": "traditional",
+                    "size": 30,
+                    "price": 839,
+                    "img": "https://media.dodostatic.net/image/r:584x584/019a109fe01672189d029a725ba99705.png",
+                    "weight": 510,
+                    "nutrition": {
+                        "calories": 306,
+                        "protein": 12.5,
+                        "fat": 12.5,
+                        "carbs": 33.8
+                    }
+                },
+                {
+                    "id": "3-trad-35",
+                    "dough": "traditional",
+                    "size": 35,
+                    "price": 1029,
+                    "img": "https://media.dodostatic.net/image/r:584x584/019a109ffdba7421b9e1fffbcb7ceb35.png",
+                    "weight": 700,
+                    "nutrition": {
+                        "calories": 298,
+                        "protein": 12.6,
+                        "fat": 12.9,
+                        "carbs": 32.9
+                    }
+                }
             ]
         },
         {
             "id": "4",
+            "slug": "horseradish",
             "title": "Пицца с хреном",
-            "category": 2,
+            "category": { "id": 2, "slug": "spicy", "name": "Острые" },
             "rating": 3,
             "description": "Пикантный сливочный хрен, свиная шейка, красный лук, маринованные огурчики",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/0199b8e98ec871ab8a443887a3e1a136.png",
-            "details": {
-                "thin": {
-                    "30": {
-                        "nutrition": {
-                            "calories": "286",
-                            "prot": "11.4",
-                            "fat": "14.7",
-                            "carbo": "27.1",
-                            "weight": "460"
-                        },
-                        "price": "999",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0199b8e996e27404abe6db25e1403104.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "272.7",
-                            "prot": "10.6",
-                            "fat": "13.8",
-                            "carbo": "26.4",
-                            "weight": "690"
-                        },
-                        "price": "1299",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0199b8e94fe079939510d6fbedf696c2.png"
-                    }
-                },
-                "traditional": {
-                    "20": {
-                        "nutrition": {
-                            "calories": "279.9",
-                            "prot": "11",
-                            "fat": "13.1",
-                            "carbo": "29.6",
-                            "weight": "250"
-                        },
-                        "price": "479",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0199b8e98207712d84f462e8a91620fe.png"
-                    },
-                    "25": {
-                        "nutrition": {
-                            "calories": "280.2",
-                            "prot": "10.2",
-                            "fat": "12.8",
-                            "carbo": "30.9",
-                            "weight": "390"
-                        },
-                        "price": "699",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0199b8e987e376b493fa2e86ad8cf640.png"
-                    },
-                    "30": {
-                        "nutrition": {
-                            "calories": "283.8",
-                            "prot": "10.6",
-                            "fat": "12.7",
-                            "carbo": "31.7",
-                            "weight": "560"
-                        },
-                        "price": "999",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0199b8e98ec871ab8a443887a3e1a136.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "274.4",
-                            "prot": "10.1",
-                            "fat": "12.6",
-                            "carbo": "30.1",
-                            "weight": "790"
-                        },
-                        "price": "1299",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0199b8e962437394af2be19011be48f6.png"
-                    }
-                }
-            },
+            "minPrice": 479,
+            "isAvailable": true,
             "ingredients": [
                 {
+                    "id": "pork-neck",
                     "name": "Свиная шейка",
                     "removable": true
                 },
-                { "name": "красный лук", "removable": true },
-                { "name": "маринованные огурчики", "removable": true },
-                { "name": "моцарелла", "removable": false },
-                { "name": "соус сливочный хрен", "removable": false },
-                { "name": "фирменный соус альфредо", "removable": false }
+                { "id": "red-onion", "name": "красный лук", "removable": true },
+                {
+                    "id": "pickles",
+                    "name": "маринованные огурчики",
+                    "removable": true
+                },
+                { "id": "mozzarella", "name": "моцарелла", "removable": false },
+                {
+                    "id": "horseradish-sauce",
+                    "name": "соус сливочный хрен",
+                    "removable": false
+                },
+                {
+                    "id": "alfredo-sauce",
+                    "name": "фирменный соус альфредо",
+                    "removable": false
+                }
+            ],
+            "variants": [
+                {
+                    "id": "4-thin-30",
+                    "dough": "thin",
+                    "size": 30,
+                    "price": 999,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0199b8e996e27404abe6db25e1403104.png",
+                    "weight": 460,
+                    "nutrition": {
+                        "calories": 286,
+                        "protein": 11.4,
+                        "fat": 14.7,
+                        "carbs": 27.1
+                    }
+                },
+                {
+                    "id": "4-thin-35",
+                    "dough": "thin",
+                    "size": 35,
+                    "price": 1299,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0199b8e94fe079939510d6fbedf696c2.png",
+                    "weight": 690,
+                    "nutrition": {
+                        "calories": 272.7,
+                        "protein": 10.6,
+                        "fat": 13.8,
+                        "carbs": 26.4
+                    }
+                },
+                {
+                    "id": "4-trad-20",
+                    "dough": "traditional",
+                    "size": 20,
+                    "price": 479,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0199b8e98207712d84f462e8a91620fe.png",
+                    "weight": 250,
+                    "nutrition": {
+                        "calories": 279.9,
+                        "protein": 11,
+                        "fat": 13.1,
+                        "carbs": 29.6
+                    }
+                },
+                {
+                    "id": "4-trad-25",
+                    "dough": "traditional",
+                    "size": 25,
+                    "price": 699,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0199b8e987e376b493fa2e86ad8cf640.png",
+                    "weight": 390,
+                    "nutrition": {
+                        "calories": 280.2,
+                        "protein": 10.2,
+                        "fat": 12.8,
+                        "carbs": 30.9
+                    }
+                },
+                {
+                    "id": "4-trad-30",
+                    "dough": "traditional",
+                    "size": 30,
+                    "price": 999,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0199b8e98ec871ab8a443887a3e1a136.png",
+                    "weight": 560,
+                    "nutrition": {
+                        "calories": 283.8,
+                        "protein": 10.6,
+                        "fat": 12.7,
+                        "carbs": 31.7
+                    }
+                },
+                {
+                    "id": "4-trad-35",
+                    "dough": "traditional",
+                    "size": 35,
+                    "price": 1299,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0199b8e962437394af2be19011be48f6.png",
+                    "weight": 790,
+                    "nutrition": {
+                        "calories": 274.4,
+                        "protein": 10.1,
+                        "fat": 12.6,
+                        "carbs": 30.1
+                    }
+                }
             ]
         },
         {
             "id": "5",
+            "slug": "burger-pizza",
             "title": "Бургер-пицца",
-            "category": 1,
+            "category": { "id": 1, "slug": "meat", "name": "Мясные" },
             "rating": 5,
             "description": "Ветчина, маринованные огурчики, томаты, красный лук, чеснок, соус бургер, моцарелла, фирменный томатный соус",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.png",
-            "details": {
-                "thin": {
-                    "30": {
-                        "nutrition": {
-                            "calories": "206.1",
-                            "prot": "8.4",
-                            "fat": "7.8",
-                            "carbo": "24.1",
-                            "weight": "540"
-                        },
-                        "price": "829",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf3fb33973f78f8af9892f86df62.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "198",
-                            "prot": "7.9",
-                            "fat": "7.1",
-                            "carbo": "24.4",
-                            "weight": "780"
-                        },
-                        "price": "1029",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf3fd6af726a867a1446960cbba9.png"
-                    }
-                },
-                "traditional": {
-                    "20": {
-                        "nutrition": {
-                            "calories": "229.6",
-                            "prot": "9.4",
-                            "fat": "8.3",
-                            "carbo": "29.4",
-                            "weight": "260"
-                        },
-                        "price": "399",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0199f21016d6752ab86898d951dbb718.png"
-                    },
-                    "25": {
-                        "nutrition": {
-                            "calories": "222.5",
-                            "prot": "8.3",
-                            "fat": "7.3",
-                            "carbo": "29.4",
-                            "weight": "420"
-                        },
-                        "price": "559",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf3fa48e74e68ad91d64302fd588.png"
-                    },
-                    "30": {
-                        "nutrition": {
-                            "calories": "221.3",
-                            "prot": "8.3",
-                            "fat": "7.3",
-                            "carbo": "29",
-                            "weight": "630"
-                        },
-                        "price": "829",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "206.5",
-                            "prot": "7.7",
-                            "fat": "6.7",
-                            "carbo": "27.6",
-                            "weight": "890"
-                        },
-                        "price": "1029",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf3fc88370f281bc3a8cfff64518.png"
-                    }
-                }
-            },
+            "minPrice": 399,
+            "isAvailable": true,
             "ingredients": [
+                { "id": "ham", "name": "Ветчина", "removable": true },
                 {
-                    "name": "Ветчина",
+                    "id": "pickles",
+                    "name": "маринованные огурчики",
                     "removable": true
                 },
-                { "name": "маринованные огурчики", "removable": true },
-                { "name": "томаты", "removable": true },
-                { "name": "красный лук", "removable": true },
-                { "name": "чеснок", "removable": true },
-                { "name": "соус бургер", "removable": false },
-                { "name": "моцарелла", "removable": false },
-                { "name": "фирменный томатный соус", "removable": false }
+                { "id": "tomatoes", "name": "томаты", "removable": true },
+                { "id": "red-onion", "name": "красный лук", "removable": true },
+                { "id": "garlic", "name": "чеснок", "removable": true },
+                {
+                    "id": "burger-sauce",
+                    "name": "соус бургер",
+                    "removable": false
+                },
+                { "id": "mozzarella", "name": "моцарелла", "removable": false },
+                {
+                    "id": "tomato-sauce",
+                    "name": "фирменный томатный соус",
+                    "removable": false
+                }
+            ],
+            "variants": [
+                {
+                    "id": "5-thin-30",
+                    "dough": "thin",
+                    "size": 30,
+                    "price": 829,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf3fb33973f78f8af9892f86df62.png",
+                    "weight": 540,
+                    "nutrition": {
+                        "calories": 206.1,
+                        "protein": 8.4,
+                        "fat": 7.8,
+                        "carbs": 24.1
+                    }
+                },
+                {
+                    "id": "5-thin-35",
+                    "dough": "thin",
+                    "size": 35,
+                    "price": 1029,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf3fd6af726a867a1446960cbba9.png",
+                    "weight": 780,
+                    "nutrition": {
+                        "calories": 198,
+                        "protein": 7.9,
+                        "fat": 7.1,
+                        "carbs": 24.4
+                    }
+                },
+                {
+                    "id": "5-trad-20",
+                    "dough": "traditional",
+                    "size": 20,
+                    "price": 399,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0199f21016d6752ab86898d951dbb718.png",
+                    "weight": 260,
+                    "nutrition": {
+                        "calories": 229.6,
+                        "protein": 9.4,
+                        "fat": 8.3,
+                        "carbs": 29.4
+                    }
+                },
+                {
+                    "id": "5-trad-25",
+                    "dough": "traditional",
+                    "size": 25,
+                    "price": 559,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf3fa48e74e68ad91d64302fd588.png",
+                    "weight": 420,
+                    "nutrition": {
+                        "calories": 222.5,
+                        "protein": 8.3,
+                        "fat": 7.3,
+                        "carbs": 29.4
+                    }
+                },
+                {
+                    "id": "5-trad-30",
+                    "dough": "traditional",
+                    "size": 30,
+                    "price": 829,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.png",
+                    "weight": 630,
+                    "nutrition": {
+                        "calories": 221.3,
+                        "protein": 8.3,
+                        "fat": 7.3,
+                        "carbs": 29
+                    }
+                },
+                {
+                    "id": "5-trad-35",
+                    "dough": "traditional",
+                    "size": 35,
+                    "price": 1029,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf3fc88370f281bc3a8cfff64518.png",
+                    "weight": 890,
+                    "nutrition": {
+                        "calories": 206.5,
+                        "protein": 7.7,
+                        "fat": 6.7,
+                        "carbs": 27.6
+                    }
+                }
             ]
         },
         {
             "id": "6",
+            "slug": "cheese",
             "title": "Сырная",
-            "category": 4,
+            "category": {
+                "id": 4,
+                "slug": "vegetarian",
+                "name": "Вегетарианские"
+            },
             "rating": 2,
             "description": "Моцарелла, сыры чеддер и пармезан, фирменный соус альфредо",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ee7d610d2925109ab2e1c92cc5383c.png",
-            "details": {
-                "thin": {
-                    "30": {
-                        "nutrition": {
-                            "calories": "304",
-                            "prot": "12.1",
-                            "fat": "12.7",
-                            "carbo": "33.2",
-                            "weight": "360"
-                        },
-                        "price": "619",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf40f3da72bd8d205ff00cc3613e.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "296",
-                            "prot": "11.5",
-                            "fat": "12.2",
-                            "carbo": "33.1",
-                            "weight": "530"
-                        },
-                        "price": "799",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf410ffa72d9b35802f9f0c97c43.png"
-                    }
-                },
-                "traditional": {
-                    "20": {
-                        "nutrition": {
-                            "calories": "328",
-                            "prot": "13.1",
-                            "fat": "12.8",
-                            "carbo": "40.2",
-                            "weight": "180"
-                        },
-                        "price": "289",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf40dc1574eca41f1be918150dff.png"
-                    },
-                    "25": {
-                        "nutrition": {
-                            "calories": "294",
-                            "prot": "10.6",
-                            "fat": "10.3",
-                            "carbo": "37.8",
-                            "weight": "310"
-                        },
-                        "price": "339",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf40e2987242886716627224c196.png"
-                    },
-                    "30": {
-                        "nutrition": {
-                            "calories": "292",
-                            "prot": "10.8",
-                            "fat": "10.6",
-                            "carbo": "36.7",
-                            "weight": "470"
-                        },
-                        "price": "619",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf40eb1171aabe90b1b3ce07c0c5.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "291",
-                            "prot": "10.7",
-                            "fat": "10.7",
-                            "carbo": "36",
-                            "weight": "640"
-                        },
-                        "price": "779",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4107ab727ca78f5f0a80f9966f.png"
-                    }
-                }
-            },
+            "minPrice": 289,
+            "isAvailable": true,
             "ingredients": [
+                { "id": "mozzarella", "name": "Моцарелла", "removable": false },
                 {
-                    "name": "Моцарелла",
+                    "id": "cheddar-parmesan",
+                    "name": "сыры чеддер и пармезан",
                     "removable": false
                 },
-                { "name": "сыры чеддер и пармезан", "removable": false },
-                { "name": "фирменный соус альфредо", "removable": false }
+                {
+                    "id": "alfredo-sauce",
+                    "name": "фирменный соус альфредо",
+                    "removable": false
+                }
+            ],
+            "variants": [
+                {
+                    "id": "6-thin-30",
+                    "dough": "thin",
+                    "size": 30,
+                    "price": 619,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf40f3da72bd8d205ff00cc3613e.png",
+                    "weight": 360,
+                    "nutrition": {
+                        "calories": 304,
+                        "protein": 12.1,
+                        "fat": 12.7,
+                        "carbs": 33.2
+                    }
+                },
+                {
+                    "id": "6-thin-35",
+                    "dough": "thin",
+                    "size": 35,
+                    "price": 799,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf410ffa72d9b35802f9f0c97c43.png",
+                    "weight": 530,
+                    "nutrition": {
+                        "calories": 296,
+                        "protein": 11.5,
+                        "fat": 12.2,
+                        "carbs": 33.1
+                    }
+                },
+                {
+                    "id": "6-trad-20",
+                    "dough": "traditional",
+                    "size": 20,
+                    "price": 289,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf40dc1574eca41f1be918150dff.png",
+                    "weight": 180,
+                    "nutrition": {
+                        "calories": 328,
+                        "protein": 13.1,
+                        "fat": 12.8,
+                        "carbs": 40.2
+                    }
+                },
+                {
+                    "id": "6-trad-25",
+                    "dough": "traditional",
+                    "size": 25,
+                    "price": 339,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf40e2987242886716627224c196.png",
+                    "weight": 310,
+                    "nutrition": {
+                        "calories": 294,
+                        "protein": 10.6,
+                        "fat": 10.3,
+                        "carbs": 37.8
+                    }
+                },
+                {
+                    "id": "6-trad-30",
+                    "dough": "traditional",
+                    "size": 30,
+                    "price": 619,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf40eb1171aabe90b1b3ce07c0c5.png",
+                    "weight": 470,
+                    "nutrition": {
+                        "calories": 292,
+                        "protein": 10.8,
+                        "fat": 10.6,
+                        "carbs": 36.7
+                    }
+                },
+                {
+                    "id": "6-trad-35",
+                    "dough": "traditional",
+                    "size": 35,
+                    "price": 779,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf4107ab727ca78f5f0a80f9966f.png",
+                    "weight": 640,
+                    "nutrition": {
+                        "calories": 291,
+                        "protein": 10.7,
+                        "fat": 10.7,
+                        "carbs": 36
+                    }
+                }
             ]
         },
         {
             "id": "7",
+            "slug": "pepperoni-fresh",
             "title": "Пепперони фреш",
-            "category": 2,
+            "category": { "id": 2, "slug": "spicy", "name": "Острые" },
             "rating": 7,
             "description": "Пикантная пепперони, увеличенная порция моцареллы, томаты, фирменный томатный соус",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ee7d612fc7b7fca5be822752bee1e5.png",
-            "details": {
-                "thin": {
-                    "30": {
-                        "nutrition": {
-                            "calories": "263",
-                            "prot": "12.8",
-                            "fat": "11.2",
-                            "carbo": "25.9",
-                            "weight": "480"
-                        },
-                        "price": "629",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf57389e72eb81e75f8fda42db70.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "264",
-                            "prot": "12.5",
-                            "fat": "11",
-                            "carbo": "27.2",
-                            "weight": "670"
-                        },
-                        "price": "749",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf576c45725cac227fd81cd6abfd.png"
-                    }
-                },
-                "traditional": {
-                    "20": {
-                        "nutrition": {
-                            "calories": "298",
-                            "prot": "14.1",
-                            "fat": "11.8",
-                            "carbo": "31.9",
-                            "weight": "230"
-                        },
-                        "price": "289",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0199f218497b75e9af21dba387e3b14b.png"
-                    },
-                    "25": {
-                        "nutrition": {
-                            "calories": "271",
-                            "prot": "12.2",
-                            "fat": "10.4",
-                            "carbo": "32.2",
-                            "weight": "370"
-                        },
-                        "price": "369",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf572a8f77118a19836d5f75e235.png"
-                    },
-                    "30": {
-                        "nutrition": {
-                            "calories": "266",
-                            "prot": "11.8",
-                            "fat": "9.9",
-                            "carbo": "30.6",
-                            "weight": "580"
-                        },
-                        "price": "629",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf57bc517218ab93c762f4b0193e.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "264",
-                            "prot": "11.7",
-                            "fat": "9.9",
-                            "carbo": "30.4",
-                            "weight": "780"
-                        },
-                        "price": "749",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf574bf879bdb7fbad84b39cd3e2.png"
-                    }
-                }
-            },
+            "minPrice": 289,
+            "isAvailable": true,
             "ingredients": [
                 {
+                    "id": "pepperoni",
                     "name": "Пикантная пепперони",
                     "removable": true
                 },
-                { "name": "увеличенная порция моцареллы", "removable": false },
-                { "name": "томаты", "removable": true },
-                { "name": "фирменный томатный соус", "removable": false }
+                {
+                    "id": "mozzarella",
+                    "name": "увеличенная порция моцареллы",
+                    "removable": false
+                },
+                { "id": "tomatoes", "name": "томаты", "removable": true },
+                {
+                    "id": "tomato-sauce",
+                    "name": "фирменный томатный соус",
+                    "removable": false
+                }
+            ],
+            "variants": [
+                {
+                    "id": "7-thin-30",
+                    "dough": "thin",
+                    "size": 30,
+                    "price": 629,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf57389e72eb81e75f8fda42db70.png",
+                    "weight": 480,
+                    "nutrition": {
+                        "calories": 263,
+                        "protein": 12.8,
+                        "fat": 11.2,
+                        "carbs": 25.9
+                    }
+                },
+                {
+                    "id": "7-thin-35",
+                    "dough": "thin",
+                    "size": 35,
+                    "price": 749,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf576c45725cac227fd81cd6abfd.png",
+                    "weight": 670,
+                    "nutrition": {
+                        "calories": 264,
+                        "protein": 12.5,
+                        "fat": 11,
+                        "carbs": 27.2
+                    }
+                },
+                {
+                    "id": "7-trad-20",
+                    "dough": "traditional",
+                    "size": 20,
+                    "price": 289,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0199f218497b75e9af21dba387e3b14b.png",
+                    "weight": 230,
+                    "nutrition": {
+                        "calories": 298,
+                        "protein": 14.1,
+                        "fat": 11.8,
+                        "carbs": 31.9
+                    }
+                },
+                {
+                    "id": "7-trad-25",
+                    "dough": "traditional",
+                    "size": 25,
+                    "price": 369,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf572a8f77118a19836d5f75e235.png",
+                    "weight": 370,
+                    "nutrition": {
+                        "calories": 271,
+                        "protein": 12.2,
+                        "fat": 10.4,
+                        "carbs": 32.2
+                    }
+                },
+                {
+                    "id": "7-trad-30",
+                    "dough": "traditional",
+                    "size": 30,
+                    "price": 629,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf57bc517218ab93c762f4b0193e.png",
+                    "weight": 580,
+                    "nutrition": {
+                        "calories": 266,
+                        "protein": 11.8,
+                        "fat": 9.9,
+                        "carbs": 30.6
+                    }
+                },
+                {
+                    "id": "7-trad-35",
+                    "dough": "traditional",
+                    "size": 35,
+                    "price": 749,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf574bf879bdb7fbad84b39cd3e2.png",
+                    "weight": 780,
+                    "nutrition": {
+                        "calories": 264,
+                        "protein": 11.7,
+                        "fat": 9.9,
+                        "carbs": 30.4
+                    }
+                }
             ]
         },
         {
             "id": "8",
+            "slug": "vegetables-mushrooms",
             "title": "Овощи и грибы",
-            "category": 4,
+            "category": {
+                "id": 4,
+                "slug": "vegetarian",
+                "name": "Вегетарианские"
+            },
             "rating": 9,
             "description": "Шампиньоны, томаты, сладкий перец, красный лук, кубики брынзы, моцарелла, фирменный томатный соус, итальянские травы",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/0198bf29e76179b88bdbf2ec5527bba3.png",
-            "details": {
-                "thin": {
-                    "30": {
-                        "nutrition": {
-                            "calories": "201.3",
-                            "prot": "8.8",
-                            "fat": "6.8",
-                            "carbo": "24.8",
-                            "weight": "530"
-                        },
-                        "price": "919",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf29f44c75079fd3563920094ded.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "202.4",
-                            "prot": "8.6",
-                            "fat": "6.5",
-                            "carbo": "26",
-                            "weight": "740"
-                        },
-                        "price": "1059",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2a1b67782f98556b53861f31ae.png"
-                    }
-                },
-                "traditional": {
-                    "20": {
-                        "nutrition": {
-                            "calories": "240.7",
-                            "prot": "11",
-                            "fat": "8.4",
-                            "carbo": "34.5",
-                            "weight": "220"
-                        },
-                        "price": "399",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf29cb9973d991ff76366be809b0.png"
-                    },
-                    "25": {
-                        "nutrition": {
-                            "calories": "214.9",
-                            "prot": "8.5",
-                            "fat": "6.3",
-                            "carbo": "29.7",
-                            "weight": "420"
-                        },
-                        "price": "609",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf29d77077d5ae97f55c6859f7e2.png"
-                    },
-                    "30": {
-                        "nutrition": {
-                            "calories": "220.9",
-                            "prot": "8.8",
-                            "fat": "6.5",
-                            "carbo": "30.2",
-                            "weight": "610"
-                        },
-                        "price": "919",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf29e76179b88bdbf2ec5527bba3.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "205.9",
-                            "prot": "8.1",
-                            "fat": "6",
-                            "carbo": "28.5",
-                            "weight": "870"
-                        },
-                        "price": "1059",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2a02ab75a7b30c9483c3ec011c.png"
-                    }
-                }
-            },
+            "minPrice": 399,
+            "isAvailable": true,
             "ingredients": [
+                { "id": "mushrooms", "name": "Шампиньоны", "removable": true },
+                { "id": "tomatoes", "name": "томаты", "removable": true },
                 {
-                    "name": "Шампиньоны",
+                    "id": "bell-pepper",
+                    "name": "сладкий перец",
                     "removable": true
                 },
-                { "name": "томаты", "removable": true },
-                { "name": "сладкий перец", "removable": true },
-                { "name": "красный лук", "removable": true },
-                { "name": "кубики брынзы", "removable": true },
-                { "name": "моцарелла", "removable": false },
-                { "name": "фирменный томатный соус", "removable": false },
-                { "name": "итальянские травы", "removable": true }
+                { "id": "red-onion", "name": "красный лук", "removable": true },
+                { "id": "feta", "name": "кубики брынзы", "removable": true },
+                { "id": "mozzarella", "name": "моцарелла", "removable": false },
+                {
+                    "id": "tomato-sauce",
+                    "name": "фирменный томатный соус",
+                    "removable": false
+                },
+                {
+                    "id": "italian-herbs",
+                    "name": "итальянские травы",
+                    "removable": true
+                }
+            ],
+            "variants": [
+                {
+                    "id": "8-thin-30",
+                    "dough": "thin",
+                    "size": 30,
+                    "price": 919,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf29f44c75079fd3563920094ded.png",
+                    "weight": 530,
+                    "nutrition": {
+                        "calories": 201.3,
+                        "protein": 8.8,
+                        "fat": 6.8,
+                        "carbs": 24.8
+                    }
+                },
+                {
+                    "id": "8-thin-35",
+                    "dough": "thin",
+                    "size": 35,
+                    "price": 1059,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf2a1b67782f98556b53861f31ae.png",
+                    "weight": 740,
+                    "nutrition": {
+                        "calories": 202.4,
+                        "protein": 8.6,
+                        "fat": 6.5,
+                        "carbs": 26
+                    }
+                },
+                {
+                    "id": "8-trad-20",
+                    "dough": "traditional",
+                    "size": 20,
+                    "price": 399,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf29cb9973d991ff76366be809b0.png",
+                    "weight": 220,
+                    "nutrition": {
+                        "calories": 240.7,
+                        "protein": 11,
+                        "fat": 8.4,
+                        "carbs": 34.5
+                    }
+                },
+                {
+                    "id": "8-trad-25",
+                    "dough": "traditional",
+                    "size": 25,
+                    "price": 609,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf29d77077d5ae97f55c6859f7e2.png",
+                    "weight": 420,
+                    "nutrition": {
+                        "calories": 214.9,
+                        "protein": 8.5,
+                        "fat": 6.3,
+                        "carbs": 29.7
+                    }
+                },
+                {
+                    "id": "8-trad-30",
+                    "dough": "traditional",
+                    "size": 30,
+                    "price": 919,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf29e76179b88bdbf2ec5527bba3.png",
+                    "weight": 610,
+                    "nutrition": {
+                        "calories": 220.9,
+                        "protein": 8.8,
+                        "fat": 6.5,
+                        "carbs": 30.2
+                    }
+                },
+                {
+                    "id": "8-trad-35",
+                    "dough": "traditional",
+                    "size": 35,
+                    "price": 1059,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf2a02ab75a7b30c9483c3ec011c.png",
+                    "weight": 870,
+                    "nutrition": {
+                        "calories": 205.9,
+                        "protein": 8.1,
+                        "fat": 6,
+                        "carbs": 28.5
+                    }
+                }
             ]
         },
         {
             "id": "9",
+            "slug": "ham-mushrooms",
             "title": "Ветчина и грибы",
-            "category": 1,
+            "category": { "id": 1, "slug": "meat", "name": "Мясные" },
             "rating": 4,
             "description": "Ветчина, шампиньоны, увеличенная порция моцареллы, фирменный томатный соус",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ef5b10b39bbbbda9f8c4e4ff1b067c.png",
-            "details": {
-                "thin": {
-                    "30": {
-                        "nutrition": {
-                            "calories": "290",
-                            "prot": "12",
-                            "fat": "11.7",
-                            "carbo": "32.3",
-                            "weight": "370"
-                        },
-                        "price": "799",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf41a6f273148459771824eab950.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "274",
-                            "prot": "10.8",
-                            "fat": "10.6",
-                            "carbo": "31.9",
-                            "weight": "550"
-                        },
-                        "price": "989",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf41d0d174ab9949445631f692f7.png"
+            "minPrice": 369,
+            "isAvailable": true,
+            "ingredients": [
+                { "id": "ham", "name": "Ветчина", "removable": true },
+                { "id": "mushrooms", "name": "шампиньоны", "removable": true },
+                {
+                    "id": "mozzarella",
+                    "name": "увеличенная порция моцареллы",
+                    "removable": false
+                },
+                {
+                    "id": "tomato-sauce",
+                    "name": "фирменный томатный соус",
+                    "removable": false
+                }
+            ],
+            "variants": [
+                {
+                    "id": "9-thin-30",
+                    "dough": "thin",
+                    "size": 30,
+                    "price": 799,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf41a6f273148459771824eab950.png",
+                    "weight": 370,
+                    "nutrition": {
+                        "calories": 290,
+                        "protein": 12,
+                        "fat": 11.7,
+                        "carbs": 32.3
                     }
                 },
-                "traditional": {
-                    "20": {
-                        "nutrition": {
-                            "calories": "306",
-                            "prot": "12.7",
-                            "fat": "11.5",
-                            "carbo": "38.1",
-                            "weight": "190"
-                        },
-                        "price": "369",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf418bcb70c183b988f3cc9ca605.png"
-                    },
-                    "25": {
-                        "nutrition": {
-                            "calories": "283",
-                            "prot": "10.7",
-                            "fat": "9.7",
-                            "carbo": "36.6",
-                            "weight": "320"
-                        },
-                        "price": "519",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4190af77a1b80fd4519b70729a.png"
-                    },
-                    "30": {
-                        "nutrition": {
-                            "calories": "282",
-                            "prot": "10.7",
-                            "fat": "9.8",
-                            "carbo": "35.9",
-                            "weight": "480"
-                        },
-                        "price": "799",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198c659b357718f9c77ad0dc392dadf.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "285",
-                            "prot": "10.6",
-                            "fat": "9.9",
-                            "carbo": "36.6",
-                            "weight": "630"
-                        },
-                        "price": "989",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf41c9c37894828208b0d2154647.png"
+                {
+                    "id": "9-thin-35",
+                    "dough": "thin",
+                    "size": 35,
+                    "price": 989,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf41d0d174ab9949445631f692f7.png",
+                    "weight": 550,
+                    "nutrition": {
+                        "calories": 274,
+                        "protein": 10.8,
+                        "fat": 10.6,
+                        "carbs": 31.9
+                    }
+                },
+                {
+                    "id": "9-trad-20",
+                    "dough": "traditional",
+                    "size": 20,
+                    "price": 369,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf418bcb70c183b988f3cc9ca605.png",
+                    "weight": 190,
+                    "nutrition": {
+                        "calories": 306,
+                        "protein": 12.7,
+                        "fat": 11.5,
+                        "carbs": 38.1
+                    }
+                },
+                {
+                    "id": "9-trad-25",
+                    "dough": "traditional",
+                    "size": 25,
+                    "price": 519,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf4190af77a1b80fd4519b70729a.png",
+                    "weight": 320,
+                    "nutrition": {
+                        "calories": 283,
+                        "protein": 10.7,
+                        "fat": 9.7,
+                        "carbs": 36.6
+                    }
+                },
+                {
+                    "id": "9-trad-30",
+                    "dough": "traditional",
+                    "size": 30,
+                    "price": 799,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198c659b357718f9c77ad0dc392dadf.png",
+                    "weight": 480,
+                    "nutrition": {
+                        "calories": 282,
+                        "protein": 10.7,
+                        "fat": 9.8,
+                        "carbs": 35.9
+                    }
+                },
+                {
+                    "id": "9-trad-35",
+                    "dough": "traditional",
+                    "size": 35,
+                    "price": 989,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf41c9c37894828208b0d2154647.png",
+                    "weight": 630,
+                    "nutrition": {
+                        "calories": 285,
+                        "protein": 10.6,
+                        "fat": 9.9,
+                        "carbs": 36.6
                     }
                 }
-            },
-            "ingredients": [
-                {
-                    "name": "Ветчина",
-                    "removable": true
-                },
-                { "name": "шампиньоны", "removable": true },
-                { "name": "увеличенная порция моцареллы", "removable": false },
-                { "name": "фирменный томатный соус", "removable": false }
             ]
         },
         {
             "id": "10",
+            "slug": "double-chicken",
             "title": "Двойной цыпленок",
-            "category": 5,
+            "category": { "id": 5, "slug": "chicken", "name": "С курицей" },
             "rating": 3,
             "description": "Цыпленок, моцарелла, фирменный соус альфредо",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ee7d614cbe0530b7234b6d7a6e5f8e.png",
-            "details": {
-                "thin": {
-                    "30": {
-                        "nutrition": {
-                            "calories": "248",
-                            "prot": "12.4",
-                            "fat": "9.7",
-                            "carbo": "27.8",
-                            "weight": "430"
-                        },
-                        "price": "749",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf3e48527603ae064ff5994c99f3.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "247",
-                            "prot": "12.2",
-                            "fat": "9.3",
-                            "carbo": "28.8",
-                            "weight": "610"
-                        },
-                        "price": "869",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf3e62ab78d88f34d70f2f5ba902.png"
+            "minPrice": 349,
+            "isAvailable": true,
+            "ingredients": [
+                { "id": "chicken", "name": "Цыпленок", "removable": true },
+                { "id": "mozzarella", "name": "моцарелла", "removable": false },
+                {
+                    "id": "alfredo-sauce",
+                    "name": "фирменный соус альфредо",
+                    "removable": false
+                }
+            ],
+            "variants": [
+                {
+                    "id": "10-thin-30",
+                    "dough": "thin",
+                    "size": 30,
+                    "price": 749,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf3e48527603ae064ff5994c99f3.png",
+                    "weight": 430,
+                    "nutrition": {
+                        "calories": 248,
+                        "protein": 12.4,
+                        "fat": 9.7,
+                        "carbs": 27.8
                     }
                 },
-                "traditional": {
-                    "20": {
-                        "nutrition": {
-                            "calories": "312",
-                            "prot": "14.8",
-                            "fat": "11.2",
-                            "carbo": "38.1",
-                            "weight": "190"
-                        },
-                        "price": "349",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0199f2169f4c762da384921acd03c950.png"
-                    },
-                    "25": {
-                        "nutrition": {
-                            "calories": "249",
-                            "prot": "11",
-                            "fat": "8.3",
-                            "carbo": "32.6",
-                            "weight": "360"
-                        },
-                        "price": "489",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf3e3bec72d2997d447502c2e3ee.png"
-                    },
-                    "30": {
-                        "nutrition": {
-                            "calories": "258",
-                            "prot": "11.6",
-                            "fat": "8.8",
-                            "carbo": "33.2",
-                            "weight": "520"
-                        },
-                        "price": "749",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf3e424371b49f0b8d7dbe320a70.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "253",
-                            "prot": "11.5",
-                            "fat": "8.6",
-                            "carbo": "32.5",
-                            "weight": "710"
-                        },
-                        "price": "869",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf3e5cc077b49d3968b9fe3d7b99.png"
+                {
+                    "id": "10-thin-35",
+                    "dough": "thin",
+                    "size": 35,
+                    "price": 869,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf3e62ab78d88f34d70f2f5ba902.png",
+                    "weight": 610,
+                    "nutrition": {
+                        "calories": 247,
+                        "protein": 12.2,
+                        "fat": 9.3,
+                        "carbs": 28.8
+                    }
+                },
+                {
+                    "id": "10-trad-20",
+                    "dough": "traditional",
+                    "size": 20,
+                    "price": 349,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0199f2169f4c762da384921acd03c950.png",
+                    "weight": 190,
+                    "nutrition": {
+                        "calories": 312,
+                        "protein": 14.8,
+                        "fat": 11.2,
+                        "carbs": 38.1
+                    }
+                },
+                {
+                    "id": "10-trad-25",
+                    "dough": "traditional",
+                    "size": 25,
+                    "price": 489,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf3e3bec72d2997d447502c2e3ee.png",
+                    "weight": 360,
+                    "nutrition": {
+                        "calories": 249,
+                        "protein": 11,
+                        "fat": 8.3,
+                        "carbs": 32.6
+                    }
+                },
+                {
+                    "id": "10-trad-30",
+                    "dough": "traditional",
+                    "size": 30,
+                    "price": 749,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf3e424371b49f0b8d7dbe320a70.png",
+                    "weight": 520,
+                    "nutrition": {
+                        "calories": 258,
+                        "protein": 11.6,
+                        "fat": 8.8,
+                        "carbs": 33.2
+                    }
+                },
+                {
+                    "id": "10-trad-35",
+                    "dough": "traditional",
+                    "size": 35,
+                    "price": 869,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf3e5cc077b49d3968b9fe3d7b99.png",
+                    "weight": 710,
+                    "nutrition": {
+                        "calories": 253,
+                        "protein": 11.5,
+                        "fat": 8.6,
+                        "carbs": 32.5
                     }
                 }
-            },
-            "ingredients": [
-                {
-                    "name": "Цыпленок",
-                    "removable": true
-                },
-                { "name": "моцарелла", "removable": false },
-                { "name": "фирменный соус альфредо", "removable": false }
             ]
         },
         {
             "id": "11",
+            "slug": "ham-cheese",
             "title": "Ветчина и сыр",
-            "category": 1,
+            "category": { "id": 1, "slug": "meat", "name": "Мясные" },
             "rating": 6,
             "description": "Ветчина, моцарелла, фирменный соус альфредо",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ee7d60fda22358ac33c6a44eb093a2.png",
-            "details": {
-                "thin": {
-                    "30": {
-                        "nutrition": {
-                            "calories": "290",
-                            "prot": "12",
-                            "fat": "11.7",
-                            "carbo": "32.3",
-                            "weight": "370"
-                        },
-                        "price": "709",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf284e0e74ffb47b0a668686351b.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "274",
-                            "prot": "10.8",
-                            "fat": "10.6",
-                            "carbo": "31.9",
-                            "weight": "550"
-                        },
-                        "price": "839",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf28744a788e8ea8e1efa999caf6.png"
+            "minPrice": 339,
+            "isAvailable": true,
+            "ingredients": [
+                { "id": "ham", "name": "Ветчина", "removable": false },
+                { "id": "mozzarella", "name": "моцарелла", "removable": false },
+                {
+                    "id": "alfredo-sauce",
+                    "name": "фирменный соус альфредо",
+                    "removable": false
+                }
+            ],
+            "variants": [
+                {
+                    "id": "11-thin-30",
+                    "dough": "thin",
+                    "size": 30,
+                    "price": 709,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf284e0e74ffb47b0a668686351b.png",
+                    "weight": 370,
+                    "nutrition": {
+                        "calories": 290,
+                        "protein": 12,
+                        "fat": 11.7,
+                        "carbs": 32.3
                     }
                 },
-                "traditional": {
-                    "20": {
-                        "nutrition": {
-                            "calories": "306",
-                            "prot": "12.7",
-                            "fat": "11.5",
-                            "carbo": "38.1",
-                            "weight": "190"
-                        },
-                        "price": "339",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2824e4797e898804ed01ef1cb7.png"
-                    },
-                    "25": {
-                        "nutrition": {
-                            "calories": "283",
-                            "prot": "10.7",
-                            "fat": "9.7",
-                            "carbo": "36.6",
-                            "weight": "320"
-                        },
-                        "price": "479",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf28326a76069673951c0086b4f8.png"
-                    },
-                    "30": {
-                        "nutrition": {
-                            "calories": "282",
-                            "prot": "10.7",
-                            "fat": "9.8",
-                            "carbo": "35.9",
-                            "weight": "480"
-                        },
-                        "price": "709",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf283b2372ea8e7cfc8adae9ea84.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "285",
-                            "prot": "10.6",
-                            "fat": "9.9",
-                            "carbo": "36.6",
-                            "weight": "630"
-                        },
-                        "price": "839",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2859e1745d8b2bde952cf1283f.png"
+                {
+                    "id": "11-thin-35",
+                    "dough": "thin",
+                    "size": 35,
+                    "price": 839,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf28744a788e8ea8e1efa999caf6.png",
+                    "weight": 550,
+                    "nutrition": {
+                        "calories": 274,
+                        "protein": 10.8,
+                        "fat": 10.6,
+                        "carbs": 31.9
+                    }
+                },
+                {
+                    "id": "11-trad-20",
+                    "dough": "traditional",
+                    "size": 20,
+                    "price": 339,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf2824e4797e898804ed01ef1cb7.png",
+                    "weight": 190,
+                    "nutrition": {
+                        "calories": 306,
+                        "protein": 12.7,
+                        "fat": 11.5,
+                        "carbs": 38.1
+                    }
+                },
+                {
+                    "id": "11-trad-25",
+                    "dough": "traditional",
+                    "size": 25,
+                    "price": 479,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf28326a76069673951c0086b4f8.png",
+                    "weight": 320,
+                    "nutrition": {
+                        "calories": 283,
+                        "protein": 10.7,
+                        "fat": 9.7,
+                        "carbs": 36.6
+                    }
+                },
+                {
+                    "id": "11-trad-30",
+                    "dough": "traditional",
+                    "size": 30,
+                    "price": 709,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf283b2372ea8e7cfc8adae9ea84.png",
+                    "weight": 480,
+                    "nutrition": {
+                        "calories": 282,
+                        "protein": 10.7,
+                        "fat": 9.8,
+                        "carbs": 35.9
+                    }
+                },
+                {
+                    "id": "11-trad-35",
+                    "dough": "traditional",
+                    "size": 35,
+                    "price": 839,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf2859e1745d8b2bde952cf1283f.png",
+                    "weight": 630,
+                    "nutrition": {
+                        "calories": 285,
+                        "protein": 10.6,
+                        "fat": 9.9,
+                        "carbs": 36.6
                     }
                 }
-            },
-            "ingredients": [
-                {
-                    "name": "Ветчина",
-                    "removable": false
-                },
-                { "name": "моцарелла", "removable": false },
-                { "name": "фирменный соус альфредо", "removable": false }
             ]
         },
         {
             "id": "12",
+            "slug": "arriva",
             "title": "Аррива",
-            "category": 2,
+            "category": { "id": 2, "slug": "spicy", "name": "Острые" },
             "rating": 8,
             "description": "Цыпленок, острые колбаски чоризо, соус бургер, сладкий перец, красный лук, томаты, моцарелла, соус ранч, чеснок",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/019591a0591d7642b97bf6ed6da45252.png",
-            "details": {
-                "thin": {
-                    "30": {
-                        "nutrition": {
-                            "calories": "282",
-                            "prot": "10.8",
-                            "fat": "13.7",
-                            "carbo": "27.1",
-                            "weight": "460"
-                        },
-                        "price": "969",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2e637f77198d981810a1d0e1bd.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "276",
-                            "prot": "10.5",
-                            "fat": "12.8",
-                            "carbo": "27.9",
-                            "weight": "650"
-                        },
-                        "price": "1159",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2e910172f1a0c13d2cd564daa7.png"
-                    }
-                },
-                "traditional": {
-                    "20": {
-                        "nutrition": {
-                            "calories": "280",
-                            "prot": "12.9",
-                            "fat": "12.7",
-                            "carbo": "30.7",
-                            "weight": "240"
-                        },
-                        "price": "469",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0199f20f177175a48ccae95b042effdc.png"
-                    },
-                    "25": {
-                        "nutrition": {
-                            "calories": "285",
-                            "prot": "10.9",
-                            "fat": "12.4",
-                            "carbo": "32.6",
-                            "weight": "370"
-                        },
-                        "price": "669",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2e4f9c7980a5390fb80de3fb04.png"
-                    },
-                    "30": {
-                        "nutrition": {
-                            "calories": "276",
-                            "prot": "9.9",
-                            "fat": "11.7",
-                            "carbo": "31.1",
-                            "weight": "570"
-                        },
-                        "price": "969",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2e5d2973a4bf5ec61161496f91.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "274",
-                            "prot": "9.9",
-                            "fat": "11.4",
-                            "carbo": "31.2",
-                            "weight": "760"
-                        },
-                        "price": "1159",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2e84ed7564b0265013a4e43711.png"
-                    }
-                }
-            },
+            "minPrice": 469,
+            "isAvailable": true,
             "ingredients": [
+                { "id": "chicken", "name": "Цыпленок", "removable": true },
                 {
-                    "name": "Цыпленок",
+                    "id": "chorizo",
+                    "name": "острые колбаски чоризо",
                     "removable": true
                 },
-                { "name": "острые колбаски чоризо", "removable": true },
-                { "name": "соус бургер", "removable": false },
-                { "name": "сладкий перец", "removable": true },
-                { "name": "красный лук", "removable": true },
-                { "name": "томаты", "removable": true },
-                { "name": "моцарелла", "removable": false },
-                { "name": "соус ранч", "removable": false },
-                { "name": "чеснок", "removable": true }
+                {
+                    "id": "burger-sauce",
+                    "name": "соус бургер",
+                    "removable": false
+                },
+                {
+                    "id": "bell-pepper",
+                    "name": "сладкий перец",
+                    "removable": true
+                },
+                { "id": "red-onion", "name": "красный лук", "removable": true },
+                { "id": "tomatoes", "name": "томаты", "removable": true },
+                { "id": "mozzarella", "name": "моцарелла", "removable": false },
+                {
+                    "id": "ranch-sauce",
+                    "name": "соус ранч",
+                    "removable": false
+                },
+                { "id": "garlic", "name": "чеснок", "removable": true }
+            ],
+            "variants": [
+                {
+                    "id": "12-thin-30",
+                    "dough": "thin",
+                    "size": 30,
+                    "price": 969,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf2e637f77198d981810a1d0e1bd.png",
+                    "weight": 460,
+                    "nutrition": {
+                        "calories": 282,
+                        "protein": 10.8,
+                        "fat": 13.7,
+                        "carbs": 27.1
+                    }
+                },
+                {
+                    "id": "12-thin-35",
+                    "dough": "thin",
+                    "size": 35,
+                    "price": 1159,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf2e910172f1a0c13d2cd564daa7.png",
+                    "weight": 650,
+                    "nutrition": {
+                        "calories": 276,
+                        "protein": 10.5,
+                        "fat": 12.8,
+                        "carbs": 27.9
+                    }
+                },
+                {
+                    "id": "12-trad-20",
+                    "dough": "traditional",
+                    "size": 20,
+                    "price": 469,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0199f20f177175a48ccae95b042effdc.png",
+                    "weight": 240,
+                    "nutrition": {
+                        "calories": 280,
+                        "protein": 12.9,
+                        "fat": 12.7,
+                        "carbs": 30.7
+                    }
+                },
+                {
+                    "id": "12-trad-25",
+                    "dough": "traditional",
+                    "size": 25,
+                    "price": 669,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf2e4f9c7980a5390fb80de3fb04.png",
+                    "weight": 370,
+                    "nutrition": {
+                        "calories": 285,
+                        "protein": 10.9,
+                        "fat": 12.4,
+                        "carbs": 32.6
+                    }
+                },
+                {
+                    "id": "12-trad-30",
+                    "dough": "traditional",
+                    "size": 30,
+                    "price": 969,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf2e5d2973a4bf5ec61161496f91.png",
+                    "weight": 570,
+                    "nutrition": {
+                        "calories": 276,
+                        "protein": 9.9,
+                        "fat": 11.7,
+                        "carbs": 31.1
+                    }
+                },
+                {
+                    "id": "12-trad-35",
+                    "dough": "traditional",
+                    "size": 35,
+                    "price": 1159,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf2e84ed7564b0265013a4e43711.png",
+                    "weight": 760,
+                    "nutrition": {
+                        "calories": 274,
+                        "protein": 9.9,
+                        "fat": 11.4,
+                        "carbs": 31.2
+                    }
+                }
             ]
         },
         {
             "id": "13",
+            "slug": "shrimps-sweet-chili",
             "title": "Креветки со сладким чили",
-            "category": 3,
+            "category": { "id": 3, "slug": "shrimps", "name": "С креветками" },
             "rating": 2,
             "description": "Креветки, ананасы, соус сладкий чили, сладкий перец, моцарелла, фирменный соус альфредо",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/0194d4fd39bb7352bfa5de2219e88b9b.png",
-            "details": {
-                "thin": {
-                    "30": {
-                        "nutrition": {
-                            "calories": "235",
-                            "prot": "10",
-                            "fat": "8.7",
-                            "carbo": "29.5",
-                            "weight": "480"
-                        },
-                        "price": "1049",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf51514f713eb56a13a60fdf1d78.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "225",
-                            "prot": "9.2",
-                            "fat": "7.9",
-                            "carbo": "29.3",
-                            "weight": "710"
-                        },
-                        "price": "1209",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf5185477302b275c6e03b5172ec.png"
-                    }
-                },
-                "traditional": {
-                    "20": {
-                        "nutrition": {
-                            "calories": "234",
-                            "prot": "9.7",
-                            "fat": "8.1",
-                            "carbo": "30.7",
-                            "weight": "260"
-                        },
-                        "price": "509",
-                        "img": "https://media.dodostatic.net/image/r:584x584/019a1099cee173b4977f5e958549b6b3.png"
-                    },
-                    "25": {
-                        "nutrition": {
-                            "calories": "242",
-                            "prot": "9.6",
-                            "fat": "7.6",
-                            "carbo": "33.8",
-                            "weight": "390"
-                        },
-                        "price": "719",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf513fd572f9817983cc29259aa9.png"
-                    },
-                    "30": {
-                        "nutrition": {
-                            "calories": "223",
-                            "prot": "8.7",
-                            "fat": "7.2",
-                            "carbo": "30.9",
-                            "weight": "630"
-                        },
-                        "price": "1049",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf5147f27780a3290a82692e7a36.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "235",
-                            "prot": "9.1",
-                            "fat": "7.5",
-                            "carbo": "32.9",
-                            "weight": "800"
-                        },
-                        "price": "1209",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf515a4b7823a8d822ceccf29ea5.png"
-                    }
-                }
-            },
+            "minPrice": 509,
+            "isAvailable": true,
             "ingredients": [
+                { "id": "shrimps", "name": "Креветки", "removable": true },
+                { "id": "pineapple", "name": "ананасы", "removable": true },
                 {
-                    "name": "Креветки",
+                    "id": "sweet-chili-sauce",
+                    "name": "соус сладкий чили",
+                    "removable": false
+                },
+                {
+                    "id": "bell-pepper",
+                    "name": "сладкий перец",
                     "removable": true
                 },
-                { "name": "ананасы", "removable": true },
-                { "name": "соус сладкий чили", "removable": false },
-                { "name": "сладкий перец", "removable": true },
-                { "name": "моцарелла", "removable": false },
-                { "name": "фирменный соус альфредо", "removable": false }
+                { "id": "mozzarella", "name": "моцарелла", "removable": false },
+                {
+                    "id": "alfredo-sauce",
+                    "name": "фирменный соус альфредо",
+                    "removable": false
+                }
+            ],
+            "variants": [
+                {
+                    "id": "13-thin-30",
+                    "dough": "thin",
+                    "size": 30,
+                    "price": 1049,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf51514f713eb56a13a60fdf1d78.png",
+                    "weight": 480,
+                    "nutrition": {
+                        "calories": 235,
+                        "protein": 10,
+                        "fat": 8.7,
+                        "carbs": 29.5
+                    }
+                },
+                {
+                    "id": "13-thin-35",
+                    "dough": "thin",
+                    "size": 35,
+                    "price": 1209,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf5185477302b275c6e03b5172ec.png",
+                    "weight": 710,
+                    "nutrition": {
+                        "calories": 225,
+                        "protein": 9.2,
+                        "fat": 7.9,
+                        "carbs": 29.3
+                    }
+                },
+                {
+                    "id": "13-trad-20",
+                    "dough": "traditional",
+                    "size": 20,
+                    "price": 509,
+                    "img": "https://media.dodostatic.net/image/r:584x584/019a1099cee173b4977f5e958549b6b3.png",
+                    "weight": 260,
+                    "nutrition": {
+                        "calories": 234,
+                        "protein": 9.7,
+                        "fat": 8.1,
+                        "carbs": 30.7
+                    }
+                },
+                {
+                    "id": "13-trad-25",
+                    "dough": "traditional",
+                    "size": 25,
+                    "price": 719,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf513fd572f9817983cc29259aa9.png",
+                    "weight": 390,
+                    "nutrition": {
+                        "calories": 242,
+                        "protein": 9.6,
+                        "fat": 7.6,
+                        "carbs": 33.8
+                    }
+                },
+                {
+                    "id": "13-trad-30",
+                    "dough": "traditional",
+                    "size": 30,
+                    "price": 1049,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf5147f27780a3290a82692e7a36.png",
+                    "weight": 630,
+                    "nutrition": {
+                        "calories": 223,
+                        "protein": 8.7,
+                        "fat": 7.2,
+                        "carbs": 30.9
+                    }
+                },
+                {
+                    "id": "13-trad-35",
+                    "dough": "traditional",
+                    "size": 35,
+                    "price": 1209,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf515a4b7823a8d822ceccf29ea5.png",
+                    "weight": 800,
+                    "nutrition": {
+                        "calories": 235,
+                        "protein": 9.1,
+                        "fat": 7.5,
+                        "carbs": 32.9
+                    }
+                }
             ]
         },
         {
             "id": "14",
+            "slug": "diablo",
             "title": "Диабло",
-            "category": 2,
+            "category": { "id": 2, "slug": "spicy", "name": "Острые" },
             "rating": 5,
             "description": "Острые колбаски чоризо, острый перец халапеньо, соус барбекю, пряная говядина, томаты, сладкий перец, красный лук, моцарелла, фирменный томатный соус",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/0198bf439a007604880d0231be87cd3e.png",
-            "details": {
-                "thin": {
-                    "30": {
-                        "nutrition": {
-                            "calories": "238",
-                            "prot": "10.5",
-                            "fat": "9.3",
-                            "carbo": "28",
-                            "weight": "510"
-                        },
-                        "price": "1029",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf43a9a572f280871a255a23ec1f.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "225.8",
-                            "prot": "9.7",
-                            "fat": "8.6",
-                            "carbo": "27.4",
-                            "weight": "750"
-                        },
-                        "price": "1199",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf43c52970879c7600791e4cab9f.png"
-                    }
-                },
-                "traditional": {
-                    "20": {
-                        "nutrition": {
-                            "calories": "229.4",
-                            "prot": "9.8",
-                            "fat": "8.5",
-                            "carbo": "28.4",
-                            "weight": "280"
-                        },
-                        "price": "479",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf438dac76cf9f87eaf3e2031882.png"
-                    },
-                    "25": {
-                        "nutrition": {
-                            "calories": "238.1",
-                            "prot": "9.7",
-                            "fat": "8.3",
-                            "carbo": "31.1",
-                            "weight": "420"
-                        },
-                        "price": "679",
-                        "img": "https://media.dodostatic.net/image/r:584x584/019aa66143f872e48783de326e66c182.png"
-                    },
-                    "30": {
-                        "nutrition": {
-                            "calories": "243.8",
-                            "prot": "9.9",
-                            "fat": "8.4",
-                            "carbo": "32",
-                            "weight": "610"
-                        },
-                        "price": "1029",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf439a007604880d0231be87cd3e.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "217.5",
-                            "prot": "8.8",
-                            "fat": "7.5",
-                            "carbo": "28.7",
-                            "weight": "910"
-                        },
-                        "price": "1199",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf43b32c78dfa507633da97df419.png"
-                    }
-                }
-            },
+            "minPrice": 479,
+            "isAvailable": true,
             "ingredients": [
                 {
+                    "id": "chorizo",
                     "name": "Острые колбаски чоризо",
                     "removable": true
                 },
-                { "name": "острый перец халапеньо", "removable": true },
-                { "name": "соус барбекю", "removable": false },
-                { "name": "томаты", "removable": true },
-                { "name": "сладкий перец", "removable": true },
-                { "name": "красный лук", "removable": true },
-                { "name": "моцарелла", "removable": false },
-                { "name": "фирменный томатный соус", "removable": false },
-                { "name": "пряная говядина", "removable": true }
+                {
+                    "id": "jalapeno",
+                    "name": "острый перец халапеньо",
+                    "removable": true
+                },
+                {
+                    "id": "bbq-sauce",
+                    "name": "соус барбекю",
+                    "removable": false
+                },
+                { "id": "tomatoes", "name": "томаты", "removable": true },
+                {
+                    "id": "bell-pepper",
+                    "name": "сладкий перец",
+                    "removable": true
+                },
+                { "id": "red-onion", "name": "красный лук", "removable": true },
+                { "id": "mozzarella", "name": "моцарелла", "removable": false },
+                {
+                    "id": "tomato-sauce",
+                    "name": "фирменный томатный соус",
+                    "removable": false
+                },
+                {
+                    "id": "spicy-beef",
+                    "name": "пряная говядина",
+                    "removable": true
+                }
+            ],
+            "variants": [
+                {
+                    "id": "14-thin-30",
+                    "dough": "thin",
+                    "size": 30,
+                    "price": 1029,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf43a9a572f280871a255a23ec1f.png",
+                    "weight": 510,
+                    "nutrition": {
+                        "calories": 238,
+                        "protein": 10.5,
+                        "fat": 9.3,
+                        "carbs": 28
+                    }
+                },
+                {
+                    "id": "14-thin-35",
+                    "dough": "thin",
+                    "size": 35,
+                    "price": 1199,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf43c52970879c7600791e4cab9f.png",
+                    "weight": 750,
+                    "nutrition": {
+                        "calories": 225.8,
+                        "protein": 9.7,
+                        "fat": 8.6,
+                        "carbs": 27.4
+                    }
+                },
+                {
+                    "id": "14-trad-20",
+                    "dough": "traditional",
+                    "size": 20,
+                    "price": 479,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf438dac76cf9f87eaf3e2031882.png",
+                    "weight": 280,
+                    "nutrition": {
+                        "calories": 229.4,
+                        "protein": 9.8,
+                        "fat": 8.5,
+                        "carbs": 28.4
+                    }
+                },
+                {
+                    "id": "14-trad-25",
+                    "dough": "traditional",
+                    "size": 25,
+                    "price": 679,
+                    "img": "https://media.dodostatic.net/image/r:584x584/019aa66143f872e48783de326e66c182.png",
+                    "weight": 420,
+                    "nutrition": {
+                        "calories": 238.1,
+                        "protein": 9.7,
+                        "fat": 8.3,
+                        "carbs": 31.1
+                    }
+                },
+                {
+                    "id": "14-trad-30",
+                    "dough": "traditional",
+                    "size": 30,
+                    "price": 1029,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf439a007604880d0231be87cd3e.png",
+                    "weight": 610,
+                    "nutrition": {
+                        "calories": 243.8,
+                        "protein": 9.9,
+                        "fat": 8.4,
+                        "carbs": 32
+                    }
+                },
+                {
+                    "id": "14-trad-35",
+                    "dough": "traditional",
+                    "size": 35,
+                    "price": 1199,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf43b32c78dfa507633da97df419.png",
+                    "weight": 910,
+                    "nutrition": {
+                        "calories": 217.5,
+                        "protein": 8.8,
+                        "fat": 7.5,
+                        "carbs": 28.7
+                    }
+                }
             ]
         },
         {
             "id": "15",
+            "slug": "carbonara",
             "title": "Карбонара",
-            "category": 1,
+            "category": { "id": 1, "slug": "meat", "name": "Мясные" },
             "rating": 7,
             "description": "Бекон, сыры чеддер и пармезан, моцарелла, томаты, красный лук, чеснок, фирменный соус альфредо, итальянские травы",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/019591b13a1a724b90092c16d9b1c05a.png",
-            "details": {
-                "thin": {
-                    "30": {
-                        "nutrition": {
-                            "calories": "305",
-                            "prot": "10.2",
-                            "fat": "17.8",
-                            "carbo": "23.9",
-                            "weight": "520"
-                        },
-                        "price": "1009",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2b11d17553b5ad83befb476632.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "321",
-                            "prot": "10.5",
-                            "fat": "18.7",
-                            "carbo": "25.7",
-                            "weight": "710"
-                        },
-                        "price": "1119",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2b3be9737f94e700a75aaf786a.png"
-                    }
-                },
-                "traditional": {
-                    "20": {
-                        "nutrition": {
-                            "calories": "325",
-                            "prot": "11.6",
-                            "fat": "16.2",
-                            "carbo": "33.5",
-                            "weight": "220"
-                        },
-                        "price": "479",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2adf8d75e7b6ceb4d0834c16a5.png"
-                    },
-                    "25": {
-                        "nutrition": {
-                            "calories": "312",
-                            "prot": "9.8",
-                            "fat": "16.3",
-                            "carbo": "29.3",
-                            "weight": "410"
-                        },
-                        "price": "659",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2aec0173979677b991c86a96ac.png"
-                    },
-                    "30": {
-                        "nutrition": {
-                            "calories": "316",
-                            "prot": "10.2",
-                            "fat": "16.3",
-                            "carbo": "30.1",
-                            "weight": "590"
-                        },
-                        "price": "1009",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2b03447079941f2d5ac6e986a9.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "322",
-                            "prot": "10.2",
-                            "fat": "17.1",
-                            "carbo": "29.7",
-                            "weight": "800"
-                        },
-                        "price": "1119",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf2b2f8a72938d1d3475aa698261.png"
-                    }
-                }
-            },
+            "minPrice": 479,
+            "isAvailable": true,
             "ingredients": [
+                { "id": "bacon", "name": "Бекон", "removable": true },
                 {
-                    "name": "Бекон",
+                    "id": "cheddar-parmesan",
+                    "name": "сыры чеддер и пармезан",
                     "removable": true
                 },
-                { "name": "сыры чеддер и пармезан", "removable": true },
-                { "name": "моцарелла", "removable": false },
-                { "name": "томаты", "removable": true },
-                { "name": "красный лук", "removable": true },
-                { "name": "чеснок", "removable": true },
-                { "name": "фирменный соус альфредо", "removable": false },
-                { "name": "итальянские травы", "removable": true }
+                { "id": "mozzarella", "name": "моцарелла", "removable": false },
+                { "id": "tomatoes", "name": "томаты", "removable": true },
+                { "id": "red-onion", "name": "красный лук", "removable": true },
+                { "id": "garlic", "name": "чеснок", "removable": true },
+                {
+                    "id": "alfredo-sauce",
+                    "name": "фирменный соус альфредо",
+                    "removable": false
+                },
+                {
+                    "id": "italian-herbs",
+                    "name": "итальянские травы",
+                    "removable": true
+                }
+            ],
+            "variants": [
+                {
+                    "id": "15-thin-30",
+                    "dough": "thin",
+                    "size": 30,
+                    "price": 1009,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf2b11d17553b5ad83befb476632.png",
+                    "weight": 520,
+                    "nutrition": {
+                        "calories": 305,
+                        "protein": 10.2,
+                        "fat": 17.8,
+                        "carbs": 23.9
+                    }
+                },
+                {
+                    "id": "15-thin-35",
+                    "dough": "thin",
+                    "size": 35,
+                    "price": 1119,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf2b3be9737f94e700a75aaf786a.png",
+                    "weight": 710,
+                    "nutrition": {
+                        "calories": 321,
+                        "protein": 10.5,
+                        "fat": 18.7,
+                        "carbs": 25.7
+                    }
+                },
+                {
+                    "id": "15-trad-20",
+                    "dough": "traditional",
+                    "size": 20,
+                    "price": 479,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf2adf8d75e7b6ceb4d0834c16a5.png",
+                    "weight": 220,
+                    "nutrition": {
+                        "calories": 325,
+                        "protein": 11.6,
+                        "fat": 16.2,
+                        "carbs": 33.5
+                    }
+                },
+                {
+                    "id": "15-trad-25",
+                    "dough": "traditional",
+                    "size": 25,
+                    "price": 659,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf2aec0173979677b991c86a96ac.png",
+                    "weight": 410,
+                    "nutrition": {
+                        "calories": 312,
+                        "protein": 9.8,
+                        "fat": 16.3,
+                        "carbs": 29.3
+                    }
+                },
+                {
+                    "id": "15-trad-30",
+                    "dough": "traditional",
+                    "size": 30,
+                    "price": 1009,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf2b03447079941f2d5ac6e986a9.png",
+                    "weight": 590,
+                    "nutrition": {
+                        "calories": 316,
+                        "protein": 10.2,
+                        "fat": 16.3,
+                        "carbs": 30.1
+                    }
+                },
+                {
+                    "id": "15-trad-35",
+                    "dough": "traditional",
+                    "size": 35,
+                    "price": 1119,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf2b2f8a72938d1d3475aa698261.png",
+                    "weight": 800,
+                    "nutrition": {
+                        "calories": 322,
+                        "protein": 10.2,
+                        "fat": 17.1,
+                        "carbs": 29.7
+                    }
+                }
             ]
         },
         {
             "id": "16",
+            "slug": "julienne",
             "title": "Жюльен",
-            "category": 5,
+            "category": { "id": 5, "slug": "chicken", "name": "С курицей" },
             "rating": 1,
             "description": "Цыпленок, шампиньоны, ароматный грибной соус, лук, чеснок, моцарелла, чеддер и пармезан, фирменный соус альфредо",
             "imgSrc": "https://media.dodostatic.net/image/r:584x584/11ee7d6175c10773bfe36e56d48df7e3.png",
-            "details": {
-                "thin": {
-                    "30": {
-                        "nutrition": {
-                            "calories": "243",
-                            "prot": "11.4",
-                            "fat": "10.1",
-                            "carbo": "25.1",
-                            "weight": "510"
-                        },
-                        "price": "929",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4e7005769c860df156c9aa8c57.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "242",
-                            "prot": "11.2",
-                            "fat": "9.9",
-                            "carbo": "25.6",
-                            "weight": "730"
-                        },
-                        "price": "1069",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4e8fa177b6af11ec656d38b1d8.png"
-                    }
-                },
-                "traditional": {
-                    "20": {
-                        "nutrition": {
-                            "calories": "241",
-                            "prot": "11",
-                            "fat": "9.2",
-                            "carbo": "28.7",
-                            "weight": "260"
-                        },
-                        "price": "429",
-                        "img": "https://media.dodostatic.net/image/r:584x584/019aa655a60670f7aa3b1fd3287f040d.png"
-                    },
-                    "25": {
-                        "nutrition": {
-                            "calories": "237",
-                            "prot": "10.1",
-                            "fat": "8.5",
-                            "carbo": "28.5",
-                            "weight": "430"
-                        },
-                        "price": "619",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4e607f703fa5210df267488be0.png"
-                    },
-                    "30": {
-                        "nutrition": {
-                            "calories": "241",
-                            "prot": "10.3",
-                            "fat": "8.8",
-                            "carbo": "28.7",
-                            "weight": "630"
-                        },
-                        "price": "929",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4e67f474f991f04a46a49af5e6.png"
-                    },
-                    "35": {
-                        "nutrition": {
-                            "calories": "251",
-                            "prot": "10.9",
-                            "fat": "9.3",
-                            "carbo": "29.5",
-                            "weight": "820"
-                        },
-                        "price": "1069",
-                        "img": "https://media.dodostatic.net/image/r:584x584/0198bf4e79bb776092f98426e15d9060.png"
-                    }
-                }
-            },
+            "minPrice": 429,
+            "isAvailable": true,
             "ingredients": [
+                { "id": "chicken", "name": "Цыпленок", "removable": true },
+                { "id": "mushrooms", "name": "шампиньоны", "removable": true },
                 {
-                    "name": "Цыпленок",
+                    "id": "mushroom-sauce",
+                    "name": "ароматный грибной соус",
+                    "removable": false
+                },
+                { "id": "onion", "name": "лук", "removable": true },
+                { "id": "garlic", "name": "чеснок", "removable": true },
+                { "id": "mozzarella", "name": "моцарелла", "removable": false },
+                {
+                    "id": "cheddar-parmesan",
+                    "name": "чеддер и пармезан",
                     "removable": true
                 },
-                { "name": "шампиньоны", "removable": true },
-                { "name": "ароматный грибной соус", "removable": false },
-                { "name": "лук", "removable": true },
-                { "name": "чеснок", "removable": true },
-                { "name": "моцарелла", "removable": false },
-                { "name": "чеддер и пармезан", "removable": true },
-                { "name": "фирменный соус альфредо", "removable": true }
+                {
+                    "id": "alfredo-sauce",
+                    "name": "фирменный соус альфредо",
+                    "removable": true
+                }
+            ],
+            "variants": [
+                {
+                    "id": "16-thin-30",
+                    "dough": "thin",
+                    "size": 30,
+                    "price": 929,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf4e7005769c860df156c9aa8c57.png",
+                    "weight": 510,
+                    "nutrition": {
+                        "calories": 243,
+                        "protein": 11.4,
+                        "fat": 10.1,
+                        "carbs": 25.1
+                    }
+                },
+                {
+                    "id": "16-thin-35",
+                    "dough": "thin",
+                    "size": 35,
+                    "price": 1069,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf4e8fa177b6af11ec656d38b1d8.png",
+                    "weight": 730,
+                    "nutrition": {
+                        "calories": 242,
+                        "protein": 11.2,
+                        "fat": 9.9,
+                        "carbs": 25.6
+                    }
+                },
+                {
+                    "id": "16-trad-20",
+                    "dough": "traditional",
+                    "size": 20,
+                    "price": 429,
+                    "img": "https://media.dodostatic.net/image/r:584x584/019aa655a60670f7aa3b1fd3287f040d.png",
+                    "weight": 260,
+                    "nutrition": {
+                        "calories": 241,
+                        "protein": 11,
+                        "fat": 9.2,
+                        "carbs": 28.7
+                    }
+                },
+                {
+                    "id": "16-trad-25",
+                    "dough": "traditional",
+                    "size": 25,
+                    "price": 619,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf4e607f703fa5210df267488be0.png",
+                    "weight": 430,
+                    "nutrition": {
+                        "calories": 237,
+                        "protein": 10.1,
+                        "fat": 8.5,
+                        "carbs": 28.5
+                    }
+                },
+                {
+                    "id": "16-trad-30",
+                    "dough": "traditional",
+                    "size": 30,
+                    "price": 929,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf4e67f474f991f04a46a49af5e6.png",
+                    "weight": 630,
+                    "nutrition": {
+                        "calories": 241,
+                        "protein": 10.3,
+                        "fat": 8.8,
+                        "carbs": 28.7
+                    }
+                },
+                {
+                    "id": "16-trad-35",
+                    "dough": "traditional",
+                    "size": 35,
+                    "price": 1069,
+                    "img": "https://media.dodostatic.net/image/r:584x584/0198bf4e79bb776092f98426e15d9060.png",
+                    "weight": 820,
+                    "nutrition": {
+                        "calories": 251,
+                        "protein": 10.9,
+                        "fat": 9.3,
+                        "carbs": 29.5
+                    }
+                }
             ]
+        }
+    ],
+    "extraIngredients": [
+        {
+            "id": "spicy_beef",
+            "name": "Пряная говядина",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/01991530635b73ecb1a22658b49e1653.png",
+            "prices": {
+                "thin_30": 119,
+                "thin_35": 155,
+                "traditional_20": 59,
+                "traditional_25": 99,
+                "traditional_30": 119,
+                "traditional_35": 155
+            }
+        },
+        {
+            "id": "mozarella",
+            "name": "Моцарелла",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/0199ae74f2fd783b8fb21bb0af7d09e6.png",
+            "prices": {
+                "thin_30": 105,
+                "thin_35": 135,
+                "traditional_20": 65,
+                "traditional_25": 79,
+                "traditional_30": 105,
+                "traditional_35": 135
+            }
+        },
+        {
+            "id": "cheese_cheddar_parmezan",
+            "name": "Сыры чеддер и пармезан",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/0199152f32e47035aefbe8c971c54502.png",
+            "prices": {
+                "thin_30": 79,
+                "thin_35": 99,
+                "traditional_20": 49,
+                "traditional_25": 69,
+                "traditional_30": 79,
+                "traditional_35": 99
+            }
+        },
+        {
+            "id": "cheese_blu",
+            "name": "Сыр блю чиз",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/0199153050ea707cbed48b92097e095f.png",
+            "prices": {
+                "thin_30": 149,
+                "thin_35": 199,
+                "traditional_20": 59,
+                "traditional_25": 99,
+                "traditional_30": 149,
+                "traditional_35": 199
+            }
+        },
+        {
+            "id": "pepper_jalapeno",
+            "name": "Острый перец халапеньо",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/0199152c7eb27553a08f57c8c9861ac3.png",
+            "prices": {
+                "thin_30": 59,
+                "thin_35": 79,
+                "traditional_20": 39,
+                "traditional_25": 49,
+                "traditional_30": 59,
+                "traditional_35": 79
+            }
+        },
+        {
+            "id": "chiken_tender",
+            "name": "Нежный цыпленок",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/0199152e59157089adb89948280ebb10.png",
+            "prices": {
+                "thin_30": 79,
+                "thin_35": 99,
+                "traditional_20": 49,
+                "traditional_25": 69,
+                "traditional_30": 79,
+                "traditional_35": 99
+            }
+        },
+        {
+            "id": "mushrooms_champignons",
+            "name": "Шампиньоны",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/0199152bfda5723f8bbecc43a35f83f1.png",
+            "prices": {
+                "thin_30": 59,
+                "thin_35": 79,
+                "traditional_20": 39,
+                "traditional_25": 49,
+                "traditional_30": 59,
+                "traditional_35": 79
+            }
+        },
+        {
+            "id": "bacon",
+            "name": "Бекон",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/019c570e36ff78f4ba36a75d85000d7e.png",
+            "prices": {
+                "thin_30": 79,
+                "thin_35": 105,
+                "traditional_20": 49,
+                "traditional_25": 69,
+                "traditional_30": 79,
+                "traditional_35": 105
+            }
+        },
+        {
+            "id": "ham",
+            "name": "Ветчина",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/0199152d7fd075a9b11d17f8acaf1670.png",
+            "prices": {
+                "thin_30": 79,
+                "thin_35": 99,
+                "traditional_20": 49,
+                "traditional_25": 69,
+                "traditional_30": 79,
+                "traditional_35": 99
+            }
+        },
+        {
+            "id": "spicy_pepperoni",
+            "name": "Пикантная пепперони",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/0199152b6e6978a188ec97d9bd52e7d2.png",
+            "prices": {
+                "thin_30": 79,
+                "thin_35": 99,
+                "traditional_20": 49,
+                "traditional_25": 69,
+                "traditional_30": 79,
+                "traditional_35": 99
+            }
+        },
+        {
+            "id": "spicy_chorizo",
+            "name": "Острая чоризо",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/0199ae74b6d6761f972e9a60b63044bc.png",
+            "prices": {
+                "thin_30": 79,
+                "thin_35": 99,
+                "traditional_20": 49,
+                "traditional_25": 69,
+                "traditional_30": 79,
+                "traditional_35": 99
+            }
+        },
+        {
+            "id": "pickled_cucumbers",
+            "name": "Соленые огурчики",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/0199152e33ee7722ac038fa5bc26e630.png",
+            "prices": {
+                "thin_30": 59,
+                "thin_35": 79,
+                "traditional_20": 39,
+                "traditional_25": 49,
+                "traditional_30": 59,
+                "traditional_35": 79
+            }
+        },
+        {
+            "id": "fresh_tomatoes",
+            "name": "Свежие томаты",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/0199152a8428737d9f6b19c1b2329749.png",
+            "prices": {
+                "thin_30": 59,
+                "thin_35": 79,
+                "traditional_20": 39,
+                "traditional_25": 49,
+                "traditional_30": 59,
+                "traditional_35": 79
+            }
+        },
+        {
+            "id": "red_onion",
+            "name": "Красный лук",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/0199ae747c85710abcf2950497834b01.png",
+            "prices": {
+                "thin_30": 59,
+                "thin_35": 79,
+                "traditional_20": 39,
+                "traditional_25": 49,
+                "traditional_30": 59,
+                "traditional_35": 79
+            }
+        },
+        {
+            "id": "pineapple",
+            "name": "Сочные ананасы",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/0199152b81587495b19ba8008c567f5d.png",
+            "prices": {
+                "thin_30": 59,
+                "thin_35": 79,
+                "traditional_20": 39,
+                "traditional_25": 49,
+                "traditional_30": 59,
+                "traditional_35": 79
+            }
+        },
+        {
+            "id": "italian_herbs",
+            "name": "Итальянские травы",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/0199152ced7677fcb0e49edd0ebf6c90.png",
+            "prices": {
+                "thin_30": 39,
+                "thin_35": 59,
+                "traditional_20": 19,
+                "traditional_25": 29,
+                "traditional_30": 39,
+                "traditional_35": 59
+            }
+        },
+        {
+            "id": "sweet_pepper",
+            "name": "Сладкий перец",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/0199152da27677a7a24a41b4eddfcedd.png",
+            "prices": {
+                "thin_30": 59,
+                "thin_35": 79,
+                "traditional_20": 39,
+                "traditional_25": 49,
+                "traditional_30": 59,
+                "traditional_35": 79
+            }
+        },
+        {
+            "id": "bavarian_sausages",
+            "name": "Баварские колбаски",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/019915307407729e970fee55536f6dca.png",
+            "prices": {
+                "thin_30": 129,
+                "thin_35": 159,
+                "traditional_20": 59,
+                "traditional_25": 119,
+                "traditional_30": 129,
+                "traditional_35": 159
+            }
+        },
+        {
+            "id": "shrimps",
+            "name": "Креветки",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/019c570e238d751dbe68f7d540857d16.png",
+            "prices": {
+                "thin_30": 239,
+                "thin_35": 275,
+                "traditional_20": 115,
+                "traditional_25": 205,
+                "traditional_30": 239,
+                "traditional_35": 275
+            }
+        },
+        {
+            "id": "pork_neck",
+            "name": "Свиная шейка",
+            "imgSrc": "https://cdn.dodostatic.net/static/Img/Ingredients/0199e7d1cd977499a410e7a4f0495221.png",
+            "prices": {
+                "thin_30": 229,
+                "thin_35": 250,
+                "traditional_20": 115,
+                "traditional_25": 205,
+                "traditional_30": 229,
+                "traditional_35": 250
+            }
         }
     ]
 }

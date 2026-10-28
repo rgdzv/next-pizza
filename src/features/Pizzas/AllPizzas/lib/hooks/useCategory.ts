@@ -10,8 +10,8 @@ export const useCategory = () => {
     const { fetchData } = useFetchData()
 
     const onChangeCategory = useCallback(
-        (newPage: number) => {
-            setCategory(newPage)
+        (newCategory: number) => {
+            setCategory(newCategory)
             fetchData()
         },
         [setCategory, fetchData]

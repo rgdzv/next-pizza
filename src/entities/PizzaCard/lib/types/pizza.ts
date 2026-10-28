@@ -1,30 +1,47 @@
-export interface Pizza {
-    id: string
-    title: string
-    category: number
-    rating: number
-    imgSrc: string
-    description: string
-    ingredients: Ingredients[]
-    details: Record<PizzaTypeKeys, Record<PizzaSizeKeys, Details>>
+export type PizzaType = 'thin' | 'traditional'
+export type PizzaSize = 20 | 25 | 30 | 35
+
+export type AddonPriceKey = `${PizzaType}_${PizzaSize}`
+
+export interface PizzaCategory {
+    id: number
+    slug: string
+    name: string
 }
-interface Ingredients {
+
+export interface PizzaNutrition {
+    calories: number
+    protein: number
+    fat: number
+    carbs: number
+}
+
+export interface PizzaVariant {
+    id: string
+    dough: PizzaType
+    size: PizzaSize
+    price: number
+    img: string
+    weight: number
+    nutrition: PizzaNutrition
+}
+
+export interface PizzaIngredient {
+    id: string
     name: string
     removable: boolean
 }
 
-export type PizzaTypeKeys = 'traditional' | 'thin'
-export type PizzaSizeKeys = '20' | '25' | '30' | '35'
-
-export interface Details {
-    nutrition: Nutrition
-    price: string
-    img: string
-}
-export interface Nutrition {
-    calories: string
-    prot: string
-    fat: string
-    carbo: string
-    weight: string
+export interface Pizza {
+    id: string
+    slug: string
+    title: string
+    category: PizzaCategory
+    rating: number
+    description: string
+    imgSrc: string
+    minPrice: number
+    isAvailable: boolean
+    ingredients: PizzaIngredient[]
+    variants: PizzaVariant[]
 }

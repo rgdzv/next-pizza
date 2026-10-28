@@ -5,12 +5,11 @@ import type { Pizza } from '../lib/types/pizza'
 
 interface PizzaCardPropsInterface {
     pizza: Pizza
-    pizzaCardPrice: string
     handleSelectPizza: () => void
 }
 
 export const PizzaCard: FC<PizzaCardPropsInterface> = memo(
-    ({ pizza, pizzaCardPrice, handleSelectPizza }) => {
+    ({ pizza, handleSelectPizza }) => {
         return (
             <article className={styles.pizzaCard}>
                 <CustomImage
@@ -26,7 +25,7 @@ export const PizzaCard: FC<PizzaCardPropsInterface> = memo(
                 <p className={styles.pizzaCardStructure}>{pizza.description}</p>
                 <div className={styles.pizzaCardFooter}>
                     <span className={styles.pizzaCardFooterPrice}>
-                        от {pizzaCardPrice}
+                        от {pizza.minPrice} ₽
                     </span>
                     <CustomButton variant='primary' onClick={handleSelectPizza}>
                         Выбрать
