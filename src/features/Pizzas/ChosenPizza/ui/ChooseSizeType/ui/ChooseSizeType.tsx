@@ -1,53 +1,62 @@
 import classNames from 'classnames'
-import { PizzaSize, PizzaType } from 'entities/PizzaCard'
+import {
+    PIZZA_TYPES,
+    PIZZA_SIZES,
+    PIZZA_SIZES_LIST,
+    PIZZA_TYPES_LIST
+} from 'entities/PizzaCard'
 import { CustomButton } from 'shared/ui'
-import { SIZES, TYPES } from '../lib/const/shapes'
 import { useSizeType } from '../../../lib/hooks/useSizeType'
 import styles from './ChooseSizeType.module.scss'
+import type { PizzaSize, PizzaType } from 'entities/PizzaCard'
 import type { FC } from 'react'
-import type { PizzaSizeKeys, PizzaTypeKeys } from 'entities/PizzaCard'
 
 export const ChooseSizeType: FC = () => {
     const { pizzaSize, pizzaType, setPizzaSize, setPizzaType } = useSizeType()
 
-    const handleChangeSize = (newSize: PizzaSizeKeys) => {
+    const handleChangeSize = (newSize: PizzaSize) => {
         setPizzaSize(newSize)
-        if (newSize === PizzaSize.EXTRA_SMALL || newSize === PizzaSize.SMALL) {
-            setPizzaType(PizzaType.TRADITIONAL)
+        if (
+            newSize === PIZZA_SIZES.EXTRA_SMALL ||
+            newSize === PIZZA_SIZES.SMALL
+        ) {
+            setPizzaType(PIZZA_TYPES.TRADITIONAL)
         }
     }
 
-    const handleChangeType = (newType: PizzaTypeKeys) => {
+    const handleChangeType = (newType: PizzaType) => {
         setPizzaType(newType)
     }
 
-    const sizes = SIZES.map((size) => {
-        const handleClickSize = () => {
-            handleChangeSize(size)
-        }
-
+    const sizes = PIZZA_SIZES_LIST.map((size) => {
         return (
-            <CustomButton key={size} variant='size' onClick={handleClickSize}>
+            <CustomButton
+                key={size}
+                variant='size'
+                onClick={() => {
+                    handleChangeSize(size)
+                }}
+            >
                 {size}
             </CustomButton>
         )
     })
 
-    const types = TYPES.map((type) => {
-        const handleClickType = () => {
-            handleChangeType(type.id)
-        }
+    const types = PIZZA_TYPES_LIST.map((type) => {
+        const isThinDisabled =
+            pizzaSize === PIZZA_SIZES.EXTRA_SMALL ||
+            pizzaSize === PIZZA_SIZES.SMALL
 
         const selectedSizeConditions =
-            type.id === PizzaType.THIN &&
-            (pizzaSize === PizzaSize.EXTRA_SMALL ||
-                pizzaSize === PizzaSize.SMALL)
+            type.id === PIZZA_TYPES.THIN && isThinDisabled
 
         return (
             <CustomButton
                 key={type.id}
                 variant='type'
-                onClick={handleClickType}
+                onClick={() => {
+                    handleChangeType(type.id)
+                }}
                 disabled={selectedSizeConditions}
             >
                 {type.name}
@@ -56,13 +65,13 @@ export const ChooseSizeType: FC = () => {
     })
 
     const backLayoutSizeClassName = classNames(styles.backLayoutSize, {
-        [styles.small]: pizzaSize === PizzaSize.SMALL,
-        [styles.middle]: pizzaSize === PizzaSize.MIDDLE,
-        [styles.large]: pizzaSize === PizzaSize.LARGE
+        [styles.small]: pizzaSize === PIZZA_SIZES.SMALL,
+        [styles.middle]: pizzaSize === PIZZA_SIZES.MIDDLE,
+        [styles.large]: pizzaSize === PIZZA_SIZES.LARGE
     })
 
     const backLayoutTypeClassName = classNames(styles.backLayoutType, {
-        [styles.thin]: pizzaType === PizzaType.THIN
+        [styles.thin]: pizzaType === PIZZA_TYPES.THIN
     })
 
     return (

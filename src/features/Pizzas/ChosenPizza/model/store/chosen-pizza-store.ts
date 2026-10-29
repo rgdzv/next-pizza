@@ -1,17 +1,12 @@
 import { devtools } from 'zustand/middleware'
 import { createStore } from 'zustand'
-import {
-    PIZZA_SIZES,
-    PIZZA_TYPES,
-    type PizzaSize,
-    type PizzaType
-} from 'entities/PizzaCard'
-import type { Pizza } from 'entities/PizzaCard'
+import { PIZZA_SIZES, PIZZA_TYPES } from 'entities/PizzaCard'
+import type { Pizza, PizzaSize, PizzaType } from 'entities/PizzaCard'
 import type { ChosenPizzaState, ChosenPizzaStore } from '../../lib/types/store'
 
 export const defaultInitState: ChosenPizzaState = {
     pizza: undefined,
-    pizzaSize: PIZZA_SIZES[2],
+    pizzaSize: PIZZA_SIZES.MIDDLE,
     pizzaType: PIZZA_TYPES.TRADITIONAL,
     ingredients: [],
     pizzaIngredientPrice: 0

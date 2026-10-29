@@ -1,13 +1,13 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
 import { CaloriesCard } from 'entities/CaloriesCard'
+import { getPizzaVariant } from 'entities/PizzaCard'
 import { CustomButton } from 'shared/ui'
 import { CaloriesIcon } from 'shared/assets'
 import { useChosenPizza } from '../../../lib/hooks/useChosenPizza'
 import { useSizeType } from '../../../lib/hooks/useSizeType'
 import styles from './ShowPizzaTitle.module.scss'
 import type { FC } from 'react'
-import type { Nutrition } from 'entities/PizzaCard'
 
 export const ShowPizzaTitle: FC = () => {
     const { chosenPizza } = useChosenPizza()
@@ -19,17 +19,19 @@ export const ShowPizzaTitle: FC = () => {
         setIsOpened((prev) => !prev)
     }
 
-    const nutritionValue = chosenPizza?.details[pizzaType][pizzaSize]
-        .nutrition as Nutrition
+    const selectedVariant = getPizzaVariant(chosenPizza, pizzaType, pizzaSize)
+    const nutritionValue = selectedVariant?.nutrition ?? {
+        calories: 0,
+        protein: 0,
+        fat: 0,
+        carbs: 0
+    }
 
     const caloriesPopupCondition = isOpened && (
         <CaloriesCard
             popupRef={popupRef}
-            calories={nutritionValue.calories}
-            carbo={nutritionValue.carbo}
-            fat={nutritionValue.fat}
-            prot={nutritionValue.prot}
-            weight={nutritionValue.weight}
+            nutrition={nutritionValue}
+            weight={selectedVariant?.weight ?? 0}
         />
     )
 
@@ -67,7 +69,7 @@ export const ShowPizzaTitle: FC = () => {
             <h1 className={styles.pizzaInfoTitle}>{chosenPizza?.title}</h1>
             <span className={styles.pizzaInfoSubtitle}>
                 {pizzaSize} см, {pizzaTypeTranslated} тесто,&nbsp;
-                {nutritionValue.weight} г
+                {selectedVariant?.weight} г
             </span>
         </div>
     )

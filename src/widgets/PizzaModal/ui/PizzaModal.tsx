@@ -1,10 +1,10 @@
 import {
     // AddIngredients,
     // AddToBasket,
-    // ChooseSizeType,
-    // RemoveIngredients,
-    ShowPizzaImage
-    // ShowPizzaTitle
+    ChooseSizeType,
+    RemoveIngredients,
+    ShowPizzaImage,
+    ShowPizzaTitle
 } from 'features/Pizzas/ChosenPizza'
 import { CustomButton, Dialog } from 'shared/ui'
 import { CrossIcon } from 'shared/assets'
@@ -32,10 +32,10 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
                 <ShowPizzaImage />
                 <div className={styles.pizzaInfoWrapper}>
                     <div className={styles.pizzaInfo}>
-                        {/* <ShowPizzaTitle />
+                        <ShowPizzaTitle />
                         <RemoveIngredients />
                         <ChooseSizeType />
-                        <AddIngredients />
+                        {/* <AddIngredients />
                         <AddToBasket closeDialog={closeDialog} /> */}
                     </div>
                 </div>

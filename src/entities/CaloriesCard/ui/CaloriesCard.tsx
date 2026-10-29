@@ -1,21 +1,16 @@
 import styles from './CaloriesCard.module.scss'
+import type { PizzaNutrition } from '../../PizzaCard'
 import type { FC, RefObject } from 'react'
 
 interface CaloriesCardPropsInterface {
     popupRef: RefObject<HTMLDivElement | null>
-    calories: string
-    prot: string
-    fat: string
-    carbo: string
-    weight: string
+    nutrition: PizzaNutrition
+    weight: number
 }
 
 export const CaloriesCard: FC<CaloriesCardPropsInterface> = ({
     popupRef,
-    calories,
-    prot,
-    fat,
-    carbo,
+    nutrition,
     weight
 }) => {
     return (
@@ -29,19 +24,19 @@ export const CaloriesCard: FC<CaloriesCardPropsInterface> = ({
                 <div className={styles.main}>
                     <div className={styles.energy}>
                         <span>Энерг. ценность</span>
-                        <span>{calories} ккал</span>
+                        <span>{nutrition.calories} ккал</span>
                     </div>
                     <div className={styles.prot}>
                         <span>Белки</span>
-                        <span>{prot} г</span>
+                        <span>{nutrition.protein} г</span>
                     </div>
                     <div className={styles.fat}>
                         <span>Жиры</span>
-                        <span>{fat} г</span>
+                        <span>{nutrition.fat} г</span>
                     </div>
                     <div className={styles.carbo}>
                         <span>Углеводы</span>
-                        <span>{carbo} г</span>
+                        <span>{nutrition.carbs} г</span>
                     </div>
                 </div>
                 <div className={styles.footer}>
