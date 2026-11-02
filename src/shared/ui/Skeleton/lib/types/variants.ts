@@ -1,1 +1,4 @@
-export type SkeletonVariantType = 'pizzaCardSkeleton' | 'themeSwitcherSkeleton'
+export type SkeletonVariantType =
+    | 'pizzaCardSkeleton'
+    | 'themeSwitcherSkeleton'
+    | 'extraIngredientSkeleton'

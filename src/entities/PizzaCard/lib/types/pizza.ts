@@ -1,7 +1,5 @@
 export type PizzaType = 'thin' | 'traditional'
 export type PizzaSize = 20 | 25 | 30 | 35
-
-export type AddonPriceKey = `${PizzaType}_${PizzaSize}`
 export interface PizzaCategory {
     id: number
     slug: string

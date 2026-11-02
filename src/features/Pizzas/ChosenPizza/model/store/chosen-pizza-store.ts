@@ -1,6 +1,7 @@
 import { devtools } from 'zustand/middleware'
 import { createStore } from 'zustand'
 import { PIZZA_SIZES, PIZZA_TYPES } from 'entities/PizzaCard'
+import { fetchExtraIngredients } from './actions/fetchExtraIngredients'
 import type { Pizza, PizzaSize, PizzaType } from 'entities/PizzaCard'
 import type { ChosenPizzaState, ChosenPizzaStore } from '../../lib/types/store'
 
@@ -9,7 +10,10 @@ export const defaultInitState: ChosenPizzaState = {
     pizzaSize: PIZZA_SIZES.MIDDLE,
     pizzaType: PIZZA_TYPES.TRADITIONAL,
     ingredients: [],
-    pizzaIngredientPrice: 0
+    pizzaIngredientPrice: 0,
+    extraIngredients: undefined,
+    isAddonsLoading: true,
+    error: undefined
 }
 
 export const createChosenPizzaStore = (
@@ -17,8 +21,9 @@ export const createChosenPizzaStore = (
 ) => {
     return createStore<ChosenPizzaStore>()(
         devtools(
-            (set) => ({
+            (set, get, store) => ({
                 ...initState,
+                ...fetchExtraIngredients(set, get, store),
                 setPizza: (newPizza: Pizza) => {
                     set(() => ({ pizza: newPizza }))
                 },
@@ -30,36 +35,16 @@ export const createChosenPizzaStore = (
                 },
                 setIngredient: (ingName: string | null) => {
                     set((state) => {
-                        if (ingName === null) {
-                            return { ingredients: [] }
-                        }
-                        const isIngredientAdded =
-                            state.ingredients.includes(ingName)
+                        if (ingName === null) return { ingredients: [] }
 
-                        const updatedIngredients = isIngredientAdded
-                            ? state.ingredients.filter(
-                                  (item) => item !== ingName
-                              )
-                            : [...state.ingredients, ingName]
-                        return { ingredients: updatedIngredients }
+                        const isAdded = state.ingredients.includes(ingName)
+
+                        return {
+                            ingredients: isAdded
+                                ? state.ingredients.filter((i) => i !== ingName)
+                                : [...state.ingredients, ingName]
+                        }
                     })
-                },
-                setPlusIngredientPrice: (ingPrice: number) => {
-                    set((state) => ({
-                        pizzaIngredientPrice:
-                            state.pizzaIngredientPrice + ingPrice
-                    }))
-                },
-                setMinusIngredientPrice: (ingPrice: number) => {
-                    set((state) => ({
-                        pizzaIngredientPrice:
-                            state.pizzaIngredientPrice - ingPrice
-                    }))
-                },
-                setUpdateIngredientPrice: (newPrice: number) => {
-                    set(() => ({
-                        pizzaIngredientPrice: newPrice
-                    }))
                 }
             }),
             { name: 'ChosenPizza' }

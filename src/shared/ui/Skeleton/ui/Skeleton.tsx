@@ -21,5 +21,9 @@ export const Skeleton: FC<SkeletonPropsInterface> = ({ variant }) => {
         )
     }
 
+    if (variant === 'extraIngredientSkeleton') {
+        return <div className={finalClassName} data-testid='skeleton'></div>
+    }
+
     return <div className={finalClassName} data-testid='skeleton'></div>
 }

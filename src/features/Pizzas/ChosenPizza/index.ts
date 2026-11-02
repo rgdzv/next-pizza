@@ -8,3 +8,4 @@ export { ChosenPizzaStoreProvider } from './model/store/provider/chosen-pizza-st
 export { useChosenPizza } from './lib/hooks/useChosenPizza'
 export { useSizeType } from './lib/hooks/useSizeType'
 export { useIngredients } from './lib/hooks/useIngredients'
+export { useFetchExtraIngredients } from './lib/hooks/useFetchExtraIngredients'

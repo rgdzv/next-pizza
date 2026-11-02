@@ -1,4 +1,9 @@
-import type { Pizza, PizzaSize, PizzaType } from 'entities/PizzaCard'
+import type {
+    ExtraIngredient,
+    Pizza,
+    PizzaSize,
+    PizzaType
+} from 'entities/PizzaCard'
 
 export interface ChosenPizzaState {
     pizza: Pizza | undefined
@@ -6,6 +11,9 @@ export interface ChosenPizzaState {
     pizzaType: PizzaType
     ingredients: string[]
     pizzaIngredientPrice: number
+    extraIngredients: ExtraIngredient[] | undefined
+    isAddonsLoading: boolean
+    error: string | undefined
 }
 
 export interface ChosenPizzaActions {
@@ -13,9 +21,7 @@ export interface ChosenPizzaActions {
     setPizzaSize: (newSize: PizzaSize) => void
     setPizzaType: (newType: PizzaType) => void
     setIngredient: (ingName: string | null) => void
-    setPlusIngredientPrice: (ingPrice: number) => void
-    setMinusIngredientPrice: (ingPrice: number) => void
-    setUpdateIngredientPrice: (newPrice: number) => void
+    fetchExtraIngredients: () => Promise<void>
 }
 
 export type ChosenPizzaStore = ChosenPizzaState & ChosenPizzaActions

@@ -1,15 +1,16 @@
+import { useEffect, type FC, type MouseEvent, type RefObject } from 'react'
 import {
-    // AddIngredients,
+    AddIngredients,
     // AddToBasket,
     ChooseSizeType,
     RemoveIngredients,
     ShowPizzaImage,
-    ShowPizzaTitle
+    ShowPizzaTitle,
+    useFetchExtraIngredients
 } from 'features/Pizzas/ChosenPizza'
 import { CustomButton, Dialog } from 'shared/ui'
 import { CrossIcon } from 'shared/assets'
 import styles from './PizzaModal.module.scss'
-import type { FC, MouseEvent, RefObject } from 'react'
 
 interface PizzaModalPropsInterface {
     dialogRef: RefObject<HTMLDialogElement | null>
@@ -22,6 +23,12 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
     closeDialog,
     onBackdropClick
 }) => {
+    const { fetchExtraIngredients } = useFetchExtraIngredients()
+
+    useEffect(() => {
+        void fetchExtraIngredients()
+    })
+
     return (
         <Dialog
             dialogRef={dialogRef}
@@ -35,8 +42,8 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
                         <ShowPizzaTitle />
                         <RemoveIngredients />
                         <ChooseSizeType />
-                        {/* <AddIngredients />
-                        <AddToBasket closeDialog={closeDialog} /> */}
+                        <AddIngredients />
+                        {/* <AddToBasket closeDialog={closeDialog} /> */}
                     </div>
                 </div>
                 <CustomButton variant='closeModal' onClick={closeDialog}>

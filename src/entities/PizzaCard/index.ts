@@ -12,3 +12,4 @@ export {
     PIZZA_TYPES_LIST
 } from './lib/const/pizzaShape'
 export { getPizzaVariant } from './lib/helper/getPizzaVariant'
+export type { ExtraIngredient } from './lib/types/extraIngredient'
