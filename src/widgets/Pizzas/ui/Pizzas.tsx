@@ -4,7 +4,8 @@ import classNames from 'classnames'
 import { useFetchData, usePizzas } from 'features/Pizzas/AllPizzas'
 import { useChosenPizza } from 'features/Pizzas/ChosenPizza'
 import { PizzaCard } from 'entities/PizzaCard'
-import { CustomButton, Skeleton } from 'shared/ui'
+import { CustomButton } from 'shared/ui'
+import { getSkeleton } from 'shared/lib'
 import styles from './Pizzas.module.scss'
 import type { FC } from 'react'
 
@@ -32,9 +33,7 @@ export const Pizzas: FC<PizzasProprInterface> = ({ openDialog }) => {
         )
     })
 
-    const pizzasSkeletons = new Array(8)
-        .fill(0)
-        .map((_, index) => <Skeleton key={index} variant='pizzaCardSkeleton' />)
+    const skeleton = getSkeleton('pizzaCardSkeleton', 8)
 
     const handleNextPage = () => {
         fetchDataNextPage()
@@ -63,7 +62,7 @@ export const Pizzas: FC<PizzasProprInterface> = ({ openDialog }) => {
     if (isLoading) {
         return (
             <main className={pizzasClassName} data-testid='pizzas-loading'>
-                <div className={styles.pizzasContent}>{pizzasSkeletons}</div>
+                <div className={styles.pizzasContent}>{skeleton}</div>
                 {pizzasFetchButtonCondition}
             </main>
         )

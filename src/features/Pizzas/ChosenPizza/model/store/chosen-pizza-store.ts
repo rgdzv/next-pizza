@@ -1,6 +1,7 @@
 import { devtools } from 'zustand/middleware'
 import { createStore } from 'zustand'
 import { PIZZA_SIZES, PIZZA_TYPES } from 'entities/PizzaCard'
+import { getIngredientsPrice } from '../../lib/helper/getIngredientsPrice'
 import { fetchExtraIngredients } from './actions/fetchExtraIngredients'
 import type { Pizza, PizzaSize, PizzaType } from 'entities/PizzaCard'
 import type { ChosenPizzaState, ChosenPizzaStore } from '../../lib/types/store'
@@ -28,21 +29,58 @@ export const createChosenPizzaStore = (
                     set(() => ({ pizza: newPizza }))
                 },
                 setPizzaSize: (newSize: PizzaSize) => {
-                    set(() => ({ pizzaSize: newSize }))
+                    set((state) => {
+                        const pizzaIngredientPrice = getIngredientsPrice(
+                            state.extraIngredients,
+                            state.ingredients,
+                            state.pizzaType,
+                            newSize
+                        )
+
+                        return {
+                            pizzaSize: newSize,
+                            pizzaIngredientPrice
+                        }
+                    })
                 },
                 setPizzaType: (newType: PizzaType) => {
-                    set(() => ({ pizzaType: newType }))
+                    set((state) => {
+                        const pizzaIngredientPrice = getIngredientsPrice(
+                            state.extraIngredients,
+                            state.ingredients,
+                            newType,
+                            state.pizzaSize
+                        )
+
+                        return {
+                            pizzaType: newType,
+                            pizzaIngredientPrice
+                        }
+                    })
                 },
                 setIngredient: (ingName: string | null) => {
                     set((state) => {
-                        if (ingName === null) return { ingredients: [] }
+                        if (ingName === null)
+                            return { ingredients: [], pizzaIngredientPrice: 0 }
 
                         const isAdded = state.ingredients.includes(ingName)
 
+                        const nextIngredients = isAdded
+                            ? state.ingredients.filter(
+                                  (ingredient) => ingredient !== ingName
+                              )
+                            : [...state.ingredients, ingName]
+
+                        const pizzaIngredientPrice = getIngredientsPrice(
+                            state.extraIngredients,
+                            nextIngredients,
+                            state.pizzaType,
+                            state.pizzaSize
+                        )
+
                         return {
-                            ingredients: isAdded
-                                ? state.ingredients.filter((i) => i !== ingName)
-                                : [...state.ingredients, ingName]
+                            ingredients: nextIngredients,
+                            pizzaIngredientPrice
                         }
                     })
                 }

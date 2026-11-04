@@ -1,13 +1,12 @@
-import type { PizzaSizeKeys, PizzaTypeKeys } from 'entities/PizzaCard'
-
+import type { PizzaSize, PizzaType } from 'entities/PizzaCard'
 export interface BasketPizza {
     id: string
     imgSrc: string
     title: string
-    size: PizzaSizeKeys
-    type: PizzaTypeKeys
+    size: PizzaSize
+    type: PizzaType
     price: number
-    weight: string
+    weight: number
     count: number
     totalPriceForCount?: number
     ingredients: string[]

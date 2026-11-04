@@ -1,6 +1,6 @@
 'use client'
 import { IngredientCard } from 'entities/IngredientCard'
-import { Skeleton } from 'shared/ui'
+import { getSkeleton } from 'shared/lib'
 import { useSizeType } from '../../../lib/hooks/useSizeType'
 import { useIngredients } from '../../../lib/hooks/useIngredients'
 import { useExtraIngredients } from '../../../lib/hooks/useExtraIngredients'
@@ -12,16 +12,15 @@ export const AddIngredients: FC = () => {
         useExtraIngredients()
     const { ingredients, setIngredient } = useIngredients()
     const { pizzaSize, pizzaType } = useSizeType()
+
     const sizeTypeCombination = `${pizzaType}_${String(pizzaSize)}`
 
     const finalIngredients = extraIngredients?.map((ingredient) => {
-        const priceCombination = ingredient.prices[sizeTypeCombination] ?? 0
-
         const ingredientData = {
             id: ingredient.id,
             name: ingredient.name,
             src: ingredient.imgSrc,
-            price: priceCombination
+            price: ingredient.prices[sizeTypeCombination] ?? 0
         }
 
         const isAdded = ingredients.includes(ingredient.name)
@@ -40,43 +39,17 @@ export const AddIngredients: FC = () => {
         )
     })
 
-    const extraIngredientsSkeleton = new Array(6)
-        .fill(0)
-        .map((_, index) => (
-            <Skeleton key={index} variant='extraIngredientSkeleton' />
-        ))
+    const skeleton = getSkeleton('extraIngredientSkeleton', 6)
 
-    if (isAddonsLoading) {
-        return (
-            <div
-                className={styles.pizzaInfoAddIngredients}
-                data-testid='add-ingredients'
-            >
-                <span className={styles.pizzaInfoAddIngredientsTitle}>
-                    Добавить по вкусу
-                </span>
-                <div className={styles.pizzaAddIngredients}>
-                    {extraIngredientsSkeleton}
-                </div>
-            </div>
-        )
-    }
-
-    if (extraIngredientsError) {
-        return (
-            <div
-                className={styles.pizzaInfoAddIngredients}
-                data-testid='add-ingredients'
-            >
-                <span className={styles.pizzaInfoAddIngredientsTitle}>
-                    Добавить по вкусу
-                </span>
-                <div className={styles.pizzaAddIngredientsError}>
-                    {extraIngredientsError}
-                </div>
-            </div>
-        )
-    }
+    const extraIngredientsCondition = isAddonsLoading ? (
+        <div className={styles.pizzaAddIngredients}>{skeleton}</div>
+    ) : extraIngredientsError ? (
+        <div className={styles.pizzaAddIngredientsError}>
+            {extraIngredientsError}
+        </div>
+    ) : (
+        <div className={styles.pizzaAddIngredients}>{finalIngredients}</div>
+    )
 
     return (
         <div
@@ -86,7 +59,7 @@ export const AddIngredients: FC = () => {
             <span className={styles.pizzaInfoAddIngredientsTitle}>
                 Добавить по вкусу
             </span>
-            <div className={styles.pizzaAddIngredients}>{finalIngredients}</div>
+            {extraIngredientsCondition}
         </div>
     )
 }

@@ -2,7 +2,8 @@
 import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import { DarkThemeIcon, LightThemeIcon } from 'shared/assets'
-import { CustomButton, Skeleton } from 'shared/ui'
+import { CustomButton } from 'shared/ui'
+import { getSkeleton } from 'shared/lib'
 
 export const ThemeSwitcher = () => {
     const [mounted, setMounted] = useState(false)
@@ -24,7 +25,8 @@ export const ThemeSwitcher = () => {
     }, [])
 
     if (!mounted) {
-        return <Skeleton variant='themeSwitcherSkeleton' />
+        const skeleton = getSkeleton('themeSwitcherSkeleton', 1)
+        return <>{skeleton}</>
     }
 
     return (

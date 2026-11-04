@@ -6,19 +6,22 @@ jest.mock('../../../lib/hooks/useChosenPizza', () => ({
     useChosenPizza: () => ({
         chosenPizza: {
             title: 'Маргарита',
-            details: {
-                traditional: {
-                    '30': {
-                        nutrition: {
-                            calories: 200,
-                            carbo: 30,
-                            fat: 10,
-                            prot: 5,
-                            weight: 300
-                        }
+            variants: [
+                {
+                    id: '5-thin-30',
+                    dough: 'thin',
+                    size: 30,
+                    price: 829,
+                    img: 'https://media.dodostatic.net/image/r:584x584/0198bf3fb33973f78f8af9892f86df62.png',
+                    weight: 540,
+                    nutrition: {
+                        calories: 206.1,
+                        protein: 8.4,
+                        fat: 7.8,
+                        carbs: 24.1
                     }
                 }
-            }
+            ]
         }
     })
 }))

@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { PizzaSize, PizzaType } from 'entities/PizzaCard'
+import { getPizzaVariant, PIZZA_SIZES, PIZZA_TYPES } from 'entities/PizzaCard'
 import { CustomButton } from 'shared/ui'
 import { priceFormat } from 'shared/lib'
 import { useChosenPizza } from '../../lib/hooks/useChosenPizza'
@@ -22,19 +22,18 @@ export const AddToBasket: FC<AddToBasketPropsInterface> = ({ closeDialog }) => {
     const { addPizzaToBasket } = useBasketPizza()
     const [orderIsSending, setOrderIsSending] = useState(false)
 
-    const pizzaPrice =
-        Number(chosenPizza?.details[pizzaType][pizzaSize].price) +
-        pizzaIngredientPrice
+    const selectedVariant = getPizzaVariant(chosenPizza, pizzaType, pizzaSize)
+
+    const pizzaPrice = (selectedVariant?.price ?? 0) + pizzaIngredientPrice
 
     const pizzaToBasket = {
-        id: `id-${chosenPizza?.id as string}_${pizzaSize}_${pizzaType}_${String(pizzaPrice)}`,
-        imgSrc: chosenPizza?.imgSrc as string,
-        title: chosenPizza?.title as string,
+        id: chosenPizza?.id ?? '',
+        imgSrc: chosenPizza?.imgSrc ?? '',
+        title: chosenPizza?.title ?? '',
         size: pizzaSize,
         type: pizzaType,
         price: pizzaPrice,
-        weight: chosenPizza?.details[pizzaType][pizzaSize].nutrition
-            .weight as string,
+        weight: selectedVariant?.weight ?? 0,
         count: 1,
         ingredients: ingredients.map(
             (item) => item.charAt(0).toLowerCase() + item.slice(1)
@@ -53,8 +52,8 @@ export const AddToBasket: FC<AddToBasketPropsInterface> = ({ closeDialog }) => {
         updateButtonContent()
         setTimeout(() => {
             closeDialog()
-            setPizzaSize(PizzaSize.MIDDLE)
-            setPizzaType(PizzaType.TRADITIONAL)
+            setPizzaSize(PIZZA_SIZES.MIDDLE)
+            setPizzaType(PIZZA_TYPES.TRADITIONAL)
             setIngredient(null)
         }, 500)
     }

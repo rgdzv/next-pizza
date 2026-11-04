@@ -1,7 +1,7 @@
 import { useEffect, type FC, type MouseEvent, type RefObject } from 'react'
 import {
     AddIngredients,
-    // AddToBasket,
+    AddToBasket,
     ChooseSizeType,
     RemoveIngredients,
     ShowPizzaImage,
@@ -27,7 +27,7 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
 
     useEffect(() => {
         void fetchExtraIngredients()
-    })
+    }, [fetchExtraIngredients])
 
     return (
         <Dialog
@@ -43,7 +43,7 @@ export const PizzaModal: FC<PizzaModalPropsInterface> = ({
                         <RemoveIngredients />
                         <ChooseSizeType />
                         <AddIngredients />
-                        {/* <AddToBasket closeDialog={closeDialog} /> */}
+                        <AddToBasket closeDialog={closeDialog} />
                     </div>
                 </div>
                 <CustomButton variant='closeModal' onClick={closeDialog}>

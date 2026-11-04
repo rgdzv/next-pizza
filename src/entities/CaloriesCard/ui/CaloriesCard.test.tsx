@@ -6,14 +6,18 @@ const popupRefMock = createRef<HTMLDivElement>()
 
 describe('CaloriesCard', () => {
     test('render', () => {
+        const nutrition = {
+            calories: 0,
+            protein: 0,
+            fat: 0,
+            carbs: 0
+        }
+
         render(
             <CaloriesCard
                 popupRef={popupRefMock}
-                calories='100'
-                prot='100'
-                fat='100'
-                carbo='100'
-                weight='500'
+                nutrition={nutrition}
+                weight={100}
             />
         )
 
