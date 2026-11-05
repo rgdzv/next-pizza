@@ -7,13 +7,7 @@ describe('PizzaCard', () => {
     test('render', () => {
         const handleSelect = jest.fn()
 
-        render(
-            <PizzaCard
-                pizza={pizzaMock}
-                pizzaCardPrice='1000'
-                handleSelectPizza={handleSelect}
-            />
-        )
+        render(<PizzaCard pizza={pizzaMock} handleSelectPizza={handleSelect} />)
 
         const pizza = screen.getByRole('article')
         expect(pizza).toBeInTheDocument()
@@ -23,13 +17,7 @@ describe('PizzaCard', () => {
         const user = userEvent.setup()
         const handleSelect = jest.fn()
 
-        render(
-            <PizzaCard
-                pizza={pizzaMock}
-                pizzaCardPrice='1000'
-                handleSelectPizza={handleSelect}
-            />
-        )
+        render(<PizzaCard pizza={pizzaMock} handleSelectPizza={handleSelect} />)
 
         const pizza = screen.getByRole('article')
         const button = screen.getByRole('button', { name: 'Выбрать' })

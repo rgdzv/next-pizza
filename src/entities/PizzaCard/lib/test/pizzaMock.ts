@@ -1,116 +1,52 @@
 import type { Pizza } from '../types/pizza'
 
 export const pizzaMock: Pizza = {
-    id: '1',
-    title: 'Терияки',
-    category: 5,
-    rating: 10,
+    id: '5',
+    slug: 'burger-pizza',
+    title: 'Бургер-пицца',
+    category: { id: 1, slug: 'meat', name: 'Мясные' },
+    rating: 5,
     description:
-        'Цыпленок, красный лук, сладкий перец, соус терияки, сыр моцарелла, фирменный соус альфредо',
-    imgSrc: 'https://media.dodostatic.net/image/r:584x584/019a10a0c9ab792190a97768688bc6e9.jpg',
-    details: {
-        thin: {
-            '20': {
-                nutrition: {
-                    calories: '254.9',
-                    prot: '11',
-                    fat: '9.7',
-                    carbo: '231',
-                    weight: '430'
-                },
-                price: '799',
-                img: 'https://media.dodostatic.net/image/r:584x584/019a10a0d04478e2888f2049f683286e.jpg'
-            },
-            '25': {
-                nutrition: {
-                    calories: '244',
-                    prot: '10.3',
-                    fat: '8.9',
-                    carbo: '30.7',
-                    weight: '630'
-                },
-                price: '979',
-                img: 'https://media.dodostatic.net/image/r:584x584/019a10a0ead476fa8b2a69b9af466c31.jpg'
-            },
-            '30': {
-                nutrition: {
-                    calories: '254.9',
-                    prot: '11',
-                    fat: '9.7',
-                    carbo: '231',
-                    weight: '430'
-                },
-                price: '799',
-                img: 'https://media.dodostatic.net/image/r:584x584/019a10a0d04478e2888f2049f683286e.jpg'
-            },
-            '35': {
-                nutrition: {
-                    calories: '244',
-                    prot: '10.3',
-                    fat: '8.9',
-                    carbo: '30.7',
-                    weight: '630'
-                },
-                price: '979',
-                img: 'https://media.dodostatic.net/image/r:584x584/019a10a0ead476fa8b2a69b9af466c31.jpg'
-            }
-        },
-        traditional: {
-            '20': {
-                nutrition: {
-                    calories: '262',
-                    prot: '11',
-                    fat: '9.1',
-                    carbo: '34',
-                    weight: '230'
-                },
-                price: '379',
-                img: 'https://media.dodostatic.net/image/r:584x584/019a10a0ba967817ab2dad8bef60807e.jpg'
-            },
-            '25': {
-                nutrition: {
-                    calories: '259.8',
-                    prot: '10.2',
-                    fat: '8.5',
-                    carbo: '35.7',
-                    weight: '350'
-                },
-                price: '519',
-                img: 'https://media.dodostatic.net/image/r:584x584/019a10a0c04379429f3a07a9df0478ed.jpg'
-            },
-            '30': {
-                nutrition: {
-                    calories: '258.4',
-                    prot: '10.2',
-                    fat: '8.6',
-                    carbo: '35.1',
-                    weight: '530'
-                },
-                price: '799',
-                img: 'https://media.dodostatic.net/image/r:584x584/019a10a0c9ab792190a97768688bc6e9.jpg'
-            },
-            '35': {
-                nutrition: {
-                    calories: '249.8',
-                    prot: '9.9',
-                    fat: '8.2',
-                    carbo: '34',
-                    weight: '730'
-                },
-                price: '979',
-                img: 'https://media.dodostatic.net/image/r:584x584/019a10a0e54870b0ae63dca748223369.jpg'
-            }
-        }
-    },
+        'Ветчина, маринованные огурчики, томаты, красный лук, чеснок, соус бургер, моцарелла, фирменный томатный соус',
+    imgSrc: 'https://media.dodostatic.net/image/r:584x584/0199b77856ec79a986a2d582c2678fff.png',
+    minPrice: 399,
+    isAvailable: true,
     ingredients: [
+        { id: 'ham', name: 'Ветчина', removable: true },
         {
-            name: 'Цыпленок',
+            id: 'pickles',
+            name: 'маринованные огурчики',
             removable: true
         },
-        { name: 'сладкий перец', removable: true },
-        { name: 'красный лук', removable: true },
-        { name: 'моцарелла', removable: false },
-        { name: 'соус терияки', removable: false },
-        { name: 'фирменный соус альфредо', removable: false }
+        { id: 'tomatoes', name: 'томаты', removable: true },
+        { id: 'red-onion', name: 'красный лук', removable: true },
+        { id: 'garlic', name: 'чеснок', removable: true },
+        {
+            id: 'burger-sauce',
+            name: 'соус бургер',
+            removable: false
+        },
+        { id: 'mozzarella', name: 'моцарелла', removable: false },
+        {
+            id: 'tomato-sauce',
+            name: 'фирменный томатный соус',
+            removable: false
+        }
+    ],
+    variants: [
+        {
+            id: '5-thin-30',
+            dough: 'thin',
+            size: 30,
+            price: 829,
+            img: 'https://media.dodostatic.net/image/r:584x584/0198bf3fb33973f78f8af9892f86df62.png',
+            weight: 540,
+            nutrition: {
+                calories: 206.1,
+                protein: 8.4,
+                fat: 7.8,
+                carbs: 24.1
+            }
+        }
     ]
 }
