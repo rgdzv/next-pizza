@@ -42,7 +42,7 @@ export const Basket: FC<BasketPropsInterface> = ({
             removePizzaFromBasket(pizza, true)
         }
 
-        const formattedPrice = priceFormat(pizza.totalPriceForCount as number)
+        const formattedPrice = priceFormat(pizza.totalPriceForCount ?? 0)
 
         const ingredients = pizza.ingredients.join(', ')
 

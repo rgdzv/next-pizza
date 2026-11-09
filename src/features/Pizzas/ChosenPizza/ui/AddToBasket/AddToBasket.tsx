@@ -6,7 +6,7 @@ import { priceFormat } from 'shared/lib'
 import { useChosenPizza } from '../../lib/hooks/useChosenPizza'
 import { useSizeType } from '../../lib/hooks/useSizeType'
 import { useIngredients } from '../../lib/hooks/useIngredients'
-import { useBasketPizza } from '../../../BasketPizzas/lib/hooks/useBasketPizza'
+import { useBasketPizza } from '../../../BasketPizzas'
 import styles from './AddToBasket.module.scss'
 import type { FC } from 'react'
 
