@@ -13,14 +13,25 @@ export const fetchExtraIngredients: StateCreator<
     Pick<ChosenPizzaActions, 'fetchExtraIngredients'>
 > = (set, get) => ({
     fetchExtraIngredients: async () => {
-        if (get().extraIngredients?.length) return
+        const { extraIngredients, isAddonsLoading } = get()
 
-        set({ isAddonsLoading: true })
+        if (extraIngredients !== undefined) return
+
+        if (isAddonsLoading) return
+
+        set({ isAddonsLoading: true }, false)
 
         try {
             const { data } = await fetchExtraIngredientsAPI()
 
-            set({ extraIngredients: data, isAddonsLoading: false })
+            set(
+                {
+                    extraIngredients: data,
+                    isAddonsLoading: false,
+                    error: undefined
+                },
+                false
+            )
         } catch (error) {
             let errorMessage = 'An unexpected error occurred!'
 
@@ -28,7 +39,13 @@ export const fetchExtraIngredients: StateCreator<
                 errorMessage = error.message
             }
 
-            set({ isAddonsLoading: false, error: errorMessage })
+            set(
+                {
+                    isAddonsLoading: false,
+                    error: errorMessage
+                },
+                false
+            )
         }
     }
 })

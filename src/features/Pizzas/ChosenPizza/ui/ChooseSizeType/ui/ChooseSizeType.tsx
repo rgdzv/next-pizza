@@ -8,25 +8,10 @@ import {
 import { CustomButton } from 'shared/ui'
 import { useSizeType } from '../../../lib/hooks/useSizeType'
 import styles from './ChooseSizeType.module.scss'
-import type { PizzaSize, PizzaType } from 'entities/PizzaCard'
 import type { FC } from 'react'
 
 export const ChooseSizeType: FC = () => {
     const { pizzaSize, pizzaType, setPizzaSize, setPizzaType } = useSizeType()
-
-    const handleChangeSize = (newSize: PizzaSize) => {
-        setPizzaSize(newSize)
-        if (
-            newSize === PIZZA_SIZES.EXTRA_SMALL ||
-            newSize === PIZZA_SIZES.SMALL
-        ) {
-            setPizzaType(PIZZA_TYPES.TRADITIONAL)
-        }
-    }
-
-    const handleChangeType = (newType: PizzaType) => {
-        setPizzaType(newType)
-    }
 
     const sizes = PIZZA_SIZES_LIST.map((size) => {
         return (
@@ -34,7 +19,7 @@ export const ChooseSizeType: FC = () => {
                 key={size}
                 variant='size'
                 onClick={() => {
-                    handleChangeSize(size)
+                    setPizzaSize(size)
                 }}
             >
                 {size}
@@ -55,7 +40,7 @@ export const ChooseSizeType: FC = () => {
                 key={type.id}
                 variant='type'
                 onClick={() => {
-                    handleChangeType(type.id)
+                    setPizzaType(type.id)
                 }}
                 disabled={selectedSizeConditions}
             >
