@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { getPizzaVariant, PIZZA_SIZES, PIZZA_TYPES } from 'entities/PizzaCard'
+import { getPizzaVariant } from 'entities/PizzaCard'
 import { CustomButton } from 'shared/ui'
 import { priceFormat } from 'shared/lib'
 import { useChosenPizza } from '../../lib/hooks/useChosenPizza'
@@ -16,9 +16,8 @@ interface AddToBasketPropsInterface {
 
 export const AddToBasket: FC<AddToBasketPropsInterface> = ({ closeDialog }) => {
     const { chosenPizza } = useChosenPizza()
-    const { ingredients, pizzaIngredientPrice, setIngredient } =
-        useIngredients()
-    const { pizzaSize, pizzaType, setPizzaSize, setPizzaType } = useSizeType()
+    const { ingredients, pizzaIngredientPrice } = useIngredients()
+    const { pizzaSize, pizzaType } = useSizeType()
     const { addPizzaToBasket } = useBasketPizza()
     const [orderIsSending, setOrderIsSending] = useState(false)
 
@@ -26,35 +25,33 @@ export const AddToBasket: FC<AddToBasketPropsInterface> = ({ closeDialog }) => {
 
     const pizzaPrice = (selectedVariant?.price ?? 0) + pizzaIngredientPrice
 
-    const pizzaToBasket = {
-        id: chosenPizza?.id ?? '',
-        imgSrc: chosenPizza?.imgSrc ?? '',
-        title: chosenPizza?.title ?? '',
-        size: pizzaSize,
-        type: pizzaType,
-        price: pizzaPrice,
-        weight: selectedVariant?.weight ?? 0,
-        count: 1,
-        ingredients: ingredients.map(
-            (item) => item.charAt(0).toLowerCase() + item.slice(1)
-        )
-    }
-
-    const updateButtonContent = () => {
-        setOrderIsSending(true)
-        setTimeout(() => {
-            setOrderIsSending(true)
-        }, 300)
-    }
+    const disableAction = orderIsSending || !chosenPizza || !selectedVariant
 
     const handleAddPizzaToBasket = () => {
+        if (disableAction) {
+            return
+        }
+
+        const pizzaToBasket = {
+            id: chosenPizza.id,
+            imgSrc: chosenPizza.imgSrc,
+            title: chosenPizza.title,
+            size: pizzaSize,
+            type: pizzaType,
+            price: pizzaPrice,
+            weight: selectedVariant.weight,
+            count: 1,
+            ingredients: ingredients.map(
+                (item) => item.charAt(0).toLowerCase() + item.slice(1)
+            )
+        }
+
+        setOrderIsSending(true)
+
         addPizzaToBasket(pizzaToBasket)
-        updateButtonContent()
+
         setTimeout(() => {
             closeDialog()
-            setPizzaSize(PIZZA_SIZES.MIDDLE)
-            setPizzaType(PIZZA_TYPES.TRADITIONAL)
-            setIngredient(null)
         }, 500)
     }
 
@@ -68,7 +65,7 @@ export const AddToBasket: FC<AddToBasketPropsInterface> = ({ closeDialog }) => {
             <CustomButton
                 variant='price'
                 onClick={handleAddPizzaToBasket}
-                disabled={orderIsSending}
+                disabled={disableAction}
             >
                 {buttonContentCondition}
             </CustomButton>

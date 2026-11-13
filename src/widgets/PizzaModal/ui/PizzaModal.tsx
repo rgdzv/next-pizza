@@ -1,4 +1,4 @@
-import { useEffect, type FC, type MouseEvent, type RefObject } from 'react'
+import { useEffect, type FC, type RefObject } from 'react'
 import {
     AddIngredients,
     AddToBasket,
@@ -15,7 +15,7 @@ import styles from './PizzaModal.module.scss'
 interface PizzaModalPropsInterface {
     dialogRef: RefObject<HTMLDialogElement | null>
     closeDialog: () => void
-    onBackdropClick: (e: MouseEvent<HTMLDialogElement>) => void
+    onBackdropClick: (e: React.MouseEvent<HTMLDialogElement>) => void
 }
 
 export const PizzaModal: FC<PizzaModalPropsInterface> = ({

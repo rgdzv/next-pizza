@@ -22,6 +22,7 @@ export interface ChosenPizzaActions {
     setPizzaType: (newType: PizzaType) => void
     setIngredient: (ingName: string | null) => void
     fetchExtraIngredients: () => Promise<void>
+    resetPizzaConfiguration: () => void
 }
 
 export type ChosenPizzaStore = ChosenPizzaState & ChosenPizzaActions

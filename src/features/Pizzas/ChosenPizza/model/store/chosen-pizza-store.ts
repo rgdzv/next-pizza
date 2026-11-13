@@ -96,6 +96,14 @@ export const createChosenPizzaStore = (
                             pizzaIngredientPrice
                         }
                     })
+                },
+                resetPizzaConfiguration: () => {
+                    set({
+                        pizzaSize: PIZZA_SIZES.MIDDLE,
+                        pizzaType: PIZZA_TYPES.TRADITIONAL,
+                        ingredients: [],
+                        pizzaIngredientPrice: 0
+                    })
                 }
             }),
             { name: 'ChosenPizza' }
