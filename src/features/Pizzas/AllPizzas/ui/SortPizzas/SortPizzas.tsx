@@ -9,26 +9,31 @@ import type { FC } from 'react'
 
 export const SortPizzas: FC = () => {
     const { sortingObj, onChangeSortingObj } = useSort()
+    const { sortProperty, order, name } = sortingObj
 
     const sortOptions = SORTLIST.map((item) => {
-        const handleSortOrder = (order: 'asc' | 'desc') => () => {
-            onChangeSortingObj({ ...item, order })
-        }
+        const isAscActive =
+            sortProperty === item.sortProperty && order === 'asc'
 
-        const isSortButtonActive = (order: 'asc' | 'desc') => {
-            return (
-                sortingObj.sortProperty === item.sortProperty &&
-                sortingObj.order === order
-            )
+        const isDescActive =
+            sortProperty === item.sortProperty && order === 'desc'
+
+        const handleChangeOrder = (newOrder: 'asc' | 'desc') => {
+            onChangeSortingObj({
+                ...item,
+                order: newOrder
+            })
         }
 
         return (
-            <li key={item.name}>
+            <li key={item.sortProperty}>
                 <CloseButton as={Fragment}>
                     <CustomButton
                         variant='sortArrow'
-                        onClick={handleSortOrder('asc')}
-                        data-active={isSortButtonActive('asc')}
+                        onClick={() => {
+                            handleChangeOrder('asc')
+                        }}
+                        data-active={isAscActive}
                     >
                         <ArrowUpIcon title='По возрастанию' />
                     </CustomButton>
@@ -36,8 +41,10 @@ export const SortPizzas: FC = () => {
                 <CloseButton as={Fragment}>
                     <CustomButton
                         variant='sortArrow'
-                        onClick={handleSortOrder('desc')}
-                        data-active={isSortButtonActive('desc')}
+                        onClick={() => {
+                            handleChangeOrder('desc')
+                        }}
+                        data-active={isDescActive}
                     >
                         <ArrowDownIcon title='По убыванию' />
                     </CustomButton>
@@ -51,7 +58,7 @@ export const SortPizzas: FC = () => {
         <CustomButton variant='sort'>
             <ArrowsUpDownIcon title='Сортировка' />
             <span>Сортировка по:</span>
-            <span>{sortingObj.name}</span>
+            <span>{name}</span>
         </CustomButton>
     )
 
