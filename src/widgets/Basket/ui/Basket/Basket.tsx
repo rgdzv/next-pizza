@@ -1,5 +1,5 @@
 'use client'
-import { useBasketPizza } from 'features/Pizzas/BasketPizzas'
+import { getBasketPizzaKey, useBasketPizza } from 'features/Pizzas/BasketPizzas'
 import { BasketPizzaCard } from 'entities/BasketPizzaCard'
 import { priceFormat } from 'shared/lib'
 import { CustomButton, Dialog } from 'shared/ui'
@@ -29,30 +29,24 @@ export const Basket: FC<BasketPropsInterface> = ({
         totalCount
     } = useBasketPizza()
 
-    const pizzas = pizzasInBasket?.map((pizza) => {
-        const handleAddPizza = () => {
-            addPizzaToBasket(pizza)
-        }
-
-        const handleRemovePizza = () => {
-            removePizzaFromBasket(pizza)
-        }
-
-        const handleRemovePizzaCompletely = () => {
-            removePizzaFromBasket(pizza, true)
-        }
-
-        const formattedPrice = priceFormat(pizza.totalPriceForCount ?? 0)
+    const pizzas = pizzasInBasket.map((pizza) => {
+        const formattedPrice = priceFormat(pizza.totalPriceForCount)
 
         const ingredients = pizza.ingredients.join(', ')
 
         return (
             <BasketPizzaCard
-                key={pizza.id}
+                key={getBasketPizzaKey(pizza)}
                 pizza={pizza}
-                handleAddPizza={handleAddPizza}
-                handleRemovePizza={handleRemovePizza}
-                handleRemovePizzaCompletely={handleRemovePizzaCompletely}
+                handleAddPizza={() => {
+                    addPizzaToBasket(pizza)
+                }}
+                handleRemovePizza={() => {
+                    removePizzaFromBasket(pizza)
+                }}
+                handleRemovePizzaCompletely={() => {
+                    removePizzaFromBasket(pizza, true)
+                }}
                 ingredients={ingredients}
                 formattedPrice={formattedPrice}
             />
@@ -62,7 +56,7 @@ export const Basket: FC<BasketPropsInterface> = ({
     const basketPizzasLength = productDeclension(totalCount)
     const basketFinalSum = priceFormat(totalPrice)
 
-    const showBasketPizzasCondition = pizzas?.length ? (
+    const showBasketPizzasCondition = pizzas.length ? (
         <BasketContent
             basketPizzasLength={basketPizzasLength}
             basketFinalSum={basketFinalSum}

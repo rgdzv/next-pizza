@@ -1,12 +1,11 @@
 import { devtools } from 'zustand/middleware'
 import { createStore } from 'zustand'
+import { getBasketPizzaKey } from '../../lib/helper/getBasketPizzaKey'
 import type { BasketPizza } from 'entities/BasketPizzaCard'
 import type { BasketPizzaState, BasketPizzaStore } from '../../lib/types/store'
 
 export const defaultInitState: BasketPizzaState = {
-    pizzasInBasket: undefined,
-    totalPrice: 0,
-    totalCount: 0
+    pizzasInBasket: []
 }
 
 export const createBasketPizzaStore = (
@@ -14,137 +13,100 @@ export const createBasketPizzaStore = (
 ) => {
     return createStore<BasketPizzaStore>()(
         devtools(
-            (set, _, store) => ({
+            (set) => ({
                 ...initState,
                 addPizzaToBasket: (pizza: BasketPizza) => {
                     set((state) => {
-                        const isPizzaInBasket = state.pizzasInBasket?.find(
-                            (obj) => obj.id === pizza.id
+                        const currentPizzas = state.pizzasInBasket
+
+                        const pizzaKey = getBasketPizzaKey(pizza)
+
+                        const existingPizzaIndex = currentPizzas.findIndex(
+                            (item) => getBasketPizzaKey(item) === pizzaKey
                         )
-                        let newTotalPrice = state.totalPrice
-                        let newTotalCount = state.totalCount
 
-                        if (isPizzaInBasket) {
-                            const updatedPizzas = state.pizzasInBasket?.map(
-                                (item) => {
-                                    if (item.id === pizza.id) {
-                                        const newCount = item.count + 1
-                                        const totalPriceForCount =
-                                            newCount * item.price
-                                        return {
-                                            ...item,
-                                            count: newCount,
-                                            totalPriceForCount
-                                        }
-                                    }
-                                    return item
-                                }
-                            )
-
-                            newTotalPrice += pizza.price
-                            newTotalCount += 1
-
+                        if (existingPizzaIndex === -1) {
                             return {
-                                ...state,
-                                pizzasInBasket: updatedPizzas,
-                                totalPrice: newTotalPrice,
-                                totalCount: newTotalCount
-                            }
-                        } else {
-                            const newPizza = {
-                                ...pizza,
-                                count: 1,
-                                totalPriceForCount: pizza.price
-                            }
-
-                            newTotalPrice += pizza.price
-                            newTotalCount += 1
-
-                            return {
-                                ...state,
                                 pizzasInBasket: [
-                                    ...(state.pizzasInBasket ?? []),
-                                    { ...newPizza }
-                                ],
-                                totalPrice: newTotalPrice,
-                                totalCount: newTotalCount
+                                    ...currentPizzas,
+                                    {
+                                        ...pizza,
+                                        count: 1
+                                    }
+                                ]
                             }
                         }
-                    })
+
+                        const updatedPizzas = currentPizzas.map(
+                            (item, index) => {
+                                if (index !== existingPizzaIndex) {
+                                    return item
+                                }
+
+                                return {
+                                    ...item,
+                                    count: item.count + 1
+                                }
+                            }
+                        )
+
+                        return {
+                            pizzasInBasket: updatedPizzas
+                        }
+                    }, false)
                 },
                 removePizzaFromBasket: (
                     pizza: BasketPizza,
                     removeCompletely = false
                 ) => {
                     set((state) => {
-                        const isPizzaInBasket = state.pizzasInBasket?.find(
-                            (obj) => obj.id === pizza.id
+                        const currentPizzas = state.pizzasInBasket
+
+                        const pizzaKey = getBasketPizzaKey(pizza)
+
+                        const existingPizza = currentPizzas.find(
+                            (item) => getBasketPizzaKey(item) === pizzaKey
                         )
 
-                        let newTotalPrice = state.totalPrice
-                        let newTotalCount = state.totalCount
+                        if (!existingPizza) {
+                            return state
+                        }
 
-                        if (removeCompletely && isPizzaInBasket) {
-                            const updatedPizzas = state.pizzasInBasket?.filter(
-                                (obj) => obj.id !== pizza.id
-                            )
+                        const shouldRemoveCompletely =
+                            removeCompletely || existingPizza.count <= 1
 
-                            newTotalPrice -= isPizzaInBasket.count * pizza.price
-                            newTotalCount -= isPizzaInBasket.count
-
+                        if (shouldRemoveCompletely) {
                             return {
-                                ...state,
-                                pizzasInBasket: updatedPizzas,
-                                totalPrice: newTotalPrice,
-                                totalCount: newTotalCount
+                                pizzasInBasket: currentPizzas.filter(
+                                    (item) =>
+                                        getBasketPizzaKey(item) !== pizzaKey
+                                )
                             }
                         }
 
-                        if (isPizzaInBasket && isPizzaInBasket.count > 1) {
-                            const updatedPizzas = state.pizzasInBasket?.map(
-                                (item) => {
-                                    if (item.id === pizza.id) {
-                                        const newCount = item.count - 1
-                                        const totalPriceForCount =
-                                            newCount * item.price
-                                        return {
-                                            ...item,
-                                            count: newCount,
-                                            totalPriceForCount
-                                        }
-                                    }
-                                    return item
-                                }
-                            )
-
-                            newTotalPrice -= pizza.price
-                            newTotalCount -= 1
+                        const updatedPizzas = currentPizzas.map((item) => {
+                            if (getBasketPizzaKey(item) !== pizzaKey) {
+                                return item
+                            }
 
                             return {
-                                ...state,
-                                pizzasInBasket: updatedPizzas,
-                                totalPrice: newTotalPrice,
-                                totalCount: newTotalCount
+                                ...item,
+                                count: item.count - 1
                             }
-                        } else {
-                            const updatedPizzas = state.pizzasInBasket?.filter(
-                                (obj) => obj.id !== pizza.id
-                            )
+                        })
 
-                            newTotalPrice -= pizza.price
-                            newTotalCount -= 1
-
-                            return {
-                                ...state,
-                                pizzasInBasket: updatedPizzas,
-                                totalPrice: newTotalPrice,
-                                totalCount: newTotalCount
-                            }
+                        return {
+                            pizzasInBasket: updatedPizzas
                         }
-                    })
+                    }, false)
                 },
                 removeAllPizzas: () => {
-                    set(store.getInitialState())
+                    set(
+                        {
+                            pizzasInBasket: []
+                        },
+                        false
+                    )
                 }
             }),
             { name: 'BasketPizza' }
